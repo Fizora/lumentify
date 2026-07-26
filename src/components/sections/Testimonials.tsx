@@ -36,7 +36,7 @@ const cardVariants = {
 const Testimonials = () => {
   return (
     <section className="py-20">
-      <div className="mx-auto max-w-6xl px-3">
+      <div className="mx-auto max-w-7xl px-3">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

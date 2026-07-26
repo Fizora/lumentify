@@ -5,7 +5,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-white border-t border-gray-100 mt-auto">
-      <div className="mx-auto max-w-6xl px-4 py-12">
+      <div className="mx-auto max-w-7xl px-4 py-12">
         {/* Top grid – replace links with your own */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand column */}

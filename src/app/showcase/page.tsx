@@ -12,7 +12,7 @@ export default function Showcase() {
     <>
       <Navbar />
       <main className="pt-32 pb-24">
-        <div className="mx-auto max-w-6xl px-3">
+        <div className="mx-auto max-w-7xl px-3">
           {/* Section header */}
           <div className="text-center space-y-5 mb-16 max-w-2xl mx-auto">
             <span className="inline-block text-xs font-semibold tracking-widest uppercase text-violet-600 bg-violet-50 px-4 py-1.5 rounded-full">

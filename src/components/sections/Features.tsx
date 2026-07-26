@@ -103,7 +103,7 @@ const FeatureCard = ({ feat }: any) => {
 const Features = () => {
   return (
     <section className="py-24 bg-white">
-      <div className="mx-auto max-w-6xl px-3">
+      <div className="mx-auto max-w-7xl px-3">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -52,7 +52,7 @@ const plans = [
     period: "one-time",
     features: [
       "Everything in Pro",
-      "unlimited pages",
+      "10 pages",
       "10 custom features",
       "1 month technical support",
       "Optional monthly support",
@@ -79,7 +79,7 @@ const cardVariants = {
 const Pricing = () => {
   return (
     <section className="py-24 bg-white" id="pricing">
-      <div className="mx-auto max-w-6xl px-3">
+      <div className="mx-auto max-w-7xl px-3">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

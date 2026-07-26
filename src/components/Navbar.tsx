@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <header className="w-full fixed top-0 left-0 bg-white z-50">
-      <div className="mx-auto max-w-6xl px-3 py-3 flex items-center justify-between">
+      <div className="mx-auto max-w-7xl px-3 py-3 flex items-center justify-between">
         {/* Logo */}
         <h1 className="text-black">
           <Link href="/" className="text-xl font-black">
@@ -37,7 +37,10 @@ const Navbar = () => {
               {item.name}
             </Link>
           ))}
-          <PrimaryButtonLink href="/project" className="text-base font-medium">
+          <PrimaryButtonLink
+            href="https://wa.me/085235086814"
+            className="text-base font-medium"
+          >
             Start Project
           </PrimaryButtonLink>
         </nav>
@@ -92,7 +95,7 @@ const Navbar = () => {
               ))}
               {/* Example CTA button – remove if not needed */}
               <div className="pt-2">
-                <PrimaryButtonLink href="/project">
+                <PrimaryButtonLink href="/https://wa.me/085235086814">
                   Start Project
                 </PrimaryButtonLink>
               </div>

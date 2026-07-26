@@ -10,7 +10,7 @@ import Link from "next/link";
 const CTA = () => {
   return (
     <section className="py-20 px-3">
-      <div className="mx-auto max-w-6xl text-center bg-violet-600 text-white rounded-2xl p-10">
+      <div className="mx-auto max-w-7xl text-center bg-violet-600 text-white rounded-2xl p-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -25,8 +25,8 @@ const CTA = () => {
             Get a website that actually brings in leads – no fluff, on directed.
           </p>
           <Link
-            href={"/project"}
-            className="px-8 py-1.5 rounded-full bg-white text-black"
+            href={""}
+            className="px-8 py-1.5 rounded-lg font-semibold transform active:scale-90 transition duration-300 bg-white text-black"
           >
             Start Project
           </Link>
