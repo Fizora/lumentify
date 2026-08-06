@@ -11,40 +11,40 @@ import {
 
 const showcaseList = [
   {
-    img: "/showcase/everflow-plumbing.jpg",
+    img: "",
     icon: LuDroplet,
     status: "Live Demo",
-    name: "Everflow Plumbing",
+    name: "CleanWell",
     desc: "Emergency plumbing & HVAC site built around one goal: get the call before the competitor does. Sticky click-to-call, licensed & insured trust bar, and suburb-based service pages for local search.",
-    tags: ["Plumbing", "Emergency Booking"],
-    href: "#",
+    tags: ["Cleaning Services", "Scheduling"],
+    href: "https://cleanwell.vercel.app",
   },
   {
-    img: "/showcase/sparkright-electrical.jpg",
+    img: "",
     icon: LuZap,
     status: "Live Demo",
-    name: "SparkRight Electrical",
+    name: "PureElectric",
     desc: "Lead-focused site for a residential electrician — quote form above the fold, real review widget, and service pages split by job type instead of one long services block.",
     tags: ["Electrical", "Local SEO"],
-    href: "#",
+    href: "https://pure-electric.vercel.app",
   },
   {
-    img: "/showcase/coolbreeze-hvac.jpg",
+    img: "",
     icon: LuWind,
     status: "Live Demo",
-    name: "CoolBreeze HVAC",
+    name: "WellGarden",
     desc: "Seasonal HVAC business site with before/after install gallery and a maintenance-plan signup flow, built to convert both emergency repairs and planned installs.",
     tags: ["HVAC", "Booking Flow"],
-    href: "#",
+    href: "https://wellgarden.vercel.app",
   },
   {
-    img: "/showcase/ironclad-roofing.jpg",
+    img: "",
     icon: LuHammer,
     status: "In Progress",
-    name: "Ironclad Roofing",
+    name: "Sea Plumbing",
     desc: "Higher-ticket roofing site with a project gallery, financing-info section, and a multi-step quote form built for jobs that need more detail before a call.",
-    tags: ["Roofing", "Quote Flow"],
-    href: "#",
+    tags: ["Plumber", "Emergency Services"],
+    href: "https://seaplumbing.vercel.app",
   },
 ];
 
@@ -68,8 +68,8 @@ const PreviewImage = ({ img, icon: Icon, name }: any) => {
 
   if (showFallback) {
     return (
-      <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-violet-50/50">
-        <Icon className="w-8 h-8 text-violet-300" />
+      <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-zinc-50/50">
+        <Icon className="w-8 h-8 text-zinc-500" />
         <span className="text-xs text-gray-400">Preview coming soon</span>
       </div>
     );
@@ -99,7 +99,7 @@ const ShowcaseGrid = () => {
         <motion.div
           key={i}
           variants={itemVariants}
-          className="group relative bg-white rounded-2xl border border-gray-200 hover:border-violet-300 overflow-hidden transition-colors duration-300"
+          className="group relative bg-white border border-gray-200 hover:border-zinc-400 overflow-hidden transition-colors duration-300"
         >
           {/* Preview image (or icon fallback) */}
           <div className="relative w-full aspect-video bg-gray-100 overflow-hidden">
@@ -109,7 +109,7 @@ const ShowcaseGrid = () => {
             <span
               className={`absolute top-3 left-3 text-[10px] font-semibold uppercase tracking-wide px-3 py-1 rounded-full ${
                 item.status === "Live Demo"
-                  ? "bg-violet-600 text-white"
+                  ? "bg-zinc-900 text-white"
                   : "bg-white text-gray-600 border border-gray-200"
               }`}
             >
@@ -123,7 +123,7 @@ const ShowcaseGrid = () => {
               <h3 className="text-lg font-bold text-black">{item.name}</h3>
               <a
                 href={item.href}
-                className="shrink-0 w-8 h-8 rounded-full bg-violet-50 text-violet-600 flex items-center justify-center group-hover:bg-violet-600 group-hover:text-white transition-colors"
+                className="shrink-0 w-8 h-8 rounded-full bg-violet-50 text-zinc-600 flex items-center justify-center group-hover:bg-zinc-600 group-hover:text-white transition-colors"
                 aria-label={`View ${item.name} demo`}
               >
                 <LuArrowUpRight className="w-4 h-4" />

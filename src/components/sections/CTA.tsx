@@ -10,7 +10,7 @@ import Link from "next/link";
 const CTA = () => {
   return (
     <section className="py-20 px-3">
-      <div className="mx-auto max-w-7xl text-center bg-violet-600 text-white rounded-2xl p-10">
+      <div className="mx-auto max-w-7xl text-center bg-zinc-900 text-white rounded-md p-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -26,7 +26,7 @@ const CTA = () => {
           </p>
           <Link
             href={""}
-            className="px-8 py-1.5 rounded-lg font-semibold transform active:scale-90 transition duration-300 bg-white text-black"
+            className="px-8 py-2 font-semibold transform active:scale-90 transition duration-300 bg-white text-black"
           >
             Start Project
           </Link>

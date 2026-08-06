@@ -1,69 +1,10 @@
 "use client";
 import { motion } from "motion/react";
 import {
-  LuPhoneCall,
-  LuMapPin,
-  LuBadgeCheck,
-  LuCalendarCheck,
-  LuZap,
-  LuShield,
-  LuPenTool,
-  LuLifeBuoy,
-} from "react-icons/lu";
-
-const businessFeatures = [
-  {
-    icon: LuPhoneCall,
-    title: "Click-to-call that gets answered",
-    description:
-      "A sticky call button your customers can reach in one tap — because in an emergency, they'll call whoever answers first.",
-  },
-  {
-    icon: LuMapPin,
-    title: "Suburb-level service pages",
-    description:
-      "Separate pages for each service and area you cover, so you show up when someone nearby searches for exactly what they need right now.",
-  },
-  {
-    icon: LuBadgeCheck,
-    title: "Trust shown up front",
-    description:
-      "Licensing, insurance, and real reviews placed where visitors actually look — not buried in a footer they'll never scroll to.",
-  },
-  {
-    icon: LuCalendarCheck,
-    title: "One-tap booking & quotes",
-    description:
-      "A quote or booking form built for someone in a hurry — few fields, clear next step, no reason to abandon it halfway.",
-  },
-];
-
-const technicalFeatures = [
-  {
-    icon: LuZap,
-    title: "Built for speed",
-    description:
-      "Every site is optimized to load fast — because a few seconds of delay is a customer calling your competitor instead.",
-  },
-  {
-    icon: LuShield,
-    title: "Secure by default",
-    description:
-      "SSL and secure hosting come standard, so your site stays safe, reliable, and professional around the clock.",
-  },
-  {
-    icon: LuPenTool,
-    title: "Copy that converts",
-    description:
-      "Every headline and CTA is written around what your customer is actually worried about — not generic filler text.",
-  },
-  {
-    icon: LuLifeBuoy,
-    title: "Support after launch",
-    description:
-      "A bug-fix warranty period is included with every project, so you're not left on your own the moment the site goes live.",
-  },
-];
+  businessFeatures,
+  technicalFeatures,
+  type FeatureItem,
+} from "@/components/constant/data";
 
 const containerVariants = {
   hidden: {},
@@ -77,18 +18,18 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const FeatureCard = ({ feat }: any) => {
+const FeatureCard = ({ feat }: { feat: FeatureItem }) => {
   const IconComponent = feat.icon;
   return (
     <motion.div
       variants={itemVariants}
-      className="group relative bg-white rounded-lg p-6 transition-shadow duration-300 border border-gray-200 hover:border-violet-300"
+      className="group relative bg-white p-6 transition-shadow duration-300 border border-gray-200 hover:border-zinc-300"
     >
       {/* Subtle gradient hover overlay */}
       <div className="absolute inset-0 bg-linear-to-b from-violet-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
       {/* Icon container */}
-      <div className="w-12 h-12 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+      <div className="w-12 h-12 rounded-xl bg-zinc-100 text-zinc-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
         <IconComponent className="w-6 h-6" />
       </div>
       {/* Content */}
@@ -112,7 +53,7 @@ const Features = () => {
           transition={{ duration: 0.5 }}
           className=" space-y-5 mb-16 text-center"
         >
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-violet-600 bg-violet-50 px-4 py-1.5 rounded-full">
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
             Features
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">

@@ -88,7 +88,7 @@ const FAQ = () => {
             transition={{ duration: 0.5 }}
             className="text-center space-y-5 mb-16"
           >
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-violet-600 bg-violet-50 px-4 py-1.5 rounded-full">
+            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
               FAQ
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
@@ -111,18 +111,18 @@ const FAQ = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="border border-gray-200 rounded-2xl overflow-hidden bg-white"
+                  className="border border-gray-200 overflow-hidden bg-white"
                 >
                   <button
                     onClick={() => toggle(i)}
-                    className="w-full flex items-center justify-between gap-4 text-left px-3 py-5 hover:bg-violet-50/50 transition-colors"
+                    className="w-full flex items-center justify-between gap-4 text-left px-3 py-5 hover:bg-zinc-50/50 transition-colors"
                     aria-expanded={isOpen}
                   >
                     <span className="text-base md:text-lg font-semibold text-black">
                       {faq.question}
                     </span>
                     <LuPlus
-                      className={`w-5 h-5 shrink-0 text-violet-600 transition-transform duration-300 ${
+                      className={`w-5 h-5 shrink-0 text-zinc-600 transition-transform duration-300 ${
                         isOpen ? "rotate-45" : ""
                       }`}
                     />

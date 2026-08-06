@@ -32,15 +32,12 @@ const Navbar = () => {
             <Link
               href={item.href}
               key={index}
-              className="hover:text-violet-600 transition-colors duration-300 text-base"
+              className="hover:text-zinc-900 transition-colors duration-300 text-base"
             >
               {item.name}
             </Link>
           ))}
-          <PrimaryButtonLink
-            href="https://wa.me/085235086814"
-            className="text-base font-medium"
-          >
+          <PrimaryButtonLink href="/project" className="text-base font-medium">
             Start Project
           </PrimaryButtonLink>
         </nav>
@@ -80,7 +77,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden absolute top-full left-0 w-full bg-white shadow-md overflow-hidden pb-8 border-b border-violet-200 rounded-2xl"
+            className="md:hidden absolute top-full left-0 w-full bg-white overflow-hidden pb-8 border-b border-zinc-200"
           >
             <div className="flex flex-col gap-2 px-4 py-4">
               {navList.map((item, index) => (
@@ -88,14 +85,14 @@ const Navbar = () => {
                   href={item.href}
                   key={index}
                   onClick={closeMenu} // close on click
-                  className="block py-2  hover:text-violet-600 transition-colors"
+                  className="block py-2  hover:text-zinc-900 transition-colors"
                 >
                   {item.name}
                 </Link>
               ))}
               {/* Example CTA button – remove if not needed */}
               <div className="pt-2">
-                <PrimaryButtonLink href="/https://wa.me/085235086814">
+                <PrimaryButtonLink href="/project">
                   Start Project
                 </PrimaryButtonLink>
               </div>

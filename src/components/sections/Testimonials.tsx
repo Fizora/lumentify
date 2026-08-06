@@ -1,27 +1,6 @@
 "use client";
 import { motion } from "motion/react";
-
-// Swap these testimonials with your real client feedback
-const testimonials = [
-  {
-    quote:
-      "My phone started ringing the first week the new site went live. Best investment I’ve made.",
-    name: "John D.",
-    role: "Owner, Dependable HVAC",
-  },
-  {
-    quote:
-      "Finally a website that doesn’t look like it’s from 2005. The guys at Lumentify really understand our trade.",
-    name: "Maria S.",
-    role: "Electrician, Bright Sparks Co.",
-  },
-  {
-    quote:
-      "Simple, clean, and it converts. I’ve already booked three new clients this month.",
-    name: "Carlos R.",
-    role: "Plumber, Flow Right Services",
-  },
-];
+import { testimonials } from "@/components/constant/data";
 
 const containerVariants = {
   hidden: {},
@@ -48,7 +27,7 @@ const Testimonials = () => {
             Trusted by home‑service owners
           </h2>
           <p className=" text-gray-600 max-w-2xl mx-auto">
-            Here’s what they say about working with us.
+            Here's what they say about working with us.
           </p>
         </motion.div>
 
@@ -66,7 +45,7 @@ const Testimonials = () => {
               className="bg-gray-50 rounded-2xl p-8 shadow-sm flex flex-col justify-between"
             >
               <blockquote className="text-gray-700 mb-6 leading-relaxed">
-                “{t.quote}”
+                "{t.quote}"
               </blockquote>
               <div>
                 <p className="font-semibold text-black">{t.name}</p>

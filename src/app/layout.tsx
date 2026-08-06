@@ -1,30 +1,22 @@
 import type { Metadata } from "next";
 import {
-  Bricolage_Grotesque,
-  Elms_Sans,
-  Geist,
-  Geist_Mono,
-  Gelasio,
-  IBM_Plex_Mono,
-  IBM_Plex_Serif,
-  JetBrains_Mono,
-  Playfair_Display,
-  Playfair_Display_SC,
-  Plus_Jakarta_Sans,
+  Merriweather,
   Poppins,
+  Space_Grotesk,
   Voltaire,
   Young_Serif,
 } from "next/font/google";
 import "./globals.css";
 import WhatsAppCall from "@/components/WhatsAppCall";
+import BlockComponentsDevelopers from "@/components/BlockComponentsDevelopers";
 
-const geistSans = Poppins({
+const geistSans = Space_Grotesk({
   variable: "--font-sans",
   subsets: ["latin"],
   weight: "400",
 });
 
-const geistMono = IBM_Plex_Serif({
+const geistMono = Poppins({
   variable: "--font-mono",
   weight: "400",
   subsets: ["latin"],
@@ -46,6 +38,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col text-base md:text-md lg:text-lg">
         {children}
+        <BlockComponentsDevelopers />
         <WhatsAppCall />
       </body>
     </html>

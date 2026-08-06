@@ -26,7 +26,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/showcase"
-                  className="hover:text-violet-600 transition-colors"
+                  className="hover:text-zinc-900 transition-colors"
                 >
                   Showcase
                 </Link>
@@ -34,7 +34,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/#pricing"
-                  className="hover:text-violet-600 transition-colors"
+                  className="hover:text-zinc-900 transition-colors"
                 >
                   Pricing
                 </Link>
@@ -42,7 +42,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/faq"
-                  className="hover:text-violet-600 transition-colors"
+                  className="hover:text-zinc-900 transition-colors"
                 >
                   FAQ
                 </Link>
@@ -56,7 +56,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/about"
-                  className="hover:text-violet-600 transition-colors"
+                  className="hover:text-zinc-900 transition-colors"
                 >
                   About
                 </Link>
@@ -64,7 +64,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/support"
-                  className="hover:text-violet-600 transition-colors"
+                  className="hover:text-zinc-900 transition-colors"
                 >
                   Support
                 </Link>
@@ -72,7 +72,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="https://wa.me/085235086814"
-                  className="hover:text-violet-600 transition-colors"
+                  className="hover:text-zinc-900 transition-colors"
                 >
                   Contact
                 </Link>
@@ -86,7 +86,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/privacy"
-                  className="hover:text-violet-600 transition-colors"
+                  className="hover:text-zinc-900 transition-colors"
                 >
                   Privacy
                 </Link>
@@ -94,7 +94,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/terms"
-                  className="hover:text-violet-600 transition-colors"
+                  className="hover:text-zinc-900 transition-colors"
                 >
                   Terms
                 </Link>

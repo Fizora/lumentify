@@ -15,7 +15,7 @@ export default function Showcase() {
         <div className="mx-auto max-w-7xl px-3">
           {/* Section header */}
           <div className="text-center space-y-5 mb-16 max-w-2xl mx-auto">
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-violet-600 bg-violet-50 px-4 py-1.5 rounded-full">
+            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
               Showcase
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">

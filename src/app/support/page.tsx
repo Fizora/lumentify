@@ -15,7 +15,7 @@ export default function Support() {
       <main className="min-h-screen px-4">
         {/* Header */}
         <section className="pt-32 pb-16 mx-auto max-w-3xl text-center">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-violet-600 bg-violet-50 px-4 py-1.5 rounded-full mb-5">
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
             Support
           </span>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight mb-4">
@@ -42,7 +42,7 @@ export default function Support() {
               </p>
               <Link
                 href="https://wa.me/085235086814"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-violet-600 hover:text-violet-700 transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-600 hover:text-zinc-700 transition-colors"
               >
                 <LuMessageCircle className="w-4 h-4" />
                 Message us on WhatsApp
@@ -61,7 +61,7 @@ export default function Support() {
               </p>
               <Link
                 href="https://wa.me/085235086814"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-violet-600 hover:text-violet-700 transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-600 hover:text-zinc-700 transition-colors"
               >
                 <LuMessageCircle className="w-4 h-4" />
                 Message us on WhatsApp
@@ -72,9 +72,9 @@ export default function Support() {
 
         {/* Direct contact + FAQ link */}
         <section className="mx-auto max-w-3xl pb-24">
-          <div className="rounded-2xl bg-violet-50/60 border border-violet-100 p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="rounded-2xl bg-zinc-50/60 border border-zinc-100 p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
-              <LuMail className="w-5 h-5 text-violet-600 shrink-0" />
+              <LuMail className="w-5 h-5 text-zinc-600 shrink-0" />
               <div>
                 <p className="text-sm font-semibold text-black">
                   Prefer email?
@@ -84,7 +84,7 @@ export default function Support() {
             </div>
             <Link
               href="/faq"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-violet-600 transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-zinc-600 transition-colors"
             >
               <LuCircleHelp className="w-4 h-4" />
               Check the FAQ first
