@@ -60,8 +60,6 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-// Preview image with icon fallback — shows the niche icon if there's no
-// image path yet, or if the image fails to load (broken/missing file).
 const PreviewImage = ({ img, icon: Icon, name }: any) => {
   const [failed, setFailed] = useState(false);
   const showFallback = !img || failed;
@@ -99,19 +97,32 @@ const ShowcaseGrid = () => {
         <motion.div
           key={i}
           variants={itemVariants}
-          className="group relative bg-white border border-gray-200 hover:border-zinc-400 overflow-hidden transition-colors duration-300"
+          className={`
+            group relative bg-white 
+            border-2 border-black 
+            shadow-[6px_6px_0px_0px_rgba(0,0,0,0.8)]
+            hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,0.8)]
+            hover:bg-zinc-800 hover:text-white
+            transition-all duration-300
+            transform active:scale-95
+            overflow-hidden
+          `}
         >
           {/* Preview image (or icon fallback) */}
-          <div className="relative w-full aspect-video bg-gray-100 overflow-hidden">
+          <div className="relative w-full aspect-video bg-gray-100 overflow-hidden border-b-2 border-black">
             <PreviewImage img={item.img} icon={item.icon} name={item.name} />
 
-            {/* Status badge */}
+            {/* Status badge – styled with Bauhaus colors */}
             <span
-              className={`absolute top-3 left-3 text-[10px] font-semibold uppercase tracking-wide px-3 py-1 rounded-full ${
-                item.status === "Live Demo"
-                  ? "bg-zinc-900 text-white"
-                  : "bg-white text-gray-600 border border-gray-200"
-              }`}
+              className={`
+                absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wide px-3 py-1 
+                border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.8)]
+                ${
+                  item.status === "Live Demo"
+                    ? "bg-yellow-400 text-black"
+                    : "bg-white text-gray-600"
+                }
+              `}
             >
               {item.status}
             </span>
@@ -120,23 +131,38 @@ const ShowcaseGrid = () => {
           {/* Content */}
           <div className="p-6">
             <div className="flex items-start justify-between gap-4 mb-2">
-              <h3 className="text-lg font-bold text-black">{item.name}</h3>
+              <h3 className="text-lg font-bold text-inherit">{item.name}</h3>
               <a
                 href={item.href}
-                className="shrink-0 w-8 h-8 rounded-full bg-violet-50 text-zinc-600 flex items-center justify-center group-hover:bg-zinc-600 group-hover:text-white transition-colors"
+                className={`
+                  shrink-0 w-8 h-8 
+                  border-2 border-black 
+                  shadow-[3px_3px_0px_0px_rgba(0,0,0,0.8)]
+                  flex items-center justify-center 
+                  bg-white text-black
+                  group-hover:bg-blue-600 group-hover:text-white group-hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,0.8)]
+                  transition-all duration-300
+                `}
                 aria-label={`View ${item.name} demo`}
               >
                 <LuArrowUpRight className="w-4 h-4" />
               </a>
             </div>
-            <p className="text-sm text-gray-600 leading-relaxed mb-4">
+            <p className="text-sm text-inherit/80 leading-relaxed mb-4">
               {item.desc}
             </p>
             <div className="flex flex-wrap gap-2">
               {item.tags.map((tag, ti) => (
                 <span
                   key={ti}
-                  className="text-xs text-gray-600 bg-gray-50 border border-gray-200 px-2.5 py-1 rounded-full"
+                  className={`
+                    text-xs font-medium px-2.5 py-1 
+                    border-2 border-black 
+                    shadow-[2px_2px_0px_0px_rgba(0,0,0,0.8)]
+                    bg-white text-black
+                    group-hover:bg-red-600 group-hover:text-white group-hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.8)]
+                    transition-all duration-300
+                  `}
                 >
                   {tag}
                 </span>
