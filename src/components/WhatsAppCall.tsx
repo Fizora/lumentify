@@ -4,6 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 const WhatsAppCall = () => {
   const phoneNumber = "6285235086814";
 
+  // Pesan template yang lebih rinci untuk information gathering
   const message = `
 Halo, saya tertarik untuk memesan jasa pembuatan website untuk bisnis home services saya.
 
@@ -41,6 +42,7 @@ Terima kasih, saya tunggu balasannya.
 `;
 
   const encodedMessage = encodeURIComponent(message.trim());
+
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
   return (
@@ -48,24 +50,10 @@ Terima kasih, saya tunggu balasannya.
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="
-        z-100 fixed bottom-2 right-2 md:bottom-4 md:right-4 xl:bottom-10 xl:right-10
-        p-4
-        bg-green-500 hover:bg-zinc-800
-        text-white hover:text-white
-        border-2 border-black
-        shadow-[6px_6px_0px_0px_rgba(0,0,0,0.8)]
-        hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,0.8)]
-        rounded-full
-        flex items-center gap-2
-        font-bold
-        transition-all duration-300
-        transform active:scale-90
-        hover:scale-105
-      "
+      className="z-100 fixed bottom-2 right-2 md:bottom-4 md:right-4 xl:bottom-10 xl:right-10 p-4 bg-green-500 text-white rounded-full flex items-center gap-2 font-semibold hover:scale-105 transform transition duration-300 active:scale-95 shadow-lg"
     >
       <FaWhatsapp size={30} />
-      <span className="hidden sm:inline">Contact Us</span>
+      Contact Us
     </a>
   );
 };

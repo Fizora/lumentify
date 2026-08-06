@@ -105,12 +105,12 @@ function FieldLabel({
   children: React.ReactNode;
 }) {
   return (
-    <label htmlFor={htmlFor} className="block text-sm font-bold text-black">
+    <label htmlFor={htmlFor} className="block text-sm font-semibold text-black">
       {children}
       {required ? (
-        <span className="text-red-600 font-normal"> *</span>
+        <span className="text-zinc-400 font-normal"> *</span>
       ) : (
-        <span className="text-gray-400 font-normal"> (optional)</span>
+        <span className="text-zinc-400 font-normal"> (optional)</span>
       )}
     </label>
   );
@@ -120,17 +120,16 @@ function HelperText({ children }: { children: React.ReactNode }) {
   return <p className="text-xs text-gray-500 mt-1">{children}</p>;
 }
 
-// Neo‑brutalism input classes
 const inputClasses =
-  "mt-2 w-full border-2 border-black px-3.5 py-2.5 text-[15px] text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 transition-all duration-200 shadow-[3px_3px_0px_0px_rgba(0,0,0,0.8)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,0.8)]";
+  "mt-2 w-full  border border-zinc-200 px-3.5 py-2.5 text-[15px] text-black placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-black/80 focus:border-transparent";
 
 function SectionHeading({ step, title }: { step: string; title: string }) {
   return (
     <div className="flex items-baseline gap-2 pb-1">
-      <span className="text-xs font-bold tracking-widest uppercase text-black bg-blue-600 px-2 py-0.5 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.8)]">
+      <span className="text-xs font-semibold tracking-widest uppercase text-zinc-400">
         {step}
       </span>
-      <h2 className="text-base font-bold text-black">{title}</h2>
+      <h2 className="text-base font-semibold text-black">{title}</h2>
     </div>
   );
 }
@@ -171,6 +170,14 @@ export default function Project() {
     }
 
     // TODO: wire this up to your actual submission endpoint
+    // (API route, email service like Resend, or a form backend like Formspree).
+    // Example:
+    // await fetch("/api/start-project", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(form),
+    // });
+
     console.log("Start Project form submitted:", form);
     setSubmitted(true);
   }
@@ -181,13 +188,13 @@ export default function Project() {
         <Navbar />
         <main className="pt-32 pb-24">
           <div className="mx-auto max-w-2xl px-3 text-center space-y-4">
-            <span className="inline-block text-xs font-bold tracking-widest uppercase text-black bg-green-500 px-4 py-1.5 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.8)]">
+            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 ">
               Details received
             </span>
             <h1 className="text-3xl md:text-4xl font-bold text-black leading-tight">
               Thanks — we&apos;ve got your details.
             </h1>
-            <p className="text-gray-700 text-[15px] md:text-base leading-relaxed border-l-4 border-green-500 pl-4">
+            <p className="text-gray-600 text-[15px] md:text-base leading-relaxed">
               We&apos;ll reply within 1 business day with a proposed scope,
               timeline, and any documents you asked for. No pressure — reply to
               our email anytime if you&apos;ve got questions first.
@@ -206,18 +213,18 @@ export default function Project() {
         <div className="mx-auto max-w-3xl px-3 space-y-10">
           {/* Hero */}
           <section className="space-y-4">
-            <span className="inline-block text-xs font-bold tracking-widest uppercase text-black bg-yellow-400 px-4 py-1.5 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.8)]">
+            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 ">
               Start project
             </span>
             <h1 className="text-3xl md:text-4xl font-bold text-black leading-tight">
               Ready to get your site built?
             </h1>
-            <p className="text-gray-700 text-[15px] md:text-base leading-relaxed border-l-4 border-yellow-400 pl-4">
+            <p className="text-gray-600 text-[15px] md:text-base leading-relaxed">
               Share a few details about your home-service business and
               we&apos;ll reply with a proposed scope, timeline, and simple
               documents to kick things off.
             </p>
-            <p className="text-gray-700 text-[15px] md:text-base leading-relaxed border-l-4 border-blue-600 pl-4">
+            <p className="text-gray-600 text-[15px] md:text-base leading-relaxed">
               If you prefer to work under an NDA or need a formal Master Service
               Agreement, just let us know in the form. We&apos;ll send a simple
               NDA and MSA alongside a draft Statement of Work based on your
@@ -225,10 +232,10 @@ export default function Project() {
             </p>
           </section>
 
-          {/* Project intake form – Neo‑Brutalism container */}
+          {/* Project intake form */}
           <form
             onSubmit={handleSubmit}
-            className="bg-white border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,0.8)] p-6 md:p-8 space-y-8 transition-all duration-300 hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,0.8)]"
+            className="bg-white border border-zinc-200  p-6 md:p-8 space-y-8"
           >
             {/* Section 1 — Your Business */}
             <fieldset className="space-y-5">
@@ -317,7 +324,7 @@ export default function Project() {
             </fieldset>
 
             {/* Section 2 — What You Need */}
-            <fieldset className="space-y-5 border-t-2 border-black pt-8">
+            <fieldset className="space-y-5 border-t border-zinc-100 pt-8">
               <SectionHeading step="02" title="What you need" />
 
               <div>
@@ -329,11 +336,11 @@ export default function Project() {
                   {GOALS.map((goal) => (
                     <label
                       key={goal}
-                      className="flex items-start gap-2.5 text-[15px] text-black cursor-pointer"
+                      className="flex items-start gap-2.5 text-[15px] text-black"
                     >
                       <input
                         type="checkbox"
-                        className="mt-0.5 h-4 w-4 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.8)] accent-black"
+                        className="mt-0.5 h-4 w-4  border-zinc-300"
                         checked={form.goals.includes(goal)}
                         onChange={() => toggleGoal(goal)}
                       />
@@ -372,7 +379,7 @@ export default function Project() {
             </fieldset>
 
             {/* Section 3 — Package & Budget */}
-            <fieldset className="space-y-5 border-t-2 border-black pt-8">
+            <fieldset className="space-y-5 border-t border-zinc-100 pt-8">
               <SectionHeading step="03" title="Package & budget" />
 
               <div>
@@ -389,16 +396,11 @@ export default function Project() {
                       key={p}
                       type="button"
                       onClick={() => update("package", p)}
-                      className={`
-                        border-2 border-black px-3.5 py-2.5 text-sm font-medium text-left 
-                        shadow-[3px_3px_0px_0px_rgba(0,0,0,0.8)]
-                        transition-all duration-200
-                        ${
-                          form.package === p
-                            ? "bg-black text-white shadow-[5px_5px_0px_0px_rgba(0,0,0,0.8)]"
-                            : "bg-white text-black hover:bg-zinc-100"
-                        }
-                      `}
+                      className={` border px-3.5 py-2.5 text-sm font-medium text-left transition-colors ${
+                        form.package === p
+                          ? "border-black bg-black text-white"
+                          : "border-zinc-200 text-black hover:border-zinc-300"
+                      }`}
                     >
                       {p}
                     </button>
@@ -451,7 +453,7 @@ export default function Project() {
             </fieldset>
 
             {/* Section 4 — Contact Details */}
-            <fieldset className="space-y-5 border-t-2 border-black pt-8">
+            <fieldset className="space-y-5 border-t border-zinc-100 pt-8">
               <SectionHeading step="04" title="Contact details" />
 
               <div>
@@ -500,10 +502,10 @@ export default function Project() {
                 />
               </div>
 
-              <label className="flex items-start gap-2.5 text-[15px] text-black cursor-pointer">
+              <label className="flex items-start gap-2.5 text-[15px] text-black">
                 <input
                   type="checkbox"
-                  className="mt-0.5 h-4 w-4 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.8)] accent-black"
+                  className="mt-0.5 h-4 w-4  border-zinc-300"
                   checked={form.wantsNda}
                   onChange={(e) => update("wantsNda", e.target.checked)}
                 />
@@ -518,14 +520,14 @@ export default function Project() {
             </fieldset>
 
             {error && (
-              <p className="text-sm text-red-600 border-2 border-red-600 bg-red-50 px-3.5 py-2.5 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.8)]">
+              <p className="text-sm text-red-600 border border-red-200 bg-red-50  px-3.5 py-2.5">
                 {error}
               </p>
             )}
 
             <button
               type="submit"
-              className="w-full bg-yellow-400 hover:bg-zinc-800 text-black hover:text-white border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,0.8)] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,0.8)] transition-all duration-300 text-[15px] font-bold py-3 active:scale-95"
+              className="w-full  bg-black text-white text-[15px] font-semibold py-3 hover:bg-zinc-800 transition-colors"
             >
               Send My Details
             </button>
@@ -533,32 +535,32 @@ export default function Project() {
 
           {/* What happens next */}
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-black inline-block bg-yellow-400 px-2 py-0.5 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.8)]">
+            <h2 className="text-lg font-semibold text-black">
               What happens next
             </h2>
-            <ul className="space-y-2 text-gray-700 text-[15px] leading-relaxed list-disc pl-5">
+            <ul className="space-y-2 text-gray-600 text-[15px] leading-relaxed list-disc pl-5">
               <li>
-                <span className="text-black font-bold">
+                <span className="text-black font-medium">
                   We reply within 1 business day
                 </span>{" "}
                 — usually sooner.
               </li>
               <li>
-                <span className="text-black font-bold">
+                <span className="text-black font-medium">
                   You&apos;ll get a proposed scope, timeline, and price range
                 </span>{" "}
                 based on what you told us — no vague &quot;let&apos;s hop on a
                 call&quot; runaround.
               </li>
               <li>
-                <span className="text-black font-bold">
+                <span className="text-black font-medium">
                   If you asked for an NDA or MSA, it&apos;ll be attached
                 </span>
                 , along with a draft Statement of Work, so everything&apos;s
                 clear before any money or commitment changes hands.
               </li>
               <li>
-                <span className="text-black font-bold">No pressure.</span> If
+                <span className="text-black font-medium">No pressure.</span> If
                 something&apos;s unclear or you just want to ask a question
                 first, reply to our email — you&apos;re not locked into anything
                 by filling out this form.

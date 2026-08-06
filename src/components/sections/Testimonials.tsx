@@ -14,7 +14,7 @@ const cardVariants = {
 
 const Testimonials = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20">
       <div className="mx-auto max-w-7xl px-3">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,10 +23,10 @@ const Testimonials = () => {
           transition={{ duration: 0.5 }}
           className="text-center space-y-4 mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-black">
+          <h2 className="text-3xl md:text-4xl  font-bold text-black">
             Trusted by home‑service owners
           </h2>
-          <p className="text-gray-700 max-w-2xl mx-auto border-l-4 border-blue-600 pl-4">
+          <p className=" text-gray-600 max-w-2xl mx-auto">
             Here's what they say about working with us.
           </p>
         </motion.div>
@@ -42,23 +42,14 @@ const Testimonials = () => {
             <motion.div
               key={i}
               variants={cardVariants}
-              className={`
-                bg-white p-8 
-                border-2 border-black 
-                shadow-[6px_6px_0px_0px_rgba(0,0,0,0.8)]
-                hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,0.8)]
-                hover:bg-zinc-800 hover:text-white
-                transition-all duration-300
-                transform active:scale-95
-                flex flex-col justify-between
-              `}
+              className="bg-gray-50 rounded-2xl p-8 shadow-sm flex flex-col justify-between"
             >
-              <blockquote className="text-inherit/80 mb-6 leading-relaxed">
+              <blockquote className="text-gray-700 mb-6 leading-relaxed">
                 "{t.quote}"
               </blockquote>
               <div>
-                <p className="font-semibold text-inherit">{t.name}</p>
-                <p className="text-sm text-inherit/60">{t.role}</p>
+                <p className="font-semibold text-black">{t.name}</p>
+                <p className="text-sm text-gray-500">{t.role}</p>
               </div>
             </motion.div>
           ))}
