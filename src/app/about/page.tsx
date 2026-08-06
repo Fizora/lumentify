@@ -12,22 +12,22 @@ export default function About() {
       <Navbar />
       <main className="pt-32 pb-24">
         <div className="mx-auto max-w-3xl px-3">
-          {/* Header */}
+          {/* Header – Neo‑Brutalism style */}
           <div className="mb-16 space-y-5">
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
+            <span className="inline-block text-xs font-bold tracking-widest uppercase text-black bg-yellow-400 px-4 py-1.5 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.8)]">
               About
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
               Why we build only for home services
             </h1>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg text-gray-700 leading-relaxed border-l-4 border-yellow-400 pl-4">
               A short read on who we are, what we focus on, and why we chose to
               go deep into one industry instead of wide across many.
             </p>
           </div>
 
-          {/* Body — blog-style, justified paragraphs */}
-          <article className="space-y-6 text-gray-700 leading-relaxed text-[15px] md:text-base [&>p]:text-justify">
+          {/* Body – paragraphs with subtle left border accent */}
+          <article className="space-y-6 text-gray-700 leading-relaxed text-[15px] md:text-base [&>p]:text-justify [&>p]:border-l-4 [&>p]:border-transparent [&>p]:pl-4 hover:[&>p]:border-blue-600 transition-all duration-300">
             <p>
               Lumentify is a small, independent studio that chose to build only
               for one kind of business: home-service trades. We focus on
