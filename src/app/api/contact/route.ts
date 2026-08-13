@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: NextRequest) {
+  // Instantiate Resend only inside the handler
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
   try {
     const { name, business, email, interest, message } = await req.json();
 
@@ -15,20 +16,11 @@ export async function POST(req: NextRequest) {
     }
 
     await resend.emails.send({
-      // "onboarding@resend.dev" only works for testing / sending to your
-      // own verified email. Once you verify your own domain in Resend,
-      // switch this to something like "notifications@lumentify.com".
       from: "Lumentify Contact Form <onboarding@resend.dev>",
       to: "lumentify@gmail.com",
       replyTo: email,
       subject: `New inquiry: ${business} (${interest})`,
-      text: `Name: ${name}
-Business: ${business}
-Email: ${email}
-Interest: ${interest}
-
-Message:
-${message}`,
+      text: `Name: ${name}\nBusiness: ${business}\nEmail: ${email}\nInterest: ${interest}\n\nMessage:\n${message}`,
     });
 
     return NextResponse.json({ success: true });
