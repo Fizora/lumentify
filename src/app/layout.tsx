@@ -38,7 +38,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col text-base md:text-md lg:text-lg">
         {children}
-        <BlockComponentsDevelopers />
+        {/* <BlockComponentsDevelopers /> */}
         <WhatsAppCall />
       </body>
     </html>

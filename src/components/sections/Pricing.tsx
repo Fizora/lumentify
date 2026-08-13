@@ -42,7 +42,7 @@ const Pricing = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch mb-24"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch mb-6"
         >
           {buildPlans.map((plan, index) => (
             <motion.div
@@ -51,7 +51,7 @@ const Pricing = () => {
               className={`relative flex flex-col p-6 md:p-8 border ${
                 plan.featured
                   ? "border-zinc-400 bg-zinc-50/50 shadow-xl scale-105 md:scale-105 z-10"
-                  : "border-gray-200 bg-white shadow-sm"
+                  : "border-gray-200 bg-white"
               }`}
             >
               {plan.featured && (
@@ -109,6 +109,22 @@ const Pricing = () => {
           ))}
         </motion.div>
 
+        {/* Deposit-back guarantee, directly under the one-time plans */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-24 max-w-2xl mx-auto"
+        >
+          <p className="text-sm text-gray-600 leading-relaxed">
+            <span className="font-semibold text-black">
+              Free revision before final payment.
+            </span>{" "}
+            If the first design direction isn&apos;t right for your business,
+            you get your deposit back — no dispute, no lock-in.
+          </p>
+        </motion.div>
+
         {/* ====== SECTION 2: KEEP IT RUNNING (MRR) ====== */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -140,7 +156,7 @@ const Pricing = () => {
               className={`relative flex flex-col p-6 md:p-8 border ${
                 plan.featured
                   ? "border-zinc-400 bg-zinc-50/50 shadow-xl scale-105 md:scale-105 z-10"
-                  : "border-gray-200 bg-white shadow-sm"
+                  : "border-gray-200 bg-white"
               }`}
             >
               {plan.featured && (

@@ -37,7 +37,10 @@ const Navbar = () => {
               {item.name}
             </Link>
           ))}
-          <PrimaryButtonLink href="/project" className="text-base font-medium">
+          <PrimaryButtonLink
+            href="https://wa.me/6285235086814"
+            className="text-base font-medium"
+          >
             Start Project
           </PrimaryButtonLink>
         </nav>
@@ -92,7 +95,7 @@ const Navbar = () => {
               ))}
               {/* Example CTA button – remove if not needed */}
               <div className="pt-2">
-                <PrimaryButtonLink href="/project">
+                <PrimaryButtonLink href="https://wa.me/6285235086814">
                   Start Project
                 </PrimaryButtonLink>
               </div>

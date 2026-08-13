@@ -42,7 +42,7 @@ const Testimonials = () => {
             <motion.div
               key={i}
               variants={cardVariants}
-              className="bg-gray-50 rounded-2xl p-8 shadow-sm flex flex-col justify-between"
+              className="bg-gray-50 p-8 flex flex-col justify-between border border-gray-200"
             >
               <blockquote className="text-gray-700 mb-6 leading-relaxed">
                 "{t.quote}"

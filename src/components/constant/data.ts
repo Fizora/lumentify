@@ -30,7 +30,7 @@ export const faqs: FaqItem[] = [
   {
     question: "How long does a project take?",
     answer:
-      "Most Essential sites are completed in 5–7 days from kickoff, while Pro and Custom projects usually take 2–4 weeks depending on scope. The timeline is agreed in writing before work begins, so you know exactly what to expect and can plan around it with confidence.",
+      "Most Essential sites are completed in 5–7 days from kickoff, Pro sites in 1–2 weeks, and Custom projects in 3–4 weeks depending on scope. The timeline is agreed in writing before work begins, so you know exactly what to expect and can plan around it with confidence.",
   },
   {
     question: "What do you need from me to get started?",
@@ -46,6 +46,11 @@ export const faqs: FaqItem[] = [
     question: "What if I need changes mid-project?",
     answer:
       "Each plan includes a defined number of revision rounds during development, so the scope stays clear and the project stays on track. If you need changes outside that scope, I'll quote them before doing the work — no surprise invoices, no vague extras.",
+  },
+  {
+    question: "What if I'm not happy with the direction?",
+    answer:
+      "You'll see the homepage design before the build continues past that point. If the direction isn't right for your business, you get your deposit back — no dispute, no hard feelings.",
   },
 ];
 
@@ -127,27 +132,28 @@ export const buildPlans: PricingPlan[] = [
   {
     name: "Essential",
     description: "A fast, simple site that gets you found and called.",
-    price: "$899",
+    price: "$1,199",
     period: "one-time",
     features: [
-      "1 pages",
+      "1 page",
       "Mobile Responsive",
       "Basic SEO",
       "2x Revisions",
       "Speed Optimization",
-      "High Quality Content",
+      "Emergency Call Banner (sticky click-to-call)",
+      "License & Insurance Trust Badges",
       "3 Days Technical Support",
-      "Hosting Setup 2 Year",
+      "Hosting Setup 1 Year",
       "Delivered in 5-7 days",
     ],
     cta: "Start My Site",
-    href: "/project",
+    href: "https://wa.me/6285235086814",
     featured: false,
   },
   {
     name: "Pro",
     description: "Built to win urgent jobs before your competitors do",
-    price: "$2,599",
+    price: "$2,249",
     period: "one-time",
     features: [
       "5 pages",
@@ -156,14 +162,15 @@ export const buildPlans: PricingPlan[] = [
       "4x Revisions",
       "Speed Optimization",
       "Advanced Copywriting",
-      "Booking Call",
-      "Google Business Profile setup",
+      "Suburb-Level Service Pages",
+      "One-Tap Booking & Quote Form",
+      "Google Business Profile Setup + Review Request Automation",
       "1 Week Technical Support",
-      "Hosting Setup 1 Year",
+      "Hosting Setup 2 Years",
       "Delivered in 1-2 Weeks",
     ],
     cta: "Get More Calls",
-    href: "/project",
+    href: "https://wa.me/6285235086814",
     featured: true,
   },
   {
@@ -176,6 +183,7 @@ export const buildPlans: PricingPlan[] = [
       "10 Pages",
       "10 Custom Features",
       "1 Month Technical Support",
+      "Hosting Setup 3 Years",
       "Optional Monthly Support",
       "Delivered in 3-4 weeks",
     ],
@@ -201,7 +209,7 @@ export const mrrPlans: PricingPlan[] = [
       "1 content update per month",
     ],
     cta: "Subscribe",
-    href: "/project",
+    href: "https://wa.me/6285235086814",
     featured: false,
   },
   {
@@ -219,7 +227,7 @@ export const mrrPlans: PricingPlan[] = [
       "Quarterly strategy call",
     ],
     cta: "Get Started",
-    href: "/project",
+    href: "https://wa.me/6285235086814",
     featured: true,
   },
   {
@@ -250,24 +258,8 @@ export type TestimonialItem = {
   role: string;
 };
 
-// Swap these testimonials with your real client feedback
-export const testimonials: TestimonialItem[] = [
-  {
-    quote:
-      "My phone started ringing the first week the new site went live. Best investment I've made.",
-    name: "John D.",
-    role: "Owner, Dependable HVAC",
-  },
-  {
-    quote:
-      "Finally a website that doesn't look like it's from 2005. The guys at Lumentify really understand our trade.",
-    name: "Maria S.",
-    role: "Electrician, Bright Sparks Co.",
-  },
-  {
-    quote:
-      "Simple, clean, and it converts. I've already booked three new clients this month.",
-    name: "Carlos R.",
-    role: "Plumber, Flow Right Services",
-  },
-];
+// NOTE: left empty on purpose. Do not populate with placeholder/fake
+// testimonials before you have real client feedback — attributing quotes
+// to invented names and businesses is a false-advertising risk, not just
+// a style choice. Add entries here as real clients give feedback.
+export const testimonials: TestimonialItem[] = [];

@@ -71,7 +71,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="https://wa.me/085235086814"
+                  href="mailto:lumentify@gmail.com"
                   className="hover:text-zinc-900 transition-colors"
                 >
                   Contact

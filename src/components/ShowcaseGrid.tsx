@@ -8,19 +8,20 @@ import {
   LuWind,
   LuHammer,
 } from "react-icons/lu";
+import Link from "next/link";
 
 const showcaseList = [
   {
-    img: "",
+    img: "/cleanwell.png",
     icon: LuDroplet,
     status: "Live Demo",
     name: "CleanWell",
     desc: "Emergency plumbing & HVAC site built around one goal: get the call before the competitor does. Sticky click-to-call, licensed & insured trust bar, and suburb-based service pages for local search.",
     tags: ["Cleaning Services", "Scheduling"],
-    href: "https://cleanwell.vercel.app",
+    href: "https://clean-well.vercel.app",
   },
   {
-    img: "",
+    img: "/pure-electrical.png",
     icon: LuZap,
     status: "Live Demo",
     name: "PureElectric",
@@ -118,16 +119,17 @@ const ShowcaseGrid = () => {
           </div>
 
           {/* Content */}
-          <div className="p-6">
+          <div className="p-6 border-t border-gray-200 group-hover:border-zinc-400 transition-colors duration-300">
             <div className="flex items-start justify-between gap-4 mb-2">
               <h3 className="text-lg font-bold text-black">{item.name}</h3>
-              <a
+              <Link
                 href={item.href}
                 className="shrink-0 w-8 h-8 rounded-full bg-violet-50 text-zinc-600 flex items-center justify-center group-hover:bg-zinc-600 group-hover:text-white transition-colors"
+                target="_blank"
                 aria-label={`View ${item.name} demo`}
               >
                 <LuArrowUpRight className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
             <p className="text-sm text-gray-600 leading-relaxed mb-4">
               {item.desc}
