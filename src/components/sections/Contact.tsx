@@ -70,7 +70,7 @@ const Contact = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
             Let&apos;s talk about your site.
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
+          <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed text-lg md:text-base">
             Tell us a bit about your business and what you need. No pressure, no
             sales script — we&apos;ll reply with honest next steps.
           </p>
@@ -90,13 +90,13 @@ const Contact = () => {
                 <h3 className="text-xl font-bold text-black mb-2">
                   Message sent!
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed max-w-sm">
+                <p className="text-lg text-gray-600 leading-relaxed max-w-sm">
                   Thanks for reaching out — we usually reply within 1 business
                   day.
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
-                  className="mt-6 text-sm font-semibold text-zinc-600 hover:text-zinc-800 transition-colors"
+                  className="mt-6 text-lg font-semibold text-zinc-600 hover:text-zinc-800 transition-colors"
                 >
                   Send another message →
                 </button>
@@ -107,7 +107,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-semibold text-black mb-1.5"
+                      className="block text-lg font-semibold text-black mb-1.5"
                     >
                       Your name *
                     </label>
@@ -119,13 +119,13 @@ const Contact = () => {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="John Smith"
-                      className="w-full border border-gray-200 px-4 py-2.5 text-sm text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 transition-shadow"
+                      className="w-full border border-gray-200 px-4 py-2.5 text-lg text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 transition-shadow"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="business"
-                      className="block text-sm font-semibold text-black mb-1.5"
+                      className="block text-lg font-semibold text-black mb-1.5"
                     >
                       Business name *
                     </label>
@@ -137,7 +137,7 @@ const Contact = () => {
                       value={form.business}
                       onChange={handleChange}
                       placeholder="Smith Plumbing Co."
-                      className="w-full border border-gray-200 px-4 py-2.5 text-sm text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 transition-shadow"
+                      className="w-full border border-gray-200 px-4 py-2.5 text-lg text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 transition-shadow"
                     />
                   </div>
                 </div>
@@ -145,7 +145,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-semibold text-black mb-1.5"
+                    className="block text-lg font-semibold text-black mb-1.5"
                   >
                     Email *
                   </label>
@@ -157,14 +157,14 @@ const Contact = () => {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="you@business.com"
-                    className="w-full border border-gray-200 px-4 py-2.5 text-sm text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 transition-shadow"
+                    className="w-full border border-gray-200 px-4 py-2.5 text-lg text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 transition-shadow"
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="interest"
-                    className="block text-sm font-semibold text-black mb-1.5"
+                    className="block text-lg font-semibold text-black mb-1.5"
                   >
                     What are you looking for?
                   </label>
@@ -173,7 +173,7 @@ const Contact = () => {
                     name="interest"
                     value={form.interest}
                     onChange={handleChange}
-                    className="w-full border border-gray-200 px-4 py-2.5 text-sm text-black focus:outline-none focus:ring-2 focus:ring-black/80 bg-white transition-shadow"
+                    className="w-full border border-gray-200 px-4 py-2.5 text-lg text-black focus:outline-none focus:ring-2 focus:ring-black/80 bg-white transition-shadow"
                   >
                     <option value="Essential">Essential — simple site</option>
                     <option value="Pro">Pro — win more calls</option>
@@ -185,7 +185,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-semibold text-black mb-1.5"
+                    className="block text-lg font-semibold text-black mb-1.5"
                   >
                     Message *
                   </label>
@@ -197,13 +197,13 @@ const Contact = () => {
                     value={form.message}
                     onChange={handleChange}
                     placeholder="Tell us about your business and what you're hoping your site can do."
-                    className="w-full border border-gray-200 px-4 py-2.5 text-sm text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 resize-none transition-shadow"
+                    className="w-full border border-gray-200 px-4 py-2.5 text-lg text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 resize-none transition-shadow"
                   />
                 </div>
 
                 {status === "error" && (
                   <div className="bg-red-50 border border-red-200 p-4">
-                    <p className="text-sm text-red-700">
+                    <p className="text-lg text-red-700">
                       Something went wrong sending your message. Please try
                       again or email us directly at{" "}
                       <a
@@ -220,7 +220,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-semibold px-8 py-3.5 transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 disabled:opacity-60 disabled:cursor-not-allowed text-white text-lg font-semibold px-8 py-3.5 transition-colors"
                 >
                   {status === "loading" ? (
                     <>
@@ -249,12 +249,12 @@ const Contact = () => {
             <div className="border border-gray-200 p-6 md:p-8">
               <LuMail className="w-5 h-5 text-zinc-600 mb-4" />
               <h3 className="text-base font-bold text-black mb-2">Email</h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-3">
+              <p className="text-lg text-gray-600 leading-relaxed mb-3">
                 Prefer to write directly? We reply within 1 business day.
               </p>
               <a
                 href="mailto:lumentify@gmail.com"
-                className="text-sm font-semibold text-zinc-700 hover:text-black transition-colors"
+                className="text-lg font-semibold text-zinc-700 hover:text-black transition-colors"
               >
                 lumentify@gmail.com
               </a>
@@ -265,7 +265,7 @@ const Contact = () => {
               <h3 className="text-base font-bold text-black mb-2">
                 Already a client?
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-3">
+              <p className="text-lg text-gray-600 leading-relaxed mb-3">
                 For support on an active project, message us on WhatsApp for the
                 fastest response.
               </p>
@@ -273,14 +273,14 @@ const Contact = () => {
                 href="https://wa.me/6285235086814"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-semibold text-zinc-700 hover:text-black transition-colors"
+                className="text-lg font-semibold text-zinc-700 hover:text-black transition-colors"
               >
                 Message on WhatsApp →
               </a>
             </div>
 
             <div className="bg-zinc-50/60 border border-zinc-100 p-6 md:p-8">
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-lg text-gray-600 leading-relaxed">
                 <span className="font-semibold text-black">✓</span> Every
                 project starts with a written proposal and a signed agreement
                 before any payment — no surprises, no verbal-only promises.

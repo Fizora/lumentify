@@ -8,10 +8,6 @@ import {
 import {
   LuCheck,
   LuClock,
-  LuUser,
-  LuBot,
-  LuLink,
-  LuSend,
   LuPhone,
   LuStar,
   LuBadgeCheck,
@@ -57,7 +53,7 @@ const Hero = () => {
         </div>
 
         {/* Example Web – Mini Website UI */}
-        <div className="bg-[url('/hero-image.jpg')] bg-fixed bg-center bg-cover min-h-135 rounded-xl px-4 py-10 md:p-10 lg:p-20 flex items-center justify-center ">
+        <div className="bg-[url('/hero-image.jpg')] bg-fixed bg-center bg-cover min-h-135 rounded px-4 py-10 md:p-10 lg:p-20 flex items-center justify-center ">
           <div className="w-full max-w-7xl rounded-xl bg-white shadow-2xl overflow-hidden relative">
             {/* Browser chrome */}
             <div className="bg-gray-100 px-4 py-3 flex items-center gap-2 border-b border-gray-200">

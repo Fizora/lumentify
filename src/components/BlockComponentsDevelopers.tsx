@@ -33,7 +33,7 @@ const BlockComponentsDevelopers = () => {
           <h1 className="text-lg font-semibold text-white">
             This site isn&apos;t live yet
           </h1>
-          <p className="text-sm text-zinc-400 leading-relaxed">
+          <p className="text-lg text-zinc-400 leading-relaxed">
             Only developers can access this page right now. Enter the password
             to continue.
           </p>

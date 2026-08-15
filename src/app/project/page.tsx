@@ -105,7 +105,7 @@ function FieldLabel({
   children: React.ReactNode;
 }) {
   return (
-    <label htmlFor={htmlFor} className="block text-sm font-semibold text-black">
+    <label htmlFor={htmlFor} className="block text-lg font-semibold text-black">
       {children}
       {required ? (
         <span className="text-zinc-400 font-normal"> *</span>
@@ -396,7 +396,7 @@ export default function Project() {
                       key={p}
                       type="button"
                       onClick={() => update("package", p)}
-                      className={` border px-3.5 py-2.5 text-sm font-medium text-left transition-colors ${
+                      className={` border px-3.5 py-2.5 text-lg font-medium text-left transition-colors ${
                         form.package === p
                           ? "border-black bg-black text-white"
                           : "border-zinc-200 text-black hover:border-zinc-300"
@@ -520,7 +520,7 @@ export default function Project() {
             </fieldset>
 
             {error && (
-              <p className="text-sm text-red-600 border border-red-200 bg-red-50  px-3.5 py-2.5">
+              <p className="text-lg text-red-600 border border-red-200 bg-red-50  px-3.5 py-2.5">
                 {error}
               </p>
             )}

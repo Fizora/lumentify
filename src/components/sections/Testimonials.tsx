@@ -49,7 +49,7 @@ const Testimonials = () => {
               </blockquote>
               <div>
                 <p className="font-semibold text-black">{t.name}</p>
-                <p className="text-sm text-gray-500">{t.role}</p>
+                <p className="text-lg text-gray-500">{t.role}</p>
               </div>
             </motion.div>
           ))}

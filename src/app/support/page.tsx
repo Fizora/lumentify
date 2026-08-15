@@ -64,20 +64,19 @@ export default function Support() {
           <h2 className="text-xl font-bold text-black mb-1 text-center">
             What you&apos;re covered by
           </h2>
-          <p className="text-sm text-gray-600 text-center mb-8 max-w-xl mx-auto">
+          <p className="text-base text-gray-600 text-center mb-8 max-w-xl mx-auto">
             We&apos;re a small independent team, not a big agency — so instead
             of a name you recognize, here&apos;s exactly what protects you when
             you work with us.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {guarantees.map(({ icon: Icon, title, body }) => (
-              <div
-                key={title}
-                className="rounded-2xl border border-gray-200 p-8"
-              >
+              <div key={title} className=" border border-gray-200 p-8">
                 <Icon className="w-5 h-5 text-zinc-600 mb-4" />
                 <h3 className="text-base font-bold text-black mb-2">{title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  {body}
+                </p>
               </div>
             ))}
           </div>
@@ -87,18 +86,18 @@ export default function Support() {
         <section className="mx-auto max-w-4xl pb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Existing client */}
-            <div className="rounded-2xl border border-gray-200 p-8">
+            <div className=" border border-gray-200 p-8">
               <h2 className="text-lg font-bold text-black mb-2">
                 Already a client
               </h2>
-              <p className="text-sm text-gray-600 leading-relaxed mb-6">
+              <p className="text-base text-gray-600 leading-relaxed mb-6">
                 Something broke, or you need a change to your live site? Message
                 us with your business name and what&apos;s happening —
                 we&apos;ll take it from there.
               </p>
               <Link
                 href="https://wa.me/085235086814"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-600 hover:text-zinc-700 transition-colors"
+                className="inline-flex items-center gap-2 text-base font-semibold text-zinc-600 hover:text-zinc-700 transition-colors"
               >
                 <LuMessageCircle className="w-4 h-4" />
                 Message us on WhatsApp
@@ -106,18 +105,18 @@ export default function Support() {
             </div>
 
             {/* New / prospective */}
-            <div className="rounded-2xl border border-gray-200 p-8">
+            <div className=" border border-gray-200 p-8">
               <h2 className="text-lg font-bold text-black mb-2">
                 Not a client yet
               </h2>
-              <p className="text-sm text-gray-600 leading-relaxed mb-6">
+              <p className="text-base text-gray-600 leading-relaxed mb-6">
                 Have a question about pricing, timelines, or whether we&apos;re
                 a fit for your business? Reach out — no pressure, no sales
                 script.
               </p>
               <Link
                 href="https://wa.me/085235086814"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-600 hover:text-zinc-700 transition-colors"
+                className="inline-flex items-center gap-2 text-base font-semibold text-zinc-600 hover:text-zinc-700 transition-colors"
               >
                 <LuMessageCircle className="w-4 h-4" />
                 Message us on WhatsApp
@@ -128,7 +127,7 @@ export default function Support() {
 
         {/* Payment & process reassurance */}
         <section className="mx-auto max-w-3xl pb-16">
-          <div className="rounded-2xl border border-gray-200 p-8">
+          <div className=" border border-gray-200 p-8">
             <h2 className="text-lg font-bold text-black mb-4">
               How a project actually goes
             </h2>
@@ -156,7 +155,7 @@ export default function Support() {
                   <span className="shrink-0 w-6 h-6 rounded-full bg-zinc-100 text-zinc-600 text-xs font-semibold flex items-center justify-center">
                     {n}
                   </span>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-base text-gray-600 leading-relaxed">
                     {text}
                   </p>
                 </li>
@@ -167,19 +166,19 @@ export default function Support() {
 
         {/* Direct contact + FAQ link */}
         <section className="mx-auto max-w-3xl pb-24">
-          <div className="rounded-2xl bg-zinc-50/60 border border-zinc-100 p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className=" bg-zinc-50/60 border border-zinc-100 p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
               <LuMail className="w-5 h-5 text-zinc-600 shrink-0" />
               <div>
-                <p className="text-sm font-semibold text-black">
+                <p className="text-base font-semibold text-black">
                   Prefer email?
                 </p>
-                <p className="text-sm text-gray-600">hello@lumentify.com</p>
+                <p className="text-base text-gray-600">hello@lumentify.com</p>
               </div>
             </div>
             <Link
               href="/faq"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-zinc-600 transition-colors"
+              className="inline-flex items-center gap-2 text-base font-semibold text-gray-700 hover:text-zinc-600 transition-colors"
             >
               <LuCircleHelp className="w-4 h-4" />
               Check the FAQ first

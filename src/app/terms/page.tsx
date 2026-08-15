@@ -18,7 +18,7 @@ export default function Terms() {
           <h1 className="text-3xl md:text-4xl font-bold text-black leading-tight mb-3">
             Terms of Use
           </h1>
-          <p className="text-sm text-gray-500">Last updated: August 2026</p>
+          <p className="text-lg text-gray-500">Last updated: August 2026</p>
         </section>
 
         <section className="mx-auto max-w-2xl pb-24 text-gray-600 leading-relaxed">

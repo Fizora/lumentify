@@ -8,6 +8,9 @@ import {
   LuShield,
   LuPenTool,
   LuLifeBuoy,
+  LuDroplet,
+  LuWind,
+  LuHammer,
 } from "react-icons/lu";
 
 // ===================== FAQ =====================
@@ -112,6 +115,59 @@ export const technicalFeatures: FeatureItem[] = [
     title: "Support after launch",
     description:
       "A bug-fix warranty period is included with every project, so you're not left on your own the moment the site goes live.",
+  },
+];
+
+// ===================== SHOWCASE =====================
+export type ShowcaseItem = {
+  img: string;
+  icon: IconType;
+  name: string;
+  desc: string;
+  tags: string[];
+  href: string;
+  status: "Live Demo" | "In Progress";
+};
+
+// These are demo builds made to demonstrate capability, not live client
+// projects, so copy stays worded as "Demo Project" with no fabricated
+// ratings or client counts. Status reflects actual build state per item.
+export const showcaseList: ShowcaseItem[] = [
+  {
+    img: "/cleanwell.png",
+    icon: LuDroplet,
+    name: "CleanWell",
+    desc: "Emergency plumbing & HVAC site built around one goal: get the call before the competitor does. Sticky click-to-call, licensed & insured trust bar, and suburb-based service pages for local search.",
+    tags: ["Cleaning Services", "Scheduling"],
+    href: "https://clean-well.vercel.app",
+    status: "Live Demo",
+  },
+  {
+    img: "/pure-electrical.png",
+    icon: LuZap,
+    name: "PureElectric",
+    desc: "Lead-focused site for a residential electrician — quote form above the fold, real review widget, and service pages split by job type instead of one long services block.",
+    tags: ["Electrical", "Local SEO"],
+    href: "https://pure-electric.vercel.app",
+    status: "Live Demo",
+  },
+  {
+    img: "",
+    icon: LuWind,
+    name: "WellGarden",
+    desc: "Seasonal HVAC business site with a before/after install gallery and a maintenance-plan signup flow, built to convert both emergency repairs and planned installs.",
+    tags: ["HVAC", "Booking Flow"],
+    href: "https://wellgarden.vercel.app",
+    status: "Live Demo",
+  },
+  {
+    img: "",
+    icon: LuHammer,
+    name: "ApexControl",
+    desc: "Higher-ticket roofing site with a project gallery, financing-info section, and a multi-step quote form built for jobs that need more detail before a call.",
+    tags: ["Roofing", "Multi-step Form"],
+    href: "https://apexcontrol.vercel.app",
+    status: "In Progress",
   },
 ];
 

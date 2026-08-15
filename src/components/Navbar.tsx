@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { PrimaryButtonLink } from "./ui/Button"; // if you use it later
+import Image from "next/image";
 
 const Navbar = () => {
   const navList = [
@@ -20,8 +21,17 @@ const Navbar = () => {
     <header className="w-full fixed top-0 left-0 bg-white z-50">
       <div className="mx-auto max-w-7xl px-3 py-3 flex items-center justify-between">
         {/* Logo */}
-        <h1 className="text-black">
-          <Link href="/" className="text-xl font-black">
+        <h1 className="text-black group">
+          <Link href="/" className="text-xl font-black flex items-center gap-2">
+            <div className="bg-white group-hover:transform group-hover:scale-105 group-hover:shadow-zinc-400 transition duration-300 p-2 rounded shadow-lg">
+              <Image
+                src={"/logo.svg"}
+                alt=""
+                height={20}
+                width={20}
+                className=""
+              />
+            </div>
             Lumentify.
           </Link>
         </h1>
