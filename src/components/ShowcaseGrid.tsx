@@ -6,7 +6,7 @@ import Image from "next/image";
 import { LuArrowUpRight, LuGlobe } from "react-icons/lu";
 import type { IconType } from "react-icons";
 import { showcaseList, type ShowcaseItem } from "@/components/constant/data";
-import { PrimaryButtonLink } from "./ui/Button";
+import { PrimaryButtonLink, SecondaryButtonLink } from "./ui/Button";
 import Link from "next/link";
 
 const containerVariants: Variants = {
@@ -131,14 +131,14 @@ const Showcase = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mt-16 pt-12 border-t border-gray-100 text-center"
+          className="mt-16 px-4 py-8 border bg-zinc-900 text-center"
         >
-          <p className="text-gray-500 mb-5">
+          <p className="text-gray-300 mb-5">
             Want something built for your business specifically?
           </p>
-          <PrimaryButtonLink href="https://wa.me/6285235086814">
+          <SecondaryButtonLink href="https://wa.me/6285235086814">
             Start Project
-          </PrimaryButtonLink>
+          </SecondaryButtonLink>
         </motion.div>
       </div>
     </section>

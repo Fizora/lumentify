@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
@@ -47,7 +48,19 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="text-xl font-black text-white">
+            <Link
+              href="/"
+              className="text-xl font-black text-white flex items-center gap-2"
+            >
+              <div className="bg-white group-hover:transform group-hover:scale-105 group-hover:shadow-zinc-400 transition duration-300 p-2 rounded shadow-lg">
+                <Image
+                  src={"/logo.svg"}
+                  alt=""
+                  height={20}
+                  width={20}
+                  className=""
+                />
+              </div>
               Lumentify.
             </Link>
             <p className="mt-3 text-sm text-zinc-500 max-w-xs">
@@ -122,7 +135,7 @@ const Footer = () => {
             Open for new projects
           </span>
 
-          <span>English</span>
+          <span>📍 East Java, Indonesia</span>
 
           <div className="flex items-center gap-4">
             <Link
