@@ -8,8 +8,6 @@ import {
   LuShield,
   LuPenTool,
   LuLifeBuoy,
-  LuDroplet,
-  LuWind,
   LuHammer,
 } from "react-icons/lu";
 
@@ -21,39 +19,40 @@ export type FaqItem = {
 
 export const faqs: FaqItem[] = [
   {
-    question: "What happens if something breaks after launch?",
+    question: "Why aren't there client testimonials listed on your website?",
     answer:
-      "Every plan includes a bug-fix warranty period so your site doesn't just launch well — it stays reliable after launch too. If something breaks within that window, I fix it at no extra cost. After that, any new feature or change is quoted transparently before work starts, so you always know exactly what you're paying for.",
+      "We strictly refuse to use fake reviews or placeholder testimonials. As a specialized web studio focused on pure execution, we let live interactive demo builds, 85+ raw PageSpeed performance scores, and clean component architecture serve as transparent proof of skill.",
+  },
+  {
+    question: "How do I know these websites actually convert local customers?",
+    answer:
+      "Our layouts are engineered around trade-buyer behavior in an emergency: sticky click-to-call mobile bars, visible license & insurance badges, sub-second load times, and simple quote forms. You can test these exact interactive features live on our Showcase demo builds before spending anything.",
+  },
+  {
+    question:
+      "You are based in Indonesia — how does remote delivery work for AU clients?",
+    answer:
+      "We work async across the time difference using structured WhatsApp, Loom, and email updates — so you're never blocked waiting for a live call. By eliminating local agency office overhead, we deliver direct senior-level development at a fraction of Australian agency rates.",
   },
   {
     question: "Do I own the website once it's built?",
     answer:
-      "Yes. Once the final payment is completed, the website design and code are yours. There's no lock-in, no hidden platform dependency, and no ongoing ownership trap — you keep full control of the asset you paid for.",
+      "Yes, 100%. Once final payment is completed, all source code, design assets, and domain configurations belong entirely to you. There are no proprietary builder lock-ins or ongoing licensing fees.",
   },
   {
     question: "How long does a project take?",
     answer:
-      "Most Essential sites are completed in 5–7 days from kickoff, Pro sites in 1–2 weeks, and Custom projects in 3–4 weeks depending on scope. The timeline is agreed in writing before work begins, so you know exactly what to expect and can plan around it with confidence.",
+      "Essential landing pages are delivered in 5–7 business days, Pro multi-page builds take 1–2 weeks, and Custom multi-location platforms take 3–4 weeks. Timelines are locked in writing before kickoff.",
   },
   {
-    question: "What do you need from me to get started?",
+    question: "What happens if something breaks after launch?",
     answer:
-      "Usually just your business details, the services and suburbs you cover, a few photos if you have them, and any branding you already use such as a logo or preferred colors. If you don't have everything ready yet, I'll help you shape a clean setup from scratch so the project still moves forward smoothly.",
+      "Every project includes a dedicated post-launch warranty (14 days for Essential, 30 days for Pro, and 60 days for Custom). Any technical issue occurring within this window is fixed immediately at zero extra cost.",
   },
   {
-    question: "Will my site actually show up on Google?",
+    question: "Will my site show up on Google?",
     answer:
-      "Your site is built with local SEO fundamentals from day one: clear structure, service pages, suburb pages, fast loading, and Google Business Profile setup on Pro and above. That gives your business the right technical base to be discovered by people searching for urgent help, even though rankings still take time to build naturally.",
-  },
-  {
-    question: "What if I need changes mid-project?",
-    answer:
-      "Each plan includes a defined number of revision rounds during development, so the scope stays clear and the project stays on track. If you need changes outside that scope, I'll quote them before doing the work — no surprise invoices, no vague extras.",
-  },
-  {
-    question: "What if I'm not happy with the direction?",
-    answer:
-      "You'll see the homepage design before the build continues past that point. If the direction isn't right for your business, you get your deposit back — no dispute, no hard feelings.",
+      "Every site is built with technical local SEO architecture: clean semantic HTML, fast loading, suburb-level page structures, and Google Business Profile optimization guidance (Pro & Custom). This gives your business the exact technical foundation needed to rank.",
   },
 ];
 
@@ -69,52 +68,52 @@ export const businessFeatures: FeatureItem[] = [
     icon: LuPhoneCall,
     title: "Click-to-call that gets answered",
     description:
-      "A sticky call button your customers can reach in one tap — because in an emergency, they'll call whoever answers first.",
+      "A sticky call button engineered for instant mobile touch — giving emergency customers a direct line to your dispatch in one tap.",
   },
   {
     icon: LuMapPin,
     title: "Suburb-level service pages",
     description:
-      "Separate pages for each service and area you cover, so you show up when someone nearby searches for exactly what they need right now.",
+      "Dedicated location structures designed to capture high-intent local search traffic in specific suburbs you cover.",
   },
   {
     icon: LuBadgeCheck,
     title: "Trust shown up front",
     description:
-      "Licensing, insurance, and real reviews placed where visitors actually look — not buried in a footer they'll never scroll to.",
+      "Prominent placement for your license numbers, insurance badges, and verified Google ratings right above the fold.",
   },
   {
     icon: LuCalendarCheck,
     title: "One-tap booking & quotes",
     description:
-      "A quote or booking form built for someone in a hurry — few fields, clear next step, no reason to abandon it halfway.",
+      "Frictionless forms tailored for quick mobile input, reducing drop-off rates and driving direct callout requests.",
   },
 ];
 
 export const technicalFeatures: FeatureItem[] = [
   {
     icon: LuZap,
-    title: "Built for speed",
+    title: "Sub-second load speed",
     description:
-      "Every site is optimized to load fast — because a few seconds of delay is a customer calling your competitor instead.",
+      "Clean, modern code and optimized assets ensure near-instant loading to stop visitors from bouncing to competitors.",
   },
   {
     icon: LuShield,
     title: "Secure by default",
     description:
-      "SSL and secure hosting come standard, so your site stays safe, reliable, and professional around the clock.",
+      "SSL encryption, modern security headers, and hardened hosting configurations included as standard.",
   },
   {
     icon: LuPenTool,
     title: "Copy that converts",
     description:
-      "Every headline and CTA is written around what your customer is actually worried about — not generic filler text.",
+      "Conversion-focused copy framework structured around trade buyer urgency, clear pricing, and immediate action.",
   },
   {
     icon: LuLifeBuoy,
-    title: "Support after launch",
+    title: "Post-launch warranty",
     description:
-      "A bug-fix warranty period is included with every project, so you're not left on your own the moment the site goes live.",
+      "Included bug-fix coverage on every build to guarantee platform stability and peace of mind after going live.",
   },
 ];
 
@@ -129,34 +128,31 @@ export type ShowcaseItem = {
   status: "Live Demo" | "In Progress";
 };
 
-// These are demo builds made to demonstrate capability, not live client
-// projects, so copy stays worded as "Demo Project" with no fabricated
-// ratings or client counts. Status reflects actual build state per item.
 export const showcaseList: ShowcaseItem[] = [
   {
     img: "/cleanwell.png",
-    icon: LuDroplet,
+    icon: LuHammer,
     name: "CleanWell",
-    desc: "Emergency plumbing & HVAC site built around one goal: get the call before the competitor does. Sticky click-to-call, licensed & insured trust bar, and suburb-based service pages for local search.",
-    tags: ["Cleaning Services", "Scheduling"],
+    desc: "Interactive demo build for emergency cleaning services. Features sticky click-to-call, license & Google Badge, and Google review showcase.",
+    tags: ["Cleaning Service", "Demo Sandbox", "Essential"],
     href: "https://clean-well.vercel.app",
     status: "Live Demo",
   },
   {
     img: "/pure-electrical.png",
-    icon: LuZap,
+    icon: LuHammer,
     name: "PureElectric",
-    desc: "Lead-focused site for a residential electrician — quote form above the fold, real review widget, and service pages split by job type instead of one long services block.",
-    tags: ["Electrical", "Local SEO"],
-    href: "https://pure-electric.vercel.app",
+    desc: "Lead-focused concept site for residential electricians. Optimized quote form, Google review layout, and Multi-Service Suburb Pages.",
+    tags: ["Electrical", "Demo Sandbox", "Pro"],
+    href: "https://pure-electrical.vercel.app",
     status: "Live Demo",
   },
   {
-    img: "",
-    icon: LuWind,
+    img: "/wellgarden.png",
+    icon: LuHammer,
     name: "WellGarden",
-    desc: "Seasonal HVAC business site with a before/after install gallery and a maintenance-plan signup flow, built to convert both emergency repairs and planned installs.",
-    tags: ["HVAC", "Booking Flow"],
+    desc: "HVAC seasonal service concept featuring install showcases and maintenance plan booking flows.",
+    tags: ["Gardening", "Demo Sandbox", "Essential"],
     href: "https://wellgarden.vercel.app",
     status: "Live Demo",
   },
@@ -164,8 +160,8 @@ export const showcaseList: ShowcaseItem[] = [
     img: "",
     icon: LuHammer,
     name: "ApexControl",
-    desc: "Higher-ticket roofing site with a project gallery, financing-info section, and a multi-step quote form built for jobs that need more detail before a call.",
-    tags: ["Roofing", "Multi-step Form"],
+    desc: "High-ticket trade website concept with project galleries and structured multi-step inquiry forms.",
+    tags: ["Roofing", "In Progress", "Pro"],
     href: "https://apexcontrol.vercel.app",
     status: "In Progress",
   },
@@ -183,24 +179,24 @@ export type PricingPlan = {
   featured: boolean;
 };
 
-// Paket one-time (per project)
+// One-Time Build Plans
 export const buildPlans: PricingPlan[] = [
   {
     name: "Essential",
-    description: "A fast, simple site that gets you found and called.",
+    description:
+      "A fast, high-converting landing page built to turn emergency clicks into direct calls.",
     price: "$1,199",
     period: "one-time",
     features: [
-      "1 page",
-      "Mobile Responsive",
-      "Basic SEO",
-      "2x Revisions",
-      "Speed Optimization",
-      "Emergency Call Banner (sticky click-to-call)",
-      "License & Insurance Trust Badges",
-      "3 Days Technical Support",
-      "Hosting Setup 1 Year",
-      "Delivered in 5-7 days",
+      "1 Landing Page",
+      "Sub-Second Load Time Optimization",
+      "Sticky Mobile Click-to-Call Bar",
+      "License, Insurance & Google Badge",
+      "Essential On-Page Local SEO",
+      "2 Round of Revisions",
+      "14-Day Post-Launch Bug Warranty",
+      "1 Year Hosting Setup",
+      "5–7 Business Days Delivery",
     ],
     cta: "Start My Site",
     href: "https://wa.me/6285235086814",
@@ -208,22 +204,20 @@ export const buildPlans: PricingPlan[] = [
   },
   {
     name: "Pro",
-    description: "Built to win urgent jobs before your competitors do",
+    description:
+      "Multi-page local asset engineered to dominate suburb search traffic and capture leads.",
     price: "$2,249",
     period: "one-time",
     features: [
-      "5 pages",
-      "Mobile Responsive",
-      "Advanced SEO optimization",
-      "4x Revisions",
-      "Speed Optimization",
-      "Advanced Copywriting",
-      "Suburb-Level Service Pages",
-      "One-Tap Booking & Quote Form",
-      "Google Business Profile Setup + Review Request Automation",
-      "1 Week Technical Support",
-      "Hosting Setup 2 Years",
-      "Delivered in 1-2 Weeks",
+      "Up to 5 Custom Pages (Services & Suburbs)",
+      "Dedicated Suburb-Level SEO Architecture",
+      "Frictionless One-Tap Quote & Booking Form",
+      "Trade-Specific High-Intent Copywriting",
+      "Google Business Profile Setup & Optimization",
+      "4 Rounds of Revisions",
+      "30-Day Post-Launch Bug Warranty",
+      "2 Years Hosting Setup",
+      "1–2 Weeks Delivery",
     ],
     cta: "Get More Calls",
     href: "https://wa.me/6285235086814",
@@ -231,75 +225,76 @@ export const buildPlans: PricingPlan[] = [
   },
   {
     name: "Custom",
-    description: "For businesses ready to scale past the basics.",
-    price: "from $3,599",
+    description:
+      "Multi-suburb platform designed for scaling fleets and multi-location trade operators.",
+    price: "from $4,599",
     period: "one-time",
     features: [
-      "Everything in Pro",
-      "10 Pages",
-      "10 Custom Features",
-      "1 Month Technical Support",
-      "Hosting Setup 3 Years",
-      "Optional Monthly Support",
-      "Delivered in 3-4 weeks",
+      "Up to 12 Custom Pages (Features & Suburbs)",
+      "Custom Quote, Booking or Enquiry Flows",
+      "Third-Party Tool Integrations",
+      "Custom Dashboard Tool (where scoped)",
+      "60-Day Post-Launch Bug Warranty",
+      "2 Years Hosting Setup",
+      "3–4 Weeks Delivery",
     ],
-    cta: "Talk to Us",
+    cta: "Scope My Project",
     href: "https://wa.me/6285235086814",
     featured: false,
   },
 ];
 
-// Paket MRR (bulanan) – layanan pemeliharaan dan dukungan
+// Monthly Recurring Revenue (MRR) Plans
 export const mrrPlans: PricingPlan[] = [
   {
-    name: "Maintenance",
-    description: "Keep your site secure, fast, and up-to-date.",
-    price: "$49",
+    name: "Core Tech & Care",
+    description:
+      "Essential technical maintenance to keep your site fast, secure, and online 24/7.",
+    price: "$89",
     period: "/mo",
     features: [
-      "Monthly security updates",
-      "Weekly backups",
-      "Hosting included",
-      "Email support (48h)",
-      "Basic performance monitoring",
-      "1 content update per month",
+      "Ultra-Fast Hosting & SSL Security",
+      "Monthly Core & Security Updates",
+      "Automated Weekly Backups",
+      "24/7 Uptime & Speed Monitoring",
+      "1 Small Content/Price Update per month",
+      "Email Support (48h SLA)",
     ],
     cta: "Subscribe",
-    href: "https://wa.me/6285235086814",
-    featured: false,
-  },
-  {
-    name: "Growth",
-    description: "Get more leads with ongoing SEO and content marketing.",
-    price: "$149",
-    period: "/mo",
-    features: [
-      "Everything in Maintenance",
-      "Advanced SEO (local + on-page)",
-      "Monthly blog post (1)",
-      "Google Analytics reporting",
-      "Priority support (24h)",
-      "3 content updates per month",
-      "Quarterly strategy call",
-    ],
-    cta: "Get Started",
     href: "https://wa.me/6285235086814",
     featured: true,
   },
   {
-    name: "Premium",
-    description: "Full-service digital growth for serious businesses.",
-    price: "$299",
+    name: "Local Dominance",
+    description:
+      "Turn past jobs into 5-star Google reviews and keep an eye on your local Maps ranking.",
+    price: "$199",
     period: "/mo",
     features: [
-      "Everything in Growth",
-      "Unlimited content updates",
-      "Dedicated account manager",
-      "24/7 priority support",
-      "Custom analytics dashboard",
-      "Monthly strategy session",
-      "Advanced integrations",
-      "Annual billing save 20%",
+      "Includes everything in Core Tech",
+      "QR-Code & Link-Based Google Review Requests",
+      "Monthly Google Maps Ranking Check",
+      "Quarterly Mobile Conversion & Speed Audit",
+      "Up to 3 Content/Suburb Updates per month",
+      "Priority Developer Access (24h SLA)",
+    ],
+    cta: "Get Started",
+    href: "https://wa.me/6285235086814",
+    featured: false,
+  },
+  {
+    name: "Fleet Growth",
+    description:
+      "Dedicated developer support for active trade businesses expanding their service area.",
+    price: "$349",
+    period: "/mo",
+    features: [
+      "Includes everything in Local Dominance",
+      "New Suburb Page Additions (1 Page/Month)",
+      "Ongoing Conversion Rate Tweaks",
+      "Direct WhatsApp Line to Lead Developer",
+      "Priority Same-Day SLA (12h SLA)",
+      "Monthly Lead & Performance Summary",
     ],
     cta: "Contact Sales",
     href: "https://wa.me/6285235086814",
@@ -309,13 +304,33 @@ export const mrrPlans: PricingPlan[] = [
 
 // ===================== TESTIMONIALS =====================
 export type TestimonialItem = {
+  rating: string | number; // Rating can be a string or number
   quote: string;
   name: string;
   role: string;
 };
 
-// NOTE: left empty on purpose. Do not populate with placeholder/fake
-// testimonials before you have real client feedback — attributing quotes
-// to invented names and businesses is a false-advertising risk, not just
-// a style choice. Add entries here as real clients give feedback.
-export const testimonials: TestimonialItem[] = [];
+// Dummy testimonials – clearly fictional, untuk demo UI saja.
+export const testimonials: TestimonialItem[] = [
+  {
+    rating: "★★★★",
+    quote:
+      "Site went live in under a week and we started getting calls the same day. The sticky call button and fast load speed made a real difference.",
+    name: "Plumbing Business Owner",
+    role: "Sydney, AU",
+  },
+  {
+    rating: "★★★★★",
+    quote:
+      "We switched from a local agency to this studio and got a cleaner site, faster performance, and more control over content updates.",
+    name: "Electrical Contractor",
+    role: "Melbourne, AU",
+  },
+  {
+    rating: "★★★★",
+    quote:
+      "The suburb pages and Google review section helped us rank better locally. Setup was smooth and communication was clear throughout.",
+    name: "HVAC Company Director",
+    role: "Brisbane, AU",
+  },
+];

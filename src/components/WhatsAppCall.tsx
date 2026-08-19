@@ -43,7 +43,8 @@ Terima kasih, saya tunggu balasannya.
 
   const encodedMessage = encodeURIComponent(message.trim());
 
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  // const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  const whatsappUrl = `https://wa.me/${phoneNumber}`;
 
   return (
     <a

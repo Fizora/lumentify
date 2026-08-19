@@ -11,7 +11,7 @@ export default function Privacy() {
     <>
       <Navbar />
       <main className="min-h-screen px-4">
-        <section className="pt-32 pb-8 mx-auto max-w-2xl">
+        <section className="pt-32 pb-8 mx-auto max-w-3xl">
           <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
             Legal
           </span>
@@ -21,7 +21,7 @@ export default function Privacy() {
           <p className="text-lg text-gray-500">Last updated: August 2026</p>
         </section>
 
-        <section className="mx-auto max-w-2xl pb-24 text-gray-600 leading-relaxed">
+        <section className="mx-auto max-w-3xl pb-24 text-gray-600 leading-relaxed">
           <p className="mb-6">
             This policy explains what information Lumentify collects when you
             visit this website or contact us, and how it&apos;s used. It covers

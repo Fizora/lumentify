@@ -33,9 +33,9 @@ const Hero = () => {
               Every Slow Page Is a Customer Calling Your Competitor Instead.
             </h1>
             <p className="max-w-3xl">
-              I build fast, clean, and directed websites for Australian
-              home‑service businesses (plumbing, electrical, HVAC) so that call
-              goes to you.
+              We build fast, clean, and directed websites for home‑service
+              businesses (plumbing, electrical, HVAC, gardening, etc) so that
+              call goes to you.
             </p>
           </div>
           <ButtonGrid>

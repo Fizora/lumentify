@@ -4,7 +4,6 @@ import Hero from "@/components/sections/Hero";
 import Features from "@/components/sections/Features";
 import Testimonials from "@/components/sections/Testimonials";
 import Pricing from "@/components/sections/Pricing";
-import Contact from "@/components/sections/Contact";
 import FAQ from "@/components/sections/FAQ";
 import CTA from "@/components/sections/CTA";
 
@@ -15,10 +14,9 @@ export default function Home() {
       <main>
         <Hero />
         <Features />
-        <Pricing />
+        <Pricing showMRR={false} showOneTime={true} />
         {/* <Testimonials /> */}
         <FAQ />
-        {/* <Contact /> */}
         <CTA />
       </main>
       <Footer />

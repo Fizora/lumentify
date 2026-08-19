@@ -11,7 +11,7 @@ export default function Terms() {
     <>
       <Navbar />
       <main className="min-h-screen px-4">
-        <section className="pt-32 pb-8 mx-auto max-w-2xl">
+        <section className="pt-32 pb-8 mx-auto max-w-3xl">
           <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
             Legal
           </span>
@@ -21,7 +21,7 @@ export default function Terms() {
           <p className="text-lg text-gray-500">Last updated: August 2026</p>
         </section>
 
-        <section className="mx-auto max-w-2xl pb-24 text-gray-600 leading-relaxed">
+        <section className="mx-auto max-w-3xl pb-24 text-gray-600 leading-relaxed">
           <p className="mb-6">
             These Terms govern your use of this website only. They are not a
             service agreement. If you engage Lumentify for a project, that work
@@ -101,7 +101,7 @@ export default function Terms() {
               href="mailto:hello@lumentify.com"
               className="text-zinc-700 font-medium hover:underline"
             >
-              hello@lumentify.com
+              lumentify@gmail.com
             </a>
             .
           </p>

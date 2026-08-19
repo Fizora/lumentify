@@ -7,6 +7,7 @@ import Image from "next/image";
 
 const Navbar = () => {
   const navList = [
+    { name: "Pricing", href: "/pricing" },
     { name: "About", href: "/about" },
     { name: "Showcase", href: "/showcase" },
     { name: "Support", href: "/support" },
@@ -23,7 +24,7 @@ const Navbar = () => {
         {/* Logo */}
         <h1 className="text-black group">
           <Link href="/" className="text-xl font-black flex items-center gap-2">
-            <div className="bg-white group-hover:transform group-hover:scale-105 group-hover:shadow-zinc-400 transition duration-300 p-2 rounded shadow-lg">
+            <div className="bg-white group-hover:transform group-hover:scale-105 border border-zinc-200 group-hover:shadow-xl group-hover:shadow-zinc-300 transition duration-300 p-2 rounded shadow-lg">
               <Image
                 src={"/logo.svg"}
                 alt=""

@@ -44,7 +44,7 @@ const PreviewImage = ({ img, icon: Icon }: PreviewImageProps) => {
       src={img}
       alt={`${img} preview`}
       onError={() => setFailed(true)}
-      width={640}
+      width={600}
       height={400}
       className="w-full h-full object-cover"
     />
@@ -57,7 +57,7 @@ const ShowcaseCard = ({ item }: { item: ShowcaseItem }) => {
   return (
     <motion.div
       variants={itemVariants}
-      className="group bg-white  border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow duration-300"
+      className="group bg-white  border border-zinc-200 hover:border-zinc-300 overflow-hidden hover:shadow-xl hover:shadow-zinc-200 transition-shadow duration-300"
     >
       {/* Preview */}
       <div className="relative w-full aspect-16/10 bg-gray-50">
@@ -81,7 +81,7 @@ const ShowcaseCard = ({ item }: { item: ShowcaseItem }) => {
       {/* Body */}
       <div className="p-6">
         <h3 className="text-lg font-semibold text-black mb-2">{item.name}</h3>
-        <p className="text-sm text-gray-600 leading-relaxed mb-4">
+        <p className="text-sm text-gray-600 leading-relaxed min-h-20 mb-4">
           {item.desc}
         </p>
 
@@ -119,7 +119,7 @@ const Showcase = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           {showcaseList.map((item) => (
             <ShowcaseCard key={item.name} item={item} />
@@ -131,8 +131,11 @@ const Showcase = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mt-16 px-4 py-8 border bg-zinc-900 text-center"
+          className="mt-16 px-4 py-8 border bg-zinc-900 text-center space-y-6"
         >
+          <h1 className="text-4xl md:text-5xl text-white font-bold">
+            Ready to Build?
+          </h1>
           <p className="text-gray-300 mb-5">
             Want something built for your business specifically?
           </p>

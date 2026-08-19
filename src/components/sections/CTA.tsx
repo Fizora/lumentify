@@ -10,7 +10,7 @@ import Link from "next/link";
 const CTA = () => {
   return (
     <section className="py-20 px-3">
-      <div className="mx-auto max-w-7xl text-center bg-zinc-900 text-white rounded-md p-10">
+      <div className="mx-auto max-w-7xl text-center bg-linear-to-b from-zinc-800 to-zinc-950  text-white rounded-md p-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

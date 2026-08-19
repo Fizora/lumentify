@@ -44,10 +44,13 @@ const Testimonials = () => {
               variants={cardVariants}
               className="bg-gray-50 p-8 flex flex-col justify-between border border-gray-200"
             >
+              <span className="text-2xl font-bold text-yellow-400">
+                {t.rating}
+              </span>
               <blockquote className="text-gray-700 mb-6 leading-relaxed">
                 "{t.quote}"
               </blockquote>
-              <div>
+              <div className="mt-auto border-t border-gray-200 pt-4">
                 <p className="font-semibold text-black">{t.name}</p>
                 <p className="text-lg text-gray-500">{t.role}</p>
               </div>

@@ -23,13 +23,13 @@ const FeatureCard = ({ feat }: { feat: FeatureItem }) => {
   return (
     <motion.div
       variants={itemVariants}
-      className="bg-white border border-gray-200 p-6 hover:border-gray-400 transition-all duration-200"
+      className="bg-white border border-gray-200 p-6 hover:border-gray-300 hover:shadow-xl hover:shadow-zinc-200 transition-all duration-200"
     >
       <div className="w-10 h-10 rounded-lg bg-gray-100 text-gray-600 flex items-center justify-center mb-5">
         <IconComponent className="w-5 h-5" />
       </div>
       <h3 className="text-lg font-semibold text-black mb-2">{feat.title}</h3>
-      <p className="text-sm text-gray-500 leading-relaxed">
+      <p className="text-base text-gray-500 leading-relaxed">
         {feat.description}
       </p>
     </motion.div>

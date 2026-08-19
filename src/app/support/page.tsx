@@ -24,8 +24,8 @@ const guarantees = [
   },
   {
     icon: LuRotateCcw,
-    title: "30-day bug-fix warranty",
-    body: "Anything breaks in the first 30 days after launch, we fix it free. No extra invoice, no waiting in a support queue.",
+    title: "Included bug-fix warranty",
+    body: "Anything breaks within your plan's warranty window (14 days for Essential, 30 days for Pro, 60 days for Custom), we fix it free. No extra invoice, no waiting in line.",
   },
   {
     icon: LuBadgeCheck,
@@ -35,7 +35,7 @@ const guarantees = [
   {
     icon: LuShieldCheck,
     title: "Everything in writing",
-    body: "Every project starts with a signed MSA and SOW — what's built, when, and for how much. Not a verbal promise, a document you can point back to.",
+    body: "Every project starts with a signed agreement (MSA + SOW) — what's built, when, and for how much. Not a verbal promise, a document you can point back to.",
   },
 ];
 
@@ -149,7 +149,10 @@ export default function Support() {
                   "4",
                   "You review the design direction early — if it's off, you get the deposit back.",
                 ],
-                ["5", "Site goes live, plus 30 days of free bug fixes on us."],
+                [
+                  "5",
+                  "Site goes live, backed by your plan's included bug-fix warranty.",
+                ],
               ].map(([n, text]) => (
                 <li key={n} className="flex gap-4">
                   <span className="shrink-0 w-6 h-6 rounded-full bg-zinc-100 text-zinc-600 text-xs font-semibold flex items-center justify-center">
