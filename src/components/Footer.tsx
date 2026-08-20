@@ -55,7 +55,9 @@ const Footer = () => {
               <div className="bg-white group-hover:transform group-hover:scale-105 group-hover:shadow-zinc-400 transition duration-300 p-2 rounded shadow-lg">
                 <Image
                   src={"/logo.svg"}
-                  alt=""
+                  alt="Lumentify Logo"
+                  priority
+                  quality={80}
                   height={20}
                   width={20}
                   className=""

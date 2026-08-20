@@ -46,6 +46,8 @@ const PreviewImage = ({ img, icon: Icon }: PreviewImageProps) => {
       onError={() => setFailed(true)}
       width={600}
       height={400}
+      priority
+      quality={50}
       className="w-full h-full object-cover"
     />
   );

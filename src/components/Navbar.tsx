@@ -28,6 +28,8 @@ const Navbar = () => {
               <Image
                 src={"/logo.svg"}
                 alt=""
+                priority
+                quality={80}
                 height={20}
                 width={20}
                 className=""

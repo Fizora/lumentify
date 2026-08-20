@@ -130,7 +130,7 @@ export type ShowcaseItem = {
 
 export const showcaseList: ShowcaseItem[] = [
   {
-    img: "/cleanwell.png",
+    img: "/cleanwell.webp",
     icon: LuHammer,
     name: "CleanWell",
     desc: "Interactive demo build for emergency cleaning services. Features sticky click-to-call, license & Google Badge, and Google review showcase.",
@@ -139,7 +139,7 @@ export const showcaseList: ShowcaseItem[] = [
     status: "Live Demo",
   },
   {
-    img: "/pure-electrical.png",
+    img: "/pure-electrical.webp",
     icon: LuHammer,
     name: "PureElectric",
     desc: "Lead-focused concept site for residential electricians. Optimized quote form, Google review layout, and Multi-Service Suburb Pages.",
