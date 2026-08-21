@@ -115,7 +115,7 @@ const ShowcaseCard = ({ item }: { item: ShowcaseItem }) => {
 const Showcase = () => {
   return (
     <section className="py-24 bg-white">
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="mx-auto max-w-7xl">
         <motion.div
           variants={containerVariants}
           initial="hidden"
