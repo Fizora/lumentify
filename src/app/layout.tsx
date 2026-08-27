@@ -7,7 +7,6 @@ import {
   Young_Serif,
 } from "next/font/google";
 import "./globals.css";
-import WhatsAppCall from "@/components/WhatsAppCall";
 import BlockComponentsDevelopers from "@/components/BlockComponentsDevelopers";
 
 const geistSans = Space_Grotesk({
@@ -23,7 +22,7 @@ const geistMono = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Lumentify",
+  title: "Lumentify - Creative Studio For Home Services Web Development",
 };
 
 export default function RootLayout({
@@ -38,8 +37,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col text-base md:text-md lg:text-lg">
         {children}
-        {/* <BlockComponentsDevelopers /> */}
-        <WhatsAppCall />
+        <BlockComponentsDevelopers />
       </body>
     </html>
   );

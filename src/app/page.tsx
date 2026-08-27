@@ -5,7 +5,9 @@ import Features from "@/components/sections/Features";
 import Testimonials from "@/components/sections/Testimonials";
 import Pricing from "@/components/sections/Pricing";
 import FAQ from "@/components/sections/FAQ";
+import Contact from "@/components/sections/Contact";
 import CTA from "@/components/sections/CTA";
+import WhatsAppCall from "@/components/WhatsAppCall";
 
 export default function Home() {
   return (
@@ -15,11 +17,13 @@ export default function Home() {
         <Hero />
         <Features />
         <Pricing showMRR={false} showOneTime={true} />
-        {/* <Testimonials /> */}
+        <Testimonials />
         <FAQ />
+        <Contact />
         <CTA />
       </main>
       <Footer />
+      <WhatsAppCall />
     </>
   );
 }

@@ -58,56 +58,56 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-24 bg-white" id="contact">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="py-16 bg-white" id="contact">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5 }}
-          className="text-center space-y-4 md:space-y-5 mb-12 md:mb-16"
+          transition={{ duration: 0.4 }}
+          className="text-center space-y-3 mb-10"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
+          <h2 className="text-2xl md:text-3xl font-bold text-black">
             Let&apos;s talk about your site.
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed text-lg md:text-base">
+          <p className="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Tell us a bit about your business and what you need. No pressure, no
             sales script — we&apos;ll reply with honest next steps.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-5">
           {/* Form */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            className="md:col-span-3 border border-gray-200 p-6 md:p-8 lg:p-10"
+            className="md:col-span-3 border border-gray-200 p-5"
           >
             {status === "sent" ? (
-              <div className="flex flex-col items-center text-center py-12 md:py-16">
-                <LuCircleCheck className="w-12 h-12 text-green-600 mb-4" />
-                <h3 className="text-xl font-bold text-black mb-2">
+              <div className="flex flex-col items-center text-center py-10">
+                <LuCircleCheck className="w-10 h-10 text-green-600 mb-3" />
+                <h3 className="text-lg font-bold text-black mb-1">
                   Message sent!
                 </h3>
-                <p className="text-lg text-gray-600 leading-relaxed max-w-sm">
+                <p className="text-base text-gray-600 leading-relaxed max-w-sm">
                   Thanks for reaching out — we usually reply within 1 business
                   day.
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
-                  className="mt-6 text-lg font-semibold text-zinc-600 hover:text-zinc-800 transition-colors"
+                  className="mt-4 text-base font-semibold text-zinc-600 hover:text-zinc-800 transition-colors"
                 >
                   Send another message →
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-lg font-semibold text-black mb-1.5"
+                      className="block text-xs font-semibold text-black mb-1"
                     >
                       Your name *
                     </label>
@@ -119,13 +119,13 @@ const Contact = () => {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="John Smith"
-                      className="w-full border border-gray-200 px-4 py-2.5 text-lg text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 transition-shadow"
+                      className="w-full border border-gray-200 px-3 py-1.5 text-base text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 transition-shadow"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="business"
-                      className="block text-lg font-semibold text-black mb-1.5"
+                      className="block text-xs font-semibold text-black mb-1"
                     >
                       Business name *
                     </label>
@@ -137,7 +137,7 @@ const Contact = () => {
                       value={form.business}
                       onChange={handleChange}
                       placeholder="Smith Plumbing Co."
-                      className="w-full border border-gray-200 px-4 py-2.5 text-lg text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 transition-shadow"
+                      className="w-full border border-gray-200 px-3 py-1.5 text-base text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 transition-shadow"
                     />
                   </div>
                 </div>
@@ -145,7 +145,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-lg font-semibold text-black mb-1.5"
+                    className="block text-xs font-semibold text-black mb-1"
                   >
                     Email *
                   </label>
@@ -157,14 +157,14 @@ const Contact = () => {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="you@business.com"
-                    className="w-full border border-gray-200 px-4 py-2.5 text-lg text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 transition-shadow"
+                    className="w-full border border-gray-200 px-3 py-1.5 text-base text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 transition-shadow"
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="interest"
-                    className="block text-lg font-semibold text-black mb-1.5"
+                    className="block text-xs font-semibold text-black mb-1"
                   >
                     What are you looking for?
                   </label>
@@ -173,7 +173,7 @@ const Contact = () => {
                     name="interest"
                     value={form.interest}
                     onChange={handleChange}
-                    className="w-full border border-gray-200 px-4 py-2.5 text-lg text-black focus:outline-none focus:ring-2 focus:ring-black/80 bg-white transition-shadow"
+                    className="w-full border border-gray-200 px-3 py-1.5 text-base text-black focus:outline-none focus:ring-2 focus:ring-black/80 bg-white transition-shadow"
                   >
                     <option value="Essential">Essential — simple site</option>
                     <option value="Pro">Pro — win more calls</option>
@@ -185,7 +185,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-lg font-semibold text-black mb-1.5"
+                    className="block text-xs font-semibold text-black mb-1"
                   >
                     Message *
                   </label>
@@ -193,17 +193,17 @@ const Contact = () => {
                     id="message"
                     name="message"
                     required
-                    rows={4}
+                    rows={3}
                     value={form.message}
                     onChange={handleChange}
                     placeholder="Tell us about your business and what you're hoping your site can do."
-                    className="w-full border border-gray-200 px-4 py-2.5 text-lg text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 resize-none transition-shadow"
+                    className="w-full border border-gray-200 px-3 py-1.5 text-base text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 resize-none transition-shadow"
                   />
                 </div>
 
                 {status === "error" && (
-                  <div className="bg-red-50 border border-red-200 p-4">
-                    <p className="text-lg text-red-700">
+                  <div className="bg-red-50 border border-red-200 p-3">
+                    <p className="text-base text-red-700">
                       Something went wrong sending your message. Please try
                       again or email us directly at{" "}
                       <a
@@ -220,17 +220,17 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 disabled:opacity-60 disabled:cursor-not-allowed text-white text-lg font-semibold px-8 py-3.5 transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 disabled:opacity-60 disabled:cursor-not-allowed text-white text-lg font-semibold px-6 py-2.5 transition-colors"
                 >
                   {status === "loading" ? (
                     <>
-                      <LuLoaderCircle className="w-4 h-4 animate-spin" />
+                      <LuLoaderCircle className="w-3.5 h-3.5 animate-spin" />
                       Sending...
                     </>
                   ) : (
                     <>
                       Send message
-                      <LuSend className="w-4 h-4" />
+                      <LuSend className="w-3.5 h-3.5" />
                     </>
                   )}
                 </button>
@@ -240,32 +240,32 @@ const Contact = () => {
 
           {/* Side info */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ delay: 0.1 }}
-            className="md:col-span-2 flex flex-col gap-5 md:gap-6"
+            className="md:col-span-2 flex flex-col gap-4"
           >
-            <div className="border border-gray-200 p-6 md:p-8">
-              <LuMail className="w-5 h-5 text-zinc-600 mb-4" />
-              <h3 className="text-base font-bold text-black mb-2">Email</h3>
-              <p className="text-lg text-gray-600 leading-relaxed mb-3">
+            <div className="border border-gray-200 p-5">
+              <LuMail className="w-4 h-4 text-zinc-600 mb-3" />
+              <h3 className="text-base font-bold text-black mb-1">Email</h3>
+              <p className="text-base text-gray-600 leading-relaxed mb-2">
                 Prefer to write directly? We reply within 1 business day.
               </p>
               <a
                 href="mailto:lumentify@gmail.com"
-                className="text-lg font-semibold text-zinc-700 hover:text-black transition-colors"
+                className="text-base font-semibold text-zinc-700 hover:text-black transition-colors"
               >
                 lumentify@gmail.com
               </a>
             </div>
 
-            <div className="border border-gray-200 p-6 md:p-8">
-              <LuMessageCircle className="w-5 h-5 text-zinc-600 mb-4" />
-              <h3 className="text-base font-bold text-black mb-2">
+            <div className="border border-gray-200 p-5">
+              <LuMessageCircle className="w-4 h-4 text-zinc-600 mb-3" />
+              <h3 className="text-base font-bold text-black mb-1">
                 Already a client?
               </h3>
-              <p className="text-lg text-gray-600 leading-relaxed mb-3">
+              <p className="text-base text-gray-600 leading-relaxed mb-2">
                 For support on an active project, message us on WhatsApp for the
                 fastest response.
               </p>
@@ -273,14 +273,14 @@ const Contact = () => {
                 href="https://wa.me/6285235086814"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lg font-semibold text-zinc-700 hover:text-black transition-colors"
+                className="text-base font-semibold text-zinc-700 hover:text-black transition-colors"
               >
                 Message on WhatsApp →
               </a>
             </div>
 
-            <div className="bg-zinc-50/60 border border-zinc-100 p-6 md:p-8">
-              <p className="text-lg text-gray-600 leading-relaxed">
+            <div className="bg-zinc-50/60 border border-zinc-100 p-5">
+              <p className="text-base text-gray-600 leading-relaxed">
                 <span className="font-semibold text-black">✓</span> Every
                 project starts with a written proposal and a signed agreement
                 before any payment — no surprises, no verbal-only promises.

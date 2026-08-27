@@ -16,17 +16,16 @@ const cardVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-// ========== TAMBAHKAN PROPS ==========
 interface PricingProps {
-  showOneTime?: boolean; // tampilkan bagian Build Your Site
-  showMRR?: boolean; // tampilkan bagian Keep It Running
+  showOneTime?: boolean;
+  showMRR?: boolean;
 }
 
 const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
   return (
     <section className="py-24 bg-white" id="pricing">
       <div className="mx-auto max-w-7xl px-3">
-        {/* ====== SECTION 1: BUILD YOUR SITE (one-time) ====== */}
+        {/* SECTION 1: BUILD YOUR SITE */}
         {showOneTime && (
           <>
             <motion.div
@@ -56,7 +55,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                 <motion.div
                   key={index}
                   variants={cardVariants}
-                  className={`relative flex flex-col p-6 md:p-8 border ${
+                  className={`rounded-md relative flex flex-col p-6 md:p-8 border ${
                     plan.featured
                       ? "border-zinc-300 bg-zinc-50/50 shadow-xl shadow-zinc-200 z-10"
                       : "border-gray-200 bg-white"
@@ -101,7 +100,8 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                     {plan.featured ? (
                       <PrimaryButtonLink
                         href={plan.href}
-                        className="w-full text-center flex items-center justify-center gap-2 px-8 py-3 text-sm font-semibold text-white "
+                        target="_blank"
+                        className="w-full text-center flex items-center justify-center gap-2 px-8 py-3 text-sm font-semibold text-white"
                       >
                         {plan.cta}
                         <LuArrowRight className="w-4 h-4" />
@@ -109,7 +109,8 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                     ) : (
                       <SecondaryButtonLink
                         href={plan.href}
-                        className="w-full text-center flex items-center justify-center gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 text-black transition-colors px-8 py-3 text-sm font-semibold "
+                        target="_blank"
+                        className="w-full text-center flex items-center justify-center gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 text-black transition-colors px-8 py-3 text-sm font-semibold"
                       >
                         {plan.cta}
                       </SecondaryButtonLink>
@@ -121,7 +122,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
           </>
         )}
 
-        {/* ====== SECTION 2: KEEP IT RUNNING (MRR) ====== */}
+        {/* SECTION 2: KEEP IT RUNNING */}
         {showMRR && (
           <>
             <motion.div
@@ -199,7 +200,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                     {plan.featured ? (
                       <PrimaryButtonLink
                         href={plan.href}
-                        className="w-full text-center flex items-center justify-center gap-2 px-8 py-3 text-sm font-semibold text-white "
+                        className="w-full text-center flex items-center justify-center gap-2 px-8 py-3 text-sm font-semibold text-white"
                       >
                         {plan.cta}
                         <LuArrowRight className="w-4 h-4" />
@@ -207,7 +208,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                     ) : (
                       <SecondaryButtonLink
                         href={plan.href}
-                        className="w-full text-center flex items-center justify-center gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 text-black transition-colors px-8 py-3 text-sm font-semibold "
+                        className="w-full text-center flex items-center justify-center gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 text-black transition-colors px-8 py-3 text-sm font-semibold"
                       >
                         {plan.cta}
                       </SecondaryButtonLink>
@@ -219,22 +220,26 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
           </>
         )}
 
-        {/* Capacity & warranty notice – tetap tampil jika ada salah satu bagian yang tampil, 
-            atau bisa juga dimasukkan ke dalam kondisi terpisah. Biarkan di sini agar selalu muncul. */}
+        {/* Capacity & warranty notice */}
         {(showOneTime || showMRR) && (
-          <>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mt-20 max-w-2xl mx-auto"
-            >
-              <p className="text-sm text-gray-500 leading-relaxed">
-                We take on a limited number of projects each month so every
-                client gets full attention — not split across a queue.
-              </p>
-            </motion.div>
-          </>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-20 max-w-2xl mx-auto bg-linear-to-br from-zinc-200 via-white to-zinc-200 p-6 border border-zinc-200 shadow-lg shadow-zinc-100"
+          >
+            <p className="text-sm text-gray-500 leading-relaxed">
+              We take on a{" "}
+              <span className="font-black text-black">
+                limited number of projects
+              </span>{" "}
+              each month so{" "}
+              <span className="font-black text-black">
+                every client gets full attention
+              </span>{" "}
+              — not split across a queue.
+            </p>
+          </motion.div>
         )}
       </div>
     </section>

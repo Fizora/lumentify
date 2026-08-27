@@ -9,7 +9,7 @@ const Footer = () => {
       title: "Explore",
       links: [
         { label: "Showcase", href: "/showcase" },
-        { label: "Pricing", href: "/#pricing" },
+        { label: "Pricing", href: "/pricing" },
         { label: "FAQ", href: "/faq" },
       ],
     },
@@ -23,8 +23,8 @@ const Footer = () => {
     {
       title: "Legal",
       links: [
-        { label: "Privacy", href: "/privacy" },
-        { label: "Terms", href: "/terms" },
+        { label: "Privacy", href: "/legal/privacy" },
+        { label: "Terms", href: "/legal/terms" },
       ],
     },
   ];
@@ -66,8 +66,8 @@ const Footer = () => {
               Lumentify.
             </Link>
             <p className="mt-3 text-sm text-zinc-500 max-w-xs">
-              Fast, clean, and directed websites — built for home-service
-              businesses that can&apos;t afford to lose a call.
+              Fast, clean, and directed websites — built & dedicated for
+              home-service businesses that can&apos;t afford to lose a call.
             </p>
           </div>
 
@@ -81,7 +81,7 @@ const Footer = () => {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="hover:text-white transition-colors"
+                      className="hover:text-white hover:underline transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -97,32 +97,32 @@ const Footer = () => {
               Get in Touch
             </h4>
             <div className="flex flex-col gap-2">
-              <a
+              <Link
                 href="https://wa.me/6285235086814"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 border border-zinc-800 hover:border-zinc-700 bg-zinc-900/50 px-3.5 py-2 text-sm text-zinc-200 transition-colors"
               >
                 WhatsApp
-              </a>
-              <a
+              </Link>
+              <Link
                 href="mailto:lumentify@gmail.com"
                 className="flex items-center gap-2 border border-zinc-800 hover:border-zinc-700 bg-zinc-900/50 px-3.5 py-2 text-sm text-zinc-200 transition-colors"
               >
                 Email
-              </a>
+              </Link>
             </div>
           </div>
         </div>
 
         {/* Giant wordmark */}
         <div className="mt-20 -mx-4 select-none overflow-hidden">
-          <p
-            className="font-black text-white text-center leading-none tracking-tighter"
+          <h1
+            className="font-black bg-linear-to-r from-gray-100 via-white to-gray-200 text-transparent text-center leading-none tracking-tighter bg-clip-text"
             style={{ fontSize: "clamp(3.5rem, 14vw, 11rem)" }}
           >
             LUMENTIFY
-          </p>
+          </h1>
         </div>
 
         {/* Bottom bar */}
@@ -137,7 +137,7 @@ const Footer = () => {
             Open for new projects
           </span>
 
-          <span>📍 East Java, Indonesia</span>
+          <span className="hidden md:block">📍 East Java, Indonesia</span>
 
           <div className="flex items-center gap-4">
             <Link
@@ -149,6 +149,7 @@ const Footer = () => {
             <Link href="/terms" className="hover:text-white transition-colors">
               Terms
             </Link>
+            <span className="block md:hidden">📍 East Java, Indonesia</span>
           </div>
         </div>
       </div>

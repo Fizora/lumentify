@@ -25,12 +25,12 @@ const Hero = () => {
   ];
 
   return (
-    <section className="py-20 mx-auto max-w-7xl px-3">
-      <div className="space-y-12">
+    <section className="">
+      <div className="space-y-12 py-20 mx-auto max-w-7xl px-3">
         {/* Headline */}
         <div className="space-y-4 py-20">
           <div className="">
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight text-black ">
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight text-black">
               Every Slow Page Is a Customer Calling Your Competitor Instead.
             </h1>
             <p className="max-w-3xl">
@@ -41,7 +41,7 @@ const Hero = () => {
           </div>
           <ButtonGrid>
             <PrimaryButtonLink
-              href="/project"
+              href="/auth/signup"
               children="Start Project"
               className="w-full text-base lg:w-max"
             />

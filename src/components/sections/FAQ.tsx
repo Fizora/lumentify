@@ -12,7 +12,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white border-b border-zinc-200" id="faq">
       <div className="mx-auto max-w-4xl px-3">
         {/* Section header */}
         <motion.div
@@ -26,11 +26,11 @@ const FAQ = () => {
             FAQ
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
-            Questions, answered
+            Your concerns, addressed
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Straight answers before you commit — no fine print you'll find out
-            about later.
+            Clear answers to the questions that matter before you engage us —
+            built to give you confidence, clarity, and peace of mind.
           </p>
         </motion.div>
 

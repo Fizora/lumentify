@@ -1,6 +1,6 @@
 {
-  "name": "lumentify",
-  "version": "0.1.0",
+  "name": "lumentify studio",
+  "version": "Beta 1.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

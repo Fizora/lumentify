@@ -10,7 +10,17 @@ import Link from "next/link";
 const CTA = () => {
   return (
     <section className="py-20 px-3">
-      <div className="mx-auto max-w-7xl text-center bg-linear-to-b from-zinc-800 to-zinc-950  text-white rounded-md p-10">
+      <div className=" mx-auto max-w-7xl text-center bg-linear-to-b from-zinc-800 to-zinc-950  text-white rounded-md pb-10 px-10">
+        <div
+          className="h-24 md:h-32 border-b border-zinc-900"
+          style={{
+            backgroundImage:
+              "radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px)",
+            backgroundSize: "16px 16px",
+            maskImage: "linear-gradient(to bottom, black, transparent)",
+            WebkitMaskImage: "linear-gradient(to bottom, black, transparent)",
+          }}
+        />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

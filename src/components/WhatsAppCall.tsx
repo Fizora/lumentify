@@ -1,4 +1,5 @@
 // components/WhatsAppCall.tsx
+import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
 const WhatsAppCall = () => {
@@ -47,15 +48,15 @@ Terima kasih, saya tunggu balasannya.
   const whatsappUrl = `https://wa.me/${phoneNumber}`;
 
   return (
-    <a
+    <Link
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       className="z-100 fixed bottom-2 right-2 md:bottom-4 md:right-4 xl:bottom-10 xl:right-10 p-4 bg-green-500 text-white rounded-full flex items-center gap-2 font-semibold hover:scale-105 transform transition duration-300 active:scale-95 shadow-lg"
     >
       <FaWhatsapp size={30} />
-      Contact Us
-    </a>
+      <span className="hidden md:block">Contact Us</span>
+    </Link>
   );
 };
 

@@ -176,7 +176,7 @@ export default function Support() {
                 <p className="text-base font-semibold text-black">
                   Prefer email?
                 </p>
-                <p className="text-base text-gray-600">hello@lumentify.com</p>
+                <p className="text-base text-gray-600">lumentify@gmail.com</p>
               </div>
             </div>
             <Link
