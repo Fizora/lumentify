@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { BiShare } from "react-icons/bi";
-import { LuInbox, LuMenu } from "react-icons/lu";
+import { LuBell, LuInbox, LuMenu } from "react-icons/lu";
 import { useSidebar } from "./DashboardLayout";
 
 const DashboardHeader = () => {
@@ -23,21 +23,21 @@ const DashboardHeader = () => {
       </button>
 
       <div className="flex items-center gap-2 sm:gap-4 text-base">
-        <Link
-          href="/dashboard-panel/inbox"
+        {/* <Link
+          href="/dashboard-panel/notification"
           aria-label="Inbox"
           className="flex items-center gap-2 p-3 rounded-full hover:bg-zinc-200 transition-colors duration-300"
         >
-          <LuInbox size={22} />
-        </Link>
+          <LuBell size={22} />
+        </Link> */}
 
-        <button
+        {/* <button
           type="button"
           className="flex items-center gap-2 bg-zinc-900 text-white rounded-md p-2 px-4 font-bold hover:bg-zinc-800 transition-colors duration-300"
         >
           <BiShare className="-scale-x-100" size={18} />
           <span className="hidden sm:inline">Share</span>
-        </button>
+        </button> */}
       </div>
     </header>
   );

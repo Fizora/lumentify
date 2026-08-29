@@ -12,6 +12,7 @@ type Plan = {
   features: string[];
   cta: string;
   href: string;
+  paymentLink: string;
   featured?: boolean;
 };
 
@@ -87,7 +88,7 @@ const PricingCardsGrid = ({
           <div className="mt-auto">
             {plan.featured ? (
               <PrimaryButtonLink
-                href={plan.href}
+                href={plan.paymentLink}
                 target="_blank"
                 className="w-full text-center flex items-center justify-center gap-2 px-8 py-3 text-sm font-semibold text-white"
               >
@@ -96,7 +97,7 @@ const PricingCardsGrid = ({
               </PrimaryButtonLink>
             ) : (
               <SecondaryButtonLink
-                href={plan.href}
+                href={plan.paymentLink}
                 target="_blank"
                 className="w-full text-center flex items-center justify-center gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 text-black transition-colors px-8 py-3 text-sm font-semibold"
               >

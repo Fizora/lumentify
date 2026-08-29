@@ -1,7 +1,6 @@
 import DashboardLayout from "@/components/DashboardLayout";
 import DashboardPageHeader from "@/components/DashboardPageHeader";
 import ActiveServicePanel from "@/components/ActiveServicePanel";
-import ServiceAnalytics from "@/components/ServiceAnalytics";
 import PricingCardsGrid from "@/components/pricing/PricingCardsGrid";
 import PricingComparisonTable from "@/components/pricing/PricingComparisonTable";
 import { buildPlans, mrrPlans } from "@/components/constant/data";

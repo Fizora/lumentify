@@ -7,6 +7,7 @@ type Plan = {
   features: string[];
   cta: string;
   href: string;
+  paymentLink: string;
   featured?: boolean;
 };
 
@@ -72,7 +73,7 @@ const PricingComparisonTable = ({
               <td key={i} className="text-center py-4 px-4 min-w-50">
                 {plan.featured ? (
                   <PrimaryButtonLink
-                    href={plan.href}
+                    href={plan.paymentLink}
                     target="_blank"
                     className="text-xs px-4 py-2"
                   >
@@ -80,7 +81,7 @@ const PricingComparisonTable = ({
                   </PrimaryButtonLink>
                 ) : (
                   <SecondaryButtonLink
-                    href={plan.href}
+                    href={plan.paymentLink}
                     target="_blank"
                     className="text-xs px-4 py-2"
                   >

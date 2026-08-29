@@ -9,6 +9,7 @@ import {
   LuBox,
   LuChevronDown,
   LuFolderOpen,
+  LuInbox,
   LuLayers,
   LuLogOut,
   LuMessageSquare,
@@ -22,10 +23,11 @@ import { useSidebar } from "./DashboardLayout";
 
 const navItems = [
   // { name: "Blog", href: "/dashboard-panel/blog", icon: LuText },
-  // { name: "Chat", href: "/dashboard-panel/chat", icon: LuMessageSquare },
-  { name: "Services", href: "/dashboard-panel/services", icon: LuLayers },
+  // { name: "Add-ons", href: "/dashboard-panel/services", icon: LuLayers },
+  { name: "Inbox", href: "/dashboard-panel/inbox", icon: LuInbox },
   { name: "Projects", href: "/dashboard-panel/projects", icon: LuBox },
   { name: "Invoices", href: "/dashboard-panel/invoices", icon: LuReceipt },
+  { name: "Quick Chat", href: "/dashboard-panel/chat", icon: LuMessageSquare },
   { name: "Documents", href: "/dashboard-panel/documents", icon: LuFolderOpen },
   // { name: "My Website", href: "/dashboard-panel/website", icon: LuAppWindow },
 ];

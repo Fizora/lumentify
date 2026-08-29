@@ -158,13 +158,19 @@ const InvoicesTable = () => {
                   key={inv.id}
                   className="border-b border-zinc-100 last:border-0"
                 >
-                  <td className="py-3 px-4 font-medium text-zinc-900">
+                  <td className="py-3 px-4 font-medium text-zinc-900 min-w-30">
                     {inv.id}
                   </td>
-                  <td className="py-3 px-4 text-zinc-600">{inv.description}</td>
-                  <td className="py-3 px-4 text-zinc-500">{inv.issueDate}</td>
-                  <td className="py-3 px-4 text-zinc-500">{inv.dueDate}</td>
-                  <td className="py-3 px-4 text-right font-semibold text-zinc-900">
+                  <td className="py-3 px-4 text-zinc-600 min-w-40">
+                    {inv.description}
+                  </td>
+                  <td className="py-3 px-4 text-zinc-500 min-w-30">
+                    {inv.issueDate}
+                  </td>
+                  <td className="py-3 px-4 text-zinc-500 min-w-30">
+                    {inv.dueDate}
+                  </td>
+                  <td className="py-3 px-4 text-right font-semibold min-w-40 text-zinc-900">
                     ${inv.amount.toLocaleString()}
                   </td>
                   <td className="py-3 px-4">

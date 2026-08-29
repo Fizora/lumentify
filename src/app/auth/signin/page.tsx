@@ -27,7 +27,7 @@ export default function SignInPage() {
         {/* Google Sign In */}
         <button
           onClick={() => console.log("Continue with Google")}
-          className="w-full flex items-center justify-center gap-2.5 bg-white border border-zinc-300 hover:border-zinc-400 text-zinc-700 font-medium py-2.5 px-4 shadow-sm hover:shadow transition-all duration-200 text-sm rounded-md"
+          className="w-full flex items-center justify-center gap-2.5 bg-white border border-zinc-300 hover:border-zinc-400 text-zinc-700 font-medium py-2.5 px-4 shadow-sm hover:shadow transform active:scale-95 transition-all duration-200 text-sm rounded-md"
         >
           <FcGoogle className="w-4 h-4" />
           Continue with Google

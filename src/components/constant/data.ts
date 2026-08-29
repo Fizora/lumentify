@@ -222,7 +222,7 @@ export const buildPlans: PricingPlan[] = [
     ],
     cta: "Start My Site",
     href: "/auth/signup",
-    paymentLink: "",
+    paymentLink: "/dashboard-panel/services/payment",
     featured: false,
   },
   {
@@ -244,7 +244,7 @@ export const buildPlans: PricingPlan[] = [
     ],
     cta: "Get More Calls",
     href: "/auth/signup",
-    paymentLink: "",
+    paymentLink: "/dashboard-panel/services/payment",
     featured: true,
   },
   {
@@ -267,7 +267,7 @@ export const buildPlans: PricingPlan[] = [
     ],
     cta: "Scope My Project",
     href: "/auth/signup",
-    paymentLink: "",
+    paymentLink: "/dashboard-panel/services/payment",
     featured: false,
   },
 ];
@@ -289,7 +289,7 @@ export const mrrPlans: PricingPlan[] = [
     ],
     cta: "Subscribe",
     href: "/auth/signup",
-    paymentLink: "",
+    paymentLink: "/dashboard-panel/services/payment",
     featured: false,
   },
   {
@@ -309,7 +309,7 @@ export const mrrPlans: PricingPlan[] = [
     ],
     cta: "Get Started",
     href: "/auth/signup",
-    paymentLink: "/auth/signup",
+    paymentLink: "/dashboard-panel/services/payment",
     featured: false,
   },
   {
@@ -329,7 +329,7 @@ export const mrrPlans: PricingPlan[] = [
     ],
     cta: "Contact Sales",
     href: "/auth/signup",
-    paymentLink: "",
+    paymentLink: "/dashboard-panel/services/payment",
     featured: false,
   },
 ];

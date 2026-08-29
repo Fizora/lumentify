@@ -11,7 +11,7 @@ export default function ChatDashboard() {
   return (
     <DashboardLayout>
       <DashboardPageHeader
-        title="Chat"
+        title="Quick Chat"
         description="Komunikasi langsung dengan tim Lumentify — tanpa perlu email atau WhatsApp."
       />
       <ChatPanel />
