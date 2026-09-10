@@ -100,7 +100,6 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                     {plan.featured ? (
                       <PrimaryButtonLink
                         href={plan.href}
-                        target="_blank"
                         className="w-full text-center flex items-center justify-center gap-2 px-8 py-3 text-sm font-semibold text-white"
                       >
                         {plan.cta}
@@ -109,7 +108,6 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                     ) : (
                       <SecondaryButtonLink
                         href={plan.href}
-                        target="_blank"
                         className="w-full text-center flex items-center justify-center gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 text-black transition-colors px-8 py-3 text-sm font-semibold"
                       >
                         {plan.cta}

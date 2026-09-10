@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
-import {
-  Merriweather,
-  Poppins,
-  Space_Grotesk,
-  Voltaire,
-  Young_Serif,
-} from "next/font/google";
+import { Poppins, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import BlockComponentsDevelopers from "@/components/BlockComponentsDevelopers";
+import LenisProvider from "@/components/LenisProvider";
 
 const geistSans = Space_Grotesk({
   variable: "--font-sans",
@@ -36,8 +31,10 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scrollbar-thin`}
     >
       <body className="min-h-full flex flex-col text-base md:text-md lg:text-lg">
-        {children}
-        {/* <BlockComponentsDevelopers /> */}
+        <LenisProvider>
+          {children}
+          {/* <BlockComponentsDevelopers /> */}
+        </LenisProvider>
       </body>
     </html>
   );

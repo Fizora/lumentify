@@ -27,7 +27,7 @@ const navItems: NavItem[] = [
         items: [
           { name: "Support", href: "/support" },
           { name: "Help Center", href: "/support/help-center" },
-          { name: "Warranty", href: "/warranty" },
+          { name: "Warranty", href: "/support/warranty" },
         ],
       },
       {

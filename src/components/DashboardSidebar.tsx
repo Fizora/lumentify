@@ -78,14 +78,14 @@ const DashboardSidebar = () => {
     <>
       {isMobileOpen && (
         <div
-          className="fixed inset-0 bg-black/40 z-40 md:hidden"
+          className="fixed bg-black/40 z-40 md:hidden"
           onClick={closeMobile}
           aria-hidden="true"
         />
       )}
 
       <aside
-        className={`fixed top-0 left-0 h-screen w-60 bg-zinc-900 text-white pb-4 flex flex-col justify-between gap-3 border-r-2 border-zinc-700 z-50 transition-all duration-300
+        className={`fixed top-0 left-0 h-full inset-0 w-60 bg-zinc-900 text-white pb-4 px-3 flex flex-col justify-between gap-3 border-r-2 border-zinc-700 z-50 transition-all duration-300
         ${isCollapsed ? "md:w-20" : "md:w-60"}
         ${isMobileOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}
       >
@@ -116,7 +116,7 @@ const DashboardSidebar = () => {
                   onClick={closeMobile}
                   title={name}
                   aria-current={isActive ? "page" : undefined}
-                  className={`flex items-center gap-2 pl-4 pr-8 py-2 rounded-md transition-colors duration-300 ${
+                  className={`flex items-center gap-2 p-4 pr-8 py-1.5 rounded-md transition-colors duration-300 text-base ${
                     isActive ? "bg-zinc-800" : "hover:bg-zinc-800"
                   } ${isCollapsed ? "md:justify-center md:pr-4" : ""}`}
                 >

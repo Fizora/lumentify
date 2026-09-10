@@ -107,7 +107,7 @@ const SettingsPanel = () => {
   return (
     <div className="max-w-2xl flex flex-col gap-6">
       {/* Password */}
-      <div className="border border-zinc-200 rounded-lg p-6">
+      <div className="border border-zinc-300 rounded-lg p-6">
         <h2 className="font-bold text-zinc-900 mb-1">Password</h2>
         <p className="text-sm text-zinc-500 mb-5">
           Update the password used to log in.
@@ -122,7 +122,7 @@ const SettingsPanel = () => {
               type="password"
               value={currentPassword}
               onChange={(e) => setCurrentPassword(e.target.value)}
-              className="w-full border border-zinc-200 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-zinc-300"
+              className="w-full border border-zinc-200 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-zinc-900"
             />
           </div>
           <div>
@@ -133,7 +133,7 @@ const SettingsPanel = () => {
               type="password"
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
-              className="w-full border border-zinc-200 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-zinc-300"
+              className="w-full border border-zinc-200 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-zinc-900"
             />
           </div>
           <div>
@@ -144,7 +144,7 @@ const SettingsPanel = () => {
               type="password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="w-full border border-zinc-200 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-zinc-300"
+              className="w-full border border-zinc-200 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-zinc-900"
             />
           </div>
         </div>
@@ -173,7 +173,7 @@ const SettingsPanel = () => {
       </div>
 
       {/* Notifications */}
-      <div className="border border-zinc-200 rounded-lg p-6">
+      <div className="border border-zinc-300 rounded-lg p-6">
         <h2 className="font-bold text-zinc-900 mb-1">Notifications</h2>
         <p className="text-sm text-zinc-500 mb-5">
           Choose which email notifications you'd like to receive.
@@ -199,7 +199,7 @@ const SettingsPanel = () => {
       </div>
 
       {/* Danger zone */}
-      <div className="border border-red-200 rounded-lg p-6">
+      <div className="border border-red-300 rounded-lg p-6">
         <h2 className="font-bold text-red-600 mb-1">Danger Zone</h2>
         <p className="text-sm text-zinc-500 mb-5">
           Deleting your account removes access to your dashboard, invoices, and

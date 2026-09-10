@@ -38,8 +38,8 @@ const statusMeta: Record<
   { icon: typeof LuCheck; className: string }
 > = {
   Submitted: { icon: LuCircleDashed, className: "bg-zinc-100 text-zinc-500" },
-  "In Progress": { icon: LuClock, className: "bg-amber-50 text-amber-600" },
-  Done: { icon: LuCheck, className: "bg-emerald-50 text-emerald-600" },
+  "In Progress": { icon: LuClock, className: "bg-amber-600 text-white" },
+  Done: { icon: LuCheck, className: "bg-emerald-600 text-white" },
 };
 
 const ChangeRequestPanel = () => {
@@ -131,14 +131,14 @@ const ChangeRequestPanel = () => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="What would you like changed?"
-            className="border border-zinc-200 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-zinc-300"
+            className="border border-zinc-200 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-zinc-800"
           />
           <textarea
             value={detail}
             onChange={(e) => setDetail(e.target.value)}
             placeholder="Add any details that help us understand the request (optional)"
             rows={3}
-            className="border border-zinc-200 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-zinc-300 resize-none"
+            className="border border-zinc-200 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-zinc-800 resize-none"
           />
           <div className="flex justify-end gap-2">
             <button

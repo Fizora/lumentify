@@ -91,7 +91,7 @@ const ShowcaseCard = ({ item }: { item: ShowcaseItem }) => {
       </span>
 
       <div className="p-2">
-        <h3 className="text-center text-sm font-black text-black p-2 border border-zinc-200">
+        <h3 className="text-center text-sm text-black p-2 border border-zinc-200">
           {item.name}
         </h3>
       </div>

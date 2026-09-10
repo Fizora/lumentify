@@ -17,9 +17,9 @@ export default function Home() {
         <Hero />
         <Features />
         <Pricing showMRR={false} showOneTime={true} />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <FAQ />
-        <Contact />
+        {/* <Contact /> */}
         <CTA />
       </main>
       <Footer />

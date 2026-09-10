@@ -11,9 +11,9 @@ export default function DashboardPanel() {
   return (
     <DashboardLayout>
       <div className="border border-zinc-200 rounded-lg h-full w-full overflow-hidden p-5">
-        <div className="border border-zinc-200 rounded-lg p-2 min-h-52 md:text-center flex flex-col justify-center">
+        <div className="border border-zinc-200 rounded-lg p-2 min-h-52 md:text-center flex flex-col justify-center mb-10">
           <h2 className="text-4xl font-bold text-black">
-            Maintance Your Website
+            Maintain Your Website
           </h2>
           <p className="">
             take care your website with pay monthly and never worry about your
