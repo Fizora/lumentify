@@ -32,7 +32,7 @@ const stages = [
   {
     icon: LuCircleCheck,
     title: "QA & Review",
-    body: "We test across devices and browsers, then walk you through the finished site before it goes live.",
+    body: "We test across devices and browsers, then walk you through the fini`shed site before it goes live.",
   },
   {
     icon: LuRocket,
