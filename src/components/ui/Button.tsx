@@ -71,7 +71,7 @@ export const PrimaryButtonLink = ({
   return (
     <Link
       href={href}
-      className={`${className} rounded-md px-6 py-1.5 font-semibold bg-zinc-900 hover:bg-zinc-800 hover:border-zinc-800 transition duration-300 text-white border border-zinc-900 hover:shadow-xl text-center transform active:scale-95`}
+      className={`${className} rounded-full px-6 py-1.5 font-semibold bg-zinc-900 hover:bg-zinc-800 hover:border-zinc-800 transition duration-300 text-white border border-zinc-600 hover:shadow-xl text-center transform active:scale-95`}
       target={target}
     >
       {children}
@@ -88,7 +88,7 @@ export const SecondaryButtonLink = ({
   return (
     <Link
       href={href}
-      className={`${className} rounded-md px-6 py-1.5 font-semibold bg-gray-50 hover:bg-gray-200 transition duration-300 text-black border border-gray-300 text-center `}
+      className={`${className} rounded-full px-6 py-1.5 font-semibold bg-gray-50 hover:bg-gray-200 transition duration-300 text-black border border-gray-300 text-center `}
       target={target}
     >
       {children}

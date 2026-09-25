@@ -12,7 +12,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-24 bg-white border-b border-zinc-200" id="faq">
+    <section className="py-24 bg-white" id="faq">
       <div className="mx-auto max-w-4xl px-3">
         {/* Section header */}
         <motion.div

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Poppins, Space_Grotesk } from "next/font/google";
+import { Bricolage_Grotesque, Poppins, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import BlockComponentsDevelopers from "@/components/BlockComponentsDevelopers";
 import LenisProvider from "@/components/LenisProvider";
 
-const geistSans = Space_Grotesk({
+const geistSans = Bricolage_Grotesque({
   variable: "--font-sans",
   subsets: ["latin"],
   weight: "400",

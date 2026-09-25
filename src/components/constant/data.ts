@@ -9,6 +9,11 @@ import {
   LuPenTool,
   LuLifeBuoy,
   LuHammer,
+  LuInbox,
+  LuBox,
+  LuReceipt,
+  LuMessageSquare,
+  LuFolderOpen,
 } from "react-icons/lu";
 
 // FAQ
@@ -419,4 +424,16 @@ export const promoOffers: PromoOffer[] = [
     duration: 2,
     durationUnit: "weeks",
   },
+];
+
+// Sidebar
+export const sidebarNavItems = [
+  // { name: "Blog", href: "/dashboard-panel/blog", icon: LuText },
+  // { name: "Add-ons", href: "/dashboard-panel/services", icon: LuLayers },
+  { name: "Inbox", href: "/dashboard-panel/inbox", icon: LuInbox },
+  { name: "Projects", href: "/dashboard-panel/projects", icon: LuBox },
+  // { name: "Invoices", href: "/dashboard-panel/invoices", icon: LuReceipt },
+  // { name: "Quick Chat", href: "/dashboard-panel/chat", icon: LuMessageSquare },
+  // { name: "Documents", href: "/dashboard-panel/documents", icon: LuFolderOpen },
+  // { name: "My Website", href: "/dashboard-panel/website", icon: LuAppWindow },
 ];

@@ -27,7 +27,7 @@ export default function About() {
           </div>
 
           {/* Body — blog-style, justified paragraphs */}
-          <article className="space-y-6 text-gray-700 leading-relaxed text-[15px] md:text-base [&>p]:text-justify">
+          <article className="space-y-6 text-gray-700 leading-relaxed text-[15px] md:text-base">
             <p>
               Lumentify is a small, independent studio that chose to build only
               for one kind of business: home-service trades. We focus on

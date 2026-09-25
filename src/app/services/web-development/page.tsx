@@ -56,7 +56,7 @@ const process = [
   [
     "4",
     "Launch",
-    "Final review, domain connection, and go-live — backed by your warranty window.",
+    "Final review, domain connection, and go-live — full ownership handover.",
   ],
 ];
 

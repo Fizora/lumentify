@@ -15,6 +15,9 @@ type NavDropdown = {
 };
 type NavItem = NavLink | NavDropdown;
 
+// Saklar tunggal untuk nonaktifkan "Services" — set true lagi kapan pun untuk mengaktifkan
+const SERVICES_ENABLED = false;
+
 const navItems: NavItem[] = [
   { name: "Pricing", href: "/pricing" },
   { name: "Showcase", href: "/showcase" },
@@ -52,6 +55,11 @@ const navItems: NavItem[] = [
   // { name: "Blog", href: "/blog" },
 ];
 
+// Dipakai untuk render (desktop bar & mobile menu) — Services otomatis hilang saat dinonaktifkan
+const visibleNavItems = navItems.filter(
+  (item) => SERVICES_ENABLED || item.name !== "Services",
+);
+
 const CTA_HREF = "/auth/signup"; // single source of truth — was WA link on mobile, /auth/signup on desktop
 
 const Navbar = () => {
@@ -82,17 +90,20 @@ const Navbar = () => {
     setIsServicesOpen(false);
   };
 
-  const servicesItem = navItems.find(
-    (item): item is NavDropdown => item.type === "dropdown",
-  );
+  const servicesItem = SERVICES_ENABLED
+    ? navItems.find((item): item is NavDropdown => item.type === "dropdown")
+    : undefined;
 
   return (
-    <header ref={headerRef} className="w-full fixed top-0 left-0 bg-white z-50">
+    <header
+      ref={headerRef}
+      className="w-full fixed top-0 left-0 z-50  backdrop-blur-xl bg-white/30 "
+    >
       <div className="mx-auto max-w-7xl px-3 py-3 flex items-center justify-between">
         {/* Logo */}
-        <h1 className="text-black group">
+        <h1 className="group p-2 rounded-full text-black">
           <Link href="/" className="text-xl font-black flex items-center gap-2">
-            <div className="bg-white group-hover:scale-105 border border-zinc-200 group-hover:shadow-xl group-hover:shadow-zinc-300 transition duration-300 p-2 rounded shadow-lg">
+            <div className="bg-white group-hover:scale-105 border border-zinc-200  transition duration-300 p-2 rounded-full">
               <Image
                 src="/logo.svg"
                 alt="Lumentify logo"
@@ -107,14 +118,14 @@ const Navbar = () => {
         </h1>
 
         {/* Desktop navigation */}
-        <nav className="hidden md:flex items-center gap-6">
-          {navItems.map((item, index) => {
+        <nav className="hidden md:flex items-center gap-4 ">
+          {visibleNavItems.map((item, index) => {
             if (item.type !== "dropdown") {
               return (
                 <Link
                   key={index}
                   href={item.href}
-                  className="hover:text-zinc-900 hover:underline transition-colors duration-300 text-base"
+                  className="text-black hover:underline transition-colors duration-300 text-base px-2"
                 >
                   {item.name}
                 </Link>
@@ -129,7 +140,7 @@ const Navbar = () => {
                 onMouseLeave={() => setIsServicesOpen(false)}
               >
                 <button
-                  className="flex items-center gap-1 hover:text-zinc-900 transition-colors duration-300 text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-300 rounded px-1"
+                  className="flex items-center gap-1 text-white hover:text-zinc-100 hover:underline transition-colors duration-300 text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-300 rounded px-1"
                   aria-expanded={isServicesOpen}
                   onClick={() => setIsServicesOpen((v) => !v)}
                 >
@@ -146,7 +157,10 @@ const Navbar = () => {
             );
           })}
 
-          <PrimaryButtonLink href={CTA_HREF} className="text-base font-medium">
+          <PrimaryButtonLink
+            href={CTA_HREF}
+            className="text-base font-medium rounded-full"
+          >
             Start Project
           </PrimaryButtonLink>
         </nav>
@@ -154,29 +168,29 @@ const Navbar = () => {
         {/* Hamburger button (mobile) */}
         <button
           onClick={toggleMenu}
-          className="md:hidden relative z-50 flex flex-col gap-1 p-2"
+          className="md:hidden bg-black/30 backdrop-blur-xl rounded-full relative z-50 flex flex-col gap-1 px-4 py-5"
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
         >
           <motion.span
-            className="block h-0.5 w-4 bg-gray-500"
+            className="block h-0.5 w-6 bg-white"
             animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.2 }}
           />
           <motion.span
-            className="block h-0.5 w-4 bg-gray-500"
+            className="block h-0.5 w-6 bg-white"
             animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
             transition={{ duration: 0.2 }}
           />
           <motion.span
-            className="block h-0.5 w-4 bg-gray-500"
+            className="block h-0.5 w-6 bg-white"
             animate={isOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.2 }}
           />
         </button>
       </div>
 
-      {/* Desktop dropdown — single AnimatePresence, no redundant wrapper */}
+      {/* Desktop dropdown — otomatis tidak pernah render saat SERVICES_ENABLED = false */}
       {servicesItem && (
         <div className="hidden md:block">
           <AnimatePresence>
@@ -186,16 +200,16 @@ const Navbar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
-                className="absolute left-0 right-0 bg-white border-b border-zinc-200 z-40"
+                className="absolute left-0 right-0 z-40"
                 style={{ top: headerHeight }}
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
               >
-                <div className="max-w-7xl mx-auto px-6 py-7">
+                <div className="max-w-7xl bg-black/30 backdrop-blur-xl rounded-lg mx-auto px-6 py-7">
                   <div className="grid grid-cols-3 gap-8">
                     {servicesItem.categories.map((category, catIdx) => (
                       <div key={catIdx} className="">
-                        <h4 className="text-xs font-semibold text-black uppercase tracking-wider mb-3 pb-2">
+                        <h4 className="text-xs font-semibold text-white uppercase tracking-wider mb-3 pb-2">
                           {category.title}
                         </h4>
                         <div className="flex flex-col gap-0.5">
@@ -204,7 +218,7 @@ const Navbar = () => {
                               key={childIdx}
                               href={child.href}
                               onClick={closeMenu}
-                              className="w-max text-sm text-zinc-600 hover:text-black hover:underline hover:bg-zinc-50 px-3 py-1.5 rounded transition-all duration-150 -mx-3"
+                              className="w-max text-sm text-zinc-200 hover:text-white hover:underline px-3 py-1.5 rounded transition-all duration-150 -mx-3"
                             >
                               {child.name}
                             </Link>
@@ -230,7 +244,7 @@ const Navbar = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="md:hidden fixed inset-0 top-full bg-black/20 z-40"
+              className="md:hidden fixed inset-0 top-0 z-40"
               onClick={closeMenu}
             />
             <motion.nav
@@ -239,17 +253,17 @@ const Navbar = () => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden absolute mb-2 top-full left-0 w-full bg-white overflow-hidden pb-8 border-b border-zinc-200 z-40"
+              className="md:hidden absolute mb-2 top-full left-0 w-full bg-black/20 backdrop-blur-xl overflow-hidden pb-8 border-b border-zinc-200 z-40"
             >
               <div className="flex flex-col gap-2 px-4 py-4">
-                {navItems.map((item, index) => {
+                {visibleNavItems.map((item, index) => {
                   if (item.type !== "dropdown") {
                     return (
                       <Link
                         key={index}
                         href={item.href}
                         onClick={closeMenu}
-                        className="block py-2 hover:text-zinc-900 transition-colors"
+                        className="block py-2 text-white transition-colors"
                       >
                         {item.name}
                       </Link>
@@ -260,7 +274,7 @@ const Navbar = () => {
                     <div key={index} className="py-2">
                       <button
                         onClick={() => setIsServicesOpen(!isServicesOpen)}
-                        className="flex items-center justify-between w-full text-left hover:text-zinc-900 transition-colors"
+                        className="flex items-center justify-between w-full text-left text-white transition-colors"
                         aria-expanded={isServicesOpen}
                       >
                         <span>{item.name}</span>
@@ -283,7 +297,7 @@ const Navbar = () => {
                           >
                             {item.categories.map((category, catIdx) => (
                               <div key={catIdx}>
-                                <h4 className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-1">
+                                <h4 className="text-xs font-semibold text-white uppercase tracking-wider mb-1">
                                   {category.title}
                                 </h4>
                                 {category.items.map((child, childIdx) => (
@@ -291,7 +305,7 @@ const Navbar = () => {
                                     key={childIdx}
                                     href={child.href}
                                     onClick={closeMenu}
-                                    className="block py-1.5 text-sm hover:text-zinc-900 transition-colors pl-2"
+                                    className="block py-1.5 text-sm text-zinc-100 transition-colors pl-2"
                                   >
                                     {child.name}
                                   </Link>

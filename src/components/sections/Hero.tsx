@@ -58,11 +58,11 @@ const Hero = () => {
         <div className="relative min-h-250 rounded-xl overflow-hidden">
           {/* Background Image dengan Next.js Image */}
           <Image
-            src="/hero-image.webp"
-            alt="Hero background showing a modern website preview"
+            src="/img/hero-image.webp"
+            alt="Hero background"
             fill
             priority
-            quality={50}
+            quality={80}
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px "
           />

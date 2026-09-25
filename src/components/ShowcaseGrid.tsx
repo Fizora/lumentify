@@ -114,7 +114,7 @@ const ShowcaseCard = ({ item }: { item: ShowcaseItem }) => {
         href={item.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-4 rounded-md p-2 bg-black text-white flex items-center gap-2 justify-center shadow-lg hover:bg-zinc-800 mb-4"
+        className="mt-4 rounded-full p-2 bg-black text-white flex items-center gap-2 justify-center shadow-lg hover:bg-zinc-800 mb-4"
       >
         <LuGlobe className="w-4 h-4" />
         Visit Site

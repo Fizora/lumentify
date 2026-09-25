@@ -26,7 +26,7 @@ export default function SignUpPage() {
 
   return (
     <main className="min-h-screen flex items-center justify-center bg-zinc-50 px-4 py-8">
-      <div className="w-full max-w-sm bg-white border border-zinc-300 p-6 rounded-md">
+      <div className="w-full max-w-sm bg-whitep-6">
         <div className="text-center space-y-1 mb-6">
           <h1 className="text-2xl font-bold text-black">Create Account</h1>
           <p className="text-zinc-500 text-sm">
@@ -37,7 +37,7 @@ export default function SignUpPage() {
         {/* Google Sign Up */}
         <button
           onClick={() => console.log("Continue with Google")}
-          className="w-full flex items-center justify-center gap-2.5 bg-white border border-zinc-300 hover:border-zinc-400 text-zinc-700 font-medium py-2.5 px-4 shadow-sm hover:shadow transform active:scale-95 transition-all duration-200 text-sm rounded-md"
+          className="w-full flex items-center justify-center gap-2.5 bg-white border border-zinc-300 hover:border-zinc-400 text-zinc-700 font-medium py-2.5 px-4 shadow-sm hover:shadow transform active:scale-95 transition-all duration-200 text-sm rounded-full"
         >
           <FcGoogle className="w-4 h-4" />
           Continue with Google
@@ -70,7 +70,7 @@ export default function SignUpPage() {
                 onChange={(e) => setName(e.target.value)}
                 placeholder="John Doe"
                 required
-                className="w-full pl-9 pr-3 py-2 text-sm border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition rounded-md"
+                className="w-full pl-9 pr-3 py-2 text-sm border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition rounded-full"
               />
             </div>
           </div>
@@ -91,7 +91,7 @@ export default function SignUpPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
                 required
-                className="w-full pl-9 pr-3 py-2 text-sm border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition rounded-md"
+                className="w-full pl-9 pr-3 py-2 text-sm border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition rounded-full"
               />
             </div>
           </div>
@@ -113,7 +113,7 @@ export default function SignUpPage() {
                 placeholder="••••••••"
                 required
                 minLength={8}
-                className="w-full pl-9 pr-9 py-2 text-sm border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition rounded-md"
+                className="w-full pl-9 pr-9 py-2 text-sm border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition rounded-full"
               />
               <button
                 type="button"
@@ -134,7 +134,7 @@ export default function SignUpPage() {
 
           <PrimaryButton
             type="submit"
-            className="w-full flex items-center justify-center gap-2 text-sm py-2.5 rounded-md"
+            className="w-full flex items-center justify-center gap-2 text-sm py-2.5 rounded-full"
           >
             Create Account
             <LuArrowRight className="w-3.5 h-3.5" />
