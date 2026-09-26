@@ -27,7 +27,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
 
-  const value: SidebarContextType = {
+  const value: SidebarContextType = { 
     isMobileOpen,
     isCollapsed,
     toggleMobile: () => setIsMobileOpen((v) => !v),

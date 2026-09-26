@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import DashboardLayout from "@/components/DashboardLayout";
 import DashboardPageHeader from "@/components/DashboardPageHeader";
 import { LuCalendar, LuArrowRight, LuNewspaper } from "react-icons/lu";
 import Link from "next/link";

@@ -52,7 +52,7 @@ const Footer = () => {
               href="/"
               className="text-xl font-black text-black flex items-center gap-2"
             >
-              <div className="bg-white group-hover:transform group-hover:scale-105 group-hover:shadow-zinc-400 transition duration-300 p-2 rounded shadow-lg">
+              <div className="bg-white group-hover:transform group-hover:scale-105 group-hover:shadow-zinc-400 transition duration-300 p-2 rounded-full border border-zinc-200 shadow-lg">
                 <Image
                   src={"/logo.svg"}
                   alt="Lumentify Logo"
