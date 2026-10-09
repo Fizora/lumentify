@@ -12,8 +12,8 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-24 bg-white" id="faq">
-      <div className="mx-auto max-w-4xl px-3">
+    <section className="bg-white border-b" id="faq">
+      <div className="mx-auto max-w-7xl py-24 px-3 border-x">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,7 +35,7 @@ const FAQ = () => {
         </motion.div>
 
         {/* FAQ list */}
-        <div className="space-y-3">
+        <div className="space-y-3  mx-auto max-w-4xl">
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
             return (

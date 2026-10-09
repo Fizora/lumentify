@@ -10,7 +10,7 @@ import Link from "next/link";
 const CTA = () => {
   return (
     <section className="py-20">
-      <div className=" mx-auto max-w-7xl text-center bg-linear-to-b from-zinc-800 to-zinc-950  text-white rounded-md pb-10 px-10">
+      <div className=" mx-auto container text-center bg-linear-to-b from-zinc-800 to-zinc-950  text-white rounded-md pb-10 px-10">
         <div
           className="h-24 md:h-32 border-b border-zinc-900"
           style={{
@@ -36,7 +36,7 @@ const CTA = () => {
           </p>
           <Link
             href={"mailto:lumentify@gmail.com"}
-            className="px-8 py-2 font-semibold transform active:scale-90 transition duration-300 bg-white rounded-full text-black"
+            className="px-8 py-2 font-semibold transform active:scale-90 transition duration-300 bg-white rounded-md border-2 border-zinc-400 text-black"
           >
             Start Project
           </Link>

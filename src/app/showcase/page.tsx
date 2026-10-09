@@ -11,8 +11,8 @@ export default function Showcase() {
   return (
     <>
       <Navbar />
-      <main className="pt-32 pb-24">
-        <div className="mx-auto max-w-7xl px-3">
+      <main className="">
+        <div className="mx-auto max-w-7xl py-32 px-3 border-x">
           {/* Section header */}
           <div className="text-center space-y-5 mb-16 max-w-2xl mx-auto">
             {/* <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">

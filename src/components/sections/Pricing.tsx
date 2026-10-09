@@ -23,8 +23,8 @@ interface PricingProps {
 
 const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
   return (
-    <section className="py-24 bg-white" id="pricing">
-      <div className="mx-auto max-w-7xl px-3">
+    <section className=" bg-white border-b" id="pricing">
+      <div className="mx-auto max-w-7xl py-24 px-3 border-x">
         {/* SECTION 1: BUILD YOUR SITE */}
         {showOneTime && (
           <>
@@ -49,7 +49,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch mb-6"
+              className="grid grid-cols-1 lg:grid-cols-3 gap-3 items-stretch mb-6"
             >
               {buildPlans.map((plan, index) => (
                 <motion.div
@@ -75,7 +75,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                     </p>
                   </div>
                   <div className="mb-8">
-                    <span className="text-4xl font-bold text-black">
+                    <span className="text-4xl font-bold text-black font-mono">
                       {plan.price}
                     </span>
                     <span className="text-gray-500 ml-2 text-sm">

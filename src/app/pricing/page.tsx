@@ -114,8 +114,8 @@ export default function PricingPage() {
   return (
     <>
       <Navbar />
-      <main className="py-24 bg-white">
-        <div className="mx-auto max-w-7xl px-3">
+      <main className="bg-white">
+        <div className="mx-auto max-w-7xl py-24 px-3 border-x">
           {/* Toggle view */}
           <div className="flex justify-end mb-8">
             <div className="inline-flex" role="group">
@@ -248,7 +248,7 @@ export default function PricingPage() {
           )}
 
           {/* SECTION 2: KEEP IT RUNNING */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -351,7 +351,7 @@ export default function PricingPage() {
             <div className="mb-12">
               <ComparisonTable plans={mrrPlans} title="Features" />
             </div>
-          )}
+          )} */}
 
           {/* Capacity notice */}
           <motion.div

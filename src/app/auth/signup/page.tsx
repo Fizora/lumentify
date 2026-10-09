@@ -37,7 +37,7 @@ export default function SignUpPage() {
         {/* Google Sign Up */}
         <button
           onClick={() => console.log("Continue with Google")}
-          className="w-full flex items-center justify-center gap-2.5 bg-white border border-zinc-300 hover:border-zinc-400 text-zinc-700 font-medium py-2.5 px-4 shadow-sm hover:shadow transform active:scale-95 transition-all duration-200 text-sm rounded-full"
+          className="w-full flex items-center justify-center gap-2.5 bg-white border border-zinc-300 hover:border-zinc-400 text-zinc-700 font-medium py-2.5 px-4 shadow-sm hover:shadow transform active:scale-95 transition-all duration-200 text-sm rounded-md"
         >
           <FcGoogle className="w-4 h-4" />
           Continue with Google
@@ -70,7 +70,7 @@ export default function SignUpPage() {
                 onChange={(e) => setName(e.target.value)}
                 placeholder="John Doe"
                 required
-                className="w-full pl-9 pr-3 py-2 text-sm border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition rounded-full"
+                className="w-full pl-9 pr-3 py-2 text-sm border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition rounded-md"
               />
             </div>
           </div>
@@ -91,7 +91,7 @@ export default function SignUpPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
                 required
-                className="w-full pl-9 pr-3 py-2 text-sm border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition rounded-full"
+                className="w-full pl-9 pr-3 py-2 text-sm border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition rounded-md"
               />
             </div>
           </div>
@@ -113,7 +113,7 @@ export default function SignUpPage() {
                 placeholder="••••••••"
                 required
                 minLength={8}
-                className="w-full pl-9 pr-9 py-2 text-sm border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition rounded-full"
+                className="w-full pl-9 pr-9 py-2 text-sm border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition rounded-md"
               />
               <button
                 type="button"
@@ -134,7 +134,7 @@ export default function SignUpPage() {
 
           <PrimaryButton
             type="submit"
-            className="w-full flex items-center justify-center gap-2 text-sm py-2.5 rounded-full"
+            className="w-full flex items-center justify-center gap-2 text-sm py-2.5 rounded-md"
           >
             Create Account
             <LuArrowRight className="w-3.5 h-3.5" />

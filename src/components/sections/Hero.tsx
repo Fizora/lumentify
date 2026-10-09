@@ -26,14 +26,14 @@ const Hero = () => {
 
   return (
     <section className="">
-      <div className="space-y-12 py-20 mx-auto max-w-7xl px-3">
+      <div className="space-y-12 py-20 mx-auto max-w-7xl px-3 border-x">
         {/* Headline */}
         <div className="space-y-4 py-20">
-          <div className="">
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight text-black">
+          <div className="space-y-6">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl leading-tight font-bold text-bold">
               Every Slow Page Is a Customer Calling Your Competitor Instead.
             </h1>
-            <p className="max-w-3xl">
+            <p className="max-w-3xl text-zinc-600 text-lg">
               We build fast, clean, and directed websites for home‑service
               businesses (plumbing, electrical, HVAC, gardening, etc) so that
               call goes to you.
@@ -62,7 +62,6 @@ const Hero = () => {
             alt="Hero background"
             fill
             priority
-            quality={80}
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px "
           />
@@ -72,7 +71,7 @@ const Hero = () => {
 
           {/* Konten mini website di atas background */}
           <div className="absolute inset-0 flex items-center justify-center p-4 md:p-10 lg:p-20">
-            <div className="w-full max-w-7xl rounded-xl bg-white shadow-2xl overflow-hidden relative">
+            <div className="w-full container rounded-xl bg-white shadow-2xl overflow-hidden relative">
               {/* Browser chrome */}
               <div className="bg-gray-100 px-4 py-3 flex items-center gap-2 border-b border-gray-200">
                 <div className="flex gap-1.5">

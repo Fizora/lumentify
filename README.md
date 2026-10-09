@@ -34,3 +34,54 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+import type { Metadata } from "next";
+import {
+  Bricolage_Grotesque,
+  Poppins,
+  Space_Grotesk,
+  Geist,
+} from "next/font/google";
+import "./globals.css";
+import BlockComponentsDevelopers from "@/components/BlockComponentsDevelopers";
+import LenisProvider from "@/components/LenisProvider";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
+
+const geistMono = Poppins({
+  variable: "--font-mono",
+  weight: "400",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Lumentify - Creative Studio For Home Services Web Development",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html
+      lang="en"
+      className={cn(
+        "h-full",
+        "antialiased",
+        "scrollbar-thin",
+        geistMono.variable,
+        "font-sans",
+        geist.variable,
+      )}
+    >
+      <body className="min-h-full flex flex-col text-base">
+        <LenisProvider>
+          {children}
+          {/* <BlockComponentsDevelopers /> */}
+        </LenisProvider>
+      </body>
+    </html>
+  );
+}

@@ -1,40 +1,40 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Poppins, Space_Grotesk } from "next/font/google";
+import {
+  Bricolage_Grotesque,
+  Geist,
+  Geist_Mono,
+  Google_Sans,
+  Michroma,
+  Poppins,
+} from "next/font/google";
 import "./globals.css";
-import BlockComponentsDevelopers from "@/components/BlockComponentsDevelopers";
 import LenisProvider from "@/components/LenisProvider";
 
-const geistSans = Bricolage_Grotesque({
+const geistSans = Poppins({
   variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-  weight: "400",
 });
 
-const geistMono = Poppins({
+const geistMono = Geist({
   variable: "--font-mono",
   weight: "400",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Lumentify - Creative Studio For Home Services Web Development",
+  title: "Lumentify",
+  description: "- Creative Studio For Home Services Web Development",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scrollbar-thin`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scrollbar-thin `}
     >
-      <body className="min-h-full flex flex-col text-base md:text-md lg:text-lg">
-        <LenisProvider>
-          {children}
-          {/* <BlockComponentsDevelopers /> */}
-        </LenisProvider>
+      <body className="min-h-full flex flex-col">
+        <LenisProvider>{children}</LenisProvider>
       </body>
     </html>
   );

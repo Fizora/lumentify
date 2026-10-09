@@ -20,6 +20,8 @@ const SERVICES_ENABLED = false;
 
 const navItems: NavItem[] = [
   { name: "Pricing", href: "/pricing" },
+  { name: "About", href: "/about" },
+  { name: "Support", href: "/support" },
   { name: "Showcase", href: "/showcase" },
   {
     name: "Services",
@@ -51,7 +53,7 @@ const navItems: NavItem[] = [
       },
     ],
   },
-  { name: "About", href: "/about" },
+
   // { name: "Blog", href: "/blog" },
 ];
 
@@ -60,7 +62,7 @@ const visibleNavItems = navItems.filter(
   (item) => SERVICES_ENABLED || item.name !== "Services",
 );
 
-const CTA_HREF = "/auth/signup"; // single source of truth — was WA link on mobile, /auth/signup on desktop
+const CTA_HREF = "/auth/signin"; // single source of truth — was WA link on mobile, /auth/signup on desktop
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -97,18 +99,20 @@ const Navbar = () => {
   return (
     <header
       ref={headerRef}
-      className="w-full fixed top-0 left-0 z-50  backdrop-blur-xl bg-white/30 "
+      className="w-full fixed top-0 left-0 z-50 backdrop-blur-3xl bg-white border-b"
     >
-      <div className="mx-auto max-w-7xl px-3 py-3 flex items-center justify-between">
+      <div className="mx-auto max-w-7xl py-1.5 flex items-center justify-between ">
         {/* Logo */}
         <h1 className="group p-2 rounded-full text-black">
-          <Link href="/" className="text-xl font-black flex items-center gap-2">
-            <div className="bg-white group-hover:scale-105 border border-zinc-200  transition duration-300 p-2 rounded-full">
+          <Link
+            href="/"
+            className="text-xl font-black flex items-center gap-2 "
+          >
+            <div className="bg-white group-hover:scale-105 border border-zinc-200 transition duration-300 p-2 rounded-full">
               <Image
                 src="/logo.svg"
                 alt="Lumentify logo"
                 priority
-                quality={80}
                 height={20}
                 width={20}
               />
@@ -125,7 +129,7 @@ const Navbar = () => {
                 <Link
                   key={index}
                   href={item.href}
-                  className="text-black hover:underline transition-colors duration-300 text-base px-2"
+                  className="text-gray-700 hover:underline transition-colors duration-300 text-sm px-2"
                 >
                   {item.name}
                 </Link>
@@ -156,34 +160,41 @@ const Navbar = () => {
               </div>
             );
           })}
-
+        </nav>
+        <div className="">
+          <SecondaryButtonLink
+            href={CTA_HREF}
+            className="text-sm font-medium rounded-full mr-2"
+          >
+            Login
+          </SecondaryButtonLink>
           <PrimaryButtonLink
             href={CTA_HREF}
-            className="text-base font-medium rounded-full"
+            className="text-sm font-medium rounded-full"
           >
-            Start Project
+            Create Account
           </PrimaryButtonLink>
-        </nav>
+        </div>
 
         {/* Hamburger button (mobile) */}
         <button
           onClick={toggleMenu}
-          className="md:hidden bg-black/30 backdrop-blur-xl rounded-full relative z-50 flex flex-col gap-1 px-4 py-5"
+          className="md:hidden rounded-full relative z-50 flex flex-col gap-1 px-4 py-5"
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
         >
           <motion.span
-            className="block h-0.5 w-6 bg-white"
+            className="block h-0.5 w-6 bg-black"
             animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.2 }}
           />
           <motion.span
-            className="block h-0.5 w-6 bg-white"
+            className="block h-0.5 w-6 bg-black"
             animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
             transition={{ duration: 0.2 }}
           />
           <motion.span
-            className="block h-0.5 w-6 bg-white"
+            className="block h-0.5 w-6 bg-black"
             animate={isOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.2 }}
           />
@@ -205,7 +216,7 @@ const Navbar = () => {
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
               >
-                <div className="max-w-7xl bg-black/30 backdrop-blur-xl rounded-lg mx-auto px-6 py-7">
+                <div className="container bg-black/30 backdrop-blur-xl rounded-lg mx-auto px-6 py-7">
                   <div className="grid grid-cols-3 gap-8">
                     {servicesItem.categories.map((category, catIdx) => (
                       <div key={catIdx} className="">
@@ -253,7 +264,7 @@ const Navbar = () => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden absolute mb-2 top-full left-0 w-full bg-black/20 backdrop-blur-xl overflow-hidden pb-8 border-b border-zinc-200 z-40"
+              className="md:hidden absolute mb-2 top-full left-0 w-full bg-white overflow-hidden pb-8 border-b border-zinc-200 z-40"
             >
               <div className="flex flex-col gap-2 px-4 py-4">
                 {visibleNavItems.map((item, index) => {
@@ -263,7 +274,7 @@ const Navbar = () => {
                         key={index}
                         href={item.href}
                         onClick={closeMenu}
-                        className="block py-2 text-white transition-colors"
+                        className="block py-2 text-gray-700 transition-colors"
                       >
                         {item.name}
                       </Link>

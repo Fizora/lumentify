@@ -12,7 +12,6 @@ import {
   LuInbox,
   LuBox,
   LuReceipt,
-  LuMessageSquare,
   LuFolderOpen,
 } from "react-icons/lu";
 
@@ -130,45 +129,55 @@ export type ShowcaseItem = {
   desc: string;
   tags: string[];
   href: string;
+  type: string;
+  year: string;
   status: "Live Demo" | "In Progress" | "Production" | "Live";
 };
 
 export const showcaseList: ShowcaseItem[] = [
   {
-    img: "/clean-well.png",
+    img: "",
     icon: LuHammer,
-    name: "www.cleanwell.vercel.app",
+    name: "Clean Well",
     desc: "Fast cleaning-service demo built for calls, quote requests, and trust.",
     tags: ["Cleaning Service", "Demo Sandbox", "Essential"],
     href: "https://clean-well.vercel.app/?ref=lumentify.vercel.app",
-    status: "In Progress",
-  },
-  {
-    img: "/",
-    icon: LuHammer,
-    name: "www.pure-electrical.vercel.app",
-    desc: "Electrician demo with service and suburb pages for local enquiries.",
-    tags: ["Electrical", "Demo Sandbox", "Pro"],
-    href: "https://pure-electrical.vercel.app/?ref=lumentify.vercel.app",
-    status: "In Progress",
-  },
-  {
-    img: "/wellgarden.png",
-    icon: LuHammer,
-    name: "www.wellgarden.vercel.app",
-    desc: "Gardening demo built for mobile calls, work proof, and simple quotes.",
-    tags: ["Gardening", "Demo Sandbox", "Essential"],
-    href: "https://wellgarden.vercel.app/?ref=lumentify.vercel.app",
-    status: "In Progress",
+    status: "Live",
+    type: "Cleaning Services",
+    year: "2026",
   },
   {
     img: "",
     icon: LuHammer,
-    name: "www.air-core.vercel.app",
+    name: "Pure Electrical",
+    desc: "Electrician demo with service and suburb pages for local enquiries.",
+    tags: ["Electrical", "Demo Sandbox", "Pro"],
+    href: "https://pure-electrical.vercel.app/?ref=lumentify.vercel.app",
+    status: "Live",
+    type: "Electrician",
+    year: "2026",
+  },
+  {
+    img: "",
+    icon: LuHammer,
+    name: "Well Garden",
+    desc: "Gardening demo built for mobile calls, work proof, and simple quotes.",
+    tags: ["Gardening", "Demo Sandbox", "Essential"],
+    href: "https://wellgarden.vercel.app/?ref=lumentify.vercel.app",
+    status: "Live",
+    type: "Gardening",
+    year: "2026",
+  },
+  {
+    img: "",
+    icon: LuHammer,
+    name: "Air Core",
     desc: "Roofing demo with project proof and a tailored quote flow.",
     tags: ["Roofing", "Demo Sandbox", "Custom"],
     href: "https://air-core.vercel.app/?ref=lumentify.vercel.app",
-    status: "Live Demo",
+    status: "Live",
+    type: "HVAC",
+    year: "2026",
   },
 ];
 
@@ -212,7 +221,7 @@ export const buildPlans: PricingPlan[] = [
     name: "Essential",
     description:
       "A fast, high-converting landing page built to turn emergency clicks into direct calls.",
-    price: "$1,199",
+    price: "$1,499",
     period: "one-time",
     features: [
       "1 Landing Page",
@@ -234,7 +243,7 @@ export const buildPlans: PricingPlan[] = [
     name: "Pro",
     description:
       "Multi-page local asset engineered to dominate suburb search traffic and capture leads.",
-    price: "$2,249",
+    price: "$2,499",
     period: "one-time",
     features: [
       "Up to 5 Custom Pages (Services & Suburbs)",
@@ -432,8 +441,8 @@ export const sidebarNavItems = [
   // { name: "Add-ons", href: "/dashboard-panel/services", icon: LuLayers },
   { name: "Inbox", href: "/dashboard-panel/inbox", icon: LuInbox },
   { name: "Projects", href: "/dashboard-panel/projects", icon: LuBox },
-  // { name: "Invoices", href: "/dashboard-panel/invoices", icon: LuReceipt },
+  { name: "Invoices", href: "/dashboard-panel/invoices", icon: LuReceipt },
   // { name: "Quick Chat", href: "/dashboard-panel/chat", icon: LuMessageSquare },
-  // { name: "Documents", href: "/dashboard-panel/documents", icon: LuFolderOpen },
+  { name: "Documents", href: "/dashboard-panel/documents", icon: LuFolderOpen },
   // { name: "My Website", href: "/dashboard-panel/website", icon: LuAppWindow },
 ];

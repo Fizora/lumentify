@@ -5,26 +5,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import {
-  LuAppWindow,
-  LuBox,
   LuChevronDown,
-  LuFolderOpen,
-  LuInbox,
-  LuLayers,
   LuLogOut,
-  LuMessageSquare,
   LuPanelLeft,
-  LuReceipt,
   LuSettings,
   LuUser,
 } from "react-icons/lu";
 import { sidebarNavItems } from "@/components/constant/data";
-import { LuText } from "react-icons/lu";
 import { useSidebar } from "./DashboardLayout";
-
-const ItemsNav = [
-  { name: "Services", href: "/dashboard-panel/services", icon: LuLayers },
-];
 
 const userMenuItems = [
   { name: "Profile", href: "/dashboard-panel/profile", icon: LuUser },
@@ -53,7 +41,7 @@ const DashboardSidebar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Tutup popup otomatis kalau sidebar di-collapse (biar gak nyangkut kebuka)
+  // Tutup popup otomatis kalau sidebar di-collapse
   useEffect(() => {
     setIsUserMenuOpen(false);
   }, [isCollapsed]);
@@ -75,11 +63,12 @@ const DashboardSidebar = () => {
       )}
 
       <aside
-        className={`fixed top-0 left-0 h-full inset-0 w-60 bg-zinc-900 text-white pb-4 px-3 flex flex-col justify-between gap-3 border-r-2 border-zinc-700 z-50 transition-all duration-300
+        className={`fixed top-0 left-0 h-full w-60 bg-zinc-900 text-white pb-4 px-3 flex flex-col justify-between gap-3 border-r-2 border-zinc-700 z-50 transition-all duration-300
         ${isCollapsed ? "md:w-20" : "md:w-60"}
         ${isMobileOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}
       >
         <div>
+          {/* Logo */}
           <Link
             href="/dashboard-panel"
             onClick={closeMobile}
@@ -92,10 +81,12 @@ const DashboardSidebar = () => {
               quality={80}
               height={20}
               width={20}
+              className="shrink-0"
             />
             <h1 className={isCollapsed ? "md:hidden" : ""}>Lumentify</h1>
           </Link>
 
+          {/* Navigasi */}
           <nav className="p-2 text-base flex flex-col gap-1">
             {sidebarNavItems.map(({ name, href, icon: Icon }) => {
               const isActive = pathname === href;
@@ -106,11 +97,11 @@ const DashboardSidebar = () => {
                   onClick={closeMobile}
                   title={name}
                   aria-current={isActive ? "page" : undefined}
-                  className={`flex items-center gap-2 p-4 pr-8 py-1.5 rounded-md transition-colors duration-300 text-base ${
+                  className={`flex items-center gap-2 px-4 py-1.5 rounded-md transition-colors duration-300 text-base ${
                     isActive ? "bg-zinc-800" : "hover:bg-zinc-800"
-                  } ${isCollapsed ? "md:justify-center md:pr-4" : ""}`}
+                  } ${isCollapsed ? "md:justify-center md:px-0 md:py-2.5" : ""}`}
                 >
-                  <Icon size={18} />
+                  <Icon size={18} className="shrink-0" />
                   <span className={isCollapsed ? "md:hidden" : ""}>{name}</span>
                 </Link>
               );
@@ -118,9 +109,17 @@ const DashboardSidebar = () => {
           </nav>
         </div>
 
-        <div className="flex items-center justify-between gap-2 px-4 pt-4 border-t border-zinc-700">
+        {/* Footer */}
+        <div
+          className={`flex items-center justify-between gap-2 pt-4 border-t border-zinc-700 px-4 ${
+            isCollapsed ? "md:flex-col md:px-0" : ""
+          }`}
+        >
           {/* User button + popup */}
-          <div className="relative flex-1" ref={userMenuRef}>
+          <div
+            className={`relative ${isCollapsed ? "md:w-full" : "flex-1"}`}
+            ref={userMenuRef}
+          >
             {isUserMenuOpen && (
               <div
                 role="menu"
@@ -139,7 +138,7 @@ const DashboardSidebar = () => {
                     }}
                     className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-zinc-100 transition-colors duration-150"
                   >
-                    <Icon size={16} />
+                    <Icon size={16} className="shrink-0" />
                     {name}
                   </Link>
                 ))}
@@ -149,7 +148,7 @@ const DashboardSidebar = () => {
                   onClick={handleLogout}
                   className="flex items-center gap-2 px-4 py-2 text-sm w-full text-left text-red-600 hover:bg-red-50 transition-colors duration-150"
                 >
-                  <LuLogOut size={16} />
+                  <LuLogOut size={16} className="shrink-0" />
                   Logout
                 </button>
               </div>
@@ -159,13 +158,13 @@ const DashboardSidebar = () => {
               onClick={() => setIsUserMenuOpen((v) => !v)}
               aria-expanded={isUserMenuOpen}
               aria-haspopup="menu"
-              className={`flex items-center justify-between gap-2 p-3 py-2 w-full hover:bg-zinc-800 transition-colors duration-300 rounded-md ${
+              className={`flex items-center justify-between gap-2 px-3 py-2 w-full hover:bg-zinc-800 transition-colors duration-300 rounded-md ${
                 isUserMenuOpen ? "bg-zinc-800" : ""
-              }`}
+              } ${isCollapsed ? "md:justify-center md:px-0" : ""}`}
             >
               <span className="flex items-center gap-2">
                 <span className="bg-white text-zinc-900 p-1 rounded-full shrink-0">
-                  <LuUser size={15} />
+                  <LuUser size={15} className="shrink-0" />
                 </span>
                 <span
                   className={`uppercase text-sm ${isCollapsed ? "md:hidden" : ""}`}
@@ -182,14 +181,19 @@ const DashboardSidebar = () => {
             </button>
           </div>
 
+          {/* Toggle collapse */}
           <button
             onClick={toggleCollapse}
             aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
-            className="hidden md:block rounded-md p-2.5 hover:bg-zinc-800 transition duration-300 shrink-0"
+            className={`hidden md:flex items-center justify-center rounded-md p-2.5 hover:bg-zinc-800 transition duration-300 shrink-0 ${
+              isCollapsed ? "md:w-full" : ""
+            }`}
           >
             <LuPanelLeft
               size={18}
-              className={`transition-transform duration-300 ${isCollapsed ? "rotate-180" : ""}`}
+              className={`shrink-0 transition-transform duration-300 ${
+                isCollapsed ? "rotate-180" : ""
+              }`}
             />
           </button>
         </div>

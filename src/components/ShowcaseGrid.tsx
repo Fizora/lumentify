@@ -33,6 +33,7 @@ const PreviewImage = ({ img, icon: Icon }: { img: string; icon: IconType }) => {
       width={600}
       height={400}
       priority
+      loading="lazy"
       quality={50}
       className="w-full h-full"
     />
@@ -81,20 +82,18 @@ const ShowcaseCard = ({ item }: { item: ShowcaseItem }) => {
   const BadgeIcon = badge.icon;
 
   return (
-    <div className="group p-2 rounded-md bg-white border border-zinc-200 hover:border-zinc-300 overflow-hidden hover:shadow-xl hover:shadow-zinc-200 transition-shadow duration-300">
+    <Link
+      href={item.href}
+      className="group p-5 bg-white overflow-hidden rounded-lg border border-zinc-200 transition-all duration-300 hover:shadow-md flex flex-col"
+    >
       {/* Status badge dengan warna & ikon */}
-      <span
+      {/* <span
         className={`inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide px-3 py-1.5 rounded-full border ${badge.className}`}
       >
         <BadgeIcon className="w-3.5 h-3.5" />
         {badge.label}
-      </span>
+      </span> */}
 
-      <div className="p-2">
-        <h3 className="text-center text-sm text-black p-2 border border-zinc-200">
-          {item.name}
-        </h3>
-      </div>
       <div className="bg-white">
         <div className="relative w-full h-100 aspect-16/10 bg-gray-50">
           <PreviewImage img={item.img} icon={IconComponent} />
@@ -110,16 +109,19 @@ const ShowcaseCard = ({ item }: { item: ShowcaseItem }) => {
           </span>
         ))}
       </div>
-      <Link
-        href={item.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-4 rounded-full p-2 bg-black text-white flex items-center gap-2 justify-center shadow-lg hover:bg-zinc-800 mb-4"
-      >
-        <LuGlobe className="w-4 h-4" />
-        Visit Site
-      </Link>
-    </div>
+      <div className="py-5 space-y-6 flex items-center justify-between">
+        <div className="">
+          <h2 className="text-2xl font-medium">{item.name}</h2>
+          <p className="text-sm tracking-wide text-zinc-700 max-w-sm">
+            {item.desc}
+          </p>
+        </div>
+        <div className="text-sm text-right">
+          <p>{item.type}</p>
+          <p>{item.year}</p>
+        </div>
+      </div>
+    </Link>
   );
 };
 
@@ -131,9 +133,9 @@ export default function ShowcaseGrid() {
 
   return (
     <>
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8 border-b border-zinc-200 pb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8  pb-4">
         <div className="flex gap-2">
-          <button
+          {/* <button
             onClick={() => setActiveTab("showcase")}
             className={` px-4 py-2 text-sm font-medium rounded-md transition ${
               activeTab === "showcase"
@@ -152,7 +154,7 @@ export default function ShowcaseGrid() {
             }`}
           >
             Projects (Real)
-          </button>
+          </button> */}
         </div>
       </div>
 
@@ -164,7 +166,7 @@ export default function ShowcaseGrid() {
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {currentItems.map((item) => (
             <ShowcaseCard key={item.name} item={item} />
           ))}
