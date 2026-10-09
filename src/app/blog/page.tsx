@@ -44,7 +44,7 @@ export default function Blog() {
     <>
       <Navbar />
       <main className="min-h-screen">
-        <section className="pt-32 mx-auto max-w-7xl px-4">
+        <section className="pt-32 mx-auto container px-4">
           <DashboardPageHeader
             title="Blog & Updates"
             description="The latest articles and updates from the Lumentify team — tips, new features, and news about your website."

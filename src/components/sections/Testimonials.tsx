@@ -32,7 +32,7 @@ const Testimonials = () => {
 
   return (
     <section className="py-16 bg-white">
-      <div className="mx-auto max-w-7xl px-3">
+      <div className="mx-auto container px-3">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
