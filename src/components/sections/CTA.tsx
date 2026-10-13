@@ -35,7 +35,7 @@ const CTA = () => {
             Get a website that actually brings in leads – no fluff, on directed.
           </p>
           <Link
-            href={"mailto:lumentify@gmail.com"}
+            href={"mailto:info@lumentify.asia"}
             className="px-8 py-2 font-semibold transform active:scale-90 transition duration-300 bg-white rounded-md border-2 border-zinc-400 text-black"
           >
             Start Project

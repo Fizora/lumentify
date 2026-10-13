@@ -161,7 +161,7 @@ const Navbar = () => {
             );
           })}
         </nav>
-        <div className="">
+        <div className="px-2">
           <SecondaryButtonLink
             href={CTA_HREF}
             className="text-sm font-medium rounded-full mr-2"

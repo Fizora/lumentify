@@ -134,7 +134,7 @@ export const msaContent: DocContent = {
     { label: "Client Email", value: "recal@bussiness.com" },
     { label: "Provider", value: "Lumentify" },
     { label: "Provider Address", value: "East Java, ID" },
-    { label: "Provider Email", value: "lumentify@gmail.com" },
+    { label: "Provider Email", value: "info@lumentify.asia" },
   ],
   sections: [
     {

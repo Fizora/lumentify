@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import WorkStatusBadge from "@/components/WorkStatusBadge";
+import { LuGlobe } from "react-icons/lu";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -106,7 +107,7 @@ const Footer = () => {
                 WhatsApp
               </Link>
               <Link
-                href="mailto:lumentify@gmail.com"
+                href="mailto:info@lumentify.asia"
                 className="flex items-center gap-2 border border-zinc-800 hover:border-zinc-700 bg-zinc-900 px-3.5 py-2 text-sm text-zinc-200 transition-colors rounded-md"
               >
                 Email
@@ -139,7 +140,9 @@ const Footer = () => {
           </div>
 
           <div className="order-3 flex items-center justify-center md:justify-end gap-4">
-            <span className="hidden sm:inline">📍 Asia-Pacific</span>
+            <span className="md:hidden sm:inline flex items-center gap-2">
+              <LuGlobe></LuGlobe> Asia-Pacific
+            </span>
             <Link
               href="/legal/privacy"
               className="hover:text-white transition-colors"

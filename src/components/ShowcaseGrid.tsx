@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { LuGlobe, LuCircleCheck, LuClock, LuRocket } from "react-icons/lu";
+import { motion } from "motion/react";
+import { LuArrowUpRight } from "react-icons/lu";
 import type { IconType } from "react-icons";
 import {
   showcaseList,
@@ -18,9 +19,11 @@ const PreviewImage = ({ img, icon: Icon }: { img: string; icon: IconType }) => {
 
   if (showFallback) {
     return (
-      <div className="w-full h-full flex flex-col items-center justify-center gap-3 bg-gray-50">
-        <Icon className="w-6 h-6 text-gray-400" />
-        <span className="text-sm text-gray-400">Preview coming soon</span>
+      <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-linear-to-br from-zinc-50 to-zinc-100">
+        <div className="flex size-12 items-center justify-center rounded-full border border-zinc-200 bg-white shadow-sm">
+          <Icon className="size-5 text-zinc-400" />
+        </div>
+        <span className="text-sm text-zinc-400">Preview coming soon</span>
       </div>
     );
   }
@@ -29,99 +32,104 @@ const PreviewImage = ({ img, icon: Icon }: { img: string; icon: IconType }) => {
     <Image
       src={img}
       alt="preview"
+      fill
+      sizes="(min-width: 1024px) 50vw, 100vw"
+      quality={75}
       onError={() => setFailed(true)}
-      width={600}
-      height={400}
-      priority
-      loading="lazy"
-      quality={50}
-      className="w-full h-full"
+      className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
     />
   );
 };
 
-// ===== Fungsi untuk menentukan badge status =====
+// Status badge: label + dot color (pulses for live states)
 const getStatusBadge = (status: string) => {
   switch (status) {
     case "Live Demo":
-      return {
-        label: "Live Demo",
-        className: "bg-green-100 text-green-700 border-green-200",
-        icon: LuCircleCheck,
-      };
+      return { label: "Live Demo", dot: "bg-green-500 animate-pulse" };
     case "In Progress":
-      return {
-        label: "In Progress",
-        className: "bg-yellow-100 text-yellow-700 border-yellow-200",
-        icon: LuClock,
-      };
+      return { label: "In Progress", dot: "bg-amber-500" };
     case "Production":
-      return {
-        label: "Production",
-        className: "bg-blue-100 text-blue-700 border-blue-200",
-        icon: LuRocket,
-      };
+      return { label: "Production", dot: "bg-blue-500" };
     case "Live":
-      return {
-        label: "Live",
-        className: "bg-green-500 text-white border-green-200",
-        icon: LuRocket,
-      };
+      return { label: "Live", dot: "bg-green-500 animate-pulse" };
     default:
-      return {
-        label: status,
-        className: "bg-gray-100 text-gray-600 border-gray-200",
-        icon: LuCircleCheck,
-      };
+      return { label: status, dot: "bg-zinc-400" };
   }
 };
 
-const ShowcaseCard = ({ item }: { item: ShowcaseItem }) => {
+const ShowcaseCard = ({
+  item,
+  index,
+}: {
+  item: ShowcaseItem;
+  index: number;
+}) => {
   const IconComponent = item.icon;
   const badge = getStatusBadge(item.status);
-  const BadgeIcon = badge.icon;
 
   return (
-    <Link
-      href={item.href}
-      className="group p-5 bg-white overflow-hidden rounded-lg border border-zinc-200 transition-all duration-300 hover:shadow-md flex flex-col"
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5, delay: (index % 2) * 0.1, ease: "easeOut" }}
+      className="h-full"
     >
-      {/* Status badge dengan warna & ikon */}
-      {/* <span
-        className={`inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide px-3 py-1.5 rounded-full border ${badge.className}`}
+      <Link
+        href={item.href}
+        className="group flex h-full flex-col rounded-lg border border-zinc-200 bg-white p-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-zinc-200"
       >
-        <BadgeIcon className="w-3.5 h-3.5" />
-        {badge.label}
-      </span> */}
-
-      <div className="bg-white">
-        <div className="relative w-full h-100 aspect-16/10 bg-gray-50">
+        {/* Preview */}
+        <div className="relative aspect-16/10 w-full overflow-hidden rounded-md bg-zinc-100">
           <PreviewImage img={item.img} icon={IconComponent} />
-        </div>
-      </div>
-      <div className="flex flex-wrap gap-2 pt-4">
-        {item.tags.map((tag) => (
-          <span
-            key={tag}
-            className="text-xs font-medium text-gray-600 border border-gray-200 rounded-full px-3 py-1"
-          >
-            {tag}
+
+          {/* Subtle inner ring so the image edge feels crisp */}
+          <div className="pointer-events-none absolute inset-0 rounded-md ring-1 ring-inset ring-black/5" />
+
+          {/* Hover gradient + "Visit site" pill */}
+          <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          <span className="absolute bottom-3 right-3 inline-flex translate-y-2 items-center gap-1 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-zinc-900 opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+            Visit site
+            <LuArrowUpRight className="size-3.5" />
           </span>
-        ))}
-      </div>
-      <div className="py-5 space-y-6 flex items-center justify-between">
-        <div className="">
-          <h2 className="text-2xl font-medium">{item.name}</h2>
-          <p className="text-sm tracking-wide text-zinc-700 max-w-sm">
-            {item.desc}
-          </p>
+
+          {/* Status badge (glass) */}
+          <span className="absolute left-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-white/80 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-zinc-800 ring-1 ring-black/5 backdrop-blur-md">
+            <span className={`size-1.5 rounded-full ${badge.dot}`} />
+            {badge.label}
+          </span>
         </div>
-        <div className="text-sm text-right">
-          <p>{item.type}</p>
-          <p>{item.year}</p>
+
+        {/* Body */}
+        <div className="flex flex-1 flex-col gap-4 px-2 pb-2 pt-5">
+          <div className="space-y-1.5">
+            <h2 className="flex items-center gap-1.5 text-xl font-semibold tracking-tight text-zinc-900 wrap-break-word">
+              {item.name}
+              <LuArrowUpRight className="size-5 shrink-0 text-zinc-400 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-zinc-900" />
+            </h2>
+            <p className="max-w-sm text-sm leading-relaxed text-zinc-600">
+              {item.desc}
+            </p>
+          </div>
+
+          <div className="mt-auto flex flex-wrap gap-1.5">
+            {item.tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full bg-zinc-100 px-2.5 py-1 text-xs font-medium text-zinc-600"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex items-center justify-between border-t border-zinc-100 pt-4 text-xs text-zinc-500">
+            <span className="font-medium text-zinc-700">{item.type}</span>
+            <span>{item.year}</span>
+          </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </motion.div>
   );
 };
 
@@ -167,8 +175,8 @@ export default function ShowcaseGrid() {
         </div>
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {currentItems.map((item) => (
-            <ShowcaseCard key={item.name} item={item} />
+          {currentItems.map((item, index) => (
+            <ShowcaseCard key={item.name} item={item} index={index} />
           ))}
         </div>
       )}

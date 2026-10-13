@@ -207,10 +207,10 @@ const Contact = () => {
                       Something went wrong sending your message. Please try
                       again or email us directly at{" "}
                       <a
-                        href="mailto:lumentify@gmail.com"
+                        href="mailto:info@lumentify.asia"
                         className="font-semibold underline hover:no-underline"
                       >
-                        lumentify@gmail.com
+                        info@lumentify.asia
                       </a>
                       .
                     </p>
@@ -253,10 +253,10 @@ const Contact = () => {
                 Prefer to write directly? We reply within 1 business day.
               </p>
               <a
-                href="mailto:lumentify@gmail.com"
+                href="mailto:info@lumentify.asia"
                 className="text-base font-semibold text-zinc-700 hover:text-black transition-colors"
               >
-                lumentify@gmail.com
+                info@lumentify.asia
               </a>
             </div>
 
