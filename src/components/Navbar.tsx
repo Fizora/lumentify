@@ -161,7 +161,7 @@ const Navbar = () => {
             );
           })}
         </nav>
-        <div className="px-2">
+        <div className="px-2 hidden md:flex">
           <SecondaryButtonLink
             href={CTA_HREF}
             className="text-sm font-medium rounded-full mr-2"
@@ -331,8 +331,17 @@ const Navbar = () => {
                 })}
 
                 <div className="pt-2">
-                  <PrimaryButtonLink href={CTA_HREF}>
-                    Start Project
+                  <SecondaryButtonLink
+                    href={CTA_HREF}
+                    className="text-sm font-medium rounded-full mr-2"
+                  >
+                    Login
+                  </SecondaryButtonLink>
+                  <PrimaryButtonLink
+                    href={CTA_HREF}
+                    className="text-sm font-medium rounded-full"
+                  >
+                    Create Account
                   </PrimaryButtonLink>
                 </div>
               </div>
