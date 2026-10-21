@@ -45,7 +45,7 @@ const initialNotifs: NotifItem[] = [
   {
     id: 2,
     type: "chat",
-    title: "New message from Lumentify Team",
+    title: "New message from Lexentify Team",
     detail: "\"Sure thing, we'll update it and let you know once it's done.\"",
     time: "5 hours ago",
     read: false,

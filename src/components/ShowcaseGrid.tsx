@@ -77,6 +77,7 @@ const ShowcaseCard = ({
     >
       <Link
         href={item.href}
+        target="_blank"
         className="group flex h-full flex-col rounded-lg border border-zinc-200 bg-white p-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-zinc-200"
       >
         {/* Preview */}

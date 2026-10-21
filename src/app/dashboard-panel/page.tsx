@@ -4,7 +4,7 @@ import PricingCardsGrid from "@/components/pricing/PricingCardsGrid";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Dashboard Panel - Lumentify",
+  title: "Dashboard Panel - Lexentify",
 };
 
 export default function DashboardPanel() {

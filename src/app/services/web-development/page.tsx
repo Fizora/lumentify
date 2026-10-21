@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 import { PrimaryButtonLink } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "Lumentify | Web Development",
+  title: "Lexentify | Web Development",
 };
 
 const included = [

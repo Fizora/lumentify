@@ -111,13 +111,13 @@ const Navbar = () => {
             <div className="bg-white group-hover:scale-105 border border-zinc-200 transition duration-300 p-2 rounded-full">
               <Image
                 src="/logo.svg"
-                alt="Lumentify logo"
+                alt="Lexentify logo"
                 priority
                 height={20}
                 width={20}
               />
             </div>
-            Lumentify.
+            Lexentify.
           </Link>
         </h1>
 

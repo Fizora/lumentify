@@ -57,14 +57,14 @@ const Footer = () => {
               <div className="bg-white p-2 rounded-full border border-zinc-200 shadow-lg transition duration-300 group-hover:scale-105 group-hover:shadow-zinc-400">
                 <Image
                   src={"/logo.svg"}
-                  alt="Lumentify Logo"
+                  alt="Lexentify Logo"
                   priority
                   quality={80}
                   height={20}
                   width={20}
                 />
               </div>
-              Lumentify.
+              Lexentify.
             </Link>
             <p className="mt-3 text-sm text-zinc-500 max-w-xs">
               Fast, clean, and directed websites — built & dedicated for
@@ -107,7 +107,7 @@ const Footer = () => {
                 WhatsApp
               </Link>
               <Link
-                href="mailto:info@lumentify.asia"
+                href="mailto:info@lexentify.com"
                 className="flex items-center gap-2 border border-zinc-800 hover:border-zinc-700 bg-zinc-900 px-3.5 py-2 text-sm text-zinc-200 transition-colors rounded-md"
               >
                 Email
@@ -125,14 +125,14 @@ const Footer = () => {
             className="font-black bg-linear-to-r from-gray-400 via-gray-300 to-gray-400 text-transparent text-center leading-none tracking-tighter bg-clip-text"
             style={{ fontSize: "clamp(3.5rem, 14vw, 11rem)" }}
           >
-            LUMENTIFY
+            Lexentify
           </h1>
         </div>
 
         {/* Bottom bar — 3 zona */}
         <div className="mt-10 pt-6 border-t border-zinc-900 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-zinc-500">
           <p className="order-2 md:order-1 text-center md:text-left">
-            &copy; {currentYear} Lumentify. All rights reserved.
+            &copy; {currentYear} Lexentify. All rights reserved.
           </p>
 
           <div className="order-1 md:order-2 flex justify-center">

@@ -76,14 +76,14 @@ const DashboardSidebar = () => {
           >
             <Image
               src="/logo.svg"
-              alt="Lumentify logo"
+              alt="Lexentify logo"
               priority
               quality={80}
               height={20}
               width={20}
               className="shrink-0"
             />
-            <h1 className={isCollapsed ? "md:hidden" : ""}>Lumentify</h1>
+            <h1 className={isCollapsed ? "md:hidden" : ""}>Lexentify</h1>
           </Link>
 
           {/* Navigasi */}

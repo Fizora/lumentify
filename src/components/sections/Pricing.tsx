@@ -70,7 +70,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                     <h3 className="text-xl font-bold text-black">
                       {plan.name}
                     </h3>
-                    <p className="text-sm text-gray-600 mb-5 py-3 h-12 leading-relaxed">
+                    <p className="md:text-sm text-gray-600 mb-5 py-3 h-12 leading-relaxed">
                       {plan.description}
                     </p>
                   </div>
@@ -227,15 +227,8 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
             className="text-center mt-20 max-w-2xl mx-auto bg-linear-to-br from-zinc-200 via-white to-zinc-200 p-6 border border-zinc-200 shadow-lg shadow-zinc-100"
           >
             <p className="text-sm text-gray-500 leading-relaxed">
-              We take on a{" "}
-              <span className="font-black text-black">
-                limited number of projects
-              </span>{" "}
-              each month so{" "}
-              <span className="font-black text-black">
-                every client gets full attention
-              </span>{" "}
-              — not split across a queue.
+              To ensure sub-second performance and direct founder-level
+              communication, we cap our active builds at 4 clients per month.
             </p>
           </motion.div>
         )}

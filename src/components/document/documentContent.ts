@@ -132,9 +132,9 @@ export const msaContent: DocContent = {
     { label: "Effective Date", value: "14-08-2026" },
     { label: "Client Address", value: "Montana Street No. 42, AU" },
     { label: "Client Email", value: "recal@bussiness.com" },
-    { label: "Provider", value: "Lumentify" },
+    { label: "Provider", value: "Lexentify" },
     { label: "Provider Address", value: "East Java, ID" },
-    { label: "Provider Email", value: "info@lumentify.asia" },
+    { label: "Provider Email", value: "info@lexentify.com" },
   ],
   sections: [
     {

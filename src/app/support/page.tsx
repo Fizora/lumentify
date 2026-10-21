@@ -13,29 +13,29 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Lumentify | Support",
+  title: "Lexentify | Support & Guarantees",
 };
 
 const guarantees = [
   {
     icon: LuFileCheck,
-    title: "See it before you pay it off",
-    body: "We show you the homepage direction before the build continues. If it's not right, you get your deposit back — no hard feelings, no dispute.",
+    title: "Visual direction approval before coding",
+    body: "We review the initial homepage layout and design direction with you before full development begins. If it doesn't align with your vision at this milestone, your initial deposit is fully refunded—no hassle.",
   },
   {
     icon: LuRotateCcw,
-    title: "Included bug-fix warranty",
-    body: "Anything breaks within your plan's warranty window (14 days for Essential, 30 days for Pro, 60 days for Custom), we fix it free. No extra invoice, no waiting in line.",
+    title: "Post-launch stabilization support",
+    body: "Every build includes a dedicated transition window (14 days for Essential, 30 days for Pro, 60 days for Custom). Any technical adjustments needed during this period are handled immediately at zero extra cost.",
   },
   {
     icon: LuBadgeCheck,
-    title: "Fixed price, no surprises",
-    body: "The number in your SOW is the number you pay. Scope changes get a written add-on quote before we touch anything — never a surprise line item.",
+    title: "Fixed pricing with zero surprises",
+    body: "The price outlined in your signed SOW is fixed. Any requested scope changes require a written add-on agreement before work proceeds—ensuring you never face surprise line items.",
   },
   {
     icon: LuShieldCheck,
-    title: "Everything in writing",
-    body: "Every project starts with a signed agreement (MSA + SOW) — what's built, when, and for how much. Not a verbal promise, a document you can point back to.",
+    title: "Complete contractual transparency",
+    body: "Every project starts with a formal, signed agreement (MSA + SOW) defining exact deliverables, timelines, and costs so both parties operate with absolute clarity.",
   },
 ];
 
@@ -43,41 +43,44 @@ export default function Support() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen px-4">
-        <section className="mx-auto max-w-7xl px-3 py-20 border-x">
+      <main className="min-h-screen px-4 bg-white text-zinc-900">
+        <section className="mx-auto max-w-7xl px-3 py-20 border-x border-zinc-200">
           {/* Header */}
           <section className="pt-32 pb-16 mx-auto max-w-3xl text-center">
             <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
-              Support
+              Support & Protection
             </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight mb-4">
-              Need a hand? We&apos;ve got you.
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-black leading-tight mb-4">
+              Need assistance? We&apos;ve got you covered.
             </h1>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Whether it&apos;s a bug, a question about your project, or
-              something before you get started — here&apos;s the fastest way to
-              reach us, and exactly what you&apos;re protected by.
+            <p className="text-lg text-zinc-600 leading-relaxed">
+              Whether you need project support, have technical questions, or
+              want to explore working together — here is how to reach us and the
+              exact standards protecting your investment.
             </p>
           </section>
 
           {/* Guarantees */}
           <section className="mx-auto max-w-4xl pb-16">
             <h2 className="text-xl font-bold text-black mb-1 text-center">
-              What you&apos;re covered by
+              Your protection standards
             </h2>
-            <p className="text-base text-gray-600 text-center mb-8 max-w-xl mx-auto">
-              We&apos;re a small independent team, not a big agency — so instead
-              of a name you recognize, here&apos;s exactly what protects you
-              when you work with us.
+            <p className="text-base text-zinc-600 text-center mb-8 max-w-xl mx-auto">
+              As an independent digital studio, we believe in radical
+              transparency. Here are the clear operational guardrails that
+              protect your project.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {guarantees.map(({ icon: Icon, title, body }) => (
-                <div key={title} className=" border border-gray-200 p-8">
-                  <Icon className="w-5 h-5 text-zinc-600 mb-4" />
+                <div
+                  key={title}
+                  className="border border-zinc-200 p-8 bg-white shadow-xs"
+                >
+                  <Icon className="w-5 h-5 text-zinc-800 mb-4" />
                   <h3 className="text-base font-bold text-black mb-2">
                     {title}
                   </h3>
-                  <p className="text-base text-gray-600 leading-relaxed">
+                  <p className="text-base text-zinc-600 leading-relaxed">
                     {body}
                   </p>
                 </div>
@@ -89,18 +92,20 @@ export default function Support() {
           <section className="mx-auto max-w-4xl pb-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Existing client */}
-              <div className=" border border-gray-200 p-8">
+              <div className="border border-zinc-200 p-8 bg-white shadow-xs">
                 <h2 className="text-lg font-bold text-black mb-2">
-                  Already a client
+                  Active clients
                 </h2>
-                <p className="text-base text-gray-600 leading-relaxed mb-6">
-                  Something broke, or you need a change to your live site?
-                  Message us with your business name and what&apos;s happening —
-                  we&apos;ll take it from there.
+                <p className="text-base text-zinc-600 leading-relaxed mb-6">
+                  Need a content update or post-launch technical assistance?
+                  Message us directly with your business name and details—we
+                  will take care of it promptly.
                 </p>
                 <Link
-                  href="https://wa.me/085235086814"
-                  className="inline-flex items-center gap-2 text-base font-semibold text-zinc-600 hover:text-zinc-700 transition-colors"
+                  href="https://wa.me/6285235086814"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-base font-semibold text-zinc-900 hover:text-zinc-600 transition-colors"
                 >
                   <LuMessageCircle className="w-4 h-4" />
                   Message us on WhatsApp
@@ -108,18 +113,20 @@ export default function Support() {
               </div>
 
               {/* New / prospective */}
-              <div className=" border border-gray-200 p-8">
+              <div className="border border-zinc-200 p-8 bg-white shadow-xs">
                 <h2 className="text-lg font-bold text-black mb-2">
-                  Not a client yet
+                  Prospective clients
                 </h2>
-                <p className="text-base text-gray-600 leading-relaxed mb-6">
-                  Have a question about pricing, timelines, or whether
-                  we&apos;re a fit for your business? Reach out — no pressure,
-                  no sales script.
+                <p className="text-base text-zinc-600 leading-relaxed mb-6">
+                  Have questions about pricing, deliverables, or whether our web
+                  framework fits your trade business? Reach out for an honest,
+                  pressure-free discussion.
                 </p>
                 <Link
-                  href="https://wa.me/085235086814"
-                  className="inline-flex items-center gap-2 text-base font-semibold text-zinc-600 hover:text-zinc-700 transition-colors"
+                  href="https://wa.me/6285235086814"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-base font-semibold text-zinc-900 hover:text-zinc-600 transition-colors"
                 >
                   <LuMessageCircle className="w-4 h-4" />
                   Message us on WhatsApp
@@ -130,38 +137,38 @@ export default function Support() {
 
           {/* Payment & process reassurance */}
           <section className="mx-auto max-w-3xl pb-16">
-            <div className=" border border-gray-200 p-8">
+            <div className="border border-zinc-200 p-8 bg-white shadow-xs">
               <h2 className="text-lg font-bold text-black mb-4">
-                How a project actually goes
+                How every project flows safely for both sides
               </h2>
               <ol className="space-y-4">
                 {[
                   [
                     "1",
-                    "You approve a written proposal and price — nothing starts before that.",
+                    "You review and approve a written proposal and fixed price before any financial commitment is made.",
                   ],
                   [
                     "2",
-                    "We sign a short agreement together (MSA + SOW) covering scope, timeline, and price.",
+                    "We formalize the arrangement with a signed Master Service Agreement (MSA) and Statement of Work (SOW).",
                   ],
                   [
                     "3",
-                    "A 50% deposit starts the work. The other 50% is due at handover, not before.",
+                    "You review the initial design direction early in the timeline. If it does not align with your expectations, your initial deposit is fully refunded.",
                   ],
                   [
                     "4",
-                    "You review the design direction early — if it's off, you get the deposit back.",
+                    "Once the design direction is approved, full development proceeds toward completion.",
                   ],
                   [
                     "5",
-                    "Site goes live, backed by your plan's included bug-fix warranty.",
+                    "The remaining balance is due only upon final handover, and your site goes live backed by post-launch stabilization support.",
                   ],
                 ].map(([n, text]) => (
-                  <li key={n} className="flex gap-4">
-                    <span className="shrink-0 w-6 h-6 rounded-full bg-zinc-100 text-zinc-600 text-xs font-semibold flex items-center justify-center">
+                  <li key={n} className="flex gap-4 items-start">
+                    <span className="shrink-0 w-6 h-6 rounded-full bg-zinc-100 text-zinc-800 text-xs font-semibold flex items-center justify-center">
                       {n}
                     </span>
-                    <p className="text-base text-gray-600 leading-relaxed">
+                    <p className="text-base text-zinc-600 leading-relaxed">
                       {text}
                     </p>
                   </li>
@@ -172,19 +179,19 @@ export default function Support() {
 
           {/* Direct contact + FAQ link */}
           <section className="mx-auto max-w-3xl pb-24">
-            <div className=" bg-zinc-50/60 border border-zinc-100 p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="bg-zinc-50 border border-zinc-200 p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-3">
-                <LuMail className="w-5 h-5 text-zinc-600 shrink-0" />
+                <LuMail className="w-5 h-5 text-zinc-800 shrink-0" />
                 <div>
                   <p className="text-base font-semibold text-black">
-                    Prefer email?
+                    Prefer email communication?
                   </p>
-                  <p className="text-base text-gray-600">info@lumentify.asia</p>
+                  <p className="text-base text-zinc-600">info@lexentify.com</p>
                 </div>
               </div>
               <Link
                 href="/faq"
-                className="inline-flex items-center gap-2 text-base font-semibold text-gray-700 hover:text-zinc-600 transition-colors"
+                className="inline-flex items-center gap-2 text-base font-semibold text-zinc-900 hover:text-zinc-600 transition-colors"
               >
                 <LuCircleHelp className="w-4 h-4" />
                 Check the FAQ first

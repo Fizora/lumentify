@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import ShowcaseGrid from "@/components/ShowcaseGrid"; // <-- import
 
 export const metadata: Metadata = {
-  title: "Showcase | Lumentify",
+  title: "Showcase | Lexentify",
 };
 
 export default function Showcase() {

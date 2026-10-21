@@ -58,56 +58,57 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-16 bg-white" id="contact">
+    <section className="py-20 bg-white" id="contact">
       <div className="mx-auto container px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.4 }}
-          className="text-center space-y-3 mb-10"
+          className="text-center space-y-3 mb-12"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-black">
+          <h2 className="text-3xl md:text-4xl font-bold text-black tracking-tight">
             Let&apos;s talk about your site.
           </h2>
-          <p className="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Tell us a bit about your business and what you need. No pressure, no
-            sales script — we&apos;ll reply with honest next steps.
+            aggressive sales script — just honest, professional next steps.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
           {/* Form */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            className="md:col-span-3 border border-gray-200 p-5"
+            className="md:col-span-3 border border-gray-200 p-6 md:p-8 bg-white shadow-xs"
           >
             {status === "sent" ? (
-              <div className="flex flex-col items-center text-center py-10">
-                <LuCircleCheck className="w-10 h-10 text-green-600 mb-3" />
-                <h3 className="text-lg font-bold text-black mb-1">
-                  Message sent!
+              <div className="flex flex-col items-center text-center py-12">
+                <LuCircleCheck className="w-12 h-12 text-emerald-600 mb-4" />
+                <h3 className="text-xl font-bold text-black mb-2">
+                  Message received successfully!
                 </h3>
-                <p className="text-base text-gray-600 leading-relaxed max-w-sm">
-                  Thanks for reaching out — we usually reply within 1 business
+                <p className="text-base text-gray-600 leading-relaxed max-w-md">
+                  Thank you for reaching out. We review every project personally
+                  and will reply with clear, actionable steps within 1 business
                   day.
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
-                  className="mt-4 text-base font-semibold text-zinc-600 hover:text-zinc-800 transition-colors"
+                  className="mt-6 text-sm font-semibold text-zinc-900 underline hover:text-zinc-600 transition-colors"
                 >
                   Send another message →
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-xs font-semibold text-black mb-1"
+                      className="block text-xs font-bold uppercase tracking-wider text-black mb-1.5"
                     >
                       Your name *
                     </label>
@@ -119,13 +120,13 @@ const Contact = () => {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="John Smith"
-                      className="w-full border border-gray-200 px-3 py-1.5 text-base text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 transition-shadow"
+                      className="w-full border border-gray-300 px-3.5 py-2.5 text-base text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black transition-all"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="business"
-                      className="block text-xs font-semibold text-black mb-1"
+                      className="block text-xs font-bold uppercase tracking-wider text-black mb-1.5"
                     >
                       Business name *
                     </label>
@@ -137,7 +138,7 @@ const Contact = () => {
                       value={form.business}
                       onChange={handleChange}
                       placeholder="Smith Plumbing Co."
-                      className="w-full border border-gray-200 px-3 py-1.5 text-base text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 transition-shadow"
+                      className="w-full border border-gray-300 px-3.5 py-2.5 text-base text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black transition-all"
                     />
                   </div>
                 </div>
@@ -145,9 +146,9 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-xs font-semibold text-black mb-1"
+                    className="block text-xs font-bold uppercase tracking-wider text-black mb-1.5"
                   >
-                    Email *
+                    Email address *
                   </label>
                   <input
                     id="email"
@@ -157,14 +158,14 @@ const Contact = () => {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="you@business.com"
-                    className="w-full border border-gray-200 px-3 py-1.5 text-base text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 transition-shadow"
+                    className="w-full border border-gray-300 px-3.5 py-2.5 text-base text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black transition-all"
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="interest"
-                    className="block text-xs font-semibold text-black mb-1"
+                    className="block text-xs font-bold uppercase tracking-wider text-black mb-1.5"
                   >
                     What are you looking for?
                   </label>
@@ -173,44 +174,50 @@ const Contact = () => {
                     name="interest"
                     value={form.interest}
                     onChange={handleChange}
-                    className="w-full border border-gray-200 px-3 py-1.5 text-base text-black focus:outline-none focus:ring-2 focus:ring-black/80 bg-white transition-shadow"
+                    className="w-full border border-gray-300 px-3.5 py-2.5 text-base text-black focus:outline-none focus:ring-2 focus:ring-black bg-white transition-all"
                   >
-                    <option value="Essential">Essential — simple site</option>
-                    <option value="Pro">Pro — win more calls</option>
-                    <option value="Custom">Custom — scale past basics</option>
-                    <option value="Not sure">Not sure yet</option>
+                    <option value="Essential">
+                      Essential — High-converting landing page
+                    </option>
+                    <option value="Pro">Pro — Multi-page local asset</option>
+                    <option value="Custom">
+                      Custom — Multi-suburb platform
+                    </option>
+                    <option value="Not sure">
+                      Not sure yet / Need guidance
+                    </option>
                   </select>
                 </div>
 
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-xs font-semibold text-black mb-1"
+                    className="block text-xs font-bold uppercase tracking-wider text-black mb-1.5"
                   >
-                    Message *
+                    Project details or goals *
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     required
-                    rows={3}
+                    rows={4}
                     value={form.message}
                     onChange={handleChange}
-                    placeholder="Tell us about your business and what you're hoping your site can do."
-                    className="w-full border border-gray-200 px-3 py-1.5 text-base text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/80 resize-none transition-shadow"
+                    placeholder="Tell us about your trade business and what you are hoping your new website can achieve."
+                    className="w-full border border-gray-300 px-3.5 py-2.5 text-base text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black resize-none transition-all"
                   />
                 </div>
 
                 {status === "error" && (
-                  <div className="bg-red-50 border border-red-200 p-3">
-                    <p className="text-base text-red-700">
+                  <div className="bg-red-50 border border-red-200 p-4">
+                    <p className="text-sm text-red-700">
                       Something went wrong sending your message. Please try
                       again or email us directly at{" "}
                       <a
-                        href="mailto:info@lumentify.asia"
+                        href="mailto:info@lexentify.com"
                         className="font-semibold underline hover:no-underline"
                       >
-                        info@lumentify.asia
+                        info@lexentify.com
                       </a>
                       .
                     </p>
@@ -220,17 +227,17 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 disabled:opacity-60 disabled:cursor-not-allowed text-white text-lg font-semibold px-6 py-2.5 transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 disabled:opacity-60 disabled:cursor-not-allowed text-white text-base font-semibold px-6 py-3 transition-colors shadow-xs cursor-pointer"
                 >
                   {status === "loading" ? (
                     <>
-                      <LuLoaderCircle className="w-3.5 h-3.5 animate-spin" />
-                      Sending...
+                      <LuLoaderCircle className="w-4 h-4 animate-spin" />
+                      Sending message...
                     </>
                   ) : (
                     <>
                       Send message
-                      <LuSend className="w-3.5 h-3.5" />
+                      <LuSend className="w-4 h-4" />
                     </>
                   )}
                 </button>
@@ -246,44 +253,47 @@ const Contact = () => {
             transition={{ delay: 0.1 }}
             className="md:col-span-2 flex flex-col gap-4"
           >
-            <div className="border border-gray-200 p-5">
-              <LuMail className="w-4 h-4 text-zinc-600 mb-3" />
-              <h3 className="text-base font-bold text-black mb-1">Email</h3>
-              <p className="text-base text-gray-600 leading-relaxed mb-2">
-                Prefer to write directly? We reply within 1 business day.
+            <div className="border border-gray-200 p-6 bg-white">
+              <LuMail className="w-5 h-5 text-zinc-800 mb-3" />
+              <h3 className="text-base font-bold text-black mb-1">
+                Direct Email
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-3">
+                Prefer writing directly? We check our inbox daily and reply
+                within 1 business day.
               </p>
               <a
-                href="mailto:info@lumentify.asia"
-                className="text-base font-semibold text-zinc-700 hover:text-black transition-colors"
+                href="mailto:info@lexentify.com"
+                className="text-sm font-semibold text-zinc-900 hover:underline"
               >
-                info@lumentify.asia
+                info@lexentify.com
               </a>
             </div>
 
-            <div className="border border-gray-200 p-5">
-              <LuMessageCircle className="w-4 h-4 text-zinc-600 mb-3" />
+            <div className="border border-gray-200 p-6 bg-white">
+              <LuMessageCircle className="w-5 h-5 text-zinc-800 mb-3" />
               <h3 className="text-base font-bold text-black mb-1">
                 Already a client?
               </h3>
-              <p className="text-base text-gray-600 leading-relaxed mb-2">
-                For support on an active project, message us on WhatsApp for the
-                fastest response.
+              <p className="text-sm text-gray-600 leading-relaxed mb-3">
+                For active project updates and rapid communication, message us
+                directly via WhatsApp.
               </p>
               <a
                 href="https://wa.me/6285235086814"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-base font-semibold text-zinc-700 hover:text-black transition-colors"
+                className="text-sm font-semibold text-zinc-950 inline-flex items-center gap-1 hover:underline"
               >
                 Message on WhatsApp →
               </a>
             </div>
 
-            <div className="bg-zinc-50/60 border border-zinc-100 p-5">
-              <p className="text-base text-gray-600 leading-relaxed">
-                <span className="font-semibold text-black">✓</span> Every
-                project starts with a written proposal and a signed agreement
-                before any payment — no surprises, no verbal-only promises.
+            <div className="bg-zinc-50 border border-zinc-200/80 p-6">
+              <p className="text-sm text-gray-700 leading-relaxed">
+                <span className="font-bold text-black">✓</span> Every project
+                starts with a clear written proposal and formal agreement before
+                any financial commitment — absolute transparency guaranteed.
               </p>
             </div>
           </motion.div>

@@ -3,111 +3,145 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Lumentify | Terms",
+  title: "Lexentify | Terms of Use",
 };
 
 export default function Terms() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen px-4">
-        <section className="mx-auto max-w-7xl px-3 py-20 border-x">
+      <main className="min-h-screen px-4 bg-white text-zinc-900">
+        <section className="mx-auto max-w-7xl px-3 py-20 border-x border-zinc-200">
           <section className="pt-32 pb-8 mx-auto max-w-3xl">
             <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
               Legal
             </span>
-            <h1 className="text-3xl md:text-4xl font-bold text-black leading-tight mb-3">
+            <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-black leading-tight mb-3">
               Terms of Use
             </h1>
-            <p className="text-lg text-gray-500">Last updated: August 2026</p>
+            <p className="text-base text-zinc-500">
+              Last updated: October 2026
+            </p>
           </section>
 
-          <section className="mx-auto max-w-3xl pb-24 text-gray-600 leading-relaxed">
-            <p className="mb-6">
-              These Terms govern your use of this website only. They are not a
-              service agreement. If you engage Lumentify for a project, that
-              work is governed by a separate, signed Master Service Agreement
-              (MSA) and Statement of Work (SOW), which take precedence over
-              anything on this site.
+          <section className="mx-auto max-w-3xl pb-24 text-zinc-600 leading-relaxed space-y-6">
+            <p className="bg-zinc-50 border border-zinc-200 p-4 text-sm text-zinc-700">
+              <strong className="text-black">Important Note:</strong> These
+              Terms govern your use of this website only. They do not constitute
+              a service agreement. If you engage Lexentify for a project, that
+              commercial work is strictly governed by a separate, signed Master
+              Service Agreement (MSA) and Statement of Work (SOW), which
+              supersede anything stated on this website.
             </p>
 
-            <h2 className="text-lg font-bold text-black mt-8 mb-3">
-              1. Acceptance
-            </h2>
-            <p className="mb-4">
-              By browsing this website, you agree to these Terms. If you
-              don&apos;t agree, please don&apos;t use the site.
-            </p>
+            <div>
+              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+                1. Acceptance of Terms
+              </h2>
+              <p>
+                By accessing and browsing this website, you agree to comply with
+                these Terms of Use. If you do not agree with any part of these
+                terms, please refrain from using the site.
+              </p>
+            </div>
 
-            <h2 className="text-lg font-bold text-black mt-8 mb-3">
-              2. Website content &amp; intellectual property
-            </h2>
-            <p className="mb-4">
-              All text, design, and showcase material on this website belongs to
-              Lumentify or is used with permission, and may not be copied or
-              reused without our consent. Showcase projects remain the property
-              of their respective clients where applicable.
-            </p>
+            <div>
+              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+                2. Website Content &amp; Intellectual Property
+              </h2>
+              <p>
+                All text, graphics, user interface designs, and showcase
+                materials displayed on this website belong exclusively to
+                Lexentify or are used with proper authorization. They may not be
+                copied, reproduced, or reused without our explicit prior
+                consent. Showcase client projects remain the property of their
+                respective owners.
+              </p>
+            </div>
 
-            <h2 className="text-lg font-bold text-black mt-8 mb-3">
-              3. Information is general, not a promise
-            </h2>
-            <p className="mb-4">
-              Pricing, timelines, and feature lists on this site are general
-              starting points, not a binding quote. The actual price, scope, and
-              delivery timeline for your project are only confirmed in a signed
-              SOW.
-            </p>
+            <div>
+              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+                3. General Information, Not a Binding Offer
+              </h2>
+              <p>
+                Pricing structures, estimated delivery timelines, and feature
+                lists published on this website serve as general guidelines and
+                starting points only—they do not constitute a binding commercial
+                quote. The exact price, detailed scope, and delivery milestones
+                for your project are exclusively confirmed through a formal,
+                signed SOW.
+              </p>
+            </div>
 
-            <h2 className="text-lg font-bold text-black mt-8 mb-3">
-              4. Limitation of liability
-            </h2>
-            <p className="mb-4">
-              This website is provided as-is. To the extent permitted by law,
-              Lumentify is not liable for any loss or damage arising from your
-              use of this website. Liability related to an actual project is
-              addressed separately in the signed MSA.
-            </p>
+            <div>
+              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+                4. Limitation of Liability
+              </h2>
+              <p>
+                This website is provided on an &quot;as-is&quot; and
+                &quot;as-available&quot; basis. To the maximum extent permitted
+                by applicable law, Lexentify shall not be held liable for any
+                direct, indirect, or incidental loss or damage arising from your
+                use of this website. Project-specific liabilities and warranties
+                are strictly governed under individual signed project
+                agreements.
+              </p>
+            </div>
 
-            <h2 className="text-lg font-bold text-black mt-8 mb-3">
-              5. External links
-            </h2>
-            <p className="mb-4">
-              This site may link to third-party sites (for example, a
-              client&apos;s live showcase site). We&apos;re not responsible for
-              the content or practices of sites we don&apos;t control.
-            </p>
+            <div>
+              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+                5. External Links &amp; Third-Party Sites
+              </h2>
+              <p>
+                This site may contain links to external third-party websites
+                (such as live client demo builds or portfolio sandboxes). We
+                hold no responsibility or liability for the content, privacy
+                policies, or operational practices of websites outside of our
+                direct control.
+              </p>
+            </div>
 
-            <h2 className="text-lg font-bold text-black mt-8 mb-3">
-              6. Governing law
-            </h2>
-            <p className="mb-4">
-              These Terms are governed by the laws of Indonesia, without regard
-              to conflict-of-law principles. Governing law for a specific
-              project may be set separately in that project&apos;s MSA.
-            </p>
+            <div>
+              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+                6. Governing Law &amp; Dispute Resolution
+              </h2>
+              <p>
+                These website Terms are governed by and construed in accordance
+                with the laws of Indonesia, without regard to conflict-of-law
+                principles. Any formal commercial disputes arising from services
+                shall first be pursued through good-faith professional
+                negotiation and mediation before any legal recourse.
+              </p>
+            </div>
 
-            <h2 className="text-lg font-bold text-black mt-8 mb-3">
-              7. Changes to these Terms
-            </h2>
-            <p className="mb-4">
-              We may update these Terms from time to time. Continued use of the
-              site after changes means you accept the updated Terms.
-            </p>
+            <div>
+              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+                7. Changes to These Terms
+              </h2>
+              <p>
+                We reserve the right to modify or update these Terms of Use at
+                any time. Your continued browsing or use of the website
+                following any updates constitutes your formal acceptance of the
+                revised terms.
+              </p>
+            </div>
 
-            <h2 className="text-lg font-bold text-black mt-8 mb-3">
-              8. Contact
-            </h2>
-            <p className="mb-4">
-              Questions about these Terms can be sent to{" "}
-              <a
-                href="mailto:hello@lumentify.com"
-                className="text-zinc-700 font-medium hover:underline"
-              >
-                info@lumentify.asia
-              </a>
-              .
-            </p>
+            <div>
+              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+                8. Contact Information
+              </h2>
+              <p>
+                If you have any questions or concerns regarding these Terms of
+                Use, please reach out directly via email at{" "}
+                <a
+                  href="mailto:info@lexentify.com"
+                  className="text-black font-semibold underline hover:text-zinc-700 transition-colors"
+                >
+                  info@lexentify.com
+                </a>
+                .
+              </p>
+            </div>
           </section>
         </section>
       </main>

@@ -23,7 +23,7 @@ const geistMono = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Lumentify",
+  title: "Lexentify",
   description: "- Creative Studio For Home Services Web Development",
 };
 

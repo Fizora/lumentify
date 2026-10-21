@@ -21,7 +21,7 @@ const notificationOptions: { key: ToggleKey; label: string; desc: string }[] = [
   {
     key: "chatEmails",
     label: "New message emails",
-    desc: "Email me when the Lumentify team sends a new chat message.",
+    desc: "Email me when the Lexentify team sends a new chat message.",
   },
   {
     key: "projectUpdates",

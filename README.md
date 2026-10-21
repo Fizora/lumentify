@@ -37,10 +37,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 import type { Metadata } from "next";
 import {
-  Bricolage_Grotesque,
-  Poppins,
-  Space_Grotesk,
-  Geist,
+Bricolage_Grotesque,
+Poppins,
+Space_Grotesk,
+Geist,
 } from "next/font/google";
 import "./globals.css";
 import BlockComponentsDevelopers from "@/components/BlockComponentsDevelopers";
@@ -50,38 +50,37 @@ import { cn } from "@/lib/utils";
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const geistMono = Poppins({
-  variable: "--font-mono",
-  weight: "400",
-  subsets: ["latin"],
+variable: "--font-mono",
+weight: "400",
+subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Lumentify - Creative Studio For Home Services Web Development",
+title: "Lexentify - Creative Studio For Home Services Web Development",
 };
 
 export default function RootLayout({
-  children,
+children,
 }: Readonly<{
-  children: React.ReactNode;
+children: React.ReactNode;
 }>) {
-  return (
-    <html
-      lang="en"
-      className={cn(
-        "h-full",
-        "antialiased",
-        "scrollbar-thin",
-        geistMono.variable,
-        "font-sans",
-        geist.variable,
-      )}
-    >
-      <body className="min-h-full flex flex-col text-base">
-        <LenisProvider>
-          {children}
-          {/* <BlockComponentsDevelopers /> */}
-        </LenisProvider>
-      </body>
-    </html>
-  );
+return (
+<html
+lang="en"
+className={cn(
+"h-full",
+"antialiased",
+"scrollbar-thin",
+geistMono.variable,
+"font-sans",
+geist.variable,
+)} >
+<body className="min-h-full flex flex-col text-base">
+<LenisProvider>
+{children}
+{/_ <BlockComponentsDevelopers /> _/}
+</LenisProvider>
+</body>
+</html>
+);
 }

@@ -28,7 +28,7 @@ const FAQ = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
             Your concerns, addressed
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Clear answers to the questions that matter before you engage us —
             built to give you confidence, clarity, and peace of mind.
           </p>

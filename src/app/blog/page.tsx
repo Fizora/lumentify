@@ -36,7 +36,7 @@ const dummyArticles = [
   },
 ];
 export const metadata: Metadata = {
-  title: "Lumentify | Blog",
+  title: "Lexentify | Blog",
 };
 
 export default function Blog() {
@@ -47,7 +47,7 @@ export default function Blog() {
         <section className="pt-32 mx-auto container px-4">
           <DashboardPageHeader
             title="Blog & Updates"
-            description="The latest articles and updates from the Lumentify team — tips, new features, and news about your website."
+            description="The latest articles and updates from the Lexentify team — tips, new features, and news about your website."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
             {dummyArticles.map((article, idx) => (

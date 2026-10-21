@@ -3,79 +3,87 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "About | Lumentify",
+  title: "Lexentify | About Our Studio",
 };
 
 export default function About() {
   return (
     <>
       <Navbar />
-      <main className="">
-        <div className="mx-auto max-w-7xl px-3 py-20 border-x">
-          <div className="mx-auto max-w-3xl">
+      <main className="min-h-screen px-4 bg-white text-zinc-900">
+        <div className="mx-auto max-w-7xl px-3 py-20 border-x border-zinc-200">
+          <div className="mx-auto max-w-3xl pt-12">
             {/* Header */}
-            <div className="mb-16 space-y-5">
+            <div className="mb-12 space-y-4">
               <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
-                About
+                About Lexentify
               </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
-                Why we build only for home services
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-black leading-tight">
+                Why we build exclusively for home-service businesses
               </h1>
-              <p className="text-lg text-gray-600 leading-relaxed text-justify">
-                A short read on who we are, what we focus on, and why we chose
-                to go deep into one industry instead of wide across many.
+              <p className="text-lg text-zinc-600 leading-relaxed">
+                A transparent look at who we are, why we chose to go deep into a
+                single industry, and how our execution standard protects your
+                trade business.
               </p>
             </div>
 
-            {/* Body — blog-style, justified paragraphs */}
-            <article className="space-y-6 text-gray-700 leading-relaxed text-[15px] text-lg text-justify">
+            {/* Body — blog-style, clean left-aligned text */}
+            <article className="space-y-6 text-zinc-700 leading-relaxed text-base  text-left">
               <p>
-                Lumentify is a small, independent studio that chose to build
-                only for one kind of business: home-service trades. We focus on
-                plumbers, electricians, HVAC technicians, and roofers whose work
-                runs on urgency — when something breaks, the question is not
-                “does this website look fancy?” but “can this business be
-                reached right now?”
+                Lexentify is a specialized, independent digital studio dedicated
+                to serving a single kind of business: home-service trades. We
+                focus exclusively on plumbers, electricians, HVAC technicians,
+                and roofers whose daily operations run on urgency. When a
+                homeowner’s pipe bursts or power fails, the question is never
+                &ldquo;does this website look fancy?&rdquo; — it is always
+                &ldquo;can I call this business right now?&rdquo;
               </p>
 
               <p>
-                That insight shapes everything we do. In home services, a slow
-                website is not just an aesthetic problem, it is a real business
-                problem. If a page takes too long to load or a phone number is
-                hard to find, the visitor does not wait and try again — they
-                call a competitor instead. For us, speed is the product: a site
-                has to load quickly, feel clear, and make it obvious how to
-                call, book, or request a quote.
+                That core insight shapes every line of code we write. In the
+                home-service sector, a slow website is not merely an aesthetic
+                flaw; it is an active business failure. If a landing page takes
+                too long to load or mobile buttons are cumbersome to tap,
+                potential customers do not wait around — they immediately call a
+                competitor. For us, speed and frictionless contact are the
+                primary products.
               </p>
 
               <p>
-                We stay deliberately small so every project gets direct
-                attention. Rather than drop generic content into a generic
-                template, we look at what services you offer, which areas you
-                cover, and why customers choose you over the tradie three
-                suburbs away. We then build around those specifics, using a
-                structure that has one job on every page: turn visitors into
-                booked jobs, not just into nice screenshots.
+                We remain deliberately small so that every project receives
+                direct, founder-level attention. Rather than recycling generic
+                templates or stuffing filler text, we analyze your specific
+                services, coverage suburbs, and operational strengths. We then
+                architect a clean, direct digital asset designed with one single
+                outcome: turning local search traffic into booked phone calls
+                and quote requests.
               </p>
 
               <p>
-                Our work rests on three principles: fast, clean, and directed.
-                Fast means the site loads before a stressed customer gives up.
-                Clean means no clutter and no competing messages when someone is
-                in a hurry. Directed means every page has a single, clear
-                outcome — a call, a booking, or a quote request — instead of
-                scattering attention across multiple calls to action. We focus
-                on licensing, insurance, and real reviews as core content,
-                because trust in this industry is built in seconds, long before
-                anyone steps through a customer’s front door.
+                Our technical philosophy rests on three non-negotiable
+                principles: <strong>Fast, Clean, and Directed</strong>.
+                <span className="block mt-2">
+                  <strong className="text-black">Fast</strong> ensures your site
+                  loads instantly before an urgent customer bounces.
+                  <strong className="text-black ml-1">Clean</strong> eliminates
+                  clutter, distractions, and competing messages when users are
+                  stressed.
+                  <strong className="text-black ml-1">Directed</strong> means
+                  every section funnels attention toward a clear action — a
+                  phone call, booking form, or quote submission. We place
+                  licensing credentials, insurance badges, and direct trust
+                  signals front and center because trust in this industry is
+                  established in seconds.
+                </span>
               </p>
 
               <p>
-                In short, we are not trying to be a general web agency that
-                happens to serve this industry. We are trying to be the team
-                that understands how home-service customers actually behave
-                online, and builds websites that match that reality — one
-                project at a time.
+                Ultimately, we are not trying to operate as a generalist web
+                agency juggling dozens of unrelated niches. Our mission is
+                simple: to be the dedicated digital partner that understands how
+                home-service consumers behave online, building high-performance
+                systems that match that reality — one project at a time.
               </p>
             </article>
           </div>
