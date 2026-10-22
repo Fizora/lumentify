@@ -30,7 +30,7 @@ const Hero = () => {
         {/* Headline */}
         <div className="space-y-4 py-20">
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-[3.4rem] leading-tight xl:max-w-4xl font-medium">
+            <h1 className="text-4xl md:text-5xl lg:text-[3.4rem] leading-tight xl:max-w-4xl font-bold">
               Every Slow Page Is a Customer Calling Your Competitor Instead.
             </h1>
             <p className="max-w-3xl text-zinc-600">
