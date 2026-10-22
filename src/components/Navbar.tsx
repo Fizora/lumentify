@@ -128,7 +128,7 @@ const Navbar = () => {
                   <Link
                     key={index}
                     href={item.href}
-                    className="text-gray-700 hover:text-gray-950 transition-colors duration-300 text-xs px-2"
+                    className="text-gray-700 hover:text-gray-950 transition-colors duration-300 text-sm px-2"
                   >
                     {item.name}
                   </Link>
@@ -167,13 +167,13 @@ const Navbar = () => {
         <div className="px-2 hidden md:flex">
           <SecondaryButtonLink
             href={CTA_HREF}
-            className="text-xs font-medium rounded-full mr-2"
+            className="text-sm font-medium rounded-full mr-2"
           >
             Login
           </SecondaryButtonLink>
           <PrimaryButtonLink
             href={CTA_HREF}
-            className="text-xs font-medium rounded-full"
+            className="text-sm font-medium rounded-full"
           >
             Create Account
           </PrimaryButtonLink>
@@ -209,7 +209,7 @@ const Navbar = () => {
                   <div className="grid grid-cols-3 gap-8">
                     {servicesItem.categories.map((category, catIdx) => (
                       <div key={catIdx} className="">
-                        <h4 className="text-xs font-semibold text-gray-black uppercase tracking-wider mb-3 pb-2">
+                        <h4 className="text-sm font-semibold text-gray-black uppercase tracking-wider mb-3 pb-2">
                           {category.title}
                         </h4>
                         <div className="flex flex-col gap-0.5">
@@ -297,7 +297,7 @@ const Navbar = () => {
                           >
                             {item.categories.map((category, catIdx) => (
                               <div key={catIdx}>
-                                <h4 className="text-xs font-semibold text-white uppercase tracking-wider mb-1">
+                                <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-1">
                                   {category.title}
                                 </h4>
                                 {category.items.map((child, childIdx) => (
