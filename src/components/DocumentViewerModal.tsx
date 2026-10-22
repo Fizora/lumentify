@@ -31,7 +31,7 @@ const DocumentViewerModal = ({
             <div className="min-w-0">
               <h2
                 id="document-viewer-title"
-                className="truncate text-sm font-bold text-zinc-900 sm:text-base"
+                className="truncate text-sm font-bold text-zinc-900 sm:text-sm"
               >
                 {content.title}
               </h2>

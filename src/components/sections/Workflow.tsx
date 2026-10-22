@@ -64,8 +64,8 @@ const itemVariants: Variants = {
 
 const Workflow = () => {
   return (
-    <section className="bg-white border-y">
-      <div className="mx-auto max-w-7xl py-24 px-4 border-x">
+    <section className="bg-white border-b">
+      <div className="mx-auto max-w-300 py-24 px-4 border-x">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -112,7 +112,7 @@ const Workflow = () => {
                   <h3 className="text-lg font-semibold text-black mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-base text-gray-500 leading-relaxed">
+                  <p className="text-sm text-gray-500 leading-relaxed">
                     {item.description}
                   </p>
                 </div>

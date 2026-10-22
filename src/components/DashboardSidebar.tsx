@@ -87,7 +87,7 @@ const DashboardSidebar = () => {
           </Link>
 
           {/* Navigasi */}
-          <nav className="p-2 text-base flex flex-col gap-1">
+          <nav className="p-2 text-sm flex flex-col gap-1">
             {sidebarNavItems.map(({ name, href, icon: Icon }) => {
               const isActive = pathname === href;
               return (
@@ -97,7 +97,7 @@ const DashboardSidebar = () => {
                   onClick={closeMobile}
                   title={name}
                   aria-current={isActive ? "page" : undefined}
-                  className={`flex items-center gap-2 px-4 py-1.5 rounded-md transition-colors duration-300 text-base ${
+                  className={`flex items-center gap-2 px-4 py-1.5 rounded-md transition-colors duration-300 text-sm ${
                     isActive ? "bg-zinc-800" : "hover:bg-zinc-800"
                   } ${isCollapsed ? "md:justify-center md:px-0 md:py-2.5" : ""}`}
                 >

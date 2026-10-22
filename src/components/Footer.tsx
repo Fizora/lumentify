@@ -45,7 +45,7 @@ const Footer = () => {
         }}
       />
 
-      <div className="mx-auto max-w-7xl px-4 py-14">
+      <div className="mx-auto max-w-300 px-4 py-14">
         {/* Link grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {/* Brand column */}
@@ -82,7 +82,7 @@ const Footer = () => {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-gray-500 hover:text-white hover:underline transition-colors"
+                      className="text-gray-500 text-xs hover:text-white "
                     >
                       {link.label}
                     </Link>
@@ -130,7 +130,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar — 3 zona */}
-        <div className="mt-10 pt-6 border-t border-zinc-900 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-zinc-500">
+        <div className=" mt-10 pt-6 border-t border-zinc-900 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-zinc-500">
           <p className="order-2 md:order-1 text-center md:text-left">
             &copy; {currentYear} Lexentify. All rights reserved.
           </p>

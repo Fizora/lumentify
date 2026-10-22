@@ -11,7 +11,7 @@ export default function About() {
     <>
       <Navbar />
       <main className="min-h-screen px-4 bg-white text-zinc-900">
-        <div className="mx-auto max-w-7xl px-3 py-20 border-x border-zinc-200">
+        <div className="mx-auto max-w-300 px-3 py-20 border-x border-zinc-200">
           <div className="mx-auto max-w-3xl pt-12">
             {/* Header */}
             <div className="mb-12 space-y-4">
@@ -21,7 +21,7 @@ export default function About() {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-black leading-tight">
                 Why we build exclusively for home-service businesses
               </h1>
-              <p className="text-lg text-zinc-600 leading-relaxed">
+              <p className="text-sm text-zinc-600 leading-relaxed">
                 A transparent look at who we are, why we chose to go deep into a
                 single industry, and how our execution standard protects your
                 trade business.
@@ -29,7 +29,7 @@ export default function About() {
             </div>
 
             {/* Body — blog-style, clean left-aligned text */}
-            <article className="space-y-6 text-zinc-700 leading-relaxed text-base  text-left">
+            <article className="space-y-6 text-zinc-700 leading-relaxed text-sm  text-left">
               <p>
                 Lexentify is a specialized, independent digital studio dedicated
                 to serving a single kind of business: home-service trades. We

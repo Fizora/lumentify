@@ -65,6 +65,7 @@ children,
 children: React.ReactNode;
 }>) {
 return (
+
 <html
 lang="en"
 className={cn(
@@ -75,7 +76,7 @@ geistMono.variable,
 "font-sans",
 geist.variable,
 )} >
-<body className="min-h-full flex flex-col text-base">
+<body className="min-h-full flex flex-col text-sm">
 <LenisProvider>
 {children}
 {/_ <BlockComponentsDevelopers /> _/}

@@ -67,13 +67,11 @@ const Testimonials = () => {
                   <span className="text-lg font-bold text-yellow-400">
                     {t.rating}
                   </span>
-                  <blockquote className="text-gray-700 my-2 text-base leading-relaxed line-clamp-3">
+                  <blockquote className="text-gray-700 my-2 text-sm leading-relaxed line-clamp-3">
                     "{t.quote}"
                   </blockquote>
                   <div className="mt-auto border-t border-gray-200 pt-3">
-                    <p className="font-semibold text-black text-base">
-                      {t.name}
-                    </p>
+                    <p className="font-semibold text-black text-sm">{t.name}</p>
                     <p className="text-xs text-gray-500">{t.role}</p>
                   </div>
                 </div>

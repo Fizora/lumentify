@@ -29,7 +29,7 @@ const FeatureCard = ({ feat }: { feat: FeatureItem }) => {
         <IconComponent className="w-5 h-5" />
       </div>
       <h3 className="text-lg font-semibold text-black mb-2">{feat.title}</h3>
-      <p className="text-base text-gray-500 leading-relaxed">
+      <p className="text-sm text-gray-500 leading-relaxed">
         {feat.description}
       </p>
     </motion.div>
@@ -63,7 +63,7 @@ const FeatureCategory = ({ label, items }: FeatureCategoryProps) => (
 const Features = () => {
   return (
     <section className="bg-white border-y">
-      <div className="mx-auto max-w-7xl py-24 px-4 border-x">
+      <div className="mx-auto max-w-300 py-24 px-4 border-x">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}

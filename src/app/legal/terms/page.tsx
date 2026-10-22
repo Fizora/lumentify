@@ -11,7 +11,7 @@ export default function Terms() {
     <>
       <Navbar />
       <main className="min-h-screen px-4 bg-white text-zinc-900">
-        <section className="mx-auto max-w-7xl px-3 py-20 border-x border-zinc-200">
+        <section className="mx-auto max-w-300 px-3 py-20 border-x border-zinc-200">
           <section className="pt-32 pb-8 mx-auto max-w-3xl">
             <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
               Legal
@@ -19,9 +19,7 @@ export default function Terms() {
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-black leading-tight mb-3">
               Terms of Use
             </h1>
-            <p className="text-base text-zinc-500">
-              Last updated: October 2026
-            </p>
+            <p className="text-sm text-zinc-500">Last updated: October 2026</p>
           </section>
 
           <section className="mx-auto max-w-3xl pb-24 text-zinc-600 leading-relaxed space-y-6">

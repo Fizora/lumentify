@@ -9,7 +9,18 @@ import Link from "next/link";
 
 const CTA = () => {
   return (
-    <section className="py-20">
+    <section
+      className="py-20"
+      style={{
+        backgroundImage: `repeating-linear-gradient(
+              45deg,
+              transparent,
+              transparent 20px,
+              rgba(120, 120, 120, 0.1) 20px,
+              rgba(120, 120, 120, 0.1) 40px
+            )`,
+      }}
+    >
       <div className=" mx-auto container text-center bg-linear-to-b from-zinc-800 to-zinc-950  text-white rounded-md pb-10 px-10">
         <div
           className="h-24 md:h-32 border-b border-zinc-900"

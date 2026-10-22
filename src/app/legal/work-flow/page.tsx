@@ -73,10 +73,8 @@ export default function WorkFlow() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-400 mb-1">Stage {idx + 1}</p>
-                  <h3 className="text-base font-bold text-black mb-2">
-                    {title}
-                  </h3>
-                  <p className="text-base text-gray-600 leading-relaxed">
+                  <h3 className="text-sm font-bold text-black mb-2">{title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
                     {body}
                   </p>
                 </div>

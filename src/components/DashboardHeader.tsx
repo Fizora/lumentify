@@ -22,7 +22,7 @@ const DashboardHeader = () => {
         <LuMenu size={22} />
       </button>
 
-      <div className="flex items-center gap-2 sm:gap-4 text-base">
+      <div className="flex items-center gap-2 sm:gap-4 text-sm">
         {/* <Link
           href="/dashboard-panel/notification"
           aria-label="Inbox"

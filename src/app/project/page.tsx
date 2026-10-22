@@ -129,7 +129,7 @@ function SectionHeading({ step, title }: { step: string; title: string }) {
       <span className="text-xs font-semibold tracking-widest uppercase text-zinc-400">
         {step}
       </span>
-      <h2 className="text-base font-semibold text-black">{title}</h2>
+      <h2 className="text-sm font-semibold text-black">{title}</h2>
     </div>
   );
 }
@@ -194,7 +194,7 @@ export default function Project() {
             <h1 className="text-3xl md:text-4xl font-bold text-black leading-tight">
               Thanks — we&apos;ve got your details.
             </h1>
-            <p className="text-gray-600 text-[15px] md:text-base leading-relaxed">
+            <p className="text-gray-600 text-[15px] md:text-sm leading-relaxed">
               We&apos;ll reply within 1 business day with a proposed scope,
               timeline, and any documents you asked for. No pressure — reply to
               our email anytime if you&apos;ve got questions first.
@@ -219,12 +219,12 @@ export default function Project() {
             <h1 className="text-3xl md:text-4xl font-bold text-black leading-tight">
               Ready to get your site built?
             </h1>
-            <p className="text-gray-600 text-[15px] md:text-base leading-relaxed">
+            <p className="text-gray-600 text-[15px] md:text-sm leading-relaxed">
               Share a few details about your home-service business and
               we&apos;ll reply with a proposed scope, timeline, and simple
               documents to kick things off.
             </p>
-            <p className="text-gray-600 text-[15px] md:text-base leading-relaxed">
+            <p className="text-gray-600 text-[15px] md:text-sm leading-relaxed">
               If you prefer to work under an NDA or need a formal Master Service
               Agreement, just let us know in the form. We&apos;ll send a simple
               NDA and MSA alongside a draft Statement of Work based on your

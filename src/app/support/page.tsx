@@ -44,7 +44,7 @@ export default function Support() {
     <>
       <Navbar />
       <main className="min-h-screen px-4 bg-white text-zinc-900">
-        <section className="mx-auto max-w-7xl px-3 py-20 border-x border-zinc-200">
+        <section className="mx-auto max-w-300 px-3 py-20 border-x border-zinc-200">
           {/* Header */}
           <section className="pt-32 pb-16 mx-auto max-w-3xl text-center">
             <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
@@ -65,7 +65,7 @@ export default function Support() {
             <h2 className="text-xl font-bold text-black mb-1 text-center">
               Your protection standards
             </h2>
-            <p className="text-base text-zinc-600 text-center mb-8 max-w-xl mx-auto">
+            <p className="text-sm text-zinc-600 text-center mb-8 max-w-xl mx-auto">
               As an independent digital studio, we believe in radical
               transparency. Here are the clear operational guardrails that
               protect your project.
@@ -77,10 +77,8 @@ export default function Support() {
                   className="border border-zinc-200 p-8 bg-white shadow-xs"
                 >
                   <Icon className="w-5 h-5 text-zinc-800 mb-4" />
-                  <h3 className="text-base font-bold text-black mb-2">
-                    {title}
-                  </h3>
-                  <p className="text-base text-zinc-600 leading-relaxed">
+                  <h3 className="text-sm font-bold text-black mb-2">{title}</h3>
+                  <p className="text-sm text-zinc-600 leading-relaxed">
                     {body}
                   </p>
                 </div>
@@ -96,7 +94,7 @@ export default function Support() {
                 <h2 className="text-lg font-bold text-black mb-2">
                   Active clients
                 </h2>
-                <p className="text-base text-zinc-600 leading-relaxed mb-6">
+                <p className="text-sm text-zinc-600 leading-relaxed mb-6">
                   Need a content update or post-launch technical assistance?
                   Message us directly with your business name and details—we
                   will take care of it promptly.
@@ -105,7 +103,7 @@ export default function Support() {
                   href="https://wa.me/6285235086814"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-base font-semibold text-zinc-900 hover:text-zinc-600 transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-900 hover:text-zinc-600 transition-colors"
                 >
                   <LuMessageCircle className="w-4 h-4" />
                   Message us on WhatsApp
@@ -117,7 +115,7 @@ export default function Support() {
                 <h2 className="text-lg font-bold text-black mb-2">
                   Prospective clients
                 </h2>
-                <p className="text-base text-zinc-600 leading-relaxed mb-6">
+                <p className="text-sm text-zinc-600 leading-relaxed mb-6">
                   Have questions about pricing, deliverables, or whether our web
                   framework fits your trade business? Reach out for an honest,
                   pressure-free discussion.
@@ -126,7 +124,7 @@ export default function Support() {
                   href="https://wa.me/6285235086814"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-base font-semibold text-zinc-900 hover:text-zinc-600 transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-900 hover:text-zinc-600 transition-colors"
                 >
                   <LuMessageCircle className="w-4 h-4" />
                   Message us on WhatsApp
@@ -168,7 +166,7 @@ export default function Support() {
                     <span className="shrink-0 w-6 h-6 rounded-full bg-zinc-100 text-zinc-800 text-xs font-semibold flex items-center justify-center">
                       {n}
                     </span>
-                    <p className="text-base text-zinc-600 leading-relaxed">
+                    <p className="text-sm text-zinc-600 leading-relaxed">
                       {text}
                     </p>
                   </li>
@@ -183,15 +181,15 @@ export default function Support() {
               <div className="flex items-center gap-3">
                 <LuMail className="w-5 h-5 text-zinc-800 shrink-0" />
                 <div>
-                  <p className="text-base font-semibold text-black">
+                  <p className="text-sm font-semibold text-black">
                     Prefer email communication?
                   </p>
-                  <p className="text-base text-zinc-600">info@lexentify.com</p>
+                  <p className="text-sm text-zinc-600">info@lexentify.com</p>
                 </div>
               </div>
               <Link
                 href="/faq"
-                className="inline-flex items-center gap-2 text-base font-semibold text-zinc-900 hover:text-zinc-600 transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-900 hover:text-zinc-600 transition-colors"
               >
                 <LuCircleHelp className="w-4 h-4" />
                 Check the FAQ first

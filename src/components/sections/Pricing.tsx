@@ -23,8 +23,8 @@ interface PricingProps {
 
 const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
   return (
-    <section className=" bg-white border-b" id="pricing">
-      <div className="mx-auto max-w-7xl py-24 px-3 border-x">
+    <section className="bg-white border-b" id="pricing">
+      <div className="mx-auto max-w-300 py-24 px-3 border-x">
         {/* SECTION 1: BUILD YOUR SITE */}
         {showOneTime && (
           <>
@@ -35,7 +35,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
               transition={{ duration: 0.5 }}
               className="text-center space-y-5 mb-16"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-bold leading-tight">
                 Build Your Site
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -49,7 +49,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              className="grid grid-cols-1 lg:grid-cols-3 gap-3 items-stretch mb-6"
+              className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-3 items-stretch mb-6"
             >
               {buildPlans.map((plan, index) => (
                 <motion.div
@@ -70,7 +70,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                     <h3 className="text-xl font-bold text-black">
                       {plan.name}
                     </h3>
-                    <p className="md:text-sm text-gray-600 mb-5 py-3 h-12 leading-relaxed">
+                    <p className="text-sm text-gray-600 mb-10 md:mb-8 lg:mb-6 xl:mb-4 py-4 h-12 leading-relaxed">
                       {plan.description}
                     </p>
                   </div>
@@ -90,7 +90,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                             plan.featured ? "text-green-600" : "text-gray-600"
                           }`}
                         />
-                        <span className="text-sm text-gray-700 leading-relaxed">
+                        <span className="text-[0.80rem] text-gray-700 leading-relaxed">
                           {feat}
                         </span>
                       </li>
@@ -144,7 +144,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch"
+              className="grid grid-cols-1  lg:grid-cols-3 gap-6 items-stretch"
             >
               {mrrPlans.map((plan, index) => (
                 <motion.div

@@ -115,7 +115,7 @@ export default function PricingPage() {
     <>
       <Navbar />
       <main className="bg-white">
-        <div className="mx-auto max-w-7xl py-24 px-3 border-x">
+        <div className="mx-auto max-w-300 py-24 px-3 border-x">
           {/* Toggle view */}
           <div className="flex justify-end mb-8">
             <div className="inline-flex" role="group">
@@ -168,7 +168,7 @@ export default function PricingPage() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch mb-6"
+              className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 items-stretch mb-6"
             >
               {buildPlans.map((plan, index) => (
                 <motion.div
@@ -200,7 +200,7 @@ export default function PricingPage() {
                     <span className="text-4xl font-bold text-black">
                       {plan.price}
                     </span>
-                    <span className="text-gray-500 ml-2 text-sm">
+                    <span className="text-gray-500 ml-2 text-xs">
                       {plan.period}
                     </span>
                   </div>
@@ -212,7 +212,7 @@ export default function PricingPage() {
                             plan.featured ? "text-green-600" : "text-gray-600"
                           }`}
                         />
-                        <span className="text-sm text-gray-700 leading-relaxed">
+                        <span className="text-xs text-gray-700 leading-relaxed">
                           {feat}
                         </span>
                       </li>

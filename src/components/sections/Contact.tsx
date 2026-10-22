@@ -58,8 +58,8 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-20 bg-white" id="contact">
-      <div className="mx-auto container px-4 sm:px-6">
+    <section className="bg-white border-b" id="contact">
+      <div className="mx-auto border-x max-w-300 px-4 py-20">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ const Contact = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-black tracking-tight">
             Let&apos;s talk about your site.
           </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Tell us a bit about your business and what you need. No pressure, no
             aggressive sales script — just honest, professional next steps.
           </p>
@@ -82,7 +82,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            className="md:col-span-3 border border-gray-200 p-6 md:p-8 bg-white shadow-xs"
+            className="md:col-span-3 border border-gray-200 p-6 md:p-8 bg-white shadow-xs rounded-md"
           >
             {status === "sent" ? (
               <div className="flex flex-col items-center text-center py-12">
@@ -90,7 +90,7 @@ const Contact = () => {
                 <h3 className="text-xl font-bold text-black mb-2">
                   Message received successfully!
                 </h3>
-                <p className="text-base text-gray-600 leading-relaxed max-w-md">
+                <p className="text-sm text-gray-600 leading-relaxed max-w-md">
                   Thank you for reaching out. We review every project personally
                   and will reply with clear, actionable steps within 1 business
                   day.
@@ -120,7 +120,7 @@ const Contact = () => {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="John Smith"
-                      className="w-full border border-gray-300 px-3.5 py-2.5 text-base text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black transition-all"
+                      className="w-full border border-gray-300 px-3.5 py-2.5 text-sm text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black transition-all rounded-md"
                     />
                   </div>
                   <div>
@@ -138,7 +138,7 @@ const Contact = () => {
                       value={form.business}
                       onChange={handleChange}
                       placeholder="Smith Plumbing Co."
-                      className="w-full border border-gray-300 px-3.5 py-2.5 text-base text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black transition-all"
+                      className="w-full border border-gray-300 px-3.5 py-2.5 text-sm text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black transition-all rounded-md"
                     />
                   </div>
                 </div>
@@ -158,7 +158,7 @@ const Contact = () => {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="you@business.com"
-                    className="w-full border border-gray-300 px-3.5 py-2.5 text-base text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black transition-all"
+                    className="w-full border border-gray-300 px-3.5 py-2.5 text-sm text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black transition-all rounded-md"
                   />
                 </div>
 
@@ -174,7 +174,7 @@ const Contact = () => {
                     name="interest"
                     value={form.interest}
                     onChange={handleChange}
-                    className="w-full border border-gray-300 px-3.5 py-2.5 text-base text-black focus:outline-none focus:ring-2 focus:ring-black bg-white transition-all"
+                    className="w-full border border-gray-300 px-3.5 py-2.5 text-sm text-black focus:outline-none focus:ring-2 focus:ring-black bg-white transition-all rounded-md"
                   >
                     <option value="Essential">
                       Essential — High-converting landing page
@@ -204,12 +204,12 @@ const Contact = () => {
                     value={form.message}
                     onChange={handleChange}
                     placeholder="Tell us about your trade business and what you are hoping your new website can achieve."
-                    className="w-full border border-gray-300 px-3.5 py-2.5 text-base text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black resize-none transition-all"
+                    className="w-full border border-gray-300 px-3.5 py-2.5 text-sm text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black resize-none transition-all rounded-md"
                   />
                 </div>
 
                 {status === "error" && (
-                  <div className="bg-red-50 border border-red-200 p-4">
+                  <div className="bg-red-50 border border-red-200 p-4 rounded-md">
                     <p className="text-sm text-red-700">
                       Something went wrong sending your message. Please try
                       again or email us directly at{" "}
@@ -227,7 +227,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 disabled:opacity-60 disabled:cursor-not-allowed text-white text-base font-semibold px-6 py-3 transition-colors shadow-xs cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-semibold px-6 py-3 transition-colors shadow-xs cursor-pointer rounded-md"
                 >
                   {status === "loading" ? (
                     <>
@@ -253,9 +253,9 @@ const Contact = () => {
             transition={{ delay: 0.1 }}
             className="md:col-span-2 flex flex-col gap-4"
           >
-            <div className="border border-gray-200 p-6 bg-white">
+            <div className="border border-gray-200 p-6 bg-white rounded-md">
               <LuMail className="w-5 h-5 text-zinc-800 mb-3" />
-              <h3 className="text-base font-bold text-black mb-1">
+              <h3 className="text-sm font-bold text-black mb-1">
                 Direct Email
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed mb-3">
@@ -270,9 +270,9 @@ const Contact = () => {
               </a>
             </div>
 
-            <div className="border border-gray-200 p-6 bg-white">
+            <div className="border border-gray-200 p-6 bg-white rounded-md">
               <LuMessageCircle className="w-5 h-5 text-zinc-800 mb-3" />
-              <h3 className="text-base font-bold text-black mb-1">
+              <h3 className="text-sm font-bold text-black mb-1">
                 Already a client?
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed mb-3">
@@ -289,7 +289,7 @@ const Contact = () => {
               </a>
             </div>
 
-            <div className="bg-zinc-50 border border-zinc-200/80 p-6">
+            <div className="bg-zinc-50 border border-zinc-200/80 p-6 rounded-md">
               <p className="text-sm text-gray-700 leading-relaxed">
                 <span className="font-bold text-black">✓</span> Every project
                 starts with a clear written proposal and formal agreement before

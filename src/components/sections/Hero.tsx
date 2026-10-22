@@ -26,14 +26,14 @@ const Hero = () => {
 
   return (
     <section className="">
-      <div className="space-y-12 py-20 mx-auto max-w-7xl px-3 border-x">
+      <div className="space-y-12 py-20 mx-auto max-w-300 px-3 border-x">
         {/* Headline */}
         <div className="space-y-4 py-20">
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-7xl leading-tight font-bold text-bold">
+            <h1 className="text-4xl md:text-5xl lg:text-[3.4rem] leading-tight xl:max-w-4xl font-medium">
               Every Slow Page Is a Customer Calling Your Competitor Instead.
             </h1>
-            <p className="max-w-3xl text-zinc-600 text-lg">
+            <p className="max-w-3xl text-zinc-600">
               We build fast, clean, and directed websites for home‑service
               businesses (plumbing, electrical, HVAC, gardening, etc) so that
               call goes to you.
@@ -43,12 +43,12 @@ const Hero = () => {
             <PrimaryButtonLink
               href="/auth/signup"
               children="Start Project"
-              className="w-full text-base lg:w-max"
+              className="w-full text-sm lg:w-max"
             />
             <SecondaryButtonLink
               href="/showcase"
               children="See Showcase"
-              className="w-full text-base lg:w-max"
+              className="w-full text-sm lg:w-max"
             />
           </ButtonGrid>
         </div>
@@ -88,7 +88,7 @@ const Hero = () => {
               <div className="text-sm">
                 {/* Navbar */}
                 <div className="flex items-center justify-between px-4 md:px-3 pt-4 pb-4 mb-0">
-                  <span className="font-bold text-base text-black">
+                  <span className="font-bold text-sm text-black">
                     Everflow <span className="text-yellow-600">Plumbing</span>
                   </span>
                   <div className="hidden sm:flex items-center gap-4 text-gray-600 text-xs">

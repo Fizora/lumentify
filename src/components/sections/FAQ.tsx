@@ -13,7 +13,7 @@ const FAQ = () => {
 
   return (
     <section className="bg-white border-b" id="faq">
-      <div className="mx-auto max-w-7xl py-24 px-3 border-x">
+      <div className="mx-auto max-w-300 py-24 px-3 border-x">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -28,7 +28,7 @@ const FAQ = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
             Your concerns, addressed
           </h2>
-          <p className="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Clear answers to the questions that matter before you engage us —
             built to give you confidence, clarity, and peace of mind.
           </p>
@@ -52,7 +52,7 @@ const FAQ = () => {
                   className="w-full flex items-center justify-between gap-4 text-left px-3 py-5 hover:bg-zinc-100 transition-colors"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-base md:text-lg font-semibold text-black">
+                  <span className="text-sm md:text-base font-semibold text-black">
                     {faq.question}
                   </span>
                   <LuPlus
@@ -72,7 +72,7 @@ const FAQ = () => {
                       transition={{ duration: 0.25, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <p className="px-3 pb-5 text-base text-gray-600 leading-relaxed">
+                      <p className="px-3 pb-5 text-sm text-gray-600 leading-relaxed">
                         {faq.answer}
                       </p>
                     </motion.div>

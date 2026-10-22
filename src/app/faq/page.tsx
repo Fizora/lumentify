@@ -56,7 +56,7 @@ const FAQ = () => {
                     className="w-full flex items-center justify-between gap-4 text-left px-5 py-5 hover:bg-zinc-50/50 transition-colors"
                     aria-expanded={isOpen}
                   >
-                    <span className="text-base md:text-lg font-semibold text-black">
+                    <span className="text-sm md:text-lg font-semibold text-black">
                       {faq.question}
                     </span>
                     <LuPlus
@@ -76,7 +76,7 @@ const FAQ = () => {
                         transition={{ duration: 0.25, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <p className="px-5 pb-5 text-base text-gray-600 leading-relaxed">
+                        <p className="px-5 pb-5 text-sm text-gray-600 leading-relaxed">
                           {faq.answer}
                         </p>
                       </motion.div>

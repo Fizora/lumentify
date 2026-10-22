@@ -10,9 +10,9 @@ import {
 import "./globals.css";
 import LenisProvider from "@/components/LenisProvider";
 
-const geistSans = Poppins({
+const geistSans = Bricolage_Grotesque({
   variable: "--font-sans",
-  weight: ["400", "500", "600", "700"],
+  weight: "400",
   subsets: ["latin"],
 });
 

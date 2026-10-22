@@ -5,7 +5,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { PrimaryButtonLink, SecondaryButtonLink } from "./ui/Button";
 import Image from "next/image";
-import { LuChevronDown } from "react-icons/lu";
+import { LuChevronDown, LuMenu, LuX } from "react-icons/lu";
 
 type NavLink = { name: string; href: string; type?: undefined };
 type NavDropdown = {
@@ -19,10 +19,13 @@ type NavItem = NavLink | NavDropdown;
 const SERVICES_ENABLED = false;
 
 const navItems: NavItem[] = [
-  { name: "Pricing", href: "/pricing" },
   { name: "About", href: "/about" },
-  { name: "Support", href: "/support" },
+  { name: "Pricing", href: "/pricing" },
   { name: "Showcase", href: "/showcase" },
+  { name: "Support", href: "/support" },
+  { name: "Warranty", href: "/support/warranty" },
+  { name: "Help center", href: "/support/help-center" },
+
   {
     name: "Services",
     type: "dropdown",
@@ -54,7 +57,7 @@ const navItems: NavItem[] = [
     ],
   },
 
-  // { name: "Blog", href: "/blog" },
+  { name: "Blog", href: "/blog" },
 ];
 
 // Dipakai untuk render (desktop bar & mobile menu) — Services otomatis hilang saat dinonaktifkan
@@ -101,9 +104,9 @@ const Navbar = () => {
       ref={headerRef}
       className="w-full fixed top-0 left-0 z-50 backdrop-blur-3xl bg-white border-b"
     >
-      <div className="mx-auto max-w-7xl py-1.5 flex items-center justify-between ">
+      <div className="mx-auto max-w-300 py-2 flex items-center justify-between ">
         {/* Logo */}
-        <h1 className="group p-2 rounded-full text-black">
+        <div className="group px-2 rounded-full text-black flex items-center gap-2">
           <Link
             href="/"
             className="text-xl font-black flex items-center gap-2 "
@@ -117,60 +120,60 @@ const Navbar = () => {
                 width={20}
               />
             </div>
-            Lexentify.
           </Link>
-        </h1>
+          <nav className="hidden md:flex items-center gap-2 ">
+            {visibleNavItems.map((item, index) => {
+              if (item.type !== "dropdown") {
+                return (
+                  <Link
+                    key={index}
+                    href={item.href}
+                    className="text-gray-700 hover:text-gray-950 transition-colors duration-300 text-xs px-2"
+                  >
+                    {item.name}
+                  </Link>
+                );
+              }
+
+              return (
+                <div
+                  key={index}
+                  className="relative"
+                  onMouseEnter={() => setIsServicesOpen(true)}
+                  onMouseLeave={() => setIsServicesOpen(false)}
+                >
+                  <button
+                    className="flex items-center gap-1 text-gray-700 hover:text-gray-950  transition-colors duration-300 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-300 rounded px-1"
+                    aria-expanded={isServicesOpen}
+                    onClick={() => setIsServicesOpen((v) => !v)}
+                  >
+                    {item.name}
+                    <motion.span
+                      animate={{ rotate: isServicesOpen ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="inline-block"
+                    >
+                      <LuChevronDown size={16} />
+                    </motion.span>
+                  </button>
+                </div>
+              );
+            })}
+          </nav>
+        </div>
 
         {/* Desktop navigation */}
-        <nav className="hidden md:flex items-center gap-4 ">
-          {visibleNavItems.map((item, index) => {
-            if (item.type !== "dropdown") {
-              return (
-                <Link
-                  key={index}
-                  href={item.href}
-                  className="text-gray-700 hover:underline transition-colors duration-300 text-sm px-2"
-                >
-                  {item.name}
-                </Link>
-              );
-            }
 
-            return (
-              <div
-                key={index}
-                className="relative"
-                onMouseEnter={() => setIsServicesOpen(true)}
-                onMouseLeave={() => setIsServicesOpen(false)}
-              >
-                <button
-                  className="flex items-center gap-1 text-white hover:text-zinc-100 hover:underline transition-colors duration-300 text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-300 rounded px-1"
-                  aria-expanded={isServicesOpen}
-                  onClick={() => setIsServicesOpen((v) => !v)}
-                >
-                  {item.name}
-                  <motion.span
-                    animate={{ rotate: isServicesOpen ? 180 : 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="inline-block"
-                  >
-                    <LuChevronDown size={16} />
-                  </motion.span>
-                </button>
-              </div>
-            );
-          })}
-        </nav>
         <div className="px-2 hidden md:flex">
           <SecondaryButtonLink
             href={CTA_HREF}
-            className="text-sm font-medium rounded-full mr-2"
+            className="text-xs font-medium rounded-full mr-2"
           >
             Login
           </SecondaryButtonLink>
           <PrimaryButtonLink
             href={CTA_HREF}
-            className="text-sm font-medium rounded-full"
+            className="text-xs font-medium rounded-full"
           >
             Create Account
           </PrimaryButtonLink>
@@ -179,25 +182,11 @@ const Navbar = () => {
         {/* Hamburger button (mobile) */}
         <button
           onClick={toggleMenu}
-          className="md:hidden rounded-full relative z-50 flex flex-col gap-1 px-4 py-5"
+          className="md:hidden rounded-full relative z-50 p-2 text-black hover:text-gray-600 transition-colors flex items-center justify-center mr-2"
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
         >
-          <motion.span
-            className="block h-0.5 w-6 bg-black"
-            animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-            transition={{ duration: 0.2 }}
-          />
-          <motion.span
-            className="block h-0.5 w-6 bg-black"
-            animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-            transition={{ duration: 0.2 }}
-          />
-          <motion.span
-            className="block h-0.5 w-6 bg-black"
-            animate={isOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-            transition={{ duration: 0.2 }}
-          />
+          {isOpen ? <LuX size={24} /> : <LuMenu size={24} />}
         </button>
       </div>
 
@@ -216,11 +205,11 @@ const Navbar = () => {
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
               >
-                <div className="container bg-black/30 backdrop-blur-xl rounded-lg mx-auto px-6 py-7">
+                <div className="container bg-white backdrop-blur-xl rounded-lg mx-auto px-6 py-7">
                   <div className="grid grid-cols-3 gap-8">
                     {servicesItem.categories.map((category, catIdx) => (
                       <div key={catIdx} className="">
-                        <h4 className="text-xs font-semibold text-white uppercase tracking-wider mb-3 pb-2">
+                        <h4 className="text-xs font-semibold text-gray-black uppercase tracking-wider mb-3 pb-2">
                           {category.title}
                         </h4>
                         <div className="flex flex-col gap-0.5">
@@ -229,7 +218,7 @@ const Navbar = () => {
                               key={childIdx}
                               href={child.href}
                               onClick={closeMenu}
-                              className="w-max text-sm text-zinc-200 hover:text-white hover:underline px-3 py-1.5 rounded transition-all duration-150 -mx-3"
+                              className="w-max text-sm text-zinc-700 hover:text-gray-950  px-3 py-1.5 rounded transition-all duration-150 -mx-3"
                             >
                               {child.name}
                             </Link>
@@ -274,7 +263,7 @@ const Navbar = () => {
                         key={index}
                         href={item.href}
                         onClick={closeMenu}
-                        className="block py-2 text-gray-700 transition-colors"
+                        className="block text-sm py-2 text-gray-700 transition-colors"
                       >
                         {item.name}
                       </Link>
@@ -330,16 +319,16 @@ const Navbar = () => {
                   );
                 })}
 
-                <div className="pt-2">
+                <div className="pt-2 flex flex-col sm:flex-row gap-2">
                   <SecondaryButtonLink
                     href={CTA_HREF}
-                    className="text-sm font-medium rounded-full mr-2"
+                    className="text-sm font-medium rounded-full text-center"
                   >
                     Login
                   </SecondaryButtonLink>
                   <PrimaryButtonLink
                     href={CTA_HREF}
-                    className="text-sm font-medium rounded-full"
+                    className="text-sm font-medium rounded-full text-center"
                   >
                     Create Account
                   </PrimaryButtonLink>

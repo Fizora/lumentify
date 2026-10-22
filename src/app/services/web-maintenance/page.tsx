@@ -61,10 +61,8 @@ export default function WebMaintenance() {
             {included.map(({ icon: Icon, title, body }) => (
               <div key={title} className="border border-gray-200 p-8">
                 <Icon className="w-5 h-5 text-zinc-600 mb-4" />
-                <h3 className="text-base font-bold text-black mb-2">{title}</h3>
-                <p className="text-base text-gray-600 leading-relaxed">
-                  {body}
-                </p>
+                <h3 className="text-sm font-bold text-black mb-2">{title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
               </div>
             ))}
           </div>
@@ -72,10 +70,10 @@ export default function WebMaintenance() {
 
         <section className="mx-auto max-w-3xl pb-16">
           <div className="bg-zinc-50/60 border border-zinc-100 p-8 text-center">
-            <p className="text-base font-semibold text-black mb-1">
+            <p className="text-sm font-semibold text-black mb-1">
               Cancel anytime after your first month
             </p>
-            <p className="text-base text-gray-600">
+            <p className="text-sm text-gray-600">
               No lock-in contracts — if it's not delivering value, you're free
               to leave.
             </p>

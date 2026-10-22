@@ -60,10 +60,8 @@ export default function SEO() {
             {included.map(({ icon: Icon, title, body }) => (
               <div key={title} className="border border-gray-200 p-8">
                 <Icon className="w-5 h-5 text-zinc-600 mb-4" />
-                <h3 className="text-base font-bold text-black mb-2">{title}</h3>
-                <p className="text-base text-gray-600 leading-relaxed">
-                  {body}
-                </p>
+                <h3 className="text-sm font-bold text-black mb-2">{title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
               </div>
             ))}
           </div>
@@ -74,7 +72,7 @@ export default function SEO() {
             <h2 className="text-lg font-bold text-black mb-3">
               A note on realistic expectations
             </h2>
-            <p className="text-base text-gray-600 leading-relaxed">
+            <p className="text-sm text-gray-600 leading-relaxed">
               No one can guarantee a #1 ranking — anyone who promises that is
               selling you something. What we can guarantee is the technical
               foundation done right, which is the part most sites get wrong from
