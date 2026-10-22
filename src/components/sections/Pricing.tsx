@@ -170,7 +170,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                     </p>
                   </div>
                   <div className="mb-8">
-                    <span className="text-4xl font-bold text-black">
+                    <span className="text-4xl font-bold text-black font-mono">
                       {plan.price}
                     </span>
                     <span className="text-gray-500 ml-2 text-sm">
@@ -188,7 +188,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                             plan.featured ? "text-green-600" : "text-gray-600"
                           }`}
                         />
-                        <span className="text-sm text-gray-700 leading-relaxed">
+                        <span className="text-[0.80rem] text-gray-700 leading-relaxed">
                           {feat}
                         </span>
                       </li>
