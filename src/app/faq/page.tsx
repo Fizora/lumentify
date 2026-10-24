@@ -26,10 +26,10 @@ const FAQ = () => {
             transition={{ duration: 0.5 }}
             className="text-center space-y-5 mb-16"
           >
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
+            <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
               FAQ
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black leading-tight">
               Questions, answered
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -56,7 +56,7 @@ const FAQ = () => {
                     className="w-full flex items-center justify-between gap-4 text-left px-5 py-5 hover:bg-zinc-50/50 transition-colors"
                     aria-expanded={isOpen}
                   >
-                    <span className="text-sm md:text-lg font-semibold text-black">
+                    <span className="text-sm md:text-lg font-medium text-black">
                       {faq.question}
                     </span>
                     <LuPlus

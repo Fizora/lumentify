@@ -89,13 +89,13 @@ const ShowcaseCard = ({
 
           {/* Hover gradient + "Visit site" pill */}
           <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-          <span className="absolute bottom-3 right-3 inline-flex translate-y-2 items-center gap-1 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-zinc-900 opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+          <span className="absolute bottom-3 right-3 inline-flex translate-y-2 items-center gap-1 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-zinc-900 opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
             Visit site
             <LuArrowUpRight className="size-3.5" />
           </span>
 
           {/* Status badge (glass) */}
-          <span className="absolute left-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-white/80 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-zinc-800 ring-1 ring-black/5 backdrop-blur-md">
+          <span className="absolute left-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-white/80 px-2.5 py-1 text-[11px] font-medium uppercase tracking-wide text-zinc-800 ring-1 ring-black/5 backdrop-blur-md">
             <span className={`size-1.5 rounded-full ${badge.dot}`} />
             {badge.label}
           </span>
@@ -104,7 +104,7 @@ const ShowcaseCard = ({
         {/* Body */}
         <div className="flex flex-1 flex-col gap-4 px-2 pb-2 pt-5">
           <div className="space-y-1.5">
-            <h2 className="flex items-center gap-1.5 text-xl font-semibold tracking-tight text-zinc-900 wrap-break-word">
+            <h2 className="flex items-center gap-1.5 text-xl font-medium tracking-tight text-zinc-900 wrap-break-word">
               {item.name}
               <LuArrowUpRight className="size-5 shrink-0 text-zinc-400 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-zinc-900" />
             </h2>
@@ -182,8 +182,8 @@ export default function ShowcaseGrid() {
         </div>
       )}
 
-      <div className="rounded-md mt-20 px-4 py-8 border bg-zinc-900 text-center space-y-6">
-        <h2 className="text-4xl md:text-5xl text-white font-bold">
+      <div className="rounded-md mt-20 mb-30 px-4 py-8 border bg-zinc-900 text-center space-y-6">
+        <h2 className="text-4xl md:text-5xl text-white font-medium">
           Ready to Build?
         </h2>
         <p className="text-gray-300 max-w-xl mx-auto">

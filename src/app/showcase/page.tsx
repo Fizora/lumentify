@@ -2,6 +2,9 @@ import { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import ShowcaseGrid from "@/components/ShowcaseGrid"; // <-- import
+import CTA from "@/components/sections/CTA";
+import Skathes from "@/components/Skathes";
+import Testimonials from "@/components/sections/Testimonials";
 
 export const metadata: Metadata = {
   title: "Showcase | Lexentify",
@@ -15,10 +18,10 @@ export default function Showcase() {
         <div className="mx-auto max-w-300 py-32 px-3 border-x">
           {/* Section header */}
           <div className="text-center space-y-5 mb-16 max-w-2xl mx-auto">
-            {/* <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
+            {/* <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
               Showcase
             </span> */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black leading-tight">
               Showcase
             </h1>
             {/* <p className="text-lg text-gray-600 leading-relaxed">
@@ -29,7 +32,11 @@ export default function Showcase() {
 
           {/* Komponen client dengan tabs & dual mode */}
           <ShowcaseGrid />
+          <Testimonials />
         </div>
+        <Skathes />
+        <CTA />
+        <Skathes />
       </main>
       <Footer />
     </>

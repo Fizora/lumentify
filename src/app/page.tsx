@@ -9,6 +9,7 @@ import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
 import CTA from "@/components/sections/CTA";
 import WhatsAppCall from "@/components/WhatsAppCall";
+import Skathes from "@/components/Skathes";
 
 export default function Home() {
   return (
@@ -16,13 +17,19 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Skathes />
         <Features />
+        <Skathes />
         <Pricing showMRR={false} showOneTime={true} />
+        <Skathes />
         <Workflow />
+        <Skathes />
         {/* <Testimonials /> */}
         <FAQ />
-        <Contact />
+        {/* <Contact /> */}
+        <Skathes />
         <CTA />
+        <Skathes />
       </main>
       <Footer />
       <WhatsAppCall />

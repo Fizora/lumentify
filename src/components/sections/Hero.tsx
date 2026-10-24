@@ -25,12 +25,17 @@ const Hero = () => {
   ];
 
   return (
-    <section className="">
-      <div className="space-y-12 py-20 mx-auto max-w-300 px-3 border-x">
-        {/* Headline */}
-        <div className="space-y-4 py-20">
+    <section className="border-b">
+      <div className="space-y-12 pt-15 md:pt-20 lg:pt-30 mx-auto max-w-300 border-x">
+        {/* Headline dengan Animasi Fade Up */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="space-y-4 py-20 px-3 "
+        >
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-[3.4rem] leading-tight xl:max-w-4xl font-bold">
+            <h1 className="text-4xl md:text-5xl lg:text-[3.4rem] leading-tight xl:max-w-4xl font-medium">
               Every Slow Page Is a Customer Calling Your Competitor Instead.
             </h1>
             <p className="max-w-3xl text-zinc-600">
@@ -51,20 +56,34 @@ const Hero = () => {
               className="w-full text-sm lg:w-max"
             />
           </ButtonGrid>
-        </div>
+        </motion.div>
 
-        {/* ===== Example Web – Mini Website UI ===== */}
-        {/* Perbaikan: gunakan Image sebagai background, dengan container relative */}
-        <div className="relative min-h-250 rounded-xl overflow-hidden">
+        {/* ===== Example Web – Mini Website UI dengan Animasi Fade Up (Delay Sedikit) ===== */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+          className="relative min-h-250 overflow-hidden "
+          style={{
+            backgroundColor: "#fafafa",
+            backgroundImage: `repeating-linear-gradient(
+            -45deg,
+            #f0f0f0,
+            #f0f0f0 1px,
+            #fafafa 1px,
+            #fafafa 6px
+          )`,
+          }}
+        >
           {/* Background Image dengan Next.js Image */}
-          <Image
+          {/* <Image
             src="/img/hero-image.webp"
             alt="Hero background"
             fill
-            priority
+            loading="lazy"
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px "
-          />
+          /> */}
 
           {/* Overlay tipis agar konten lebih terbaca */}
           <div className="absolute inset-0 bg-black/10" />
@@ -88,7 +107,7 @@ const Hero = () => {
               <div className="text-sm">
                 {/* Navbar */}
                 <div className="flex items-center justify-between px-4 md:px-3 pt-4 pb-4 mb-0">
-                  <span className="font-bold text-sm text-black">
+                  <span className="font-medium text-sm text-black">
                     Everflow <span className="text-yellow-600">Plumbing</span>
                   </span>
                   <div className="hidden sm:flex items-center gap-4 text-gray-600 text-xs">
@@ -96,7 +115,7 @@ const Hero = () => {
                     <span>About</span>
                     <span>Services</span>
                     <span>Contact</span>
-                    <span className="px-3 py-1.5 rounded-full bg-yellow-600 text-white flex items-center gap-2 font-semibold">
+                    <span className="px-3 py-1.5 rounded-full bg-yellow-600 text-white flex items-center gap-2 font-medium">
                       <LuPhone />
                       Need Now | Call Us
                     </span>
@@ -139,10 +158,10 @@ const Hero = () => {
                 <div className="p-4 md:p-6 pt-0">
                   {/* Hero section inside mini web */}
                   <div className="bg-yellow-50/60 rounded-xl p-4 md:p-6 mb-6 border border-yellow-100">
-                    <span className="inline-block text-[10px] font-semibold tracking-wide uppercase text-yellow-700 bg-white px-2.5 py-1 rounded-full mb-2 border border-yellow-100">
+                    <span className="inline-block text-[10px] font-medium tracking-wide uppercase text-yellow-700 bg-white px-2.5 py-1 rounded-full mb-2 border border-yellow-100">
                       Licensed &amp; Insured · 24/7 Emergency
                     </span>
-                    <h2 className="md:text-3xl font-bold text-black mb-2">
+                    <h2 className="md:text-3xl font-medium text-black mb-2">
                       A Burst Pipe Won&apos;t Wait — Neither Do We
                     </h2>
                     <p className="text-gray-600 text-sm mb-4 max-w-sm">
@@ -164,7 +183,7 @@ const Hero = () => {
                     <div className="bg-yellow-50/50 rounded-lg p-3 flex items-center gap-2 border border-yellow-100/60">
                       <LuAward className="text-yellow-600 w-4 h-4" />
                       <div>
-                        <p className="font-semibold text-xs">
+                        <p className="font-medium text-xs">
                           1,200+ Jobs Completed
                         </p>
                         <p className="text-gray-500 text-[10px]">
@@ -175,7 +194,7 @@ const Hero = () => {
                     <div className="bg-yellow-50/50 rounded-lg p-3 flex items-center gap-2 border border-yellow-100/60">
                       <LuStar className="text-yellow-600 w-4 h-4" />
                       <div>
-                        <p className="font-semibold text-xs">
+                        <p className="font-medium text-xs">
                           4.9★ from 240+ Reviews
                         </p>
                         <p className="text-gray-500 text-[10px]">
@@ -186,9 +205,7 @@ const Hero = () => {
                     <div className="bg-yellow-50/50 rounded-lg p-3 flex items-center gap-2 border border-yellow-100/60">
                       <LuBadgeCheck className="text-yellow-600 w-4 h-4" />
                       <div>
-                        <p className="font-semibold text-xs">
-                          11 Years Licensed
-                        </p>
+                        <p className="font-medium text-xs">11 Years Licensed</p>
                         <p className="text-gray-500 text-[10px]">
                           Master Plumbers Association member
                         </p>
@@ -197,7 +214,7 @@ const Hero = () => {
                     <div className="bg-yellow-50/50 rounded-lg p-3 flex items-center gap-2 border border-yellow-100/60">
                       <LuTimer className="text-yellow-600 w-4 h-4" />
                       <div>
-                        <p className="font-semibold text-xs">
+                        <p className="font-medium text-xs">
                           98% Same-Day Response
                         </p>
                         <p className="text-gray-500 text-[10px]">
@@ -211,7 +228,7 @@ const Hero = () => {
                   <div className="border-t border-gray-200 pt-4 mt-2">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 text-[10px]">
                       <div>
-                        <p className="font-semibold text-black mb-1.5">
+                        <p className="font-medium text-black mb-1.5">
                           Everflow Plumbing
                         </p>
                         <p className="text-gray-500 leading-relaxed">
@@ -221,7 +238,7 @@ const Hero = () => {
                         </p>
                       </div>
                       <div>
-                        <p className="font-semibold text-black mb-1.5">
+                        <p className="font-medium text-black mb-1.5">
                           Quick Links
                         </p>
                         <ul className="text-gray-500 space-y-1">
@@ -232,7 +249,7 @@ const Hero = () => {
                         </ul>
                       </div>
                       <div>
-                        <p className="font-semibold text-black mb-1.5">
+                        <p className="font-medium text-black mb-1.5">
                           Areas We Cover
                         </p>
                         <ul className="text-gray-500 space-y-1">
@@ -243,7 +260,7 @@ const Hero = () => {
                         </ul>
                       </div>
                       <div>
-                        <p className="font-semibold text-black mb-1.5">
+                        <p className="font-medium text-black mb-1.5">
                           Get In Touch
                         </p>
                         <ul className="text-gray-500 space-y-1">
@@ -271,11 +288,11 @@ const Hero = () => {
               {/* Floating emergency button */}
               <span className="cursor-pointer absolute bottom-2 right-2 flex items-center gap-2 bg-yellow-600 hover:bg-yellow-700 transition-colors text-white pl-3 pr-4 py-2.5 rounded-full shadow-lg">
                 <LuPhone className="w-4 h-4" />
-                <span className="text-xs font-semibold">Call</span>
+                <span className="text-xs font-medium">Call</span>
               </span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

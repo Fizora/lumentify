@@ -53,11 +53,11 @@ const ChatPanel = () => {
   return (
     <div className="border border-zinc-200 rounded-lg flex flex-col h-[70vh]">
       <div className="flex items-center gap-3 p-4 border-b border-zinc-200">
-        <div className="w-9 h-9 rounded-full bg-zinc-900 text-white flex items-center justify-center font-bold text-sm">
+        <div className="w-9 h-9 rounded-full bg-zinc-900 text-white flex items-center justify-center font-medium text-sm">
           L
         </div>
         <div>
-          <p className="font-semibold text-zinc-900 text-sm">Lexentify Team</p>
+          <p className="font-medium text-zinc-900 text-sm">Lexentify Team</p>
           <p className="text-xs text-emerald-600 flex items-center gap-1">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
             Online

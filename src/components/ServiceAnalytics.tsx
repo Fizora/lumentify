@@ -47,7 +47,7 @@ const ServiceAnalytics = () => {
     <div className="border border-zinc-200 rounded-lg p-5 sm:p-6 mb-10">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
         <div>
-          <h2 className="font-bold text-zinc-900">
+          <h2 className="font-medium text-zinc-900">
             Value Your {activePlan.name} Plan Is Generating
           </h2>
           <p className="text-sm text-zinc-500">
@@ -59,7 +59,7 @@ const ServiceAnalytics = () => {
             <button
               key={key}
               onClick={() => setRange(key)}
-              className={`px-3 py-1.5 text-xs font-semibold rounded transition-colors duration-200 ${
+              className={`px-3 py-1.5 text-xs font-medium rounded transition-colors duration-200 ${
                 range === key
                   ? "bg-zinc-900 text-white"
                   : "text-zinc-500 hover:bg-zinc-100"
@@ -77,14 +77,14 @@ const ServiceAnalytics = () => {
             <span className="text-xs text-zinc-500">Leads from website</span>
             <LuPhoneCall className="text-zinc-400" size={16} />
           </div>
-          <p className="text-2xl font-bold text-zinc-900">{stats.leads}</p>
+          <p className="text-2xl font-medium text-zinc-900">{stats.leads}</p>
         </div>
         <div className="p-4 rounded-md bg-zinc-50">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs text-zinc-500">Hours saved</span>
             <LuTrendingUp className="text-zinc-400" size={16} />
           </div>
-          <p className="text-2xl font-bold text-zinc-900">
+          <p className="text-2xl font-medium text-zinc-900">
             {stats.hoursSaved} hrs
           </p>
         </div>
@@ -95,7 +95,7 @@ const ServiceAnalytics = () => {
             </span>
             <LuServer className="text-zinc-400" size={16} />
           </div>
-          <p className="text-2xl font-bold text-zinc-900">
+          <p className="text-2xl font-medium text-zinc-900">
             ${stats.costForPeriod}
           </p>
         </div>
@@ -106,7 +106,7 @@ const ServiceAnalytics = () => {
             </span>
             <LuBadgeDollarSign className="text-emerald-600" size={16} />
           </div>
-          <p className="text-2xl font-bold text-emerald-700">
+          <p className="text-2xl font-medium text-emerald-700">
             ${stats.estimatedValue}
           </p>
         </div>
@@ -115,9 +115,9 @@ const ServiceAnalytics = () => {
       <div className="flex items-center gap-3 p-4 rounded-md bg-zinc-900 text-white">
         <LuTrendingUp size={20} className="text-emerald-400 shrink-0" />
         <p className="text-sm">
-          For every <span className="font-bold">$1</span> you spend on this
+          For every <span className="font-medium">$1</span> you spend on this
           plan, you're generating roughly{" "}
-          <span className="font-bold text-emerald-400">
+          <span className="font-medium text-emerald-400">
             ${stats.roiMultiplier}
           </span>{" "}
           in value back to your business over the last{" "}

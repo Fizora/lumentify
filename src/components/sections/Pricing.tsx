@@ -35,7 +35,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
               transition={{ duration: 0.5 }}
               className="text-center space-y-5 mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-bold leading-tight">
+              <h2 className="text-3xl md:text-4xl font-medium text-bold leading-tight">
                 Build Your Site
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -55,27 +55,27 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                 <motion.div
                   key={index}
                   variants={cardVariants}
-                  className={`rounded-md relative flex flex-col p-6 md:p-8 border ${
+                  className={`rounded-md relative flex flex-col p-6 border ${
                     plan.featured
                       ? "border-zinc-300 bg-zinc-50/50 shadow-xl shadow-zinc-200 z-10"
                       : "border-gray-200 bg-white"
                   }`}
                 >
                   {plan.featured && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-xs font-semibold px-5 py-1 rounded-full">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-xs font-medium px-5 py-1 rounded-full">
                       The Best Choice
                     </div>
                   )}
                   <div className="mb-6">
-                    <h3 className="text-xl font-bold text-black">
+                    <h3 className="text-xl font-semibold text-black">
                       {plan.name}
                     </h3>
-                    <p className="text-sm text-gray-600 mb-10 md:mb-8 lg:mb-6 xl:mb-4 py-4 h-12 leading-relaxed">
+                    <p className="text-sm text-gray-600 mb-10 md:mb-8 lg:mb-6 xl:mb-8 py-4 h-12 leading-relaxed">
                       {plan.description}
                     </p>
                   </div>
                   <div className="mb-8">
-                    <span className="text-4xl font-bold text-black font-mono">
+                    <span className="text-4xl font-semibold text-black font-mono">
                       {plan.price}
                     </span>
                     <span className="text-gray-500 ml-2 text-sm">
@@ -100,7 +100,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                     {plan.featured ? (
                       <PrimaryButtonLink
                         href={plan.href}
-                        className="w-full text-center flex items-center justify-center gap-2 px-8 py-3 text-sm font-semibold text-white"
+                        className="w-full text-center flex items-center justify-center gap-2 px-8 py-3 text-sm font-medium text-white"
                       >
                         {plan.cta}
                         <LuArrowRight className="w-4 h-4" />
@@ -108,7 +108,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                     ) : (
                       <SecondaryButtonLink
                         href={plan.href}
-                        className="w-full text-center flex items-center justify-center gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 text-black transition-colors px-8 py-3 text-sm font-semibold"
+                        className="w-full text-center flex items-center justify-center gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 text-black transition-colors px-8 py-3 text-sm font-medium"
                       >
                         {plan.cta}
                       </SecondaryButtonLink>
@@ -130,7 +130,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
               transition={{ duration: 0.5 }}
               className="text-center space-y-5 pt-20 mb-16"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
+              <h2 className="text-3xl md:text-4xl font-medium text-black leading-tight">
                 Keep It Running
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -157,20 +157,20 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                   }`}
                 >
                   {plan.featured && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-xs font-semibold px-5 py-1 rounded-full">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-xs font-medium px-5 py-1 rounded-full">
                       Best Value
                     </div>
                   )}
                   <div className="mb-6">
-                    <h3 className="text-xl font-bold text-black">
+                    <h3 className="text-xl font-semibold text-black">
                       {plan.name}
                     </h3>
-                    <p className="text-sm text-gray-600 mb-5 py-3 h-12 leading-relaxed">
+                    <p className="text-sm text-gray-600 mb-5 xl:mb-8 py-3 h-12 leading-relaxed">
                       {plan.description}
                     </p>
                   </div>
                   <div className="mb-8">
-                    <span className="text-4xl font-bold text-black font-mono">
+                    <span className="text-4xl font-semibold text-black font-mono">
                       {plan.price}
                     </span>
                     <span className="text-gray-500 ml-2 text-sm">
@@ -198,7 +198,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                     {plan.featured ? (
                       <PrimaryButtonLink
                         href={plan.href}
-                        className="w-full text-center flex items-center justify-center gap-2 px-8 py-3 text-sm font-semibold text-white"
+                        className="w-full text-center flex items-center justify-center gap-2 px-8 py-3 text-sm font-medium text-white"
                       >
                         {plan.cta}
                         <LuArrowRight className="w-4 h-4" />
@@ -206,7 +206,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                     ) : (
                       <SecondaryButtonLink
                         href={plan.href}
-                        className="w-full text-center flex items-center justify-center gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 text-black transition-colors px-8 py-3 text-sm font-semibold"
+                        className="w-full text-center flex items-center justify-center gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 text-black transition-colors px-8 py-3 text-sm font-medium"
                       >
                         {plan.cta}
                       </SecondaryButtonLink>

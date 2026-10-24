@@ -33,7 +33,7 @@ const DashboardHeader = () => {
 
         {/* <button
           type="button"
-          className="flex items-center gap-2 bg-zinc-900 text-white rounded-md p-2 px-4 font-bold hover:bg-zinc-800 transition-colors duration-300"
+          className="flex items-center gap-2 bg-zinc-900 text-white rounded-md p-2 px-4 font-medium hover:bg-zinc-800 transition-colors duration-300"
         >
           <BiShare className="-scale-x-100" size={18} />
           <span className="hidden sm:inline">Share</span>

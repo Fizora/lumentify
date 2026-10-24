@@ -1,57 +1,54 @@
 "use client";
 import { motion } from "motion/react";
-import {
-  ButtonGrid,
-  PrimaryButtonLink,
-  SecondaryButtonLink,
-} from "@/components/ui/Button";
 import Link from "next/link";
 
 const CTA = () => {
   return (
-    <section
-      className="py-20"
-      style={{
-        backgroundImage: `repeating-linear-gradient(
-              45deg,
-              transparent,
-              transparent 20px,
-              rgba(120, 120, 120, 0.1) 20px,
-              rgba(120, 120, 120, 0.1) 40px
-            )`,
-      }}
-    >
-      <div className=" mx-auto container text-center bg-linear-to-b from-zinc-800 to-zinc-950  text-white rounded-md pb-10 px-10">
-        <div
-          className="h-24 md:h-32 border-b border-zinc-900"
-          style={{
-            backgroundImage:
-              "radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px)",
-            backgroundSize: "16px 16px",
-            maskImage: "linear-gradient(to bottom, black, transparent)",
-            WebkitMaskImage: "linear-gradient(to bottom, black, transparent)",
-          }}
-        />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5 }}
-          className="space-y-6"
-        >
-          <h1 className="text-4xl md:text-5xl text-white font-bold">
-            Ready to grow your business?
-          </h1>
-          <p className=" text-gray-300 max-w-2xl mx-auto">
-            Get a website that actually brings in leads – no fluff, on directed.
-          </p>
-          <Link
-            href={"mailto:info@lexentify.com"}
-            className="px-8 py-2 font-semibold transform active:scale-90 transition duration-300 bg-white rounded-md border-2 border-zinc-400 text-black"
+    <section className=" border-b">
+      <div
+        className="py-20 lg:py-30 mx-auto max-w-300 p-12 md:p-16 relative overflow-hidden border-x"
+        style={{
+          backgroundColor: "#fafafa",
+          backgroundImage: `repeating-linear-gradient(
+            -45deg,
+            #f0f0f0,
+            #f0f0f0 1px,
+            #fafafa 1px,
+            #fafafa 6px
+          )`,
+        }}
+      >
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5 }}
+            className="max-w-xl"
           >
-            Start Project
-          </Link>
-        </motion.div>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-neutral-900 tracking-tight leading-tight">
+              Ready to grow your business?
+            </h1>
+            <p className="text-neutral-500 mt-3 text-base">
+              Get a website that actually brings in leads – no fluff, on
+              directed.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <Link
+              href={"mailto:info@lexentify.com"}
+              className="inline-block px-5 py-2.5 text-sm font-medium transform active:scale-95 transition duration-200 bg-neutral-900 text-white rounded-lg shadow-sm hover:bg-neutral-800"
+            >
+              Start Project
+            </Link>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

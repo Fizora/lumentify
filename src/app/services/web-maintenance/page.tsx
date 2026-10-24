@@ -43,10 +43,10 @@ export default function WebMaintenance() {
       <Navbar />
       <main className="min-h-screen px-4">
         <section className="pt-32 pb-16 mx-auto max-w-3xl text-center">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
+          <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
             Services / Web Maintenance
           </span>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight mb-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black leading-tight mb-4">
             A website is never really "done."
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed">
@@ -61,7 +61,7 @@ export default function WebMaintenance() {
             {included.map(({ icon: Icon, title, body }) => (
               <div key={title} className="border border-gray-200 p-8">
                 <Icon className="w-5 h-5 text-zinc-600 mb-4" />
-                <h3 className="text-sm font-bold text-black mb-2">{title}</h3>
+                <h3 className="text-sm font-medium text-black mb-2">{title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
               </div>
             ))}
@@ -70,7 +70,7 @@ export default function WebMaintenance() {
 
         <section className="mx-auto max-w-3xl pb-16">
           <div className="bg-zinc-50/60 border border-zinc-100 p-8 text-center">
-            <p className="text-sm font-semibold text-black mb-1">
+            <p className="text-sm font-medium text-black mb-1">
               Cancel anytime after your first month
             </p>
             <p className="text-sm text-gray-600">
@@ -83,7 +83,7 @@ export default function WebMaintenance() {
         <section className="mx-auto max-w-3xl pb-24 text-center">
           <PrimaryButtonLink
             href="/pricing"
-            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium"
           >
             See Maintenance Plans
             <LuArrowRight className="w-4 h-4" />

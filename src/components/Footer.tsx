@@ -58,8 +58,7 @@ const Footer = () => {
                 <Image
                   src={"/logo.svg"}
                   alt="Lexentify Logo"
-                  priority
-                  quality={80}
+                  loading="lazy"
                   height={20}
                   width={20}
                 />
@@ -74,7 +73,7 @@ const Footer = () => {
 
           {linkGroups.map((group) => (
             <div key={group.title}>
-              <h4 className="font-semibold text-sm text-white mb-4">
+              <h4 className="font-medium text-sm text-white mb-4">
                 {group.title}
               </h4>
               <ul className="space-y-2.5 text-sm">
@@ -94,7 +93,7 @@ const Footer = () => {
 
           {/* Contact column — bersih, hanya aksi */}
           <div className="col-span-2 md:col-span-1">
-            <h4 className="font-semibold text-sm text-white mb-4">
+            <h4 className="font-medium text-sm text-white mb-4">
               Get in Touch
             </h4>
             <div className="flex flex-col gap-2">

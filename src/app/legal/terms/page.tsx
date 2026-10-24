@@ -13,10 +13,10 @@ export default function Terms() {
       <main className="min-h-screen px-4 bg-white text-zinc-900">
         <section className="mx-auto max-w-300 px-3 py-20 border-x border-zinc-200">
           <section className="pt-32 pb-8 mx-auto max-w-3xl">
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
+            <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
               Legal
             </span>
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-black leading-tight mb-3">
+            <h1 className="text-3xl md:text-4xl font-medium tracking-tight text-black leading-tight mb-3">
               Terms of Use
             </h1>
             <p className="text-sm text-zinc-500">Last updated: October 2026</p>
@@ -33,7 +33,7 @@ export default function Terms() {
             </p>
 
             <div>
-              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+              <h2 className="text-lg font-medium text-black mt-8 mb-2">
                 1. Acceptance of Terms
               </h2>
               <p>
@@ -44,7 +44,7 @@ export default function Terms() {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+              <h2 className="text-lg font-medium text-black mt-8 mb-2">
                 2. Website Content &amp; Intellectual Property
               </h2>
               <p>
@@ -58,7 +58,7 @@ export default function Terms() {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+              <h2 className="text-lg font-medium text-black mt-8 mb-2">
                 3. General Information, Not a Binding Offer
               </h2>
               <p>
@@ -72,7 +72,7 @@ export default function Terms() {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+              <h2 className="text-lg font-medium text-black mt-8 mb-2">
                 4. Limitation of Liability
               </h2>
               <p>
@@ -87,7 +87,7 @@ export default function Terms() {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+              <h2 className="text-lg font-medium text-black mt-8 mb-2">
                 5. External Links &amp; Third-Party Sites
               </h2>
               <p>
@@ -100,7 +100,7 @@ export default function Terms() {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+              <h2 className="text-lg font-medium text-black mt-8 mb-2">
                 6. Governing Law &amp; Dispute Resolution
               </h2>
               <p>
@@ -113,7 +113,7 @@ export default function Terms() {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+              <h2 className="text-lg font-medium text-black mt-8 mb-2">
                 7. Changes to These Terms
               </h2>
               <p>
@@ -125,7 +125,7 @@ export default function Terms() {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+              <h2 className="text-lg font-medium text-black mt-8 mb-2">
                 8. Contact Information
               </h2>
               <p>
@@ -133,7 +133,7 @@ export default function Terms() {
                 Use, please reach out directly via email at{" "}
                 <a
                   href="mailto:info@lexentify.com"
-                  className="text-black font-semibold underline hover:text-zinc-700 transition-colors"
+                  className="text-black font-medium underline hover:text-zinc-700 transition-colors"
                 >
                   info@lexentify.com
                 </a>

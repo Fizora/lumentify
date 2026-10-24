@@ -79,11 +79,11 @@ const DocumentsList = () => {
             </span>
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-[10px] font-bold uppercase tracking-wide text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded-full">
+                <span className="text-[10px] font-medium uppercase tracking-wide text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded-full">
                   {doc.type}
                 </span>
                 <span
-                  className={`inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded-full ${
+                  className={`inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full ${
                     doc.status === "Signed"
                       ? "bg-emerald-50 text-emerald-600"
                       : "bg-amber-50 text-amber-600"
@@ -97,7 +97,7 @@ const DocumentsList = () => {
                   {doc.status}
                 </span>
               </div>
-              <p className="font-semibold text-zinc-900 text-sm">{doc.title}</p>
+              <p className="font-medium text-zinc-900 text-sm">{doc.title}</p>
               <p className="text-xs text-zinc-400 mt-0.5">
                 {doc.date} · {doc.fileSize}
               </p>
@@ -108,7 +108,7 @@ const DocumentsList = () => {
             <button
               onClick={() => setActiveDoc(doc)}
               disabled={!doc.content}
-              className={`flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-md border transition-colors duration-200 ${
+              className={`flex items-center gap-1.5 text-xs font-medium px-3 py-2 rounded-md border transition-colors duration-200 ${
                 doc.content
                   ? "border-zinc-200 hover:bg-zinc-50"
                   : "border-zinc-100 text-zinc-300 cursor-not-allowed"
@@ -119,7 +119,7 @@ const DocumentsList = () => {
             </button>
             <button
               onClick={() => handleDownload(doc.id)}
-              className="flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-md bg-zinc-900 text-white hover:bg-zinc-800 transition-colors duration-200"
+              className="flex items-center gap-1.5 text-xs font-medium px-3 py-2 rounded-md bg-zinc-900 text-white hover:bg-zinc-800 transition-colors duration-200"
             >
               <LuDownload size={14} />
               Download

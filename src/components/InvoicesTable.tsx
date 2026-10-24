@@ -101,19 +101,19 @@ const InvoicesTable = () => {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
         <div className="border border-zinc-200 rounded-lg p-4">
           <p className="text-xs text-zinc-500 mb-1">Total Paid</p>
-          <p className="text-2xl font-bold text-zinc-900">
+          <p className="text-2xl font-medium text-zinc-900">
             ${totalPaid.toLocaleString()}
           </p>
         </div>
         <div className="border border-zinc-200 rounded-lg p-4">
           <p className="text-xs text-zinc-500 mb-1">Outstanding Balance</p>
-          <p className="text-2xl font-bold text-zinc-900">
+          <p className="text-2xl font-medium text-zinc-900">
             ${outstanding.toLocaleString()}
           </p>
         </div>
         <div className="border border-zinc-200 rounded-lg p-4">
           <p className="text-xs text-zinc-500 mb-1">Next Due</p>
-          <p className="text-2xl font-bold text-zinc-900">
+          <p className="text-2xl font-medium text-zinc-900">
             {nextDue ? nextDue.dueDate : "—"}
           </p>
         </div>
@@ -125,7 +125,7 @@ const InvoicesTable = () => {
           <button
             key={f}
             onClick={() => setFilter(f)}
-            className={`text-xs font-semibold px-3 py-1.5 rounded-full border transition-colors duration-200 ${
+            className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-colors duration-200 ${
               filter === f
                 ? "bg-zinc-900 text-white border-zinc-900"
                 : "border-zinc-200 text-zinc-600 hover:border-zinc-400"
@@ -141,13 +141,13 @@ const InvoicesTable = () => {
         <table className="w-full min-w-150 text-sm">
           <thead>
             <tr className="border-b border-zinc-200 text-left text-zinc-500">
-              <th className="py-3 px-4 font-semibold">Invoice</th>
-              <th className="py-3 px-4 font-semibold">Description</th>
-              <th className="py-3 px-4 font-semibold">Issued</th>
-              <th className="py-3 px-4 font-semibold">Due</th>
-              <th className="py-3 px-4 font-semibold text-right">Amount</th>
-              <th className="py-3 px-4 font-semibold">Status</th>
-              <th className="py-3 px-4 font-semibold"></th>
+              <th className="py-3 px-4 font-medium">Invoice</th>
+              <th className="py-3 px-4 font-medium">Description</th>
+              <th className="py-3 px-4 font-medium">Issued</th>
+              <th className="py-3 px-4 font-medium">Due</th>
+              <th className="py-3 px-4 font-medium text-right">Amount</th>
+              <th className="py-3 px-4 font-medium">Status</th>
+              <th className="py-3 px-4 font-medium"></th>
             </tr>
           </thead>
           <tbody>
@@ -170,12 +170,12 @@ const InvoicesTable = () => {
                   <td className="py-3 px-4 text-zinc-500 min-w-30">
                     {inv.dueDate}
                   </td>
-                  <td className="py-3 px-4 text-right font-semibold min-w-40 text-zinc-900">
+                  <td className="py-3 px-4 text-right font-medium min-w-40 text-zinc-900">
                     ${inv.amount.toLocaleString()}
                   </td>
                   <td className="py-3 px-4">
                     <span
-                      className={`inline-flex items-center gap-1 text-xs font-semibold px-2 py-1 rounded-full ${badge}`}
+                      className={`inline-flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full ${badge}`}
                     >
                       <Icon size={12} />
                       {inv.status}

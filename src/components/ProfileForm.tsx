@@ -55,11 +55,13 @@ const ProfileForm = () => {
     <div className="max-w-2xl">
       {/* Avatar + name summary */}
       <div className="border border-zinc-200 rounded-lg p-6 flex items-center gap-4 mb-6">
-        <div className="w-16 h-16 rounded-full bg-zinc-900 text-white flex items-center justify-center text-xl font-bold shrink-0">
+        <div className="w-16 h-16 rounded-full bg-zinc-900 text-white flex items-center justify-center text-xl font-medium shrink-0">
           {profile.fullName.charAt(0).toUpperCase()}
         </div>
         <div>
-          <p className="font-bold text-lg text-zinc-900">{profile.fullName}</p>
+          <p className="font-medium text-lg text-zinc-900">
+            {profile.fullName}
+          </p>
           <p className="text-sm text-zinc-500">{profile.businessName}</p>
         </div>
       </div>
@@ -67,11 +69,11 @@ const ProfileForm = () => {
       {/* Details form */}
       <div className="border border-zinc-200 rounded-lg p-6">
         <div className="flex items-center justify-between mb-5">
-          <h2 className="font-bold text-zinc-900">Account Details</h2>
+          <h2 className="font-medium text-zinc-900">Account Details</h2>
           {!isEditing && (
             <button
               onClick={() => setIsEditing(true)}
-              className="flex items-center gap-1.5 text-xs font-semibold text-zinc-600 hover:text-zinc-900 transition-colors duration-200"
+              className="flex items-center gap-1.5 text-xs font-medium text-zinc-600 hover:text-zinc-900 transition-colors duration-200"
             >
               <LuPencil size={14} />
               Edit
@@ -82,7 +84,7 @@ const ProfileForm = () => {
         <div className="flex flex-col gap-4">
           {fields.map(({ key, label, type }) => (
             <div key={key}>
-              <label className="text-xs font-semibold text-zinc-500 mb-1.5 block">
+              <label className="text-xs font-medium text-zinc-500 mb-1.5 block">
                 {label}
               </label>
               {isEditing ? (
@@ -106,13 +108,13 @@ const ProfileForm = () => {
           <div className="flex justify-end gap-2 mt-6 pt-4 border-t border-zinc-100">
             <button
               onClick={handleCancel}
-              className="text-xs font-semibold px-4 py-2 rounded-md border border-zinc-200 hover:bg-zinc-50 transition-colors duration-200"
+              className="text-xs font-medium px-4 py-2 rounded-md border border-zinc-200 hover:bg-zinc-50 transition-colors duration-200"
             >
               Cancel
             </button>
             <button
               onClick={handleSave}
-              className="text-xs font-semibold px-4 py-2 rounded-md bg-zinc-900 text-white hover:bg-zinc-800 transition-colors duration-200"
+              className="text-xs font-medium px-4 py-2 rounded-md bg-zinc-900 text-white hover:bg-zinc-800 transition-colors duration-200"
             >
               Save Changes
             </button>
@@ -120,7 +122,7 @@ const ProfileForm = () => {
         )}
 
         {savedMessage && (
-          <div className="flex items-center gap-2 mt-4 text-emerald-600 text-xs font-semibold">
+          <div className="flex items-center gap-2 mt-4 text-emerald-600 text-xs font-medium">
             <LuCheck size={14} />
             Profile updated
           </div>

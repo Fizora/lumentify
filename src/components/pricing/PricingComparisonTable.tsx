@@ -31,17 +31,17 @@ const PricingComparisonTable = ({
       <table className="w-full min-w-175 border-collapse text-sm">
         <thead>
           <tr className="border-b border-zinc-200">
-            <th className="text-left py-3 px-4 font-semibold text-zinc-600 bg-zinc-50/50">
+            <th className="text-left py-3 px-4 font-medium text-zinc-600 bg-zinc-50/50">
               {title}
             </th>
             {plans.map((plan, i) => (
               <th
                 key={i}
-                className={`text-center py-3 px-4 font-semibold ${
+                className={`text-center py-3 px-4 font-medium ${
                   plan.featured ? "bg-zinc-100" : "bg-zinc-50/50"
                 }`}
               >
-                <div className="font-bold text-black">{plan.name}</div>
+                <div className="font-medium text-black">{plan.name}</div>
                 <div className="text-sm font-normal text-zinc-500">
                   {plan.price}
                 </div>

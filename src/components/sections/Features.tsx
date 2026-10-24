@@ -28,7 +28,7 @@ const FeatureCard = ({ feat }: { feat: FeatureItem }) => {
       <div className="w-10 h-10 rounded-lg bg-gray-100 text-gray-600 flex items-center justify-center mb-5">
         <IconComponent className="w-5 h-5" />
       </div>
-      <h3 className="text-lg font-semibold text-black mb-2">{feat.title}</h3>
+      <h3 className="text-lg font-medium text-black mb-2">{feat.title}</h3>
       <p className="text-sm text-gray-500 leading-relaxed">
         {feat.description}
       </p>
@@ -43,7 +43,7 @@ interface FeatureCategoryProps {
 
 const FeatureCategory = ({ label, items }: FeatureCategoryProps) => (
   <div>
-    <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-6">
+    <h3 className="text-xs font-medium uppercase tracking-wide text-black mb-6">
       {label}
     </h3>
     <motion.div
@@ -62,7 +62,7 @@ const FeatureCategory = ({ label, items }: FeatureCategoryProps) => (
 
 const Features = () => {
   return (
-    <section className="bg-white border-y">
+    <section className="bg-white border-b">
       <div className="mx-auto max-w-300 py-24 px-4 border-x">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -74,7 +74,7 @@ const Features = () => {
           <span className="text-sm font-medium text-gray-400 mb-3 block">
             Features
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-black leading-tight mb-4">
+          <h2 className="text-3xl md:text-4xl font-medium text-black leading-tight mb-4">
             Built to grow your home-service business
           </h2>
           <p className="text-gray-500 leading-relaxed">

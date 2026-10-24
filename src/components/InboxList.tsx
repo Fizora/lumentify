@@ -99,7 +99,7 @@ const InboxList = () => {
         {unreadCount > 0 && (
           <button
             onClick={markAllRead}
-            className="flex items-center gap-1.5 text-xs font-semibold text-zinc-600 hover:text-zinc-900 transition-colors duration-200"
+            className="flex items-center gap-1.5 text-xs font-medium text-zinc-600 hover:text-zinc-900 transition-colors duration-200"
           >
             <LuCheck size={14} />
             Mark all as read
@@ -127,9 +127,7 @@ const InboxList = () => {
                 <div className="flex items-center justify-between gap-2">
                   <p
                     className={`text-sm truncate ${
-                      notif.read
-                        ? "text-zinc-700"
-                        : "font-semibold text-zinc-900"
+                      notif.read ? "text-zinc-700" : "font-medium text-zinc-900"
                     }`}
                   >
                     {notif.title}

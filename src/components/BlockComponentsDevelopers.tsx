@@ -27,10 +27,10 @@ const BlockComponentsDevelopers = () => {
     <div className="fixed inset-0 z-9999 flex items-center justify-center bg-black px-4 h-screen">
       <div className="w-full max-w-sm rounded-xl border border-zinc-800 bg-zinc-900 p-6 space-y-4">
         <div className="space-y-1.5">
-          <span className="inline-block text-xs font-semibold tracking-widest  uppercase text-zinc-400 bg-zinc-800 px-3 py-1 rounded-full">
+          <span className="inline-block text-xs font-medium tracking-widest  uppercase text-zinc-400 bg-zinc-800 px-3 py-1 rounded-full">
             Under development
           </span>
-          <h1 className="text-lg font-semibold text-white">
+          <h1 className="text-lg font-medium text-white">
             This site isn&apos;t live yet
           </h1>
           <p className="text-lg text-zinc-400 leading-relaxed">
@@ -61,7 +61,7 @@ const BlockComponentsDevelopers = () => {
 
           <button
             type="submit"
-            className="w-full rounded-lg bg-white text-black text-[15px] font-semibold py-2.5 hover:bg-zinc-200 transition-colors"
+            className="w-full rounded-lg bg-white text-black text-[15px] font-medium py-2.5 hover:bg-zinc-200 transition-colors"
           >
             Unlock
           </button>

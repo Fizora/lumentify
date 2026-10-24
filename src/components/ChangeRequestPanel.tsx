@@ -80,7 +80,7 @@ const ChangeRequestPanel = () => {
     <div className="border border-zinc-200 rounded-lg p-5 sm:p-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
         <div>
-          <h2 className="font-bold text-zinc-900">Change Requests</h2>
+          <h2 className="font-medium text-zinc-900">Change Requests</h2>
           <p className="text-sm text-zinc-500">
             Track revisions you've requested for this project.
           </p>
@@ -88,7 +88,7 @@ const ChangeRequestPanel = () => {
         <button
           onClick={() => setShowForm((v) => !v)}
           disabled={isQuotaFull}
-          className={`flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-md transition-colors duration-200 shrink-0 ${
+          className={`flex items-center gap-1.5 text-xs font-medium px-3 py-2 rounded-md transition-colors duration-200 shrink-0 ${
             isQuotaFull
               ? "bg-zinc-100 text-zinc-400 cursor-not-allowed"
               : "bg-zinc-900 text-white hover:bg-zinc-800"
@@ -143,14 +143,14 @@ const ChangeRequestPanel = () => {
           <div className="flex justify-end gap-2">
             <button
               onClick={() => setShowForm(false)}
-              className="text-xs font-semibold px-3 py-2 rounded-md border border-zinc-200 hover:bg-zinc-50 transition-colors duration-200"
+              className="text-xs font-medium px-3 py-2 rounded-md border border-zinc-200 hover:bg-zinc-50 transition-colors duration-200"
             >
               Cancel
             </button>
             <button
               onClick={handleSubmit}
               disabled={!title.trim()}
-              className="text-xs font-semibold px-3 py-2 rounded-md bg-zinc-900 text-white hover:bg-zinc-800 transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
+              className="text-xs font-medium px-3 py-2 rounded-md bg-zinc-900 text-white hover:bg-zinc-800 transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
             >
               Submit Request
             </button>
@@ -172,7 +172,7 @@ const ChangeRequestPanel = () => {
               </span>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between gap-2">
-                  <p className="text-sm font-semibold text-zinc-900 truncate">
+                  <p className="text-sm font-medium text-zinc-900 truncate">
                     {req.title}
                   </p>
                   <span className="text-[10px] text-zinc-400 shrink-0">
@@ -181,7 +181,7 @@ const ChangeRequestPanel = () => {
                 </div>
                 <p className="text-xs text-zinc-500 mt-0.5">{req.detail}</p>
                 <span
-                  className={`inline-block mt-1.5 text-[10px] font-semibold px-2 py-0.5 rounded-full ${className}`}
+                  className={`inline-block mt-1.5 text-[10px] font-medium px-2 py-0.5 rounded-full ${className}`}
                 >
                   {req.status}
                 </span>

@@ -66,10 +66,10 @@ export default function WebDevelopment() {
       <Navbar />
       <main className="min-h-screen px-4">
         <section className="pt-32 pb-16 mx-auto max-w-3xl text-center">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
+          <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
             Services / Web Development
           </span>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight mb-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black leading-tight mb-4">
             Websites built to get your phone ringing.
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed">
@@ -83,7 +83,7 @@ export default function WebDevelopment() {
             {included.map(({ icon: Icon, title, body }) => (
               <div key={title} className="border border-gray-200 p-8">
                 <Icon className="w-5 h-5 text-zinc-600 mb-4" />
-                <h3 className="text-sm font-bold text-black mb-2">{title}</h3>
+                <h3 className="text-sm font-medium text-black mb-2">{title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
               </div>
             ))}
@@ -92,15 +92,17 @@ export default function WebDevelopment() {
 
         <section className="mx-auto max-w-3xl pb-16">
           <div className="border border-gray-200 p-8">
-            <h2 className="text-lg font-bold text-black mb-4">How it works</h2>
+            <h2 className="text-lg font-medium text-black mb-4">
+              How it works
+            </h2>
             <ol className="space-y-4">
               {process.map(([n, title, text]) => (
                 <li key={n} className="flex gap-4">
-                  <span className="shrink-0 w-6 h-6 rounded-full bg-zinc-100 text-zinc-600 text-xs font-semibold flex items-center justify-center">
+                  <span className="shrink-0 w-6 h-6 rounded-full bg-zinc-100 text-zinc-600 text-xs font-medium flex items-center justify-center">
                     {n}
                   </span>
                   <div>
-                    <p className="text-sm font-semibold text-black">{title}</p>
+                    <p className="text-sm font-medium text-black">{title}</p>
                     <p className="text-sm text-gray-600 leading-relaxed">
                       {text}
                     </p>
@@ -114,7 +116,7 @@ export default function WebDevelopment() {
         <section className="mx-auto max-w-3xl pb-24 text-center">
           <PrimaryButtonLink
             href="/pricing"
-            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium"
           >
             See Build Pricing
             <LuArrowRight className="w-4 h-4" />

@@ -15,11 +15,11 @@ export default function About() {
           <div className="mx-auto max-w-3xl pt-12">
             {/* Header */}
             <div className="mb-12 space-y-4">
-              <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
+              <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
                 About Lexentify
               </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-black leading-tight">
-                Why we build exclusively for home-service businesses
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-black leading-tight">
+                Why we build exclusively for home-service businesess
               </h1>
               <p className="text-sm text-zinc-600 leading-relaxed">
                 A transparent look at who we are, why we chose to go deep into a

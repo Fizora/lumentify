@@ -66,7 +66,7 @@ const PromoBanner = () => {
         <LuSparkles size={16} />
       </span>
       <div className="flex-1">
-        <p className="font-semibold text-sm">{offer.title}</p>
+        <p className="font-medium text-sm">{offer.title}</p>
         <p className="text-xs text-zinc-300">{offer.message}</p>
       </div>
       <div className="flex items-center gap-3 shrink-0">
@@ -79,7 +79,7 @@ const PromoBanner = () => {
           href={offer.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-white text-zinc-900 text-xs font-semibold px-3 py-1.5 rounded-md hover:bg-zinc-100 transition-colors duration-300 whitespace-nowrap"
+          className="bg-white text-zinc-900 text-xs font-medium px-3 py-1.5 rounded-md hover:bg-zinc-100 transition-colors duration-300 whitespace-nowrap"
         >
           {offer.cta}
         </Link>

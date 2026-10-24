@@ -38,10 +38,10 @@ export default function Warranty() {
         {/* Hero */}
         <section className="border-x mx-auto max-w-300 px-3">
           <section className="pt-32 pb-16 mx-auto max-w-3xl text-center">
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
+            <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
               Warranty
             </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight mb-4">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black leading-tight mb-4">
               Every build ships with a bug-fix warranty.
             </h1>
             <p className="text-sm text-gray-600 leading-relaxed">
@@ -59,7 +59,7 @@ export default function Warranty() {
                   className="border border-gray-200 p-8 text-center"
                 >
                   <p className="text-sm text-gray-500 mb-2">{plan} Plan</p>
-                  <p className="text-4xl font-bold text-black mb-1">{days}</p>
+                  <p className="text-4xl font-medium text-black mb-1">{days}</p>
                   <p className="text-sm text-gray-500">days of coverage</p>
                 </div>
               ))}
@@ -70,7 +70,7 @@ export default function Warranty() {
           <section className="mx-auto max-w-4xl pb-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="border border-gray-200 p-8">
-                <h2 className="text-sm font-bold text-black mb-4 flex items-center gap-2">
+                <h2 className="text-sm font-medium text-black mb-4 flex items-center gap-2">
                   <LuCircleCheck className="w-5 h-5 text-emerald-600" />
                   What's covered
                 </h2>
@@ -87,7 +87,7 @@ export default function Warranty() {
                 </ul>
               </div>
               <div className="border border-gray-200 p-8">
-                <h2 className="text-sm font-bold text-black mb-4 flex items-center gap-2">
+                <h2 className="text-sm font-medium text-black mb-4 flex items-center gap-2">
                   <LuCircleX className="w-5 h-5 text-red-500" />
                   What's not covered
                 </h2>
@@ -109,7 +109,7 @@ export default function Warranty() {
           {/* How to claim */}
           <section className="mx-auto max-w-3xl pb-16">
             <div className="border border-gray-200 p-8">
-              <h2 className="text-lg font-bold text-black mb-4">
+              <h2 className="text-lg font-medium text-black mb-4">
                 How to file a claim
               </h2>
               <ol className="space-y-4">
@@ -129,7 +129,7 @@ export default function Warranty() {
                   ["4", "Fix ships, you review it, done — no invoice."],
                 ].map(([n, text]) => (
                   <li key={n} className="flex gap-4">
-                    <span className="shrink-0 w-6 h-6 rounded-full bg-zinc-100 text-zinc-600 text-xs font-semibold flex items-center justify-center">
+                    <span className="shrink-0 w-6 h-6 rounded-full bg-zinc-100 text-zinc-600 text-xs font-medium flex items-center justify-center">
                       {n}
                     </span>
                     <p className="text-sm text-gray-600 leading-relaxed">
@@ -145,7 +145,7 @@ export default function Warranty() {
           <section className="mx-auto max-w-3xl pb-24 text-center">
             <Link
               href="/support"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-700 hover:text-zinc-900"
+              className="inline-flex items-center gap-2 text-sm font-medium text-zinc-700 hover:text-zinc-900"
             >
               Have an issue right now? Contact Support
               <LuArrowRight className="w-4 h-4" />

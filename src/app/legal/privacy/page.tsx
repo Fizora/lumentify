@@ -13,10 +13,10 @@ export default function Privacy() {
       <main className="min-h-screen px-4 bg-white text-zinc-900">
         <section className="mx-auto max-w-300 px-3 py-20 border-x border-zinc-200">
           <section className="pt-32 pb-8 mx-auto max-w-3xl">
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
+            <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
               Legal
             </span>
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-black leading-tight mb-3">
+            <h1 className="text-3xl md:text-4xl font-medium tracking-tight text-black leading-tight mb-3">
               Privacy Policy
             </h1>
             <p className="text-sm text-zinc-500">Last updated: August 2026</p>
@@ -33,7 +33,7 @@ export default function Privacy() {
             </p>
 
             <div>
-              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+              <h2 className="text-lg font-medium text-black mt-8 mb-2">
                 1. What we collect
               </h2>
               <p className="mb-3">
@@ -50,7 +50,7 @@ export default function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+              <h2 className="text-lg font-medium text-black mt-8 mb-2">
                 2. How we use it
               </h2>
               <p>
@@ -62,7 +62,7 @@ export default function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+              <h2 className="text-lg font-medium text-black mt-8 mb-2">
                 3. Third-party tools
               </h2>
               <p>
@@ -75,7 +75,7 @@ export default function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+              <h2 className="text-lg font-medium text-black mt-8 mb-2">
                 4. Cookies
               </h2>
               <p>
@@ -86,7 +86,7 @@ export default function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+              <h2 className="text-lg font-medium text-black mt-8 mb-2">
                 5. Data retention &amp; security
               </h2>
               <p>
@@ -99,7 +99,7 @@ export default function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+              <h2 className="text-lg font-medium text-black mt-8 mb-2">
                 6. Your rights
               </h2>
               <p>
@@ -110,14 +110,14 @@ export default function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+              <h2 className="text-lg font-medium text-black mt-8 mb-2">
                 7. Contact
               </h2>
               <p>
                 Questions about this policy can be sent to{" "}
                 <a
                   href="mailto:info@lexentify.com"
-                  className="text-black font-semibold underline hover:text-zinc-700 transition-colors"
+                  className="text-black font-medium underline hover:text-zinc-700 transition-colors"
                 >
                   info@lexentify.com
                 </a>
@@ -126,7 +126,7 @@ export default function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-black mt-8 mb-2">
+              <h2 className="text-lg font-medium text-black mt-8 mb-2">
                 8. Changes to this policy
               </h2>
               <p>

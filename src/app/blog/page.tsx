@@ -50,10 +50,10 @@ export default function Blog() {
       <main className="min-h-screen bg-white">
         <section className="pt-32 pb-20 mx-auto max-w-300 px-4 border-x border-b">
           <div className="text-center space-y-3 mb-12">
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-2">
+            <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-2">
               Guides & Updates
             </span>
-            <h1 className="text-3xl md:text-4xl font-bold text-black tracking-tight">
+            <h1 className="text-3xl md:text-4xl font-medium text-black tracking-tight">
               Blog & Help Articles
             </h1>
             <p className="text-sm text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -71,7 +71,7 @@ export default function Blog() {
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-xs text-gray-400">
-                    <span className="font-semibold uppercase tracking-wider text-black bg-zinc-100 px-2 py-0.5 rounded-full">
+                    <span className="font-medium uppercase tracking-wider text-black bg-zinc-100 px-2 py-0.5 rounded-full">
                       {article.category}
                     </span>
                     <span className="flex items-center gap-1">
@@ -79,14 +79,14 @@ export default function Blog() {
                       {article.date}
                     </span>
                   </div>
-                  <h3 className="font-bold text-zinc-900 text-lg leading-snug group-hover:underline">
+                  <h3 className="font-medium text-zinc-900 text-lg leading-snug group-hover:underline">
                     {article.title}
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">
                     {article.excerpt}
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-zinc-900">
+                <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between text-xs font-medium text-zinc-900">
                   <span>Read guide</span>
                   <LuArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>

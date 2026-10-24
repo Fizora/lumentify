@@ -31,13 +31,13 @@ const DocumentViewerModal = ({
             <div className="min-w-0">
               <h2
                 id="document-viewer-title"
-                className="truncate text-sm font-bold text-zinc-900 sm:text-sm"
+                className="truncate text-sm font-medium text-zinc-900 sm:text-sm"
               >
                 {content.title}
               </h2>
 
               <span
-                className={`mt-1 inline-block rounded-full px-2 py-0.5 text-[10px] font-semibold ${
+                className={`mt-1 inline-block rounded-full px-2 py-0.5 text-[10px] font-medium ${
                   status === "Signed"
                     ? "bg-emerald-50 text-emerald-600"
                     : "bg-amber-50 text-amber-600"
@@ -73,7 +73,7 @@ const DocumentViewerModal = ({
             <div className="flex flex-col gap-6">
               {content.sections.map((section) => (
                 <div key={section.heading}>
-                  <h3 className="mb-2 text-sm font-bold text-zinc-900">
+                  <h3 className="mb-2 text-sm font-medium text-zinc-900">
                     {section.heading}
                   </h3>
 
@@ -122,7 +122,7 @@ const DocumentViewerModal = ({
             <button
               type="button"
               onClick={onDownload}
-              className="flex items-center gap-1.5 rounded-md bg-zinc-900 px-4 py-2 text-xs font-semibold text-white transition-colors duration-200 hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-zinc-400 active:scale-95"
+              className="flex items-center gap-1.5 rounded-md bg-zinc-900 px-4 py-2 text-xs font-medium text-white transition-colors duration-200 hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-zinc-400 active:scale-95"
             >
               <LuDownload size={14} />
               Download PDF

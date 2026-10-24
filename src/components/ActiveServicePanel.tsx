@@ -67,12 +67,12 @@ const ActiveServicePanel = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
         <div>
           <p className="text-xs text-zinc-500 mb-1">Active plan</p>
-          <p className="font-bold text-lg text-zinc-900">
+          <p className="font-medium text-lg text-zinc-900">
             {activePlan.name} — {activePlan.price}
             {activePlan.period}
           </p>
         </div>
-        <span className="w-max text-xs font-semibold uppercase tracking-wide bg-emerald-50 text-emerald-600 px-3 py-1 rounded-full">
+        <span className="w-max text-xs font-medium uppercase tracking-wide bg-emerald-50 text-emerald-600 px-3 py-1 rounded-full">
           Active
         </span>
       </div>
@@ -82,7 +82,7 @@ const ActiveServicePanel = () => {
           <LuCalendarClock className="text-zinc-500 shrink-0" size={18} />
           <div>
             <p className="text-xs text-zinc-500">Next billing date</p>
-            <p className="text-sm font-semibold text-zinc-900">
+            <p className="text-sm font-medium text-zinc-900">
               {nextBillingDate.toLocaleDateString("en-AU", {
                 day: "numeric",
                 month: "long",
@@ -99,7 +99,7 @@ const ActiveServicePanel = () => {
           )}
           <div>
             <p className="text-xs text-zinc-500">Cancellation status</p>
-            <p className="text-sm font-semibold text-zinc-900">
+            <p className="text-sm font-medium text-zinc-900">
               {isUnlocked
                 ? "Cancel anytime"
                 : `Unlocks in ${daysUntilUnlocked} days`}
@@ -107,12 +107,12 @@ const ActiveServicePanel = () => {
           </div>
         </div>
         <div className="flex items-center gap-3 p-3 rounded-md bg-zinc-50">
-          <span className="text-zinc-500 text-xs font-bold w-4.5 text-center shrink-0">
+          <span className="text-zinc-500 text-xs font-medium w-4.5 text-center shrink-0">
             {daysActive}
           </span>
           <div>
             <p className="text-xs text-zinc-500">Subscribed for</p>
-            <p className="text-sm font-semibold text-zinc-900">
+            <p className="text-sm font-medium text-zinc-900">
               {daysActive} days
             </p>
           </div>
@@ -128,7 +128,7 @@ const ActiveServicePanel = () => {
           type="button"
           disabled={!isUnlocked}
           onClick={() => setShowConfirm(true)}
-          className={`w-max text-sm font-semibold px-4 py-2 rounded-md transition-colors duration-300 shrink-0 ${
+          className={`w-max text-sm font-medium px-4 py-2 rounded-md transition-colors duration-300 shrink-0 ${
             isUnlocked
               ? "bg-red-50 text-red-600 hover:bg-red-100"
               : "bg-zinc-100 text-zinc-400 cursor-not-allowed"
@@ -141,7 +141,7 @@ const ActiveServicePanel = () => {
       {showConfirm && (
         <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-lg p-6 max-w-sm w-full">
-            <h3 className="font-bold text-zinc-900 mb-2">
+            <h3 className="font-medium text-zinc-900 mb-2">
               Cancel your {activePlan.name} plan?
             </h3>
             <p className="text-sm text-zinc-500 mb-5">
@@ -151,7 +151,7 @@ const ActiveServicePanel = () => {
             <div className="flex gap-3">
               <button
                 onClick={() => setShowConfirm(false)}
-                className="flex-1 py-2 rounded-md border border-zinc-200 text-sm font-semibold hover:bg-zinc-50 transition-colors duration-300"
+                className="flex-1 py-2 rounded-md border border-zinc-200 text-sm font-medium hover:bg-zinc-50 transition-colors duration-300"
               >
                 Keep Plan
               </button>
@@ -160,7 +160,7 @@ const ActiveServicePanel = () => {
                   setCancelled(true);
                   setShowConfirm(false);
                 }}
-                className="flex-1 py-2 rounded-md bg-red-600 text-white text-sm font-semibold hover:bg-red-700 transition-colors duration-300"
+                className="flex-1 py-2 rounded-md bg-red-600 text-white text-sm font-medium hover:bg-red-700 transition-colors duration-300"
               >
                 Yes, Cancel
               </button>

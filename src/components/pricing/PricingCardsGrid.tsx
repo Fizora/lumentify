@@ -52,18 +52,20 @@ const PricingCardsGrid = ({
           }`}
         >
           {plan.featured && (
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-xs font-semibold px-5 py-1 rounded-full">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-xs font-medium px-5 py-1 rounded-full">
               {featuredBadgeLabel}
             </div>
           )}
           <div className="mb-6">
-            <h3 className="text-xl font-bold text-black">{plan.name}</h3>
+            <h3 className="text-xl font-medium text-black">{plan.name}</h3>
             <p className="text-sm text-gray-600 mb-5 py-3 min-h-12 leading-relaxed">
               {plan.description}
             </p>
           </div>
           <div className="mb-8">
-            <span className="text-4xl font-bold text-black">{plan.price}</span>
+            <span className="text-4xl font-medium text-black">
+              {plan.price}
+            </span>
             <span className="text-gray-500 ml-2 text-sm">{plan.period}</span>
             {showBilledMonthlyNote && (
               <span className="block text-xs text-gray-400 mt-1">
@@ -90,7 +92,7 @@ const PricingCardsGrid = ({
               <PrimaryButtonLink
                 href={plan.paymentLink}
                 target="_blank"
-                className="w-full text-center flex items-center justify-center gap-2 px-8 py-3 text-sm font-semibold text-white"
+                className="w-full text-center flex items-center justify-center gap-2 px-8 py-3 text-sm font-medium text-white"
               >
                 {plan.cta}
                 <LuArrowRight className="w-4 h-4" />
@@ -99,7 +101,7 @@ const PricingCardsGrid = ({
               <SecondaryButtonLink
                 href={plan.paymentLink}
                 target="_blank"
-                className="w-full text-center flex items-center justify-center gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 text-black transition-colors px-8 py-3 text-sm font-semibold"
+                className="w-full text-center flex items-center justify-center gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 text-black transition-colors px-8 py-3 text-sm font-medium"
               >
                 {plan.cta}
               </SecondaryButtonLink>

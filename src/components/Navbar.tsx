@@ -65,7 +65,8 @@ const visibleNavItems = navItems.filter(
   (item) => SERVICES_ENABLED || item.name !== "Services",
 );
 
-const CTA_HREF = "/auth/signin"; // single source of truth — was WA link on mobile, /auth/signup on desktop
+const CTA_HREF = "/start-project"; // single source of truth — was WA link on mobile, /auth/signup on desktop
+const MAIL_HREF = "mailto:info@gmail.com"; // single source of truth — was WA link on mobile, /auth/signup on desktop
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -111,7 +112,7 @@ const Navbar = () => {
             href="/"
             className="text-xl font-black flex items-center gap-2 "
           >
-            <div className="bg-white group-hover:scale-105 border border-zinc-200 transition duration-300 p-2 rounded-full">
+            <div className="bg-white group-hover:scale-105 border border-zinc-200 hover:border-black transition duration-300 p-2 rounded-full">
               <Image
                 src="/logo.svg"
                 alt="Lexentify logo"
@@ -128,7 +129,7 @@ const Navbar = () => {
                   <Link
                     key={index}
                     href={item.href}
-                    className="text-gray-700 hover:text-gray-950 transition-colors duration-300 text-sm px-2"
+                    className="text-gray-700 hover:text-black transition-colors duration-300 text-sm px-2"
                   >
                     {item.name}
                   </Link>
@@ -143,7 +144,7 @@ const Navbar = () => {
                   onMouseLeave={() => setIsServicesOpen(false)}
                 >
                   <button
-                    className="flex items-center gap-1 text-gray-700 hover:text-gray-950  transition-colors duration-300 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-300 rounded px-1"
+                    className="flex items-center gap-1 text-gray-700 hover:text-black  transition-colors duration-300 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-300 rounded px-1"
                     aria-expanded={isServicesOpen}
                     onClick={() => setIsServicesOpen((v) => !v)}
                   >
@@ -165,7 +166,7 @@ const Navbar = () => {
         {/* Desktop navigation */}
 
         <div className="px-2 hidden md:flex">
-          <SecondaryButtonLink
+          {/* <SecondaryButtonLink
             href={CTA_HREF}
             className="text-sm font-medium rounded-full mr-2"
           >
@@ -176,6 +177,18 @@ const Navbar = () => {
             className="text-sm font-medium rounded-full"
           >
             Create Account
+          </PrimaryButtonLink> */}
+          <SecondaryButtonLink
+            href={MAIL_HREF}
+            className="text-sm font-medium rounded-full mr-2"
+          >
+            Contact Us
+          </SecondaryButtonLink>
+          <PrimaryButtonLink
+            href={CTA_HREF}
+            className="text-sm font-medium rounded-full"
+          >
+            Start Project
           </PrimaryButtonLink>
         </div>
 
@@ -209,7 +222,7 @@ const Navbar = () => {
                   <div className="grid grid-cols-3 gap-8">
                     {servicesItem.categories.map((category, catIdx) => (
                       <div key={catIdx} className="">
-                        <h4 className="text-sm font-semibold text-gray-black uppercase tracking-wider mb-3 pb-2">
+                        <h4 className="text-sm font-medium text-gray-black uppercase tracking-wider mb-3 pb-2">
                           {category.title}
                         </h4>
                         <div className="flex flex-col gap-0.5">
@@ -218,7 +231,7 @@ const Navbar = () => {
                               key={childIdx}
                               href={child.href}
                               onClick={closeMenu}
-                              className="w-max text-sm text-zinc-700 hover:text-gray-950  px-3 py-1.5 rounded transition-all duration-150 -mx-3"
+                              className="w-max text-sm text-zinc-700 hover:text-black  px-3 py-1.5 rounded transition-all duration-150 -mx-3"
                             >
                               {child.name}
                             </Link>
@@ -297,7 +310,7 @@ const Navbar = () => {
                           >
                             {item.categories.map((category, catIdx) => (
                               <div key={catIdx}>
-                                <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-1">
+                                <h4 className="text-sm font-medium text-white uppercase tracking-wider mb-1">
                                   {category.title}
                                 </h4>
                                 {category.items.map((child, childIdx) => (
@@ -321,16 +334,16 @@ const Navbar = () => {
 
                 <div className="pt-2 flex flex-col sm:flex-row gap-2">
                   <SecondaryButtonLink
-                    href={CTA_HREF}
-                    className="text-sm font-medium rounded-full text-center"
+                    href={MAIL_HREF}
+                    className="text-sm font-medium rounded-full mr-2"
                   >
-                    Login
+                    Contact Us
                   </SecondaryButtonLink>
                   <PrimaryButtonLink
                     href={CTA_HREF}
-                    className="text-sm font-medium rounded-full text-center"
+                    className="text-sm font-medium rounded-full"
                   >
-                    Create Account
+                    Start Project
                   </PrimaryButtonLink>
                 </div>
               </div>

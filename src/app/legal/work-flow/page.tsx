@@ -47,10 +47,10 @@ export default function WorkFlow() {
       <Navbar />
       <main className="min-h-screen px-4">
         <section className="pt-32 pb-16 mx-auto max-w-3xl text-center">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
+          <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
             Work Flow
           </span>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight mb-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black leading-tight mb-4">
             Exactly how a project moves from signed to live.
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed">
@@ -73,7 +73,9 @@ export default function WorkFlow() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-400 mb-1">Stage {idx + 1}</p>
-                  <h3 className="text-sm font-bold text-black mb-2">{title}</h3>
+                  <h3 className="text-sm font-medium text-black mb-2">
+                    {title}
+                  </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     {body}
                   </p>

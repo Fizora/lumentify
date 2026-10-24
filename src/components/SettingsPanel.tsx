@@ -108,14 +108,14 @@ const SettingsPanel = () => {
     <div className="max-w-2xl flex flex-col gap-6">
       {/* Password */}
       <div className="border border-zinc-300 rounded-lg p-6">
-        <h2 className="font-bold text-zinc-900 mb-1">Password</h2>
+        <h2 className="font-medium text-zinc-900 mb-1">Password</h2>
         <p className="text-sm text-zinc-500 mb-5">
           Update the password used to log in.
         </p>
 
         <div className="flex flex-col gap-4">
           <div>
-            <label className="text-xs font-semibold text-zinc-500 mb-1.5 block">
+            <label className="text-xs font-medium text-zinc-500 mb-1.5 block">
               Current Password
             </label>
             <input
@@ -126,7 +126,7 @@ const SettingsPanel = () => {
             />
           </div>
           <div>
-            <label className="text-xs font-semibold text-zinc-500 mb-1.5 block">
+            <label className="text-xs font-medium text-zinc-500 mb-1.5 block">
               New Password
             </label>
             <input
@@ -137,7 +137,7 @@ const SettingsPanel = () => {
             />
           </div>
           <div>
-            <label className="text-xs font-semibold text-zinc-500 mb-1.5 block">
+            <label className="text-xs font-medium text-zinc-500 mb-1.5 block">
               Confirm New Password
             </label>
             <input
@@ -150,13 +150,13 @@ const SettingsPanel = () => {
         </div>
 
         {passwordError && (
-          <div className="flex items-center gap-2 mt-4 text-red-600 text-xs font-semibold">
+          <div className="flex items-center gap-2 mt-4 text-red-600 text-xs font-medium">
             <LuTriangleAlert size={14} />
             {passwordError}
           </div>
         )}
         {passwordSaved && (
-          <div className="flex items-center gap-2 mt-4 text-emerald-600 text-xs font-semibold">
+          <div className="flex items-center gap-2 mt-4 text-emerald-600 text-xs font-medium">
             <LuCheck size={14} />
             Password updated
           </div>
@@ -165,7 +165,7 @@ const SettingsPanel = () => {
         <div className="flex justify-end mt-5 pt-4 border-t border-zinc-100">
           <button
             onClick={handlePasswordSave}
-            className="text-xs font-semibold px-4 py-2 rounded-md bg-zinc-900 text-white hover:bg-zinc-800 transition-colors duration-200"
+            className="text-xs font-medium px-4 py-2 rounded-md bg-zinc-900 text-white hover:bg-zinc-800 transition-colors duration-200"
           >
             Update Password
           </button>
@@ -174,7 +174,7 @@ const SettingsPanel = () => {
 
       {/* Notifications */}
       <div className="border border-zinc-300 rounded-lg p-6">
-        <h2 className="font-bold text-zinc-900 mb-1">Notifications</h2>
+        <h2 className="font-medium text-zinc-900 mb-1">Notifications</h2>
         <p className="text-sm text-zinc-500 mb-5">
           Choose which email notifications you'd like to receive.
         </p>
@@ -186,7 +186,7 @@ const SettingsPanel = () => {
               className="flex items-center justify-between gap-4 py-4 first:pt-0 last:pb-0"
             >
               <div>
-                <p className="text-sm font-semibold text-zinc-900">{label}</p>
+                <p className="text-sm font-medium text-zinc-900">{label}</p>
                 <p className="text-xs text-zinc-500 mt-0.5">{desc}</p>
               </div>
               <Toggle
@@ -200,7 +200,7 @@ const SettingsPanel = () => {
 
       {/* Danger zone */}
       <div className="border border-red-300 rounded-lg p-6">
-        <h2 className="font-bold text-red-600 mb-1">Danger Zone</h2>
+        <h2 className="font-medium text-red-600 mb-1">Danger Zone</h2>
         <p className="text-sm text-zinc-500 mb-5">
           Deleting your account removes access to your dashboard, invoices, and
           documents. This does not cancel an active subscription — cancel it
@@ -208,7 +208,7 @@ const SettingsPanel = () => {
         </p>
         <button
           onClick={() => setShowDeleteConfirm(true)}
-          className="text-xs font-semibold px-4 py-2 rounded-md bg-red-50 text-red-600 hover:bg-red-100 transition-colors duration-200"
+          className="text-xs font-medium px-4 py-2 rounded-md bg-red-50 text-red-600 hover:bg-red-100 transition-colors duration-200"
         >
           Delete Account
         </button>
@@ -217,7 +217,7 @@ const SettingsPanel = () => {
       {showDeleteConfirm && (
         <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-lg p-6 max-w-sm w-full">
-            <h3 className="font-bold text-zinc-900 mb-2">
+            <h3 className="font-medium text-zinc-900 mb-2">
               Delete your account?
             </h3>
             <p className="text-sm text-zinc-500 mb-5">
@@ -227,7 +227,7 @@ const SettingsPanel = () => {
             <div className="flex gap-3">
               <button
                 onClick={() => setShowDeleteConfirm(false)}
-                className="flex-1 py-2 rounded-md border border-zinc-200 text-sm font-semibold hover:bg-zinc-50 transition-colors duration-300"
+                className="flex-1 py-2 rounded-md border border-zinc-200 text-sm font-medium hover:bg-zinc-50 transition-colors duration-300"
               >
                 Cancel
               </button>
@@ -236,7 +236,7 @@ const SettingsPanel = () => {
                   // TODO: call account deletion endpoint
                   setShowDeleteConfirm(false);
                 }}
-                className="flex-1 py-2 rounded-md bg-red-600 text-white text-sm font-semibold hover:bg-red-700 transition-colors duration-300"
+                className="flex-1 py-2 rounded-md bg-red-600 text-white text-sm font-medium hover:bg-red-700 transition-colors duration-300"
               >
                 Yes, Delete
               </button>

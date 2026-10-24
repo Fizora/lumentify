@@ -105,7 +105,7 @@ function FieldLabel({
   children: React.ReactNode;
 }) {
   return (
-    <label htmlFor={htmlFor} className="block text-lg font-semibold text-black">
+    <label htmlFor={htmlFor} className="block text-lg font-medium text-black">
       {children}
       {required ? (
         <span className="text-zinc-400 font-normal"> *</span>
@@ -126,10 +126,10 @@ const inputClasses =
 function SectionHeading({ step, title }: { step: string; title: string }) {
   return (
     <div className="flex items-baseline gap-2 pb-1">
-      <span className="text-xs font-semibold tracking-widest uppercase text-zinc-400">
+      <span className="text-xs font-medium tracking-widest uppercase text-zinc-400">
         {step}
       </span>
-      <h2 className="text-sm font-semibold text-black">{title}</h2>
+      <h2 className="text-sm font-medium text-black">{title}</h2>
     </div>
   );
 }
@@ -188,10 +188,10 @@ export default function Project() {
         <Navbar />
         <main className="pt-32 pb-24">
           <div className="mx-auto max-w-2xl px-3 text-center space-y-4">
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 ">
+            <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 ">
               Details received
             </span>
-            <h1 className="text-3xl md:text-4xl font-bold text-black leading-tight">
+            <h1 className="text-3xl md:text-4xl font-medium text-black leading-tight">
               Thanks — we&apos;ve got your details.
             </h1>
             <p className="text-gray-600 text-[15px] md:text-sm leading-relaxed">
@@ -213,10 +213,10 @@ export default function Project() {
         <div className="mx-auto max-w-3xl px-3 space-y-10">
           {/* Hero */}
           <section className="space-y-4">
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 ">
+            <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 ">
               Start project
             </span>
-            <h1 className="text-3xl md:text-4xl font-bold text-black leading-tight">
+            <h1 className="text-3xl md:text-4xl font-medium text-black leading-tight">
               Ready to get your site built?
             </h1>
             <p className="text-gray-600 text-[15px] md:text-sm leading-relaxed">
@@ -527,7 +527,7 @@ export default function Project() {
 
             <button
               type="submit"
-              className="w-full  bg-black text-white text-[15px] font-semibold py-3 hover:bg-zinc-800 transition-colors"
+              className="w-full  bg-black text-white text-[15px] font-medium py-3 hover:bg-zinc-800 transition-colors"
             >
               Send My Details
             </button>
@@ -535,7 +535,7 @@ export default function Project() {
 
           {/* What happens next */}
           <section className="space-y-3">
-            <h2 className="text-lg font-semibold text-black">
+            <h2 className="text-lg font-medium text-black">
               What happens next
             </h2>
             <ul className="space-y-2 text-gray-600 text-[15px] leading-relaxed list-disc pl-5">

@@ -52,7 +52,7 @@ Terima kasih, saya tunggu balasannya.
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="z-100 fixed bottom-2 right-2 md:bottom-4 md:right-4 xl:bottom-10 xl:right-10 p-4 bg-green-500 text-white rounded-full flex items-center gap-2 font-semibold hover:scale-105 transform transition duration-300 active:scale-95 shadow-lg"
+      className="z-100 fixed bottom-2 right-2 md:bottom-4 md:right-4 xl:bottom-10 xl:right-10 p-4 bg-green-500 text-white rounded-full flex items-center gap-2 font-medium hover:scale-105 transform transition duration-300 active:scale-95 shadow-lg"
     >
       <FaWhatsapp size={30} />
       <span className="hidden md:block">Contact Us</span>

@@ -40,7 +40,7 @@ const Testimonials = () => {
           transition={{ duration: 0.5 }}
           className="text-center space-y-3 mb-10"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-black">
+          <h2 className="text-2xl md:text-3xl font-medium text-black">
             Trusted by home‑service owners
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
@@ -64,14 +64,14 @@ const Testimonials = () => {
                   key={i}
                   className="bg-gray-50 p-4 flex flex-col justify-between border border-gray-200 hover:shadow-md transition duration-200"
                 >
-                  <span className="text-lg font-bold text-yellow-400">
+                  <span className="text-lg font-medium text-yellow-400">
                     {t.rating}
                   </span>
                   <blockquote className="text-gray-700 my-2 text-sm leading-relaxed line-clamp-3">
                     "{t.quote}"
                   </blockquote>
                   <div className="mt-auto border-t border-gray-200 pt-3">
-                    <p className="font-semibold text-black text-sm">{t.name}</p>
+                    <p className="font-medium text-black text-sm">{t.name}</p>
                     <p className="text-xs text-gray-500">{t.role}</p>
                   </div>
                 </div>

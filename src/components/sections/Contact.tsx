@@ -67,7 +67,7 @@ const Contact = () => {
           transition={{ duration: 0.4 }}
           className="text-center space-y-3 mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-black tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-medium text-black tracking-tight">
             Let&apos;s talk about your site.
           </h2>
           <p className="text-sm text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -87,7 +87,7 @@ const Contact = () => {
             {status === "sent" ? (
               <div className="flex flex-col items-center text-center py-12">
                 <LuCircleCheck className="w-12 h-12 text-emerald-600 mb-4" />
-                <h3 className="text-xl font-bold text-black mb-2">
+                <h3 className="text-xl font-medium text-black mb-2">
                   Message received successfully!
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed max-w-md">
@@ -97,7 +97,7 @@ const Contact = () => {
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
-                  className="mt-6 text-sm font-semibold text-zinc-900 underline hover:text-zinc-600 transition-colors"
+                  className="mt-6 text-sm font-medium text-zinc-900 underline hover:text-zinc-600 transition-colors"
                 >
                   Send another message →
                 </button>
@@ -108,7 +108,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-xs font-bold uppercase tracking-wider text-black mb-1.5"
+                      className="block text-xs font-medium uppercase tracking-wider text-black mb-1.5"
                     >
                       Your name *
                     </label>
@@ -126,7 +126,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="business"
-                      className="block text-xs font-bold uppercase tracking-wider text-black mb-1.5"
+                      className="block text-xs font-medium uppercase tracking-wider text-black mb-1.5"
                     >
                       Business name *
                     </label>
@@ -146,7 +146,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-xs font-bold uppercase tracking-wider text-black mb-1.5"
+                    className="block text-xs font-medium uppercase tracking-wider text-black mb-1.5"
                   >
                     Email address *
                   </label>
@@ -165,7 +165,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="interest"
-                    className="block text-xs font-bold uppercase tracking-wider text-black mb-1.5"
+                    className="block text-xs font-medium uppercase tracking-wider text-black mb-1.5"
                   >
                     What are you looking for?
                   </label>
@@ -192,7 +192,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-xs font-bold uppercase tracking-wider text-black mb-1.5"
+                    className="block text-xs font-medium uppercase tracking-wider text-black mb-1.5"
                   >
                     Project details or goals *
                   </label>
@@ -215,7 +215,7 @@ const Contact = () => {
                       again or email us directly at{" "}
                       <a
                         href="mailto:info@lexentify.com"
-                        className="font-semibold underline hover:no-underline"
+                        className="font-medium underline hover:no-underline"
                       >
                         info@lexentify.com
                       </a>
@@ -227,7 +227,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-semibold px-6 py-3 transition-colors shadow-xs cursor-pointer rounded-md"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-medium px-6 py-3 transition-colors shadow-xs cursor-pointer rounded-md"
                 >
                   {status === "loading" ? (
                     <>
@@ -255,7 +255,7 @@ const Contact = () => {
           >
             <div className="border border-gray-200 p-6 bg-white rounded-md">
               <LuMail className="w-5 h-5 text-zinc-800 mb-3" />
-              <h3 className="text-sm font-bold text-black mb-1">
+              <h3 className="text-sm font-medium text-black mb-1">
                 Direct Email
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed mb-3">
@@ -264,7 +264,7 @@ const Contact = () => {
               </p>
               <a
                 href="mailto:info@lexentify.com"
-                className="text-sm font-semibold text-zinc-900 hover:underline"
+                className="text-sm font-medium text-zinc-900 hover:underline"
               >
                 info@lexentify.com
               </a>
@@ -272,7 +272,7 @@ const Contact = () => {
 
             <div className="border border-gray-200 p-6 bg-white rounded-md">
               <LuMessageCircle className="w-5 h-5 text-zinc-800 mb-3" />
-              <h3 className="text-sm font-bold text-black mb-1">
+              <h3 className="text-sm font-medium text-black mb-1">
                 Already a client?
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed mb-3">
@@ -283,7 +283,7 @@ const Contact = () => {
                 href="https://wa.me/6285235086814"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-semibold text-zinc-950 inline-flex items-center gap-1 hover:underline"
+                className="text-sm font-medium text-zinc-950 inline-flex items-center gap-1 hover:underline"
               >
                 Message on WhatsApp →
               </a>
@@ -291,7 +291,7 @@ const Contact = () => {
 
             <div className="bg-zinc-50 border border-zinc-200/80 p-6 rounded-md">
               <p className="text-sm text-gray-700 leading-relaxed">
-                <span className="font-bold text-black">✓</span> Every project
+                <span className="font-medium text-black">✓</span> Every project
                 starts with a clear written proposal and formal agreement before
                 any financial commitment — absolute transparency guaranteed.
               </p>
