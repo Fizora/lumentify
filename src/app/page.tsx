@@ -32,7 +32,7 @@ export default function Home() {
         <Skathes />
       </main>
       <Footer />
-      <WhatsAppCall />
+      {/* <WhatsAppCall /> */}
     </>
   );
 }

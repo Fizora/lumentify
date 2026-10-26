@@ -20,6 +20,7 @@ import { buildPlans, mrrPlans } from "@/components/constant/data";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Pricing from "@/components/sections/Pricing";
+import Skathes from "@/components/Skathes";
 
 const getAllFeatures = (plans: typeof buildPlans) => {
   const all = new Set<string>();
@@ -116,9 +117,8 @@ export default function PricingPage() {
     <>
       <Navbar />
       <main className="bg-white">
-        <div className="mx-auto max-w-300 py-24 px-3 border-x">
-          <Pricing showOneTime={true}></Pricing>
-        </div>
+        <Skathes />
+        <Pricing showOneTime={true}></Pricing>
       </main>
       <Footer />
     </>

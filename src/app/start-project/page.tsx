@@ -208,7 +208,7 @@ function StartProjectContent() {
                     required
                     value={form.phone}
                     onChange={handleChange}
-                    placeholder="+61 2 5551 0192"
+                    placeholder="+61 255 511 192"
                     className="w-full border border-gray-300 px-3.5 py-3 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-black transition-all"
                   />
                 </div>

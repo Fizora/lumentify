@@ -47,8 +47,8 @@ export default function Blog() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white">
-        <section className="pt-32 pb-20 mx-auto max-w-300 px-4 border-x border-b">
+      <main className="min-h-screen bg-white border-b">
+        <section className="min-h-screen pt-32 pb-20 mx-auto max-w-300 px-4 border-x">
           <div className="text-center space-y-3 mb-12">
             <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-2">
               Guides & Updates
