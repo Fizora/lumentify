@@ -105,7 +105,7 @@ const Navbar = () => {
       ref={headerRef}
       className="w-full fixed top-0 left-0 z-50 backdrop-blur-3xl bg-white border-b"
     >
-      <div className="mx-auto max-w-300 py-2 flex items-center justify-between ">
+      <div className="mx-auto max-w-300 py-2 px-3 md:px-0 flex items-center justify-between ">
         {/* Logo */}
         <div className="group px-2 rounded-full text-black flex items-center gap-2">
           <Link

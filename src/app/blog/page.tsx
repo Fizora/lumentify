@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import { LuCalendar, LuArrowRight, LuNewspaper } from "react-icons/lu";
 import Link from "next/link";
 import Skathes from "@/components/Skathes";
+import CTA from "@/components/sections/CTA";
 
 const blogArticles = [
   {
@@ -96,6 +97,8 @@ export default function Blog() {
           </div>
         </section>
       </main>
+      <Skathes />
+      <CTA />
       <Skathes />
       <Footer />
     </>

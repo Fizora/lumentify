@@ -144,13 +144,13 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              className="grid grid-cols-1  lg:grid-cols-3 gap-6 items-stretch"
+              className="grid grid-cols-1  lg:grid-cols-3 gap-3 items-stretch"
             >
               {mrrPlans.map((plan, index) => (
                 <motion.div
                   key={index}
                   variants={cardVariants}
-                  className={`relative flex flex-col p-6 md:p-8 border ${
+                  className={`relative flex flex-col p-6 md:p-8 border rounded-lg ${
                     plan.featured
                       ? "border-zinc-300 bg-zinc-50/50 shadow-xl shadow-zinc-200 z-10"
                       : "border-gray-200 bg-white"

@@ -3,6 +3,8 @@ import Link from "next/link";
 import { LuCircleCheck, LuCircleX, LuArrowRight } from "react-icons/lu";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Skathes from "@/components/Skathes";
+import CTA from "@/components/sections/CTA";
 
 export const metadata: Metadata = {
   title: "Lexentify | Warranty",
@@ -34,7 +36,7 @@ export default function Warranty() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen px-4">
+      <main className="min-h-screen border-b px-4">
         {/* Hero */}
         <section className="border-x mx-auto max-w-300 px-3">
           <section className="pt-32 pb-16 mx-auto max-w-3xl text-center">
@@ -144,7 +146,7 @@ export default function Warranty() {
           {/* CTA */}
           <section className="mx-auto max-w-3xl pb-24 text-center">
             <Link
-              href="/support"
+              href="mailto:services@lexentify.com"
               className="inline-flex items-center gap-2 text-sm font-medium text-zinc-700 hover:text-zinc-900"
             >
               Have an issue right now? Contact Support
@@ -153,6 +155,9 @@ export default function Warranty() {
           </section>
         </section>
       </main>
+      <Skathes />
+      <CTA />
+      <Skathes />
       <Footer />
     </>
   );

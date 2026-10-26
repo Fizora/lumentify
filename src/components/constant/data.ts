@@ -305,7 +305,7 @@ export const mrrPlans: PricingPlan[] = [
     cta: "Get Started",
     href: "/auth/signup",
     paymentLink: "/dashboard-panel/services/payment",
-    featured: false,
+    featured: true,
   },
   {
     name: "Growth Partner",
