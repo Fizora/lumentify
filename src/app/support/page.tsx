@@ -11,6 +11,7 @@ import {
 } from "react-icons/lu";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import Skathes from "@/components/Skathes";
 
 export const metadata: Metadata = {
   title: "Lexentify | Support & Guarantees",
@@ -43,7 +44,7 @@ export default function Support() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen px-4 bg-white text-zinc-900">
+      <main className="min-h-screen px-4 bg-white text-zinc-900 border-b">
         <section className="mx-auto max-w-300 px-3 py-20 border-x border-zinc-200">
           {/* Header */}
           <section className="pt-32 pb-16 mx-auto max-w-3xl text-center">
@@ -200,6 +201,7 @@ export default function Support() {
           </section>
         </section>
       </main>
+      <Skathes />
       <Footer />
     </>
   );

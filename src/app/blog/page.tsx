@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { LuCalendar, LuArrowRight, LuNewspaper } from "react-icons/lu";
 import Link from "next/link";
+import Skathes from "@/components/Skathes";
 
 const blogArticles = [
   {
@@ -95,6 +96,7 @@ export default function Blog() {
           </div>
         </section>
       </main>
+      <Skathes />
       <Footer />
     </>
   );

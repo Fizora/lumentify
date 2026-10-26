@@ -127,9 +127,9 @@ const Footer = () => {
         </div>
 
         {/* Giant wordmark */}
-        <div className="mt-20 -mx-4 select-none overflow-hidden">
+        <div className="mt-20 -mx-4 select-none overflow-hidden py-15">
           <h1
-            className="font-black bg-linear-to-r from-zinc-800 via-zinc-300 to-zinc-800 text-transparent text-center leading-none tracking-tighter bg-clip-text"
+            className="font-black text-zinc-800 text-center leading-none tracking-tighter"
             style={{ fontSize: "clamp(3.5rem, 14vw, 11rem)" }}
           >
             Lexentify

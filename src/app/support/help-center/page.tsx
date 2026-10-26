@@ -12,6 +12,8 @@ import {
 } from "react-icons/lu";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Skathes from "@/components/Skathes";
+import CTA from "@/components/sections/CTA";
 
 const categories = [
   {
@@ -67,7 +69,7 @@ export default function HelpCenter() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-white border-b">
         {/* Hero + search */}
         <section className="pt-32 pb-16 mx-auto max-w-300 px-4 text-center border-x">
           <div className="max-w-2xl mx-auto">
@@ -119,7 +121,7 @@ export default function HelpCenter() {
         </section>
 
         {/* Categories */}
-        <section className="mx-auto max-w-300 px-4 py-12 border-x border-t">
+        <section className="mx-auto max-w-300 px-4 py-12 border-x">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {categories.map(({ icon: Icon, title, desc, date, link }) => (
@@ -145,7 +147,7 @@ export default function HelpCenter() {
         </section>
 
         {/* Popular articles */}
-        <section className="mx-auto max-w-300 px-4 py-12 border-x border-t">
+        <section className="mx-auto max-w-300 px-4 py-12 border-x">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-lg font-medium text-black mb-4">
               Popular questions
@@ -166,7 +168,7 @@ export default function HelpCenter() {
         </section>
 
         {/* Contact fallback */}
-        <section className="mx-auto max-w-300 px-4 py-16 border-x border-t border-b">
+        <section className="mx-auto max-w-300 px-4 py-16 border-x">
           <div className="max-w-3xl mx-auto">
             <div className="bg-zinc-50 border border-zinc-200 p-8 text-center rounded-md">
               <p className="text-sm font-medium text-black mb-1">
@@ -187,6 +189,9 @@ export default function HelpCenter() {
           </div>
         </section>
       </main>
+      <Skathes />
+      <CTA />
+      <Skathes />
       <Footer />
     </>
   );
