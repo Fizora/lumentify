@@ -26,7 +26,8 @@ export default function Home() {
         <Skathes />
         {/* <Testimonials /> */}
         <FAQ />
-        {/* <Contact /> */}
+        <Skathes />
+        <Contact />
         <Skathes />
         <CTA />
         <Skathes />

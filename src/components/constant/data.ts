@@ -136,7 +136,7 @@ export type ShowcaseItem = {
 
 export const showcaseList: ShowcaseItem[] = [
   {
-    img: "",
+    img: "/img/clean-well.png",
     icon: LuHammer,
     name: "Clean Well",
     desc: "High-performance cleaning service demo built for direct mobile calls, fast quotes, and verified trust.",
@@ -147,7 +147,7 @@ export const showcaseList: ShowcaseItem[] = [
     year: "2026",
   },
   {
-    img: "",
+    img: "/img/pure-electrical.webp",
     icon: LuHammer,
     name: "Pure Electrical",
     desc: "Electrician demo featuring local service areas and suburb pages designed for emergency search dominance.",
@@ -158,7 +158,7 @@ export const showcaseList: ShowcaseItem[] = [
     year: "2026",
   },
   {
-    img: "",
+    img: "/img/wellgarden.png",
     icon: LuHammer,
     name: "Well Garden",
     desc: "Gardening demo optimized for instant mobile contact, portfolio proof, and streamlined customer inquiries.",
@@ -201,7 +201,7 @@ export const buildPlans: PricingPlan[] = [
   {
     name: "Essential",
     description:
-      "A fast, high-converting landing page built to turn emergency mobile clicks into direct phone calls.",
+      "A fast, high-converting landing page built to turn emergency mobile clicks into more direct phone calls.",
     price: "$1,499",
     period: "one-time",
     features: [

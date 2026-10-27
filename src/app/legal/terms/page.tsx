@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import Skathes from "@/components/Skathes";
+import CTA from "@/components/sections/CTA";
 
 export const metadata: Metadata = {
   title: "Lexentify | Terms of Use",
@@ -10,7 +12,7 @@ export default function Terms() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen px-4 bg-white text-zinc-900">
+      <main className="min-h-screen px-4 bg-white text-zinc-900 border-b">
         <section className="mx-auto max-w-300 px-3 py-20 border-x border-zinc-200">
           <section className="pt-32 pb-8 mx-auto max-w-3xl">
             <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
@@ -126,7 +128,24 @@ export default function Terms() {
 
             <div>
               <h2 className="text-lg font-medium text-black mt-8 mb-2">
-                8. Contact Information
+                8. Project Deposits &amp; Initial Milestone Cancellation Policy
+              </h2>
+              <p>
+                For contracted projects governed under a signed SOW, we include
+                an initial design direction review milestone prior to full code
+                development. If you choose to formally cancel the project at
+                this milestone because the visual direction does not align with
+                your vision, your initial deposit will be fully refunded to stop
+                the project cleanly before development begins. Please note that
+                such refunds cover the net deposit amount received by Lexentify
+                (minus non-recoverable third-party payment gateway or platform
+                transfer fees such as PayPal or Wise, if applicable).
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-lg font-medium text-black mt-8 mb-2">
+                9. Contact Information
               </h2>
               <p>
                 If you have any questions or concerns regarding these Terms of
@@ -143,6 +162,8 @@ export default function Terms() {
           </section>
         </section>
       </main>
+      <CTA />
+      <Skathes />
       <Footer />
     </>
   );

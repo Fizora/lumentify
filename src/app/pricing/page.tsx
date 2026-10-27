@@ -21,6 +21,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Pricing from "@/components/sections/Pricing";
 import Skathes from "@/components/Skathes";
+import CTA from "@/components/sections/CTA";
 
 const getAllFeatures = (plans: typeof buildPlans) => {
   const all = new Set<string>();
@@ -117,8 +118,10 @@ export default function PricingPage() {
     <>
       <Navbar />
       <main className="bg-white">
-        <Skathes />
         <Pricing showOneTime={true}></Pricing>
+        <Skathes />
+        <CTA />
+        <Skathes />
       </main>
       <Footer />
     </>

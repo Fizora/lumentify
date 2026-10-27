@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import Skathes from "@/components/Skathes";
+import CTA from "@/components/sections/CTA";
 
 export const metadata: Metadata = {
   title: "Lexentify | About Our Studio",
@@ -10,7 +12,7 @@ export default function About() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen px-4 bg-white text-zinc-900">
+      <main className="min-h-screen px-4 bg-white text-zinc-900 border-b">
         <div className="mx-auto max-w-300 px-3 py-20 border-x border-zinc-200">
           <div className="mx-auto max-w-3xl pt-12">
             {/* Header */}
@@ -89,6 +91,9 @@ export default function About() {
           </div>
         </div>
       </main>
+      <Skathes />
+      <CTA />
+      <Skathes />
       <Footer />
     </>
   );

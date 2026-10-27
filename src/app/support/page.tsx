@@ -21,7 +21,7 @@ const guarantees = [
   {
     icon: LuFileCheck,
     title: "Visual direction approval before coding",
-    body: "We review the initial homepage layout and design direction with you before full development begins. If it doesn't align with your vision at this milestone, your initial deposit is fully refunded—no hassle.",
+    body: "We review the initial homepage design direction with you before full development begins. If you choose to cancel the project at this milestone because the direction doesn't fit your vision, your initial deposit is fully refunded—stopping the project cleanly before any code is written.",
   },
   {
     icon: LuRotateCcw,
@@ -124,13 +124,12 @@ export default function Support() {
                   pressure-free discussion.
                 </p>
                 <Link
-                  href="https://wa.me/6285235086814"
-                  target="_blank"
+                  href="mailto:support@lexentify.com"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-medium text-zinc-900 hover:text-zinc-600 transition-colors"
                 >
-                  <LuMessageCircle className="w-4 h-4" />
-                  Message us on WhatsApp
+                  <LuMail className="w-4 h-4" />
+                  Message us on Email
                 </Link>
               </div>
             </div>

@@ -3,6 +3,8 @@ import { motion } from "motion/react";
 import { LuCircleCheck, LuArrowRight } from "react-icons/lu";
 import { PrimaryButtonLink, SecondaryButtonLink } from "@/components/ui/Button";
 import { buildPlans, mrrPlans } from "@/components/constant/data";
+import Skathes from "../Skathes";
+import CTA from "./CTA";
 
 const containerVariants = {
   hidden: {},
@@ -23,215 +25,222 @@ interface PricingProps {
 
 const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
   return (
-    <section className="bg-white border-b" id="pricing">
-      <div className="mx-auto max-w-300 py-24 px-3 border-x">
-        {/* SECTION 1: BUILD YOUR SITE */}
-        {showOneTime && (
-          <>
+    <section id="pricing">
+      <div className="bg-white border-b ">
+        <div className="mx-auto max-w-300 py-24 border-x border-zinc-200">
+          {/* SECTION 1: BUILD YOUR SITE */}
+          {showOneTime && (
+            <>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5 }}
+                className="text-center space-y-5 mb-16 px-3 "
+              >
+                <span className="inline-block text-sm font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
+                  Pricing
+                </span>
+                <h2 className="text-3xl md:text-4xl font-semibold text-black tracking-tight leading-tight">
+                  Build Your Site
+                </h2>
+                <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed text-sm">
+                  One payment, no subscriptions. Choose the package that fits
+                  your business needs.
+                </p>
+              </motion.div>
+
+              {/* Grid dengan gap-0 dan border menyatu (menggunakan -ml-px dan border collapse) */}
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-y border-zinc-200 mb-16"
+              >
+                {buildPlans.map((plan, index) => (
+                  <motion.div
+                    key={index}
+                    variants={cardVariants}
+                    className={`relative flex flex-col p-6 lg:p-8 bg-white border-b lg:border-b-0 lg:border-r border-zinc-200 last:border-r-0 ${
+                      plan.featured ? "bg-zinc-50/50 z-10" : ""
+                    }`}
+                  >
+                    {plan.featured && (
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-sm font-medium px-4 py-1 rounded-full shadow-xs">
+                        The Best Choice
+                      </div>
+                    )}
+
+                    {/* Header Paket */}
+                    <div className="mb-6 pb-6 border-b border-zinc-100">
+                      <h3 className="text-xl font-semibold text-black mb-2">
+                        {plan.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 min-h-14 leading-relaxed py-3">
+                        {plan.description}
+                      </p>
+                      <div className="mt-4 flex items-baseline min-h-10 py-2">
+                        <span className="text-3xl lg:text-4xl font-semibold text-black font-mono">
+                          {plan.price}
+                        </span>
+                        <span className="text-gray-500 ml-2 text-sm">
+                          {plan.period}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Tombol Aksi dipindah ke atas list seperti gaya referensi */}
+                    <div className="mb-8">
+                      {plan.featured ? (
+                        <PrimaryButtonLink
+                          href={plan.href}
+                          className="w-full text-center flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium text-white shadow-xs"
+                        >
+                          {plan.cta}
+                          <LuArrowRight className="w-4 h-4" />
+                        </PrimaryButtonLink>
+                      ) : (
+                        <SecondaryButtonLink
+                          href={plan.href}
+                          className="w-full text-center flex items-center justify-center gap-2 bg-white hover:bg-zinc-50 border-zinc-200 text-black transition-colors px-6 py-2.5 text-sm font-medium shadow-2xs"
+                        >
+                          {plan.cta}
+                        </SecondaryButtonLink>
+                      )}
+                    </div>
+
+                    {/* Daftar Fitur */}
+                    <ul className="space-y-3 mb-6 flex-1">
+                      {plan.features.map((feat, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <LuCircleCheck className="w-4 h-4 mt-0.5 shrink-0 text-zinc-800" />
+                          <span className="text-sm text-gray-700 leading-relaxed">
+                            {feat}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </>
+          )}
+
+          {/* SECTION 2: KEEP IT RUNNING (MRR) */}
+          {showMRR && (
+            <>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5 }}
+                className="text-center space-y-5 pt-12 mb-16 px-3"
+              >
+                <h2 className="text-3xl md:text-4xl font-semibold text-black tracking-tight leading-tight">
+                  Keep It Running
+                </h2>
+                <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed text-sm">
+                  Ongoing support, hosting, and updates — pay monthly and never
+                  worry about your site.
+                </p>
+              </motion.div>
+
+              {/* Grid MRR dengan border menyatu tanpa gap */}
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-y border-zinc-200"
+              >
+                {mrrPlans.map((plan, index) => (
+                  <motion.div
+                    key={index}
+                    variants={cardVariants}
+                    className={`relative flex flex-col p-6 lg:p-8 bg-white border-b lg:border-b-0 lg:border-r border-zinc-200 last:border-r-0 ${
+                      plan.featured ? "bg-zinc-50/50 z-10" : ""
+                    }`}
+                  >
+                    {plan.featured && (
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-sm font-medium px-4 py-1 rounded-full shadow-xs">
+                        Best Value
+                      </div>
+                    )}
+
+                    {/* Header Paket MRR */}
+                    <div className="mb-6 pb-6 border-b border-zinc-100">
+                      <h3 className="text-xl font-semibold text-black mb-2">
+                        {plan.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 min-h-16 py-3 leading-relaxed">
+                        {plan.description}
+                      </p>
+                      <div className="mt-4 flex items-baseline">
+                        <span className="text-3xl lg:text-4xl font-semibold text-black font-mono py-8">
+                          {plan.price}
+                        </span>
+                        <span className="text-gray-500 ml-2 text-sm">
+                          {plan.period}
+                        </span>
+                      </div>
+                      <span className="block text-[11px] text-gray-400 mt-0.5">
+                        billed monthly
+                      </span>
+                    </div>
+
+                    {/* Tombol Aksi MRR */}
+                    <div className="mb-8">
+                      {plan.featured ? (
+                        <PrimaryButtonLink
+                          href={plan.href}
+                          className="w-full text-center flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium text-white shadow-xs"
+                        >
+                          {plan.cta}
+                          <LuArrowRight className="w-4 h-4" />
+                        </PrimaryButtonLink>
+                      ) : (
+                        <SecondaryButtonLink
+                          href={plan.href}
+                          className="w-full text-center flex items-center justify-center gap-2 bg-white hover:bg-zinc-50 border-zinc-200 text-black transition-colors px-6 py-2.5 text-sm font-medium shadow-2xs"
+                        >
+                          {plan.cta}
+                        </SecondaryButtonLink>
+                      )}
+                    </div>
+
+                    {/* Daftar Fitur MRR */}
+                    <ul className="space-y-3 mb-6 flex-1">
+                      {plan.features.map((feat, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <LuCircleCheck className="w-4 h-4 mt-0.5 shrink-0 text-zinc-800" />
+                          <span className="text-sm text-gray-700 leading-relaxed">
+                            {feat}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </>
+          )}
+
+          {/* Capacity & warranty notice */}
+          {(showOneTime || showMRR) && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5 }}
-              className="text-center space-y-5 mb-16"
+              viewport={{ once: true }}
+              className="text-center mt-16 max-w-2xl mx-auto bg-zinc-50 p-6 border border-zinc-200 rounded-md shadow-2xs px-3 "
             >
-              <h2 className="text-3xl md:text-4xl font-medium text-bold leading-tight">
-                Build Your Site
-              </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                One payment, no subscriptions. Choose the package that fits your
-                business needs.
+              <p className="text-sm text-gray-600 leading-relaxed">
+                To ensure sub-second performance and direct founder-level
+                communication, we cap our active builds at 4 clients per month.
               </p>
             </motion.div>
-
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-3 items-stretch mb-6"
-            >
-              {buildPlans.map((plan, index) => (
-                <motion.div
-                  key={index}
-                  variants={cardVariants}
-                  className={`rounded-md relative flex flex-col p-6 border ${
-                    plan.featured
-                      ? "border-zinc-300 bg-zinc-50/50 shadow-xl shadow-zinc-200 z-10"
-                      : "border-gray-200 bg-white"
-                  }`}
-                >
-                  {plan.featured && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-xs font-medium px-5 py-1 rounded-full">
-                      The Best Choice
-                    </div>
-                  )}
-                  <div className="mb-6">
-                    <h3 className="text-xl font-semibold text-black">
-                      {plan.name}
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-10 md:mb-8 lg:mb-6 xl:mb-8 py-4 h-12 leading-relaxed">
-                      {plan.description}
-                    </p>
-                  </div>
-                  <div className="mb-8">
-                    <span className="text-4xl font-semibold text-black font-mono">
-                      {plan.price}
-                    </span>
-                    <span className="text-gray-500 ml-2 text-sm">
-                      {plan.period}
-                    </span>
-                  </div>
-                  <ul className="space-y-3 mb-10 flex-1">
-                    {plan.features.map((feat, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <LuCircleCheck
-                          className={`w-5 h-5 mt-0.5 shrink-0 ${
-                            plan.featured ? "text-green-600" : "text-gray-600"
-                          }`}
-                        />
-                        <span className="text-[0.80rem] text-gray-700 leading-relaxed">
-                          {feat}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-auto">
-                    {plan.featured ? (
-                      <PrimaryButtonLink
-                        href={plan.href}
-                        className="w-full text-center flex items-center justify-center gap-2 px-8 py-3 text-sm font-medium text-white"
-                      >
-                        {plan.cta}
-                        <LuArrowRight className="w-4 h-4" />
-                      </PrimaryButtonLink>
-                    ) : (
-                      <SecondaryButtonLink
-                        href={plan.href}
-                        className="w-full text-center flex items-center justify-center gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 text-black transition-colors px-8 py-3 text-sm font-medium"
-                      >
-                        {plan.cta}
-                      </SecondaryButtonLink>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </>
-        )}
-
-        {/* SECTION 2: KEEP IT RUNNING */}
-        {showMRR && (
-          <>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5 }}
-              className="text-center space-y-5 pt-20 mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl font-medium text-black leading-tight">
-                Keep It Running
-              </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                Ongoing support, hosting, and updates — pay monthly and never
-                worry about your site.
-              </p>
-            </motion.div>
-
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              className="grid grid-cols-1  lg:grid-cols-3 gap-3 items-stretch"
-            >
-              {mrrPlans.map((plan, index) => (
-                <motion.div
-                  key={index}
-                  variants={cardVariants}
-                  className={`relative flex flex-col p-6 md:p-8 border rounded-lg ${
-                    plan.featured
-                      ? "border-zinc-300 bg-zinc-50/50 shadow-xl shadow-zinc-200 z-10"
-                      : "border-gray-200 bg-white"
-                  }`}
-                >
-                  {plan.featured && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-xs font-medium px-5 py-1 rounded-full">
-                      Best Value
-                    </div>
-                  )}
-                  <div className="mb-6">
-                    <h3 className="text-xl font-semibold text-black">
-                      {plan.name}
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-5 xl:mb-8 py-3 h-12 leading-relaxed">
-                      {plan.description}
-                    </p>
-                  </div>
-                  <div className="mb-8">
-                    <span className="text-4xl font-semibold text-black font-mono">
-                      {plan.price}
-                    </span>
-                    <span className="text-gray-500 ml-2 text-sm">
-                      {plan.period}
-                    </span>
-                    <span className="block text-xs text-gray-400 mt-1">
-                      billed monthly
-                    </span>
-                  </div>
-                  <ul className="space-y-3 mb-10 flex-1">
-                    {plan.features.map((feat, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <LuCircleCheck
-                          className={`w-5 h-5 mt-0.5 shrink-0 ${
-                            plan.featured ? "text-green-600" : "text-gray-600"
-                          }`}
-                        />
-                        <span className="text-[0.80rem] text-gray-700 leading-relaxed">
-                          {feat}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-auto">
-                    {plan.featured ? (
-                      <PrimaryButtonLink
-                        href={plan.href}
-                        className="w-full text-center flex items-center justify-center gap-2 px-8 py-3 text-sm font-medium text-white"
-                      >
-                        {plan.cta}
-                        <LuArrowRight className="w-4 h-4" />
-                      </PrimaryButtonLink>
-                    ) : (
-                      <SecondaryButtonLink
-                        href={plan.href}
-                        className="w-full text-center flex items-center justify-center gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 text-black transition-colors px-8 py-3 text-sm font-medium"
-                      >
-                        {plan.cta}
-                      </SecondaryButtonLink>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </>
-        )}
-
-        {/* Capacity & warranty notice */}
-        {(showOneTime || showMRR) && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mt-20 max-w-2xl mx-auto bg-linear-to-br from-zinc-200 via-white to-zinc-200 p-6 border border-zinc-200 shadow-lg shadow-zinc-100"
-          >
-            <p className="text-sm text-gray-500 leading-relaxed">
-              To ensure sub-second performance and direct founder-level
-              communication, we cap our active builds at 4 clients per month.
-            </p>
-          </motion.div>
-        )}
+          )}
+        </div>
       </div>
     </section>
   );

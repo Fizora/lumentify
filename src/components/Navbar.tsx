@@ -23,8 +23,8 @@ const navItems: NavItem[] = [
   { name: "Pricing", href: "/pricing" },
   { name: "Showcase", href: "/showcase" },
   { name: "Support", href: "/support" },
-  { name: "Warranty", href: "/support/warranty" },
-  { name: "Help center", href: "/support/help-center" },
+  // { name: "Warranty", href: "/support/warranty" },
+  // { name: "Help center", href: "/support/help-center" },
 
   {
     name: "Services",
@@ -57,7 +57,7 @@ const navItems: NavItem[] = [
     ],
   },
 
-  { name: "Blog", href: "/blog" },
+  // { name: "Blog", href: "/blog" },
 ];
 
 // Dipakai untuk render (desktop bar & mobile menu) — Services otomatis hilang saat dinonaktifkan
