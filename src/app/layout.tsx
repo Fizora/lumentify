@@ -32,7 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-scroll="smooth"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scrollbar-thin `}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scrollbar-thin px-3`}
     >
       <body className="min-h-full flex flex-col">
         <LenisProvider>{children}</LenisProvider>

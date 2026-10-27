@@ -32,7 +32,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="space-y-4 py-20 px-3 "
+          className="space-y-4 py-20 px-3"
         >
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-[3.4rem] leading-tight xl:max-w-4xl font-medium">

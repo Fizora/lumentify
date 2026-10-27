@@ -50,13 +50,13 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                 </p>
               </motion.div>
 
-              {/* Grid dengan gap-0 dan border menyatu (menggunakan -ml-px dan border collapse) */}
+              {/* Grid dengan gap-0 dan border menyatu */}
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-y border-zinc-200 mb-16"
+                className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-y border-zinc-200 mb-16 items-stretch"
               >
                 {buildPlans.map((plan, index) => (
                   <motion.div
@@ -72,15 +72,18 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                       </div>
                     )}
 
-                    {/* Header Paket */}
-                    <div className="mb-6 pb-6 border-b border-zinc-100">
-                      <h3 className="text-xl font-semibold text-black mb-2">
-                        {plan.name}
-                      </h3>
-                      <p className="text-sm text-gray-600 min-h-14 leading-relaxed py-3">
-                        {plan.description}
-                      </p>
-                      <div className="mt-4 flex items-baseline min-h-10 py-2">
+                    {/* Header Paket (Judul, Deskripsi, dan Harga diset seragam posisinya) */}
+                    <div className="mb-6 pb-6 border-b border-zinc-100 flex flex-col justify-between">
+                      <div>
+                        <h3 className="text-xl font-semibold text-black mb-2">
+                          {plan.name}
+                        </h3>
+                        {/* Memberikan tinggi minimal atau flex agar tinggi deskripsi menyesuaikan tanpa merusak tata letak */}
+                        <p className="text-sm text-gray-600 leading-relaxed py-3 lg:h-24">
+                          {plan.description}
+                        </p>
+                      </div>
+                      <div className="mt-4 flex items-baseline py-2">
                         <span className="text-3xl lg:text-4xl font-semibold text-black font-mono">
                           {plan.price}
                         </span>
@@ -90,7 +93,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                       </div>
                     </div>
 
-                    {/* Tombol Aksi dipindah ke atas list seperti gaya referensi */}
+                    {/* Tombol Aksi */}
                     <div className="mb-8">
                       {plan.featured ? (
                         <PrimaryButtonLink
@@ -110,7 +113,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                       )}
                     </div>
 
-                    {/* Daftar Fitur */}
+                    {/* Daftar Fitur (flex-1 membuat area list menyesuaikan sisa tinggi kartu) */}
                     <ul className="space-y-3 mb-6 flex-1">
                       {plan.features.map((feat, i) => (
                         <li key={i} className="flex items-start gap-3">
@@ -152,7 +155,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-y border-zinc-200"
+                className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-y border-zinc-200 items-stretch"
               >
                 {mrrPlans.map((plan, index) => (
                   <motion.div
@@ -169,15 +172,17 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                     )}
 
                     {/* Header Paket MRR */}
-                    <div className="mb-6 pb-6 border-b border-zinc-100">
-                      <h3 className="text-xl font-semibold text-black mb-2">
-                        {plan.name}
-                      </h3>
-                      <p className="text-sm text-gray-600 min-h-16 py-3 leading-relaxed">
-                        {plan.description}
-                      </p>
+                    <div className="mb-6 pb-6 border-b border-zinc-100 flex flex-col justify-between">
+                      <div>
+                        <h3 className="text-xl font-semibold text-black mb-2">
+                          {plan.name}
+                        </h3>
+                        <p className="text-sm text-gray-600 py-3 leading-relaxed lg:h-24">
+                          {plan.description}
+                        </p>
+                      </div>
                       <div className="mt-4 flex items-baseline">
-                        <span className="text-3xl lg:text-4xl font-semibold text-black font-mono py-8">
+                        <span className="text-3xl lg:text-4xl font-semibold text-black font-mono ">
                           {plan.price}
                         </span>
                         <span className="text-gray-500 ml-2 text-sm">
