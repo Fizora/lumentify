@@ -21,7 +21,7 @@ const guarantees = [
   {
     icon: LuFileCheck,
     title: "Visual direction approval before coding",
-    body: "We review the initial homepage design direction with you before full development begins. If you choose to cancel the project at this milestone because the direction doesn't fit your vision, your initial deposit is fully refunded—stopping the project cleanly before any code is written.",
+    body: "We review the initial homepage design direction with you before full development begins. If you choose to cancel the project at this milestone because the direction doesn't fit your vision, your initial deposit is fully refunded.",
   },
   {
     icon: LuRotateCcw,
@@ -44,7 +44,7 @@ export default function Support() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen px-4 bg-white text-zinc-900 border-b">
+      <main className="min-h-screen bg-white text-zinc-900 border-b">
         <section className="mx-auto max-w-300 px-3 py-20 border-x border-zinc-200">
           {/* Header */}
           <section className="pt-32 pb-16 mx-auto max-w-3xl text-center">
@@ -54,7 +54,7 @@ export default function Support() {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-black leading-tight mb-4">
               Need assistance? We&apos;ve got you covered.
             </h1>
-            <p className="text-lg text-zinc-600 leading-relaxed">
+            <p className="text-sm text-zinc-600 leading-relaxed">
               Whether you need project support, have technical questions, or
               want to explore working together — here is how to reach us and the
               exact standards protecting your investment.
@@ -106,7 +106,7 @@ export default function Support() {
                   href="https://wa.me/6285235086814"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-zinc-900 hover:text-zinc-600 transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-zinc-700 hover:text-black transition-colors"
                 >
                   <LuMessageCircle className="w-4 h-4" />
                   Message us on WhatsApp
@@ -126,7 +126,7 @@ export default function Support() {
                 <Link
                   href="mailto:support@lexentify.com"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-zinc-900 hover:text-zinc-600 transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-zinc-700 hover:text-black transition-colors"
                 >
                   <LuMail className="w-4 h-4" />
                   Message us on Email

@@ -18,24 +18,6 @@ const itemVariants: Variants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const FeatureCard = ({ feat }: { feat: FeatureItem }) => {
-  const IconComponent = feat.icon;
-  return (
-    <motion.div
-      variants={itemVariants}
-      className="bg-white rounded-md border border-gray-200 p-6 hover:border-gray-300 hover:shadow-xl hover:shadow-zinc-200 transition-all duration-200"
-    >
-      <div className="w-10 h-10 rounded-lg bg-gray-100 text-gray-600 flex items-center justify-center mb-5">
-        <IconComponent className="w-5 h-5" />
-      </div>
-      <h3 className="text-lg font-medium text-black mb-2">{feat.title}</h3>
-      <p className="text-sm text-gray-500 leading-relaxed">
-        {feat.description}
-      </p>
-    </motion.div>
-  );
-};
-
 interface FeatureCategoryProps {
   label: string;
   items: FeatureItem[];
@@ -43,7 +25,7 @@ interface FeatureCategoryProps {
 
 const FeatureCategory = ({ label, items }: FeatureCategoryProps) => (
   <div>
-    <h3 className="text-xs font-medium uppercase tracking-wide text-black mb-6">
+    <h3 className="text-xs font-medium uppercase tracking-wide text-black mb-6 px-4">
       {label}
     </h3>
     <motion.div
@@ -51,11 +33,31 @@ const FeatureCategory = ({ label, items }: FeatureCategoryProps) => (
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
-      className="grid grid-cols-1 md:grid-cols-2 gap-6"
+      className="grid grid-cols-1 md:grid-cols-2 gap-0 border-y border-zinc-200 items-stretch"
     >
-      {items.map((feat, i) => (
-        <FeatureCard key={i} feat={feat} />
-      ))}
+      {items.map((feat, i) => {
+        const IconComponent = feat.icon;
+        return (
+          <motion.div
+            key={i}
+            variants={itemVariants}
+            className={`relative flex flex-col p-6 lg:p-8 bg-white transition-colors duration-200 hover:bg-zinc-50/50 
+              border-b border-zinc-200 last:border-b-0
+              ${i % 2 === 0 ? "md:border-r border-zinc-200" : ""}
+              ${i < items.length - 2 ? "md:border-b" : "md:border-b-0"}`}
+          >
+            <div className="w-10 h-10 rounded-lg bg-gray-100 text-gray-600 flex items-center justify-center mb-5">
+              <IconComponent className="w-5 h-5" />
+            </div>
+            <h3 className="text-lg font-medium text-black mb-2">
+              {feat.title}
+            </h3>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              {feat.description}
+            </p>
+          </motion.div>
+        );
+      })}
     </motion.div>
   </div>
 );
@@ -63,13 +65,13 @@ const FeatureCategory = ({ label, items }: FeatureCategoryProps) => (
 const Features = () => {
   return (
     <section className="bg-white border-b">
-      <div className="mx-auto max-w-300 py-24 px-4 border-x">
+      <div className="mx-auto max-w-300 py-24 border-x border-zinc-200">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}
-          className="max-w-xl mb-16"
+          className="max-w-xl px-4 mb-16"
         >
           <span className="text-sm font-medium text-gray-400 mb-3 block">
             Features

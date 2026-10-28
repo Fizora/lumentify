@@ -12,7 +12,7 @@ export default function About() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen px-4 bg-white text-zinc-900 border-b">
+      <main className="min-h-screen bg-white text-zinc-900 border-b">
         <div className="mx-auto max-w-300 px-3 py-20 border-x border-zinc-200">
           <div className="mx-auto max-w-3xl pt-12">
             {/* Header */}

@@ -65,13 +65,13 @@ const itemVariants: Variants = {
 const Workflow = () => {
   return (
     <section className="bg-white border-b">
-      <div className="mx-auto max-w-300 py-24 px-4 border-x">
+      <div className="mx-auto max-w-300 py-24 border-x border-zinc-200">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}
-          className="max-w-xl mb-16"
+          className="max-w-xl mb-16 px-4"
         >
           <span className="text-sm font-medium text-gray-400 mb-3 block">
             How It Works
@@ -90,7 +90,7 @@ const Workflow = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-0 border-y border-zinc-200 items-stretch"
         >
           {workflowSteps.map((item, i) => {
             const IconComponent = item.icon;
@@ -98,7 +98,10 @@ const Workflow = () => {
               <motion.div
                 variants={itemVariants}
                 key={i}
-                className="bg-white rounded-md border border-gray-200 p-6 hover:border-gray-300 hover:shadow-xl hover:shadow-zinc-200 transition-all duration-200"
+                className={`relative flex flex-col p-6 lg:p-8 bg-white transition-colors duration-200 hover:bg-zinc-50/50 
+                  border-b border-zinc-200 last:border-b-0
+                  ${i % 2 === 0 ? "md:border-r border-zinc-200" : ""}
+                  ${i < workflowSteps.length - 2 ? "md:border-b" : "md:border-b-0"}`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
