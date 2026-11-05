@@ -16,7 +16,7 @@ import {
   LuClock,
 } from "react-icons/lu";
 import { PrimaryButtonLink, SecondaryButtonLink } from "@/components/ui/Button";
-import { buildPlans, mrrPlans } from "@/components/constant/data";
+import { buildPlans, mrrPlans } from "@/components/constant/data-pricing";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Pricing from "@/components/sections/Pricing";
@@ -118,7 +118,7 @@ export default function PricingPage() {
     <>
       <Navbar />
       <main className="bg-white">
-        <Pricing showOneTime={true}></Pricing>
+        <Pricing showOneTime={true} showMRR={false}></Pricing>
         <Skathes />
         <CTA />
         <Skathes />

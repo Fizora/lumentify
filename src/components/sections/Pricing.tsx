@@ -1,10 +1,8 @@
 "use client";
 import { motion } from "motion/react";
-import { LuCircleCheck, LuArrowRight } from "react-icons/lu";
+import { LuCircleCheck, LuArrowRight, LuTag } from "react-icons/lu";
 import { PrimaryButtonLink, SecondaryButtonLink } from "@/components/ui/Button";
-import { buildPlans, mrrPlans } from "@/components/constant/data";
-import Skathes from "../Skathes";
-import CTA from "./CTA";
+import { buildPlans, mrrPlans } from "@/components/constant/data-pricing";
 
 const containerVariants = {
   hidden: {},
@@ -23,11 +21,30 @@ interface PricingProps {
   showMRR?: boolean;
 }
 
+// ==========================================
+// PENGATURAN DISKON (Ubah ke true untuk aktif)
+// ==========================================
+const ENABLE_DISCOUNT = true;
+
+// Data pembanding harga coret dengan label persentase diskon (November Special Strategy)
+const originalPrices: Record<string, { price: string; discountLabel: string }> =
+  {
+    // Build Plans (One-time) - Diubah ke format persentase
+    Essential: { price: "$1,899", discountLabel: "21% OFF" },
+    Pro: { price: "$2,999", discountLabel: "17% OFF" },
+    Custom: { price: "from $5,499", discountLabel: "16% OFF" },
+
+    // MRR Plans (Monthly) - Diubah ke format persentase
+    "Core Tech & Care": { price: "$119", discountLabel: "25% OFF" },
+    "Local Dominance": { price: "$249", discountLabel: "20% OFF" },
+    "Growth Partner": { price: "from $499", discountLabel: "20% OFF" },
+  };
+
 const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
   return (
     <section id="pricing">
       <div className="bg-white border-b ">
-        <div className="mx-auto max-w-300 py-24 border-x border-zinc-200">
+        <div className="mx-auto max-w-300 py-32 border-x border-zinc-200">
           {/* SECTION 1: BUILD YOUR SITE */}
           {showOneTime && (
             <>
@@ -58,74 +75,93 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                 viewport={{ once: true, margin: "-50px" }}
                 className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-y border-zinc-200 mb-16 items-stretch"
               >
-                {buildPlans.map((plan, index) => (
-                  <motion.div
-                    key={index}
-                    variants={cardVariants}
-                    className={`relative flex flex-col p-6 lg:p-8 bg-white border-b lg:border-b-0 lg:border-r border-zinc-200 last:border-r-0 ${
-                      plan.featured ? "bg-zinc-50/50 z-10" : ""
-                    }`}
-                  >
-                    {plan.featured && (
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-sm font-medium px-4 py-1 rounded-full shadow-xs">
-                        The Best Choice
-                      </div>
-                    )}
+                {buildPlans.map((plan, index) => {
+                  const promo = originalPrices[plan.name];
 
-                    {/* Header Paket (Judul, Deskripsi, dan Harga diset seragam posisinya) */}
-                    <div className="mb-6 pb-6 border-b border-zinc-100 flex flex-col justify-between">
-                      <div>
-                        <h3 className="text-xl font-semibold text-black mb-2">
-                          {plan.name}
-                        </h3>
-                        {/* Memberikan tinggi minimal atau flex agar tinggi deskripsi menyesuaikan tanpa merusak tata letak */}
-                        <p className="text-sm text-gray-600 leading-relaxed py-3 lg:h-24">
-                          {plan.description}
-                        </p>
-                      </div>
-                      <div className="mt-4 flex items-baseline py-2">
-                        <span className="text-3xl lg:text-4xl font-semibold text-black font-mono">
-                          {plan.price}
-                        </span>
-                        <span className="text-gray-500 ml-2 text-sm">
-                          {plan.period}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Tombol Aksi */}
-                    <div className="mb-8">
-                      {plan.featured ? (
-                        <PrimaryButtonLink
-                          href={plan.href}
-                          className="w-full text-center flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium text-white shadow-xs"
-                        >
-                          {plan.cta}
-                          <LuArrowRight className="w-4 h-4" />
-                        </PrimaryButtonLink>
-                      ) : (
-                        <SecondaryButtonLink
-                          href={plan.href}
-                          className="w-full text-center flex items-center justify-center gap-2 bg-white hover:bg-zinc-50 border-zinc-200 text-black transition-colors px-6 py-2.5 text-sm font-medium shadow-2xs"
-                        >
-                          {plan.cta}
-                        </SecondaryButtonLink>
+                  return (
+                    <motion.div
+                      key={index}
+                      variants={cardVariants}
+                      className={`relative flex flex-col p-6 lg:p-8 bg-white border-b lg:border-b-0 lg:border-r border-zinc-200 last:border-r-0 ${
+                        plan.featured ? "bg-zinc-50/50 z-10" : ""
+                      }`}
+                    >
+                      {plan.featured && (
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-sm font-medium px-4 py-1 rounded-full shadow-xs">
+                          The Best Choice
+                        </div>
                       )}
-                    </div>
 
-                    {/* Daftar Fitur (flex-1 membuat area list menyesuaikan sisa tinggi kartu) */}
-                    <ul className="space-y-3 mb-6 flex-1">
-                      {plan.features.map((feat, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <LuCircleCheck className="w-4 h-4 mt-0.5 shrink-0 text-zinc-800" />
-                          <span className="text-sm text-gray-700 leading-relaxed">
-                            {feat}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                ))}
+                      {/* Header Paket (Judul, Deskripsi, dan Harga diset seragam posisinya) */}
+                      <div className="mb-6 pb-6 border-b border-zinc-100 flex flex-col justify-between">
+                        <div>
+                          <div className="flex items-center justify-between mb-2">
+                            <h3 className="text-xl font-semibold text-black">
+                              {plan.name}
+                            </h3>
+                            {ENABLE_DISCOUNT && promo && (
+                              <span className="inline-flex items-center gap-1 text-[11px] font-bold text-white bg-red-600 border border-red-600 px-2 py-0.5 rounded-md shadow-xs">
+                                <LuTag size={11} className="text-white" />{" "}
+                                {promo.discountLabel}
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-sm text-gray-600 leading-relaxed py-3 lg:h-24">
+                            {plan.description}
+                          </p>
+                        </div>
+
+                        <div className="mt-4 flex flex-col">
+                          {ENABLE_DISCOUNT && promo && (
+                            <span className="text-lg text-gray-400 font-mono line-through">
+                              {promo.price}
+                            </span>
+                          )}
+                          <div className="flex items-baseline">
+                            <span className="text-3xl lg:text-4xl font-semibold text-black font-mono">
+                              {plan.price}
+                            </span>
+                            <span className="text-gray-500 ml-2 text-sm">
+                              {plan.period}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Tombol Aksi */}
+                      <div className="mb-8">
+                        {plan.featured ? (
+                          <PrimaryButtonLink
+                            href={plan.href}
+                            className="w-full text-center flex items-center justify-center gap-2 px-6 py-2.5 font-medium"
+                          >
+                            {plan.cta}
+                            <LuArrowRight className="w-4 h-4" />
+                          </PrimaryButtonLink>
+                        ) : (
+                          <SecondaryButtonLink
+                            href={plan.href}
+                            className="w-full text-center flex items-center justify-center gap-2 px-6 py-2.5 font-medium"
+                          >
+                            {plan.cta}
+                          </SecondaryButtonLink>
+                        )}
+                      </div>
+
+                      {/* Daftar Fitur */}
+                      <ul className="space-y-3 mb-6 flex-1">
+                        {plan.features.map((feat, i) => (
+                          <li key={i} className="flex items-start gap-3">
+                            <LuCircleCheck className="w-4 h-4 mt-0.5 shrink-0 text-zinc-800" />
+                            <span className="text-sm text-gray-700 leading-relaxed">
+                              {feat}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  );
+                })}
               </motion.div>
             </>
           )}
@@ -144,8 +180,8 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                   Keep It Running
                 </h2>
                 <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed text-sm">
-                  Ongoing support, hosting, and updates — pay monthly and never
-                  worry about your site.
+                  Ongoing support, hosting, and updates — lock in the November
+                  rate and never worry about your site.
                 </p>
               </motion.div>
 
@@ -157,76 +193,95 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                 viewport={{ once: true, margin: "-50px" }}
                 className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-y border-zinc-200 items-stretch"
               >
-                {mrrPlans.map((plan, index) => (
-                  <motion.div
-                    key={index}
-                    variants={cardVariants}
-                    className={`relative flex flex-col p-6 lg:p-8 bg-white border-b lg:border-b-0 lg:border-r border-zinc-200 last:border-r-0 ${
-                      plan.featured ? "bg-zinc-50/50 z-10" : ""
-                    }`}
-                  >
-                    {plan.featured && (
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-sm font-medium px-4 py-1 rounded-full shadow-xs">
-                        Best Value
-                      </div>
-                    )}
+                {mrrPlans.map((plan, index) => {
+                  const promo = originalPrices[plan.name];
 
-                    {/* Header Paket MRR */}
-                    <div className="mb-6 pb-6 border-b border-zinc-100 flex flex-col justify-between">
-                      <div>
-                        <h3 className="text-xl font-semibold text-black mb-2">
-                          {plan.name}
-                        </h3>
-                        <p className="text-sm text-gray-600 py-3 leading-relaxed lg:h-24">
-                          {plan.description}
-                        </p>
-                      </div>
-                      <div className="mt-4 flex items-baseline">
-                        <span className="text-3xl lg:text-4xl font-semibold text-black font-mono ">
-                          {plan.price}
-                        </span>
-                        <span className="text-gray-500 ml-2 text-sm">
-                          {plan.period}
-                        </span>
-                      </div>
-                      <span className="block text-[11px] text-gray-400 mt-0.5">
-                        billed monthly
-                      </span>
-                    </div>
-
-                    {/* Tombol Aksi MRR */}
-                    <div className="mb-8">
-                      {plan.featured ? (
-                        <PrimaryButtonLink
-                          href={plan.href}
-                          className="w-full text-center flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium text-white shadow-xs"
-                        >
-                          {plan.cta}
-                          <LuArrowRight className="w-4 h-4" />
-                        </PrimaryButtonLink>
-                      ) : (
-                        <SecondaryButtonLink
-                          href={plan.href}
-                          className="w-full text-center flex items-center justify-center gap-2 bg-white hover:bg-zinc-50 border-zinc-200 text-black transition-colors px-6 py-2.5 text-sm font-medium shadow-2xs"
-                        >
-                          {plan.cta}
-                        </SecondaryButtonLink>
+                  return (
+                    <motion.div
+                      key={index}
+                      variants={cardVariants}
+                      className={`relative flex flex-col p-6 lg:p-8 bg-white border-b lg:border-b-0 lg:border-r border-zinc-200 last:border-r-0 ${
+                        plan.featured ? "bg-zinc-50/50 z-10" : ""
+                      }`}
+                    >
+                      {plan.featured && (
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-sm font-medium px-4 py-1 rounded-full shadow-xs">
+                          Best Value
+                        </div>
                       )}
-                    </div>
 
-                    {/* Daftar Fitur MRR */}
-                    <ul className="space-y-3 mb-6 flex-1">
-                      {plan.features.map((feat, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <LuCircleCheck className="w-4 h-4 mt-0.5 shrink-0 text-zinc-800" />
-                          <span className="text-sm text-gray-700 leading-relaxed">
-                            {feat}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                ))}
+                      {/* Header Paket MRR */}
+                      <div className="mb-6 pb-6 border-b border-zinc-100 flex flex-col justify-between">
+                        <div>
+                          <div className="flex items-center justify-between mb-2">
+                            <h3 className="text-xl font-semibold text-black">
+                              {plan.name}
+                            </h3>
+                            {ENABLE_DISCOUNT && promo && (
+                              <span className="inline-flex items-center gap-1 text-[11px] font-bold text-white bg-red-600 border border-red-600 px-2 py-0.5 rounded-md shadow-xs">
+                                <LuTag size={11} /> {promo.discountLabel}
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-sm text-gray-600 py-3 leading-relaxed lg:h-24">
+                            {plan.description}
+                          </p>
+                        </div>
+
+                        <div className="mt-4 flex flex-col">
+                          {ENABLE_DISCOUNT && promo && (
+                            <span className="text-lg text-gray-400 font-mono line-through">
+                              {promo.price}
+                            </span>
+                          )}
+                          <div className="flex items-baseline">
+                            <span className="text-3xl lg:text-4xl font-semibold text-black font-mono">
+                              {plan.price}
+                            </span>
+                            <span className="text-gray-500 ml-2 text-sm">
+                              {plan.period}
+                            </span>
+                          </div>
+                        </div>
+                        <span className="block text-[11px] text-gray-400 mt-0.5">
+                          billed monthly
+                        </span>
+                      </div>
+
+                      {/* Tombol Aksi MRR */}
+                      <div className="mb-8">
+                        {plan.featured ? (
+                          <PrimaryButtonLink
+                            href={plan.href}
+                            className="w-full text-center flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium"
+                          >
+                            {plan.cta}
+                            <LuArrowRight className="w-4 h-4" />
+                          </PrimaryButtonLink>
+                        ) : (
+                          <SecondaryButtonLink
+                            href={plan.href}
+                            className="w-full text-center flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium"
+                          >
+                            {plan.cta}
+                          </SecondaryButtonLink>
+                        )}
+                      </div>
+
+                      {/* Daftar Fitur MRR */}
+                      <ul className="space-y-3 mb-6 flex-1">
+                        {plan.features.map((feat, i) => (
+                          <li key={i} className="flex items-start gap-3">
+                            <LuCircleCheck className="w-4 h-4 mt-0.5 shrink-0 text-zinc-800" />
+                            <span className="text-sm text-gray-700 leading-relaxed">
+                              {feat}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  );
+                })}
               </motion.div>
             </>
           )}
@@ -237,7 +292,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mt-16 max-w-2xl mx-auto bg-zinc-50 p-6 border border-zinc-200 rounded-md shadow-2xs px-3 "
+              className="text-center mt-16 mx-3 max-w-2xl bg-zinc-50 lg:mx-auto p-6 border border-zinc-200 rounded-md shadow-2xs px-3 "
             >
               <p className="text-sm text-gray-600 leading-relaxed">
                 To ensure sub-second performance and direct founder-level

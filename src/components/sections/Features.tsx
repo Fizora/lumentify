@@ -71,12 +71,12 @@ const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}
-          className="max-w-xl px-4 mb-16"
+          className="max-w-2xl px-4 mb-16"
         >
           <span className="text-sm font-medium text-gray-400 mb-3 block">
             Features
           </span>
-          <h2 className="text-3xl md:text-4xl font-medium text-black leading-tight mb-4">
+          <h2 className="text-3xl md:text-4xl font-semibold text-black leading-tight mb-4">
             Built to grow your home-service business
           </h2>
           <p className="text-gray-500 leading-relaxed">

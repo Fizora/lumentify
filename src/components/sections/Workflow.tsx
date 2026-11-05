@@ -76,7 +76,7 @@ const Workflow = () => {
           <span className="text-sm font-medium text-gray-400 mb-3 block">
             How It Works
           </span>
-          <h2 className="text-3xl md:text-4xl font-medium text-black leading-tight mb-4">
+          <h2 className="text-3xl md:text-4xl font-semibold text-black leading-tight mb-4">
             A transparent process built for mutual safety
           </h2>
           <p className="text-gray-500 leading-relaxed">

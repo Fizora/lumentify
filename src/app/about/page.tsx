@@ -6,86 +6,93 @@ import CTA from "@/components/sections/CTA";
 
 export const metadata: Metadata = {
   title: "Lexentify | About Our Studio",
+  description:
+    "Learn about Lexentify's approach to building clear, mobile-friendly websites for home-service businesses.",
 };
 
 export default function About() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white text-zinc-900 border-b">
+      <main className="min-h-screen bg-white text-zinc-900 border-b px-3">
         <div className="mx-auto max-w-300 px-3 py-20 border-x border-zinc-200">
           <div className="mx-auto max-w-3xl pt-12">
-            {/* Header */}
             <div className="mb-12 space-y-4">
               <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
                 About Lexentify
               </span>
+
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-black leading-tight">
-                Why we build exclusively for home-service businesess
+                Websites designed for home-service businesses
               </h1>
+
               <p className="text-sm text-zinc-600 leading-relaxed">
-                A transparent look at who we are, why we chose to go deep into a
-                single industry, and how our execution standard protects your
-                trade business.
+                Learn about our focus, how we approach website projects, and the
+                principles that guide our work for local trade businesses.
               </p>
             </div>
 
-            {/* Body — blog-style, clean left-aligned text */}
-            <article className="space-y-6 text-zinc-700 leading-relaxed text-sm  text-left">
+            <article className="space-y-6 text-zinc-700 leading-relaxed text-sm text-left">
               <p>
-                Lexentify is a specialized, independent digital studio dedicated
-                to serving a single kind of business: home-service trades. We
-                focus exclusively on plumbers, electricians, HVAC technicians,
-                and roofers whose daily operations run on urgency. When a
-                homeowner’s pipe bursts or power fails, the question is never
-                &ldquo;does this website look fancy?&rdquo; — it is always
-                &ldquo;can I call this business right now?&rdquo;
+                Lexentify is an independent digital studio focused on websites
+                for home-service businesses, including plumbers, electricians,
+                HVAC providers, and roofers. We understand that customers
+                looking for these services often need clear information and an
+                easy way to get in touch. A website should help visitors
+                understand what a business offers and how to contact it.
               </p>
 
               <p>
-                That core insight shapes every line of code we write. In the
-                home-service sector, a slow website is not merely an aesthetic
-                flaw; it is an active business failure. If a landing page takes
-                too long to load or mobile buttons are cumbersome to tap,
-                potential customers do not wait around — they immediately call a
-                competitor. For us, speed and frictionless contact are the
-                primary products.
+                Website usability matters, particularly on mobile devices. Slow
+                loading, unclear service information, or difficult-to-find
+                contact details can create friction for visitors. We aim to
+                reduce that friction through considered page structure,
+                responsive layouts, optimized assets, and clear contact options.
+                Actual website performance and customer behavior depend on
+                factors beyond design and development alone.
               </p>
 
               <p>
-                We remain deliberately small so that every project receives
-                direct, founder-level attention. Rather than recycling generic
-                templates or stuffing filler text, we analyze your specific
-                services, coverage suburbs, and operational strengths. We then
-                architect a clean, direct digital asset designed with one single
-                outcome: turning local search traffic into booked phone calls
-                and quote requests.
+                We take a project-specific approach rather than relying on
+                one-size-fits-all copy. Where information is available, we
+                review your services, service areas, business priorities, and
+                existing website before shaping the page structure and content.
+                The result is a website built around your agreed requirements,
+                with clear paths for visitors to call, enquire, or request a
+                quote.
               </p>
 
               <p>
-                Our technical philosophy rests on three non-negotiable
-                principles: <strong>Fast, Clean, and Directed</strong>.
+                Our approach is guided by three principles:{" "}
+                <strong>Fast, Clean, and Directed.</strong>
                 <span className="block mt-2">
-                  <strong className="text-black">Fast</strong> ensures your site
-                  loads instantly before an urgent customer bounces.
-                  <strong className="text-black ml-1">Clean</strong> eliminates
-                  clutter, distractions, and competing messages when users are
-                  stressed.
+                  <strong className="text-black">Fast</strong> means applying
+                  performance-conscious development practices and testing the
+                  site under defined conditions. Actual loading times vary with
+                  devices, networks, hosting, and third-party services.
+                  <strong className="text-black ml-1">Clean</strong> means
+                  organizing information in a way that is easy to scan and
+                  navigate.
                   <strong className="text-black ml-1">Directed</strong> means
-                  every section funnels attention toward a clear action — a
-                  phone call, booking form, or quote submission. We place
-                  licensing credentials, insurance badges, and direct trust
-                  signals front and center because trust in this industry is
-                  established in seconds.
+                  giving each page a clear purpose and making relevant actions,
+                  such as calling or submitting an enquiry, easy to find.
                 </span>
               </p>
 
               <p>
-                Ultimately, we are not trying to operate as a generalist web
-                agency juggling dozens of unrelated niches. Our mission is
-                simple: to be the dedicated digital partner that understands how
-                home-service consumers behave online, building high-performance
-                systems that match that reality — one project at a time.
+                Where applicable, business credentials, licences, insurance
+                details, reviews, and other trust signals should be accurate and
+                supplied or approved by the business owner. We do not present
+                unverified credentials or invented customer reviews as genuine
+                evidence.
+              </p>
+
+              <p>
+                Lexentify focuses on building practical websites for
+                home-service businesses, one project at a time. Our work
+                supports your online presence; search rankings, enquiry volume,
+                bookings, and revenue depend on many factors and are not
+                guaranteed by website development alone.
               </p>
             </article>
           </div>

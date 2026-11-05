@@ -14,6 +14,7 @@ import {
   LuTimer,
   LuAward,
   LuWrench,
+  LuSparkles,
 } from "react-icons/lu";
 import Image from "next/image";
 
@@ -35,7 +36,7 @@ const Hero = () => {
           className="space-y-4 py-20 px-3"
         >
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-[3.4rem] leading-tight xl:max-w-4xl font-medium">
+            <h1 className="text-4xl md:text-5xl lg:text-[3.4rem] leading-tight xl:max-w-4xl font-bold">
               Every Slow Page Is a Customer Calling Your Competitor Instead.
             </h1>
             <p className="max-w-3xl text-zinc-600">
@@ -75,22 +76,19 @@ const Hero = () => {
           )`,
           }}
         >
-          {/* Background Image dengan Next.js Image */}
-          {/* <Image
-            src="/img/hero-image.webp"
-            alt="Hero background"
-            fill
-            loading="lazy"
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px "
-          /> */}
-
           {/* Overlay tipis agar konten lebih terbaca */}
           <div className="absolute inset-0 bg-black/10" />
-
+          <div className="absolute top-3 right-3 md:top-4 md:right-4 z-20">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-zinc-900/90 text-white backdrop-blur-md shadow-md border border-white/10">
+              <span className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse" />
+              Interactive Demo Preview
+            </span>
+          </div>
           {/* Konten mini website di atas background */}
           <div className="absolute inset-0 flex items-center justify-center p-4 md:p-10 lg:p-20">
             <div className="w-full container rounded-xl bg-white shadow-2xl overflow-hidden relative">
+              {/* ===================================== */}
+
               {/* Browser chrome */}
               <div className="bg-gray-100 px-4 py-3 flex items-center gap-2 border-b border-gray-200">
                 <div className="flex gap-1.5">

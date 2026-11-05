@@ -10,7 +10,7 @@ import {
   showcaseList,
   projectsList,
   type ShowcaseItem,
-} from "@/components/constant/data";
+} from "@/components/constant/data-showcase";
 import { SecondaryButtonLink } from "@/components/ui/Button";
 
 const PreviewImage = ({ img, icon: Icon }: { img: string; icon: IconType }) => {

@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import {
-  LuMessageCircle,
   LuMail,
   LuCircleHelp,
   LuShieldCheck,
@@ -14,29 +13,54 @@ import Navbar from "@/components/Navbar";
 import Skathes from "@/components/Skathes";
 
 export const metadata: Metadata = {
-  title: "Lexentify | Support & Guarantees",
+  title: "Lexentify | Support & Project Process",
+  description:
+    "Learn how Lexentify handles project agreements, revisions, post-launch support, and client enquiries.",
 };
 
 const guarantees = [
   {
     icon: LuFileCheck,
-    title: "Visual direction approval before coding",
-    body: "We review the initial homepage design direction with you before full development begins. If you choose to cancel the project at this milestone because the direction doesn't fit your vision, your initial deposit is fully refunded.",
+    title: "Review the design direction",
+    body: "We agree on a design-review milestone before full development begins. The review process, included revisions, approval method, and any cancellation option are documented in the project agreement.",
   },
   {
     icon: LuRotateCcw,
-    title: "Post-launch stabilization support",
-    body: "Every build includes a dedicated transition window (14 days for Essential, 30 days for Pro, 60 days for Custom). Any technical adjustments needed during this period are handled immediately at zero extra cost.",
+    title: "Defined post-launch support",
+    body: "Each project has a support period and scope specified in its written agreement. Support covers eligible issues within the agreed deliverables. New features, additional content, and third-party service issues may require separate work.",
   },
   {
     icon: LuBadgeCheck,
-    title: "Fixed pricing with zero surprises",
-    body: "The price outlined in your signed SOW is fixed. Any requested scope changes require a written add-on agreement before work proceeds—ensuring you never face surprise line items.",
+    title: "Clear pricing and scope",
+    body: "The written proposal and project agreement set out the agreed price and deliverables. Changes to the scope, price, or timeline require written approval before the additional work begins.",
   },
   {
     icon: LuShieldCheck,
-    title: "Complete contractual transparency",
-    body: "Every project starts with a formal, signed agreement (MSA + SOW) defining exact deliverables, timelines, and costs so both parties operate with absolute clarity.",
+    title: "Written project terms",
+    body: "Before work starts, both parties should have written terms covering the project scope, payment schedule, timeline, review process, ownership, support, and cancellation conditions.",
+  },
+];
+
+const projectSteps = [
+  {
+    number: "1",
+    text: "We discuss your requirements and provide a written proposal outlining the intended scope, price, and estimated timeline.",
+  },
+  {
+    number: "2",
+    text: "Before work begins, both parties review and sign the applicable project agreement and Statement of Work (SOW), including payment milestones and cancellation terms.",
+  },
+  {
+    number: "3",
+    text: "We share the agreed design direction for review. Any revision limits, approval deadlines, and applicable cancellation or refund terms follow the signed agreement.",
+  },
+  {
+    number: "4",
+    text: "After design approval, we develop and test the website against the agreed deliverables. Requests outside the scope are quoted separately and require written approval.",
+  },
+  {
+    number: "5",
+    text: "We complete the agreed review and handover process. Final payment, production launch, transfer of assets, and post-launch support follow the payment and delivery terms agreed in writing.",
   },
 ];
 
@@ -46,31 +70,31 @@ export default function Support() {
       <Navbar />
       <main className="min-h-screen bg-white text-zinc-900 border-b">
         <section className="mx-auto max-w-300 px-3 py-20 border-x border-zinc-200">
-          {/* Header */}
           <section className="pt-32 pb-16 mx-auto max-w-3xl text-center">
             <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
-              Support & Protection
+              Support
             </span>
+
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-black leading-tight mb-4">
-              Need assistance? We&apos;ve got you covered.
+              Clear expectations at every stage
             </h1>
+
             <p className="text-sm text-zinc-600 leading-relaxed">
-              Whether you need project support, have technical questions, or
-              want to explore working together — here is how to reach us and the
-              exact standards protecting your investment.
+              Learn how we communicate, review project work, handle post-launch
+              support, and document the terms of each engagement.
             </p>
           </section>
 
-          {/* Guarantees */}
           <section className="mx-auto max-w-4xl pb-16">
             <h2 className="text-xl font-medium text-black mb-1 text-center">
-              Your protection standards
+              How we work with clients
             </h2>
+
             <p className="text-sm text-zinc-600 text-center mb-8 max-w-xl mx-auto">
-              As an independent digital studio, we believe in radical
-              transparency. Here are the clear operational guardrails that
-              protect your project.
+              We aim to make responsibilities, project boundaries, and
+              expectations clear before work begins.
             </p>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {guarantees.map(({ icon: Icon, title, body }) => (
                 <div
@@ -89,85 +113,64 @@ export default function Support() {
             </div>
           </section>
 
-          {/* Two support paths */}
           <section className="mx-auto max-w-4xl pb-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Existing client */}
               <div className="border border-zinc-200 p-8 bg-white shadow-xs">
                 <h2 className="text-lg font-medium text-black mb-2">
-                  Active clients
+                  Existing clients
                 </h2>
+
                 <p className="text-sm text-zinc-600 leading-relaxed mb-6">
-                  Need a content update or post-launch technical assistance?
-                  Message us directly with your business name and details—we
-                  will take care of it promptly.
+                  For a project-related question or support request, contact us
+                  with your business name, project details, and a clear
+                  description of the issue. We will review your request and
+                  respond as soon as reasonably practicable.
                 </p>
+
                 <Link
-                  href="https://wa.me/6285235086814"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="mailto:support@lexentify.com"
                   className="inline-flex items-center gap-2 text-sm font-medium text-zinc-700 hover:text-black transition-colors"
                 >
-                  <LuMessageCircle className="w-4 h-4" />
-                  Message us on WhatsApp
+                  <LuMail className="w-4 h-4" />
+                  support@lexentify.com
                 </Link>
               </div>
 
-              {/* New / prospective */}
               <div className="border border-zinc-200 p-8 bg-white shadow-xs">
                 <h2 className="text-lg font-medium text-black mb-2">
                   Prospective clients
                 </h2>
+
                 <p className="text-sm text-zinc-600 leading-relaxed mb-6">
-                  Have questions about pricing, deliverables, or whether our web
-                  framework fits your trade business? Reach out for an honest,
-                  pressure-free discussion.
+                  Have questions about pricing, deliverables, project timing, or
+                  whether our services fit your business? Contact us to discuss
+                  your requirements before making a commitment.
                 </p>
+
                 <Link
-                  href="mailto:support@lexentify.com"
-                  rel="noopener noreferrer"
+                  href="mailto:business@lexentify.com"
                   className="inline-flex items-center gap-2 text-sm font-medium text-zinc-700 hover:text-black transition-colors"
                 >
                   <LuMail className="w-4 h-4" />
-                  Message us on Email
+                  business@lexentify.com
                 </Link>
               </div>
             </div>
           </section>
 
-          {/* Payment & process reassurance */}
           <section className="mx-auto max-w-3xl pb-16">
             <div className="border border-zinc-200 p-8 bg-white shadow-xs">
               <h2 className="text-lg font-medium text-black mb-4">
-                How every project flows safely for both sides
+                How a project proceeds
               </h2>
+
               <ol className="space-y-4">
-                {[
-                  [
-                    "1",
-                    "You review and approve a written proposal and fixed price before any financial commitment is made.",
-                  ],
-                  [
-                    "2",
-                    "We formalize the arrangement with a signed Master Service Agreement (MSA) and Statement of Work (SOW).",
-                  ],
-                  [
-                    "3",
-                    "You review the initial design direction early in the timeline. If it does not align with your expectations, your initial deposit is fully refunded.",
-                  ],
-                  [
-                    "4",
-                    "Once the design direction is approved, full development proceeds toward completion.",
-                  ],
-                  [
-                    "5",
-                    "The remaining balance is due only upon final handover, and your site goes live backed by post-launch stabilization support.",
-                  ],
-                ].map(([n, text]) => (
-                  <li key={n} className="flex gap-4 items-start">
+                {projectSteps.map(({ number, text }) => (
+                  <li key={number} className="flex gap-4 items-start">
                     <span className="shrink-0 w-6 h-6 rounded-full bg-zinc-100 text-zinc-800 text-xs font-medium flex items-center justify-center">
-                      {n}
+                      {number}
                     </span>
+
                     <p className="text-sm text-zinc-600 leading-relaxed">
                       {text}
                     </p>
@@ -177,7 +180,6 @@ export default function Support() {
             </div>
           </section>
 
-          {/* Direct contact + FAQ link */}
           <section className="mx-auto max-w-3xl pb-24">
             <div className="bg-zinc-50 border border-zinc-200 p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-3">
@@ -189,12 +191,13 @@ export default function Support() {
                   <p className="text-sm text-zinc-600">info@lexentify.com</p>
                 </div>
               </div>
+
               <Link
                 href="/faq"
-                className="inline-flex items-center gap-2 text-sm font-medium text-zinc-900 hover:text-zinc-600 transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 hover:text-black transition-colors"
               >
                 <LuCircleHelp className="w-4 h-4" />
-                Check the FAQ first
+                Check the FAQ
               </Link>
             </div>
           </section>

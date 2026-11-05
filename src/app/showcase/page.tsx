@@ -1,13 +1,14 @@
 import { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import ShowcaseGrid from "@/components/ShowcaseGrid"; // <-- import
+import ShowcaseGrid from "@/components/ShowcaseGrid";
 import CTA from "@/components/sections/CTA";
 import Skathes from "@/components/Skathes";
-import Testimonials from "@/components/sections/Testimonials";
 
 export const metadata: Metadata = {
   title: "Showcase | Lexentify",
+  description:
+    "Explore our live interactive demo builds. See how our Essential, Pro, and Custom web architectures deliver lightning-fast performance and high conversions for trade businesses.",
 };
 
 export default function Showcase() {
@@ -16,23 +17,24 @@ export default function Showcase() {
       <Navbar />
       <main className="border-b">
         <div className="mx-auto max-w-300 py-32 border-x">
-          {/* Section header */}
-          <div className="text-center space-y-5 mb-16 max-w-2xl mx-auto">
-            {/* <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
+          {/* Section header dengan copywriting berkualitas */}
+          <div className="text-center space-y-4 mb-16 max-w-2xl mx-auto px-4">
+            <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
               Showcase
-            </span> */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black leading-tight">
-              Showcase
+            </span>
+            <h1 className="text-3xl md:text-4xl font-semibold text-black leading-tight">
+              Explore Our Demo Builds
             </h1>
-            {/* <p className="text-lg text-gray-600 leading-relaxed">
-              A few demo sites showing how Essential, Pro, and Custom packages
-              can look for home-service businesses.
-            </p> */}
+            <p className="text-sm text-zinc-600 leading-relaxed">
+              Explore our fully interactive demo builds below. Experience
+              firsthand how our Essential, Pro, and Custom packages perform in
+              the wild—engineered specifically to dominate local searches and
+              turn emergency clicks into direct calls.
+            </p>
           </div>
 
           {/* Komponen client dengan tabs & dual mode */}
           <ShowcaseGrid />
-          {/* <Testimonials /> */}
         </div>
       </main>
       <Skathes />

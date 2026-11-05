@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const CTA = () => {
   return (
-    <section className=" border-b">
+    <section className="border-b px-3">
       <div
-        className="py-20 lg:py-30 mx-auto max-w-300 p-12 md:p-16 relative overflow-hidden border-x"
+        className="py-20 lg:py-30 mx-auto max-w-300 p-12 md:p-16 relative overflow-hidden border-x px-3"
         style={{
           backgroundColor: "#fafafa",
           backgroundImage: `repeating-linear-gradient(

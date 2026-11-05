@@ -25,14 +25,14 @@ const Footer = () => {
     {
       title: "Legal",
       links: [
-        { label: "Privacy", href: "/legal/privacy" },
-        { label: "Terms", href: "/legal/terms" },
+        { label: "Privacy Policy", href: "/legal/privacy-policy" },
+        { label: "Terms & Conditions", href: "/legal/terms" },
       ],
     },
   ];
 
   return (
-    <footer className="bg-white text-zinc-600 mt-auto border-zinc-200">
+    <footer className="bg-white text-zinc-600 mt-auto border-zinc-200 px-3">
       {/* Decorative dot-grid band */}
       <div
         className=""
@@ -97,32 +97,18 @@ const Footer = () => {
             <h4 className="font-semibold text-xs uppercase tracking-wider text-black mb-4">
               Get in Touch
             </h4>
-            <div className="flex flex-col gap-2.5">
-              <Link
-                href="https://wa.me/6285235086814"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between border border-zinc-200 hover:border-green-600 bg-zinc-50 hover:bg-zinc-100 px-3.5 py-2 text-sm text-zinc-900 font-medium transition-colors rounded-md"
-              >
-                <span>WhatsApp</span>
-                <span className="text-xs text-zinc-400 flex items-center gap-2 group-hover:text-green-600 transition-colors">
-                  Direct
-                  <span className="text-xs">▶</span>
-                </span>
-              </Link>
-              <Link
-                href="mailto:info@lexentify.com"
-                className=" group flex items-center justify-between border border-zinc-200 hover:border-blue-600 bg-zinc-50 hover:bg-zinc-100 px-3.5 py-2 text-sm text-zinc-900 font-medium transition-colors rounded-md"
-              >
-                <span>Email</span>
-                <span className="text-xs text-zinc-400 flex items-center gap-2 group-hover:text-blue-600 transition-colors">
-                  Inbox <span className="text-xs">▶</span>
-                </span>
-              </Link>
-            </div>
-            <p className="mt-3 text-xs text-zinc-500">
+            <Link
+              href="mailto:business@lexentify.com"
+              className=" group flex items-center justify-between border border-zinc-200 hover:border-blue-600 bg-zinc-50 hover:bg-zinc-100 px-3.5 py-2 text-sm text-zinc-900 font-medium transition-colors rounded-md"
+            >
+              <span>Email</span>
+              <span className="text-xs text-zinc-400 flex items-center gap-2 group-hover:text-blue-600 transition-colors">
+                Inbox <span className="text-xs">▶</span>
+              </span>
+            </Link>
+            {/* <p className="mt-3 text-xs text-zinc-500">
               Avg. response &lt; 2 hours during business hours.
-            </p>
+            </p> */}
           </div>
         </div>
 
@@ -130,9 +116,9 @@ const Footer = () => {
         <div className="mt-20 -mx-4 select-none overflow-hidden py-15">
           <h1
             className="font-black text-zinc-800 text-center leading-none tracking-tighter"
-            style={{ fontSize: "clamp(3.5rem, 14vw, 11rem)" }}
+            style={{ fontSize: "clamp(4.5rem, 14vw, 11rem)" }}
           >
-            Lexentify
+            LEXENTIFY
           </h1>
         </div>
 
@@ -154,13 +140,13 @@ const Footer = () => {
               href="/legal/privacy"
               className="hover:text-black transition-colors"
             >
-              Privacy
+              Privacy & Policy
             </Link>
             <Link
               href="/legal/terms"
               className="hover:text-black transition-colors"
             >
-              Terms
+              Terms & Conditions
             </Link>
           </div>
         </div>
