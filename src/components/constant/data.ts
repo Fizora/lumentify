@@ -116,3 +116,57 @@ export const technicalFeatures: FeatureItem[] = [
       "Dedicated post-deployment assistance included with every build to ensure absolute platform stability and total peace of mind.",
   },
 ];
+
+// Tambahkan tipe TestimonialItem
+export type TestimonialItem = {
+  rating: string; // atau number, sesuai penggunaannya (misal: "★★★★★")
+  quote: string;
+  name: string;
+  role: string;
+};
+
+// Tambahkan data testimonials dummy
+export const testimonials: TestimonialItem[] = [
+  {
+    rating: "★★★★★",
+    quote:
+      "Website baru kami benar-benar mengubah cara pelanggan menghubungi kami. Fitur click-to-call di ponsel sangat membantu klien darurat yang butuh perbaikan AC cepat.",
+    name: "Budi Santoso",
+    role: "Owner, CoolFix HVAC Services",
+  },
+  {
+    rating: "★★★★★",
+    quote:
+      "Pengerjaannya sangat cepat dan kodenya bersih. Tidak ada lagi drama plugin lambat seperti di WordPress lama kami. Sangat direkomendasikan untuk bisnis tukang!",
+    name: "Ahmad Hidayat",
+    role: "Director, ProPlumbing Solutions",
+  },
+  {
+    rating: "★★★★★",
+    quote:
+      "Transparan dari awal sampai akhir. Pemilik rumah sekarang jauh lebih percaya karena lisensi dan kredensial kami langsung terlihat di bagian atas halaman.",
+    name: "Michael Pratama",
+    role: "Founder, Alpha Electric & Wiring",
+  },
+  {
+    rating: "★★★★★",
+    quote:
+      "Hanya butuh waktu kurang dari seminggu hingga situs live, dan peningkatannya langsung terasa pada jumlah panggilan telepon masuk di minggu pertama.",
+    name: "Rian Kusuma",
+    role: "Lead Contractor, Kusuma Home Remodeling",
+  },
+  {
+    rating: "★★★★★",
+    quote:
+      "Struktur SEO lokalnya luar biasa. Bisnis jasa perbaikan kami sekarang jauh lebih mudah ditemukan oleh pelanggan di berbagai area suburb sekitar kota.",
+    name: "Dewi Lestari",
+    role: "Manager, CleanHome Deep Cleaning",
+  },
+  {
+    rating: "★★★★★",
+    quote:
+      "Komunikasi via Loom dan WhatsApp sangat efisien tanpa buang waktu meeting berjam-jam. Hasil akhirnya bersih, modern, dan sangat profesional.",
+    name: "Joko Prasetyo",
+    role: "Owner, J-Security & Locksmith",
+  },
+];
