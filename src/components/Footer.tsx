@@ -32,7 +32,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-white text-zinc-600 mt-auto border-zinc-200 px-3">
+    <footer className="bg-white text-zinc-600 mt-auto border-zinc-200">
       {/* Decorative dot-grid band */}
       <div
         className=""
@@ -137,7 +137,7 @@ const Footer = () => {
               <LuGlobe className="w-3.5 h-3.5" /> Asia-Pacific / Remote
             </span>
             <Link
-              href="/legal/privacy"
+              href="/legal/privacy-policy"
               className="hover:text-black transition-colors"
             >
               Privacy & Policy

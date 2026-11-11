@@ -1,35 +1,65 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { PrimaryButtonLink, SecondaryButtonLink } from "./ui/Button";
 import Image from "next/image";
-import { LuMenu, LuX, LuSparkles, LuArrowRight } from "react-icons/lu";
-import { navItems } from "@/components/constant/navigation";
+import {
+  LuMenu,
+  LuX,
+  LuSparkles,
+  LuArrowRight,
+  LuChevronDown,
+} from "react-icons/lu";
+import { navItems, NavDropdown } from "@/components/constant/navigation";
 
 const CTA_HREF = "/start-project";
 const MAIL_HREF = "mailto:info@lexentify.com";
 
-// Saklar utama: Ubah ke `false` jika ingin menonaktifkan banner secara permanen
+// Saklar utama untuk Banner & Services
 const ENABLE_ANNOUNCEMENT_BANNER = true;
+const SERVICES_ENABLED = true; // Ubah ke false jika ingin menyembunyikan menu dropdown Services
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isBannerVisible, setIsBannerVisible] = useState(true); // State untuk tombol close (X)
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isBannerVisible, setIsBannerVisible] = useState(true);
   const headerRef = useRef<HTMLElement>(null);
+  const [headerHeight, setHeaderHeight] = useState(0);
+
+  useEffect(() => {
+    const updateHeight = () => {
+      if (headerRef.current) setHeaderHeight(headerRef.current.offsetHeight);
+    };
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, [isBannerVisible]); // Perbarui tinggi header jika banner ditutup/dibuka
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    const newIsOpen = !isOpen;
+    setIsOpen(newIsOpen);
+    if (newIsOpen) setIsServicesOpen(false);
   };
 
   const closeMenu = () => {
     setIsOpen(false);
+    setIsServicesOpen(false);
   };
+
+  // Filter item navigasi berdasarkan saklar SERVICES_ENABLED
+  const visibleNavItems = navItems.filter(
+    (item) => SERVICES_ENABLED || item.name !== "Services",
+  );
+
+  const servicesItem = SERVICES_ENABLED
+    ? navItems.find((item): item is NavDropdown => item.type === "dropdown")
+    : undefined;
 
   // Konfigurasi Banner Promo / Pengumuman
   const bannerMessage =
-    "🚀 Special Offer: Get 1 free month of Core Tech & Care maintenance on your first project build!";
+    "Special Offer: Lock in exclusive end-of-year rates—valid throughout November & December before 2027!";
   const bannerLinkText = "Claim Offer";
   const bannerLinkHref = "/pricing";
 
@@ -38,7 +68,7 @@ const Navbar = () => {
       ref={headerRef}
       className="w-full fixed top-0 left-0 z-50 bg-white border-b border-zinc-200"
     >
-      {/* ===== ANNOUNCEMENT / PROMO BANNER (Dikontrol oleh ENABLE_ANNOUNCEMENT_BANNER) ===== */}
+      {/* ===== ANNOUNCEMENT / PROMO BANNER ===== */}
       {ENABLE_ANNOUNCEMENT_BANNER && (
         <AnimatePresence>
           {isBannerVisible && (
@@ -47,19 +77,15 @@ const Navbar = () => {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
-              className="overflow-hidden bg-zinc-900 text-white text-xs md:text-sm px-4 py-2 flex items-center justify-between gap-4 relative z-50"
+              className="overflow-hidden bg-zinc-900 text-white text-xs lg:text-sm px-4 py-3 flex items-center justify-between gap-4 relative z-50"
             >
               <div className="flex-1 text-center flex items-center justify-center gap-2 flex-wrap">
                 <span className="flex items-center gap-1.5 font-medium text-yellow-400">
                   <LuSparkles size={14} /> Announcement:
                 </span>
-                <span>{bannerMessage}</span>
                 {bannerLinkHref && (
-                  <Link
-                    href={bannerLinkHref}
-                    className="underline hover:text-yellow-300 font-medium transition-colors ml-1 inline-flex items-center gap-1"
-                  >
-                    {bannerLinkText} <LuArrowRight size={14} />
+                  <Link href={bannerLinkHref} className="hover:underline ">
+                    <span>{bannerMessage}</span>
                   </Link>
                 )}
               </div>
@@ -76,7 +102,7 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       )}
-      {/* ============================================================================== */}
+      {/* ======================================= */}
 
       <div className="mx-auto max-w-300 py-2 px-3 md:px-0 flex items-center justify-between backdrop-blur-3xl">
         {/* Logo */}
@@ -95,15 +121,43 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-2">
-            {navItems.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                className="text-gray-700 hover:text-black transition-colors duration-300 text-sm px-2"
-              >
-                {item.name}
-              </Link>
-            ))}
+            {visibleNavItems.map((item, index) => {
+              if (item.type !== "dropdown") {
+                return (
+                  <Link
+                    key={index}
+                    href={item.href}
+                    className="text-gray-700 hover:text-black transition-colors duration-300 text-sm px-2"
+                  >
+                    {item.name}
+                  </Link>
+                );
+              }
+
+              return (
+                <div
+                  key={index}
+                  className="relative"
+                  onMouseEnter={() => setIsServicesOpen(true)}
+                  onMouseLeave={() => setIsServicesOpen(false)}
+                >
+                  <button
+                    className="flex items-center gap-1 text-gray-700 hover:text-black transition-colors duration-300 text-sm focus:outline-none rounded px-2 py-1"
+                    aria-expanded={isServicesOpen}
+                    onClick={() => setIsServicesOpen((v) => !v)}
+                  >
+                    {item.name}
+                    <motion.span
+                      animate={{ rotate: isServicesOpen ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="inline-block"
+                    >
+                      <LuChevronDown size={14} />
+                    </motion.span>
+                  </button>
+                </div>
+              );
+            })}
           </nav>
         </div>
 
@@ -134,6 +188,49 @@ const Navbar = () => {
         </button>
       </div>
 
+      {/* Desktop Dropdown Panel */}
+      {servicesItem && (
+        <div className="hidden md:block">
+          <AnimatePresence>
+            {isServicesOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+                className="absolute left-0 right-0 z-40 bg-white border-b border-zinc shadow-sm"
+                onMouseEnter={() => setIsServicesOpen(true)}
+                onMouseLeave={() => setIsServicesOpen(false)}
+              >
+                <div className="max-w-300 mx-auto px-6 py-8">
+                  <div className="grid grid-cols-3 gap-8">
+                    {servicesItem.categories.map((category, catIdx) => (
+                      <div key={catIdx}>
+                        <h4 className="text-xs font-semibold text-black uppercase tracking-wider mb-3 pb-2 border-b border-zinc-100">
+                          {category.title}
+                        </h4>
+                        <div className="flex flex-col gap-1.5">
+                          {category.items.map((child, childIdx) => (
+                            <Link
+                              key={childIdx}
+                              href={child.href}
+                              onClick={closeMenu}
+                              className="text-sm hover:underline text-zinc-700 hover:text-black hover:bg-zinc-50 px-3 py-2 rounded-md transition-colors"
+                            >
+                              {child.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      )}
+
       {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
@@ -152,19 +249,74 @@ const Navbar = () => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden absolute top-full left-0 w-full bg-white overflow-hidden pb-8 border-b border-zinc-200 z-40 shadow-lg"
+              className="md:hidden absolute top-full left-0 w-full bg-white overflow-hidden pb-8 border-b border-zinc-200 z-40 shadow-lg max-h-[80vh] overflow-y-auto"
             >
               <div className="flex flex-col gap-2 px-6 py-4">
-                {navItems.map((item, index) => (
-                  <Link
-                    key={index}
-                    href={item.href}
-                    onClick={closeMenu}
-                    className="block text-sm py-2 text-gray-700 hover:text-black transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+                {visibleNavItems.map((item, index) => {
+                  if (item.type !== "dropdown") {
+                    return (
+                      <Link
+                        key={index}
+                        href={item.href}
+                        onClick={closeMenu}
+                        className="block text-sm py-2 text-gray-700 hover:text-black transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+                    );
+                  }
+
+                  return (
+                    <div
+                      key={index}
+                      className="py-2 border-y border-zinc-100 my-1"
+                    >
+                      <button
+                        onClick={() => setIsServicesOpen(!isServicesOpen)}
+                        className="flex items-center justify-between w-full text-left text-zinc-900 font-medium py-1"
+                        aria-expanded={isServicesOpen}
+                      >
+                        <span>{item.name}</span>
+                        <motion.span
+                          animate={{ rotate: isServicesOpen ? 180 : 0 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <LuChevronDown size={16} />
+                        </motion.span>
+                      </button>
+
+                      <AnimatePresence>
+                        {isServicesOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="pl-4 mt-2 flex flex-col gap-3 overflow-hidden pb-2"
+                          >
+                            {item.categories.map((category, catIdx) => (
+                              <div key={catIdx} className="space-y-1">
+                                <h4 className="text-xs font-semibold text-zinc-400 uppercase tracking-wider">
+                                  {category.title}
+                                </h4>
+                                {category.items.map((child, childIdx) => (
+                                  <Link
+                                    key={childIdx}
+                                    href={child.href}
+                                    onClick={closeMenu}
+                                    className="block py-1 text-sm text-zinc-600 hover:text-black transition-colors pl-2"
+                                  >
+                                    {child.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                })}
 
                 <div className="pt-4 flex flex-col sm:flex-row gap-2 border-t border-zinc-100">
                   <SecondaryButtonLink

@@ -29,7 +29,7 @@ const FAQ = () => {
             <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
               FAQ
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black leading-tight">
+            <h2 className="text-3xl md:text-4xlfont-medium text-black leading-tight">
               Questions, answered
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">

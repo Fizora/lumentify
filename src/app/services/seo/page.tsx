@@ -46,7 +46,7 @@ export default function SEO() {
           <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
             Services / SEO
           </span>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black leading-tight mb-4">
+          <h1 className="text-3xl md:text-4xlfont-medium text-black leading-tight mb-4">
             SEO that starts with the build, not after it.
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed">

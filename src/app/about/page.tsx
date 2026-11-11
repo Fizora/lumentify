@@ -22,7 +22,7 @@ export default function About() {
                 About Lexentify
               </span>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-black leading-tight">
+              <h1 className="text-3xl md:text-4xlfont-medium tracking-tight text-black leading-tight">
                 Websites designed for home-service businesses
               </h1>
 

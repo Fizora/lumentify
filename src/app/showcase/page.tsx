@@ -6,7 +6,7 @@ import CTA from "@/components/sections/CTA";
 import Skathes from "@/components/Skathes";
 
 export const metadata: Metadata = {
-  title: "Showcase | Lexentify",
+  title: "Showcase",
   description:
     "Explore our live interactive demo builds. See how our Essential, Pro, and Custom web architectures deliver lightning-fast performance and high conversions for trade businesses.",
 };
@@ -23,14 +23,14 @@ export default function Showcase() {
               Showcase
             </span>
             <h1 className="text-3xl md:text-4xl font-semibold text-black leading-tight">
-              Explore Our Demo Builds
+              Explore Our Demo
             </h1>
-            <p className="text-sm text-zinc-600 leading-relaxed">
+            {/* <p className="text-sm text-zinc-600 leading-relaxed">
               Explore our fully interactive demo builds below. Experience
               firsthand how our Essential, Pro, and Custom packages perform in
               the wild—engineered specifically to dominate local searches and
               turn emergency clicks into direct calls.
-            </p>
+            </p> */}
           </div>
 
           {/* Komponen client dengan tabs & dual mode */}

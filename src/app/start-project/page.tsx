@@ -10,6 +10,7 @@ import {
   LuLoaderCircle,
   LuShieldCheck,
   LuZap,
+  LuChevronLeft,
 } from "react-icons/lu";
 import { SecondaryButtonLink } from "@/components/ui/Button";
 
@@ -80,9 +81,9 @@ function StartProjectContent() {
         <div className=" border-gray-200 px-4 py-2 flex items-center justify-between max-w-300 mx-auto">
           <SecondaryButtonLink
             href="/"
-            className="text-sm flex items-center gap-2"
+            className="text-sm flex items-center gap-2 py-1.5 pr-8"
           >
-            <LuArrowLeft></LuArrowLeft>
+            <LuChevronLeft></LuChevronLeft>
             Back To Home
           </SecondaryButtonLink>
           <span className="text-xs font-medium uppercase tracking-wider text-zinc-400">

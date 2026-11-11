@@ -75,7 +75,7 @@ export default function Support() {
               Support
             </span>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-black leading-tight mb-4">
+            <h1 className="text-3xl md:text-4xlfont-medium tracking-tight text-black leading-tight mb-4">
               Clear expectations at every stage
             </h1>
 

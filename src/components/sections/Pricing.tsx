@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { LuCircleCheck, LuArrowRight, LuTag } from "react-icons/lu";
 import { PrimaryButtonLink, SecondaryButtonLink } from "@/components/ui/Button";
 import { buildPlans, mrrPlans } from "@/components/constant/data-pricing";
+import Link from "next/link";
 
 const containerVariants = {
   hidden: {},
@@ -26,15 +27,15 @@ interface PricingProps {
 // ==========================================
 const ENABLE_DISCOUNT = true;
 
-// Data pembanding harga coret dengan label persentase diskon (November Special Strategy)
+// Data pembanding harga coret dengan label persentase diskon
 const originalPrices: Record<string, { price: string; discountLabel: string }> =
   {
-    // Build Plans (One-time) - Diubah ke format persentase
+    // Build Plans (One-time)
     Essential: { price: "$1,899", discountLabel: "21% OFF" },
     Pro: { price: "$2,999", discountLabel: "17% OFF" },
     Custom: { price: "from $5,499", discountLabel: "16% OFF" },
 
-    // MRR Plans (Monthly) - Diubah ke format persentase
+    // MRR Plans (Monthly)
     "Core Tech & Care": { price: "$119", discountLabel: "25% OFF" },
     "Local Dominance": { price: "$249", discountLabel: "20% OFF" },
     "Growth Partner": { price: "from $499", discountLabel: "20% OFF" },
@@ -128,8 +129,8 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                         </div>
                       </div>
 
-                      {/* Tombol Aksi */}
-                      <div className="mb-8">
+                      {/* Tombol Aksi & Learn More */}
+                      <div className="mb-8 space-y-2">
                         {plan.featured ? (
                           <PrimaryButtonLink
                             href={plan.href}
