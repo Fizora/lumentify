@@ -48,7 +48,7 @@ export const showcaseList: ShowcaseItem[] = [
     year: "2026",
   },
   {
-    img: "/img/air-core.png",
+    img: "/img/air-core.jpg",
     icon: LuHammer,
     name: "Air Core",
     desc: "HVAC and roofing platform demo featuring deep project proof and tailored quote flows.",
