@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "motion/react";
-import { LuCircleCheck, LuTag, LuChevronRight } from "react-icons/lu";
+import { LuCheck, LuTag, LuChevronRight } from "react-icons/lu";
 import { PrimaryButtonLink, SecondaryButtonLink } from "@/components/ui/Button";
 import { buildPlans, mrrPlans } from "@/components/constant/data-pricing";
 import Link from "next/link";
@@ -68,7 +68,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                 </p>
               </motion.div>
 
-              {/* Grid dengan gap-0 dan border menyatu */}
+              {/* Grid dengan items-stretch agar tinggi kartu sama rata */}
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
@@ -93,24 +93,22 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                         </div>
                       )}
 
-                      {/* Header Paket (Judul, Deskripsi, dan Harga diset seragam posisinya) */}
-                      <div className="mb-6 pb-6 border-b border-zinc-100 flex flex-col justify-between">
-                        <div>
-                          <div className="flex items-center justify-between mb-2">
-                            <h3 className="text-xl font-semibold text-black">
-                              {plan.name}
-                            </h3>
-                            {ENABLE_DISCOUNT && promo && (
-                              <span className="inline-flex items-center gap-1 text-[11px] font-bold text-white bg-red-600 border border-red-600 px-2 py-0.5 rounded-md shadow-xs">
-                                <LuTag size={11} className="text-white" />{" "}
-                                {promo.discountLabel}
-                              </span>
-                            )}
-                          </div>
-                          <p className="text-sm text-gray-600 leading-relaxed py-3 lg:h-24">
-                            {plan.description}
-                          </p>
+                      {/* Header Paket */}
+                      <div className="mb-6 pb-6 border-b border-zinc-100">
+                        <div className="flex items-center justify-between mb-2">
+                          <h3 className="text-xl font-semibold text-black">
+                            {plan.name}
+                          </h3>
+                          {ENABLE_DISCOUNT && promo && (
+                            <span className="inline-flex items-center gap-1 text-[11px] font-bold text-white bg-red-600 border border-red-600 px-2 py-0.5 rounded-md shadow-xs">
+                              <LuTag size={11} className="text-white" />{" "}
+                              {promo.discountLabel}
+                            </span>
+                          )}
                         </div>
+                        <p className="text-sm text-gray-600 leading-relaxed py-3 min-h-18">
+                          {plan.description}
+                        </p>
 
                         <div className="mt-4 flex flex-col">
                           {ENABLE_DISCOUNT && promo && (
@@ -129,7 +127,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                         </div>
                       </div>
 
-                      {/* Tombol Aksi & Learn More */}
+                      {/* Tombol Aksi */}
                       <div className="mb-8 space-y-2">
                         {plan.featured ? (
                           <PrimaryButtonLink
@@ -153,7 +151,9 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                       <ul className="space-y-3 mb-6 flex-1">
                         {plan.features.map((feat, i) => (
                           <li key={i} className="flex items-start gap-3">
-                            <LuCircleCheck className="w-4 h-4 mt-0.5 shrink-0 text-zinc-800" />
+                            <div className="w-4 h-4 rounded-full bg-zinc-900 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+                              <LuCheck className="w-3 h-3 stroke-3" />
+                            </div>
                             <span className="text-sm text-gray-700 leading-relaxed">
                               {feat}
                             </span>
@@ -186,7 +186,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                 </p>
               </motion.div>
 
-              {/* Grid MRR dengan border menyatu tanpa gap */}
+              {/* Grid MRR dengan items-stretch agar tinggi kartu simetris */}
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
@@ -211,23 +211,21 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                         </div>
                       )}
 
-                      {/* Header Paket MRR */}
-                      <div className="mb-6 pb-6 border-b border-zinc-100 flex flex-col justify-between">
-                        <div>
-                          <div className="flex items-center justify-between mb-2">
-                            <h3 className="text-xl font-semibold text-black">
-                              {plan.name}
-                            </h3>
-                            {ENABLE_DISCOUNT && promo && (
-                              <span className="inline-flex items-center gap-1 text-[11px] font-bold text-white bg-red-600 border border-red-600 px-2 py-0.5 rounded-md shadow-xs">
-                                <LuTag size={11} /> {promo.discountLabel}
-                              </span>
-                            )}
-                          </div>
-                          <p className="text-sm text-gray-600 py-3 leading-relaxed lg:h-24">
-                            {plan.description}
-                          </p>
+                      {/* Header Paket MRR dengan min-h yang disamakan */}
+                      <div className="mb-6 pb-6 border-b border-zinc-100">
+                        <div className="flex items-center justify-between mb-2">
+                          <h3 className="text-xl font-semibold text-black">
+                            {plan.name}
+                          </h3>
+                          {ENABLE_DISCOUNT && promo && (
+                            <span className="inline-flex items-center gap-1 text-[11px] font-bold text-white bg-red-600 border border-red-600 px-2 py-0.5 rounded-md shadow-xs">
+                              <LuTag size={11} /> {promo.discountLabel}
+                            </span>
+                          )}
                         </div>
+                        <p className="text-sm text-gray-600 py-3 leading-relaxed min-h-18">
+                          {plan.description}
+                        </p>
 
                         <div className="mt-4 flex flex-col">
                           {ENABLE_DISCOUNT && promo && (
@@ -269,11 +267,13 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                         )}
                       </div>
 
-                      {/* Daftar Fitur MRR */}
+                      {/* Daftar Fitur MRR (flex-1 agar tombol & list fitur sejajar secara vertikal) */}
                       <ul className="space-y-3 mb-6 flex-1">
                         {plan.features.map((feat, i) => (
                           <li key={i} className="flex items-start gap-3">
-                            <LuCircleCheck className="w-4 h-4 mt-0.5 shrink-0 text-zinc-800" />
+                            <div className="w-4 h-4 rounded-full bg-zinc-900 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+                              <LuCheck className="w-3 h-3 stroke-3" />
+                            </div>
                             <span className="text-sm text-gray-700 leading-relaxed">
                               {feat}
                             </span>

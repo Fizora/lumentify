@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import WorkStatusBadge from "@/components/WorkStatusBadge";
-import { LuFlagTriangleRight, LuGlobe, LuTriangleRight } from "react-icons/lu";
+import { LuGlobe, LuClock } from "react-icons/lu";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -92,23 +92,41 @@ const Footer = () => {
             </div>
           ))}
 
-          {/* Contact column */}
-          <div className="col-span-2 md:col-span-1">
-            <h4 className="font-semibold text-xs uppercase tracking-wider text-black mb-4">
-              Get in Touch
-            </h4>
-            <Link
-              href="mailto:business@lexentify.com"
-              className=" group flex items-center justify-between border border-zinc-200 hover:border-blue-600 bg-zinc-50 hover:bg-zinc-100 px-3.5 py-2 text-sm text-zinc-900 font-medium transition-colors rounded-md"
-            >
-              <span>Email</span>
-              <span className="text-xs text-zinc-400 flex items-center gap-2 group-hover:text-blue-600 transition-colors">
-                Inbox <span className="text-xs">▶</span>
-              </span>
-            </Link>
-            {/* <p className="mt-3 text-xs text-zinc-500">
-              Avg. response &lt; 2 hours during business hours.
-            </p> */}
+          {/* Contact column dengan Zona Waktu Asia-Pacific */}
+          <div className="col-span-2 md:col-span-1 flex flex-col space-y-4">
+            <div>
+              <h4 className="font-semibold text-xs uppercase tracking-wider text-black mb-4">
+                Get in Touch
+              </h4>
+              <Link
+                href="mailto:business@lexentify.com"
+                className="group flex items-center justify-between border border-zinc-200 hover:border-blue-600 bg-zinc-50 hover:bg-zinc-100 px-3.5 py-2 text-sm text-zinc-900 font-medium transition-colors rounded-md"
+              >
+                <span>Email</span>
+                <span className="text-xs text-zinc-400 flex items-center gap-2 group-hover:text-blue-600 transition-colors">
+                  Inbox <span className="text-xs">▶</span>
+                </span>
+              </Link>
+            </div>
+
+            {/* Jam Operasional Zona Waktu Asia-Pacific */}
+            <div className="space-y-1.5 text-xs text-zinc-500 pt-3 border-t border-zinc-100">
+              <div className="flex items-center gap-1.5 font-semibold text-xs uppercase tracking-wider text-black mb-4">
+                <span>Business Hours (APAC):</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Mon–Fri, 09:00–18:00</span>
+                <span className="font-mono text-zinc-400">(GMT+7)</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Mon–Fri, 10:00–19:00</span>
+                <span className="font-mono text-zinc-400">(GMT+8)</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Mon–Fri, 11:00–20:00</span>
+                <span className="font-mono text-zinc-400">(GMT+10)</span>
+              </div>
+            </div>
           </div>
         </div>
 

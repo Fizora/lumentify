@@ -1,12 +1,20 @@
 import { Metadata } from "next";
-import { LuPhoneCall, LuMapPin, LuZap, LuShield } from "react-icons/lu";
+import {
+  LuPhoneCall,
+  LuMapPin,
+  LuZap,
+  LuShield,
+  LuArrowRight,
+} from "react-icons/lu";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Link from "next/link";
+import { webDevelopmentDetails } from "@/components/constant/service-details";
 
 export const metadata: Metadata = {
-  title: "Web Development | Services | Lexentify",
+  title: "Web Development Scope | Services | Lexentify",
   description:
-    "High-performance web development engineered specifically for home-service contractors and trade businesses.",
+    "Comprehensive technical scope, deliverable definitions, and operational framework for Lexentify web development services.",
 };
 
 const included = [
@@ -43,7 +51,7 @@ export default function WebDevelopment() {
             <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
               Services / Web Development
             </span>
-            <h1 className="text-3xl md:text-4xl font-medium text-black leading-tight mb-4">
+            <h1 className="text-3xl md:text-5xl font-medium text-black leading-tight mb-4">
               Websites built to get your phone ringing.
             </h1>
             <p className="text-zinc-600 leading-relaxed text-sm md:text-base">
@@ -52,13 +60,13 @@ export default function WebDevelopment() {
             </p>
           </section>
 
-          {/* Features Grid (4 Cards) */}
-          <section className="mx-auto max-w-4xl pb-12 px-3">
+          {/* Features Grid */}
+          <section className="mx-auto max-w-4xl pb-20 px-3">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {included.map(({ icon: Icon, title, body }) => (
                 <div
                   key={title}
-                  className="border border-zinc-200 p-8 bg-zinc-50/50 "
+                  className="border border-zinc-200 p-8 bg-zinc-50/50 rounded-lg"
                 >
                   {Icon && <Icon className="w-5 h-5 text-zinc-800 mb-4" />}
                   <h3 className="text-sm font-semibold text-black mb-2">
@@ -69,6 +77,80 @@ export default function WebDevelopment() {
                   </p>
                 </div>
               ))}
+            </div>
+          </section>
+
+          {/* Detailed Narrative Transparency Hub (Imported from service-details.ts) */}
+          <section className="mx-auto max-w-4xl px-3 py-16 border-t border-zinc-200">
+            <div className="mb-12 text-center max-w-2xl mx-auto">
+              <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-3">
+                Development Information Hub
+              </span>
+              <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight mb-3">
+                Technical Scope & Operational Rules
+              </h2>
+              <p className="text-sm text-zinc-600 leading-relaxed">
+                {webDevelopmentDetails.overview}
+              </p>
+              <p className="text-xs text-zinc-400 mt-2">
+                Last updated: {webDevelopmentDetails.lastUpdated}
+              </p>
+            </div>
+
+            <div className="space-y-12">
+              {webDevelopmentDetails.sections.map((section, idx) => (
+                <div
+                  key={idx}
+                  className="border-b border-zinc-100 pb-8 last:border-none"
+                >
+                  <h3 className="text-lg font-semibold text-black mb-4">
+                    {section.title}
+                  </h3>
+
+                  {section.content.map((paragraph, pIdx) => (
+                    <p
+                      key={pIdx}
+                      className="text-sm text-zinc-700 leading-relaxed mb-3"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+
+                  {section.listItems && (
+                    <ul className="mt-4 space-y-3 pl-4 border-l-2 border-zinc-900">
+                      {section.listItems.map((li, lIdx) => (
+                        <li
+                          key={lIdx}
+                          className="text-sm text-zinc-700 leading-relaxed"
+                        >
+                          {li}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Cross-reference CTA to Web Maintenance */}
+            <div className="mt-16 bg-zinc-50 border border-zinc-200 rounded-xl p-8 text-center space-y-4">
+              <h3 className="text-base font-semibold text-black">
+                Looking for ongoing updates or server management?
+              </h3>
+              <p className="text-sm text-zinc-600 max-w-xl mx-auto leading-relaxed">
+                If you want to understand how our monthly maintenance tiers
+                handle server uptime, security patches, and routine adjustments,
+                check out our dedicated maintenance guide.
+              </p>
+              <div className="pt-2">
+                <Link
+                  href="/services/web-maintenance"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-black bg-white border border-zinc-300 hover:border-black px-6 py-2.5 rounded-full transition-colors"
+                >
+                  <span>Explore Web Maintenance Details</span>
+                  <LuArrowRight size={16} />
+                </Link>
+              </div>
             </div>
           </section>
         </div>

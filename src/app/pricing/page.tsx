@@ -118,7 +118,7 @@ export default function PricingPage() {
     <>
       <Navbar />
       <main className="bg-white">
-        <Pricing showOneTime={true} showMRR={false}></Pricing>
+        <Pricing showOneTime={true} showMRR={true}></Pricing>
         <Skathes />
         <CTA />
         <Skathes />

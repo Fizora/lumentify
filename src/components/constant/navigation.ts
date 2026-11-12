@@ -28,7 +28,7 @@ export const navItems: NavItem[] = [
         title: "Services",
         items: [
           { name: "Web Development", href: "/services/web-development" },
-          // { name: "Web Maintenance", href: "/services/web-maintenance" },
+          { name: "Web Maintenance", href: "/services/web-maintenance" },
           { name: "SEO", href: "/services/seo" },
         ],
       },
