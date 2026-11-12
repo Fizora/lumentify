@@ -65,7 +65,7 @@ const FeatureCategory = ({ label, items }: FeatureCategoryProps) => (
 const Features = () => {
   return (
     <section className="bg-white border-b">
-      <div className="mx-auto max-w-300 py-24 border-x border-zinc-200">
+      <div className="mx-auto max-w-7xl py-24 border-x border-zinc-200">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}

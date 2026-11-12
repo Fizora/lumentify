@@ -46,7 +46,7 @@ const Footer = () => {
       />
 
       {/* Wrapper utama disamakan dengan max-w-7xl dan border-x seperti section FAQ & Workflow */}
-      <div className="mx-auto max-w-300 border-x border-zinc-200 py-20">
+      <div className="mx-auto max-w-7xl border-x border-zinc-200 py-20">
         {/* Link grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 px-3">
           {/* Brand column */}

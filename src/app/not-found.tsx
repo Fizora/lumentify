@@ -10,7 +10,7 @@ export default function NotFound() {
       <Skathes />
       <div className="border-b">
         <div
-          className="bg-white text-center mx-auto max-w-300 border-x flex min-h-[77vh] flex-col items-center justify-center "
+          className="bg-white text-center mx-auto max-w-7xl border-x flex min-h-[77vh] flex-col items-center justify-center "
           style={{
             backgroundColor: "#fafafa",
             backgroundImage: `repeating-linear-gradient(

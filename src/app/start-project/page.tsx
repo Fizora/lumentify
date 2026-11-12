@@ -78,7 +78,7 @@ function StartProjectContent() {
     <main className="min-h-screen bg-white text-black selection:bg-black selection:text-white">
       {/* Header Nav Minimalis */}
       <header className=" w-full">
-        <div className=" border-gray-200 px-4 py-2 flex items-center justify-between max-w-300 mx-auto">
+        <div className=" border-gray-200 px-4 py-2 flex items-center justify-between max-w-7xl mx-auto">
           <SecondaryButtonLink
             href="/"
             className="text-sm flex items-center gap-2 py-1.5 pr-8"

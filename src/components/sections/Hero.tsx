@@ -27,7 +27,7 @@ const Hero = () => {
 
   return (
     <section className="border-b">
-      <div className="space-y-12 pt-15 md:pt-20 lg:pt-30 mx-auto max-w-300 border-x">
+      <div className="space-y-12 pt-15 md:pt-20 lg:pt-30 mx-auto max-w-7xl border-x">
         {/* Headline dengan Animasi Fade Up */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

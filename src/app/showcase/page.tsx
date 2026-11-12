@@ -16,7 +16,7 @@ export default function Showcase() {
     <>
       <Navbar />
       <main className="border-b">
-        <div className="mx-auto max-w-300 py-32 border-x">
+        <div className="mx-auto max-w-7xl py-32 border-x">
           {/* Section header dengan copywriting berkualitas */}
           <div className="text-center space-y-4 mb-16 max-w-2xl mx-auto px-4">
             <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">

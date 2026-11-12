@@ -7,7 +7,7 @@ import CTA from "@/components/sections/CTA";
 export const metadata: Metadata = {
   title: "Lexentify | About Our Studio",
   description:
-    "Learn about Lexentify's approach to building clear, mobile-friendly websites for home-service businesses.",
+    "Learn about Lexentify's approach to building clear, mobile-friendly websites for home-service businesses and broader digital projects.",
 };
 
 export default function About() {
@@ -15,31 +15,34 @@ export default function About() {
     <>
       <Navbar />
       <main className="min-h-screen bg-white text-zinc-900 border-b px-3">
-        <div className="mx-auto max-w-300 px-3 py-20 border-x border-zinc-200">
+        <div className="mx-auto max-w-7xl px-3 py-20 border-x border-zinc-200">
           <div className="mx-auto max-w-3xl pt-12">
             <div className="mb-12 space-y-4">
               <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
                 About Lexentify
               </span>
 
-              <h1 className="text-3xl md:text-4xlfont-medium tracking-tight text-black leading-tight">
-                Websites designed for home-service businesses
+              <h1 className="text-3xl md:text-4xl font-medium tracking-tight text-black leading-tight">
+                Websites designed with precision & purpose
               </h1>
 
               <p className="text-sm text-zinc-600 leading-relaxed">
-                Learn about our focus, how we approach website projects, and the
-                principles that guide our work for local trade businesses.
+                Learn about our focus, our approach to digital execution, and
+                the core principles that guide our work across every project.
               </p>
             </div>
 
             <article className="space-y-6 text-zinc-700 leading-relaxed text-sm text-left">
               <p>
-                Lexentify is an independent digital studio focused on websites
-                for home-service businesses, including plumbers, electricians,
-                HVAC providers, and roofers. We understand that customers
-                looking for these services often need clear information and an
-                easy way to get in touch. A website should help visitors
-                understand what a business offers and how to contact it.
+                Lexentify is an independent digital studio with a primary focus
+                on building high-conversion websites for household and
+                home-service businesses, including plumbers, electricians, HVAC
+                providers, and roofers. By deeply specializing in this sector,
+                we streamline our development processes and maintain rigorous
+                quality control. However, our engineering standards are
+                adaptable—we are always open to selecting and accepting
+                selective projects outside of this niche when clients share our
+                value for clean, high-performance web architecture.
               </p>
 
               <p>
@@ -55,11 +58,11 @@ export default function About() {
               <p>
                 We take a project-specific approach rather than relying on
                 one-size-fits-all copy. Where information is available, we
-                review your services, service areas, business priorities, and
-                existing website before shaping the page structure and content.
-                The result is a website built around your agreed requirements,
-                with clear paths for visitors to call, enquire, or request a
-                quote.
+                review your services, target audience, business priorities, and
+                existing digital assets before shaping the page structure and
+                content. The result is a website built around your agreed
+                requirements, with clear paths for visitors to call, enquire, or
+                request a quote.
               </p>
 
               <p>
@@ -88,11 +91,12 @@ export default function About() {
               </p>
 
               <p>
-                Lexentify focuses on building practical websites for
-                home-service businesses, one project at a time. Our work
-                supports your online presence; search rankings, enquiry volume,
-                bookings, and revenue depend on many factors and are not
-                guaranteed by website development alone.
+                Whether building for our core household niche or expanding into
+                new industries, Lexentify focuses on delivering practical,
+                high-standard websites one project at a time. Our work supports
+                your online presence; search rankings, enquiry volume, bookings,
+                and revenue depend on many factors and are not guaranteed by
+                website development alone.
               </p>
             </article>
           </div>

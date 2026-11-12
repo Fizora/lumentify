@@ -69,13 +69,13 @@ export default function Support() {
     <>
       <Navbar />
       <main className="min-h-screen bg-white text-zinc-900 border-b">
-        <section className="mx-auto max-w-300 px-3 py-20 border-x border-zinc-200">
+        <section className="mx-auto max-w-7xl px-3 py-20 border-x border-zinc-200">
           <section className="pt-32 pb-16 mx-auto max-w-3xl text-center">
             <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
               Support
             </span>
 
-            <h1 className="text-3xl md:text-4xlfont-medium tracking-tight text-black leading-tight mb-4">
+            <h1 className="text-3xl md:text-4xl font-medium tracking-tight text-black leading-tight mb-4">
               Clear expectations at every stage
             </h1>
 

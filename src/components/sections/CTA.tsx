@@ -6,7 +6,7 @@ const CTA = () => {
   return (
     <section className="border-b">
       <div
-        className="py-20 lg:py-30 mx-auto max-w-300 p-12 md:p-16 relative overflow-hidden border-x px-4"
+        className="py-20 lg:py-30 mx-auto max-w-7xl p-12 md:p-16 relative overflow-hidden border-x px-4"
         style={{
           backgroundColor: "#fafafa",
           backgroundImage: `repeating-linear-gradient(

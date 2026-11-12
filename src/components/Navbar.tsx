@@ -21,12 +21,30 @@ const MAIL_HREF = "mailto:info@lexentify.com";
 const ENABLE_ANNOUNCEMENT_BANNER = true;
 const SERVICES_ENABLED = true; // Ubah ke false jika ingin menyembunyikan menu dropdown Services
 
+const BANNER_STORAGE_KEY = "lexentify_banner_dismissed_until";
+const TWENTY_FOUR_HOURS = 24 * 60 * 60 * 1000;
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isBannerVisible, setIsBannerVisible] = useState(true);
+  const [isBannerVisible, setIsBannerVisible] = useState(false); // Default false sebelum dicek localStorage
   const headerRef = useRef<HTMLElement>(null);
   const [headerHeight, setHeaderHeight] = useState(0);
+
+  // Periksa status banner dari localStorage saat komponen dimuat di client
+  useEffect(() => {
+    if (ENABLE_ANNOUNCEMENT_BANNER) {
+      const dismissedUntil = localStorage.getItem(BANNER_STORAGE_KEY);
+      const now = new Date().getTime();
+
+      if (!dismissedUntil || now > parseInt(dismissedUntil, 10)) {
+        // Jika belum pernah di-close atau sudah lewat 24 jam, tampilkan banner
+        setIsBannerVisible(true);
+      } else {
+        setIsBannerVisible(false);
+      }
+    }
+  }, []);
 
   useEffect(() => {
     const updateHeight = () => {
@@ -35,7 +53,14 @@ const Navbar = () => {
     updateHeight();
     window.addEventListener("resize", updateHeight);
     return () => window.removeEventListener("resize", updateHeight);
-  }, [isBannerVisible]); // Perbarui tinggi header jika banner ditutup/dibuka
+  }, [isBannerVisible]);
+
+  const handleCloseBanner = () => {
+    setIsBannerVisible(false);
+    // Simpan batas waktu kedaluwarsa 24 jam ke depan
+    const expireTime = new Date().getTime() + TWENTY_FOUR_HOURS;
+    localStorage.setItem(BANNER_STORAGE_KEY, expireTime.toString());
+  };
 
   const toggleMenu = () => {
     const newIsOpen = !isOpen;
@@ -90,9 +115,9 @@ const Navbar = () => {
                 )}
               </div>
 
-              {/* Tombol Close di kanan */}
+              {/* Tombol Close di kanan dengan fungsi penyimpanan localStorage 24 jam */}
               <button
-                onClick={() => setIsBannerVisible(false)}
+                onClick={handleCloseBanner}
                 className="text-zinc-400 hover:text-white transition-colors p-1 rounded-full shrink-0 focus:outline-none"
                 aria-label="Close banner"
               >
@@ -104,7 +129,7 @@ const Navbar = () => {
       )}
       {/* ======================================= */}
 
-      <div className="mx-auto max-w-300 py-2 px-3 md:px-0 flex items-center justify-between backdrop-blur-3xl">
+      <div className="mx-auto max-w-7xl py-2 px-3 md:px-0 flex items-center justify-between backdrop-blur-3xl">
         {/* Logo */}
         <div className="group px-2 rounded-full text-black flex items-center gap-2">
           <Link href="/" className="text-xl font-black flex items-center gap-2">
@@ -202,7 +227,7 @@ const Navbar = () => {
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
               >
-                <div className="max-w-300 mx-auto px-6 py-8">
+                <div className="max-w-7xl mx-auto px-6 py-8">
                   <div className="grid grid-cols-3 gap-8">
                     {servicesItem.categories.map((category, catIdx) => (
                       <div key={catIdx}>

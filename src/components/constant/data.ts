@@ -18,11 +18,11 @@ export type FaqItem = {
 };
 
 export const faqs: FaqItem[] = [
-  {
-    question: "Why aren't there client testimonials listed on your website?",
-    answer:
-      "We strictly avoid placeholder or unverified reviews. Instead, we let live, fully interactive demo builds and pristine code architecture serve as transparent, verifiable proof of our execution standard.",
-  },
+  // {
+  //   question: "Why aren't there client testimonials listed on your website?",
+  //   answer:
+  //     "We strictly avoid placeholder or unverified reviews. Instead, we let live, fully interactive demo builds and pristine code architecture serve as transparent, verifiable proof of our execution standard.",
+  // },
   {
     question: "How do I know these websites actually convert local customers?",
     answer:

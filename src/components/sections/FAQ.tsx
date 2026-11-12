@@ -13,7 +13,7 @@ const FAQ = () => {
 
   return (
     <section className="bg-white border-b" id="faq">
-      <div className="mx-auto max-w-300 py-24 px-3 border-x">
+      <div className="mx-auto max-w-7xl py-24 px-3 border-x">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

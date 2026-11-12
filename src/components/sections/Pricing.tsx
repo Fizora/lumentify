@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "motion/react";
-import { LuCircleCheck, LuArrowRight, LuTag } from "react-icons/lu";
+import { LuCircleCheck, LuTag, LuChevronRight } from "react-icons/lu";
 import { PrimaryButtonLink, SecondaryButtonLink } from "@/components/ui/Button";
 import { buildPlans, mrrPlans } from "@/components/constant/data-pricing";
 import Link from "next/link";
@@ -137,7 +137,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                             className="w-full text-center flex items-center justify-center gap-2 px-6 py-2.5 font-medium"
                           >
                             {plan.cta}
-                            <LuArrowRight className="w-4 h-4" />
+                            <LuChevronRight className="w-4 h-4" />
                           </PrimaryButtonLink>
                         ) : (
                           <SecondaryButtonLink
@@ -257,7 +257,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                             className="w-full text-center flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium"
                           >
                             {plan.cta}
-                            <LuArrowRight className="w-4 h-4" />
+                            <LuChevronRight className="w-4 h-4" />
                           </PrimaryButtonLink>
                         ) : (
                           <SecondaryButtonLink

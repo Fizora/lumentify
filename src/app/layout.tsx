@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://lexentify.com"),
   title: {
     default: "Lexentify | High-Conversion Web Development for Home Services",
-    template: "%s | Lexentify",
+    template: "",
   },
   description:
     "Lexentify is an elite digital studio building ultra-fast, high-converting websites and landing pages specifically engineered for home-service businesses including plumbing, HVAC, electrical, and roofing trades.",
