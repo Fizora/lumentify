@@ -18,7 +18,7 @@ const CTA_HREF = "/start-project";
 const MAIL_HREF = "mailto:info@lexentify.com";
 
 // Saklar utama untuk Banner & Services
-const ENABLE_ANNOUNCEMENT_BANNER = true;
+const ENABLE_ANNOUNCEMENT_BANNER = false;
 const SERVICES_ENABLED = true; // Ubah ke false jika ingin menyembunyikan menu dropdown Services
 
 const BANNER_STORAGE_KEY = "lexentify_banner_dismissed_until";

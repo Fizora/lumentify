@@ -25,7 +25,7 @@ interface PricingProps {
 // ==========================================
 // PENGATURAN DISKON (Ubah ke true untuk aktif)
 // ==========================================
-const ENABLE_DISCOUNT = true;
+const ENABLE_DISCOUNT = false;
 
 // Data pembanding harga coret dengan label persentase diskon
 const originalPrices: Record<string, { price: string; discountLabel: string }> =
@@ -234,7 +234,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                             </span>
                           )}
                           <div className="flex items-baseline">
-                            <span className="text-3xl lg:text-4xl font-semibold text-black font-mono">
+                            <span className="text-3xl min-h-18 lg:text-4xl font-semibold text-black font-mono">
                               {plan.price}
                             </span>
                             <span className="text-gray-500 ml-2 text-sm">
