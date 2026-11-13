@@ -31,8 +31,8 @@ export default function Home() {
         <Skathes />
         <CTA />
         <Skathes />
+        <Footer />
       </main>
-      <Footer />
       {/* <WhatsAppCall /> */}
     </>
   );

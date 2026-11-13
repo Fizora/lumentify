@@ -15,7 +15,7 @@ export default function About() {
     <>
       <Navbar />
       <main className="min-h-screen bg-white text-zinc-900 border-b px-3">
-        <div className="mx-auto max-w-7xl px-3 py-20 border-x border-zinc-200">
+        <div className="mx-auto max-w-7xl px-3 py-20 border-x ">
           <div className="mx-auto max-w-3xl pt-12">
             <div className="mb-12 space-y-4">
               <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">

@@ -65,7 +65,7 @@ const itemVariants: Variants = {
 const Workflow = () => {
   return (
     <section className="bg-white border-b">
-      <div className="mx-auto max-w-7xl py-24 border-x border-zinc-200">
+      <div className="mx-auto max-w-7xl py-24 border-x ">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -90,7 +90,7 @@ const Workflow = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-0 border-y border-zinc-200 items-stretch"
+          className="grid grid-cols-1 md:grid-cols-2 gap-0 border-y  items-stretch"
         >
           {workflowSteps.map((item, i) => {
             const IconComponent = item.icon;
@@ -99,8 +99,8 @@ const Workflow = () => {
                 variants={itemVariants}
                 key={i}
                 className={`relative flex flex-col p-6 lg:p-8 bg-white transition-colors duration-200 hover:bg-zinc-50/50 
-                  border-b border-zinc-200 last:border-b-0
-                  ${i % 2 === 0 ? "md:border-r border-zinc-200" : ""}
+                  border-b  last:border-b-0
+                  ${i % 2 === 0 ? "md:border-r " : ""}
                   ${i < workflowSteps.length - 2 ? "md:border-b" : "md:border-b-0"}`}
               >
                 <div>

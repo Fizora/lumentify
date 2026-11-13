@@ -69,7 +69,7 @@ export default function Support() {
     <>
       <Navbar />
       <main className="min-h-screen bg-white text-zinc-900 border-b">
-        <section className="mx-auto max-w-7xl px-3 py-20 border-x border-zinc-200">
+        <section className="mx-auto max-w-7xl px-3 py-20 border-x ">
           <section className="pt-32 pb-16 mx-auto max-w-3xl text-center">
             <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
               Support
@@ -97,10 +97,7 @@ export default function Support() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {guarantees.map(({ icon: Icon, title, body }) => (
-                <div
-                  key={title}
-                  className="border border-zinc-200 p-8 bg-white shadow-xs"
-                >
+                <div key={title} className="border  p-8 bg-white shadow-xs">
                   <Icon className="w-5 h-5 text-zinc-800 mb-4" />
                   <h3 className="text-base font-medium text-black mb-2">
                     {title}
@@ -115,7 +112,7 @@ export default function Support() {
 
           <section className="mx-auto max-w-4xl pb-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="border border-zinc-200 p-8 bg-white shadow-xs">
+              <div className="border  p-8 bg-white shadow-xs">
                 <h2 className="text-lg font-medium text-black mb-2">
                   Existing clients
                 </h2>
@@ -136,7 +133,7 @@ export default function Support() {
                 </Link>
               </div>
 
-              <div className="border border-zinc-200 p-8 bg-white shadow-xs">
+              <div className="border  p-8 bg-white shadow-xs">
                 <h2 className="text-lg font-medium text-black mb-2">
                   Prospective clients
                 </h2>
@@ -159,7 +156,7 @@ export default function Support() {
           </section>
 
           <section className="mx-auto max-w-3xl pb-16">
-            <div className="border border-zinc-200 p-8 bg-white shadow-xs">
+            <div className="border  p-8 bg-white shadow-xs">
               <h2 className="text-lg font-medium text-black mb-4">
                 How a project proceeds
               </h2>
@@ -181,7 +178,7 @@ export default function Support() {
           </section>
 
           <section className="mx-auto max-w-3xl pb-24">
-            <div className="bg-zinc-50 border border-zinc-200 p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="bg-zinc-50 border  p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-3">
                 <LuMail className="w-5 h-5 text-zinc-800 shrink-0" />
                 <div>

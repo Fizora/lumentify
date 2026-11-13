@@ -16,7 +16,7 @@ export default function Privacy() {
     <>
       <Navbar />
       <main className="min-h-screen px-4 bg-white text-zinc-900 border-b">
-        <section className="mx-auto max-w-7xl px-3 py-20 border-x border-zinc-200">
+        <section className="mx-auto max-w-7xl px-3 py-20 border-x ">
           <section className="pt-32 pb-8 mx-auto max-w-3xl">
             <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
               Legal
@@ -32,7 +32,7 @@ export default function Privacy() {
           </section>
 
           <section className="mx-auto max-w-3xl pb-24 text-zinc-600 leading-relaxed space-y-6 text-sm">
-            <p className="bg-zinc-50 border border-zinc-200 p-4 text-sm text-zinc-700">
+            <p className="bg-zinc-50 border  p-4 text-sm text-zinc-700">
               <strong className="text-black">Scope:</strong>{" "}
               {privacyPolicyData.scopeNotice}
             </p>

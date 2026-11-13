@@ -43,8 +43,8 @@ export default function SEO() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white text-zinc-900 border-b border-zinc-200">
-        <div className="mx-auto max-w-7xl px-3 py-20 border-x border-zinc-200">
+      <main className="min-h-screen bg-white text-zinc-900 border-b">
+        <div className="mx-auto max-w-7xl px-3 py-20 border-x ">
           {/* Header Section */}
           <section className="pt-32 pb-16 mx-auto max-w-3xl text-center px-3">
             <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
@@ -63,10 +63,7 @@ export default function SEO() {
           <section className="mx-auto max-w-4xl pb-16 px-3">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {included.map(({ icon: Icon, title, body }) => (
-                <div
-                  key={title}
-                  className="border border-zinc-200 p-8 bg-zinc-50/50 "
-                >
+                <div key={title} className="border  p-8 bg-zinc-50/50 ">
                   <Icon className="w-5 h-5 text-zinc-800 mb-4" />
                   <h3 className="text-sm font-semibold text-black mb-2">
                     {title}
@@ -81,7 +78,7 @@ export default function SEO() {
 
           {/* Note on Expectations */}
           <section className="mx-auto max-w-3xl pb-16 px-3">
-            <div className="border border-zinc-200 p-8  bg-white">
+            <div className="border  p-8  bg-white">
               <h2 className="text-base font-semibold text-black mb-3">
                 A note on realistic expectations
               </h2>

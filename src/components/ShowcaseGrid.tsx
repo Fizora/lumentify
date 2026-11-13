@@ -88,7 +88,7 @@ const ShowcaseCard = ({
       <Link
         href={item.href}
         target="_blank"
-        className={`group flex h-full flex-col bg-white p-4 transition-colors hover:bg-zinc-50/50 border-zinc-200 ${
+        className={`group flex h-full flex-col bg-white p-4 transition-colors hover:bg-zinc-50/50  ${
           !isLastInRow ? "lg:border-r" : ""
         } ${!isLastRow ? "border-b" : "border-b lg:border-b-0"}`}
       >
@@ -158,7 +158,7 @@ export default function ShowcaseGrid() {
       </div>
 
       {currentItems.length === 0 ? (
-        <div className="text-center py-16 px-4 border border-zinc-200 bg-zinc-50/50 rounded-md">
+        <div className="text-center py-16 px-4 border  bg-zinc-50/50 rounded-md">
           <p className="text-gray-500 text-sm">
             No {activeTab} available yet. We believe in transparency —
             we&apos;ll publish them as soon as they&apos;re ready.
@@ -166,7 +166,7 @@ export default function ShowcaseGrid() {
         </div>
       ) : (
         /* Pembungkus luar dengan border-y agar sisi atas dan bawah terbingkai rapi menyatu */
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-y border-zinc-200">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-y ">
           {currentItems.map((item, index) => (
             <ShowcaseCard
               key={item.name}

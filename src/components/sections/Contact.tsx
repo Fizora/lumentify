@@ -289,7 +289,7 @@ const Contact = () => {
               </a>
             </div>
 
-            <div className="bg-zinc-50 border border-zinc-200/80 p-6 rounded-md">
+            <div className="bg-zinc-50 border /80 p-6 rounded-md">
               <p className="text-sm text-gray-700 leading-relaxed">
                 <span className="font-medium text-black">✓</span> Every project
                 starts with a clear written proposal and formal agreement before

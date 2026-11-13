@@ -33,7 +33,7 @@ const FeatureCategory = ({ label, items }: FeatureCategoryProps) => (
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
-      className="grid grid-cols-1 md:grid-cols-2 gap-0 border-y border-zinc-200 items-stretch"
+      className="grid grid-cols-1 md:grid-cols-2 gap-0 border-y  items-stretch"
     >
       {items.map((feat, i) => {
         const IconComponent = feat.icon;
@@ -42,8 +42,8 @@ const FeatureCategory = ({ label, items }: FeatureCategoryProps) => (
             key={i}
             variants={itemVariants}
             className={`relative flex flex-col p-6 lg:p-8 bg-white transition-colors duration-200 hover:bg-zinc-50/50 
-              border-b border-zinc-200 last:border-b-0
-              ${i % 2 === 0 ? "md:border-r border-zinc-200" : ""}
+              border-b  last:border-b-0
+              ${i % 2 === 0 ? "md:border-r " : ""}
               ${i < items.length - 2 ? "md:border-b" : "md:border-b-0"}`}
           >
             <div className="w-10 h-10 rounded-lg bg-gray-100 text-gray-600 flex items-center justify-center mb-5">
@@ -65,7 +65,7 @@ const FeatureCategory = ({ label, items }: FeatureCategoryProps) => (
 const Features = () => {
   return (
     <section className="bg-white border-b">
-      <div className="mx-auto max-w-7xl py-24 border-x border-zinc-200">
+      <div className="mx-auto max-w-7xl py-24 border-x ">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}

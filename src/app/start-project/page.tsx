@@ -305,7 +305,7 @@ function StartProjectContent() {
               )}
 
               {/* Keamanan & Jaminan */}
-              <div className="bg-zinc-50 border border-zinc-200 p-4 rounded-md flex items-start gap-3">
+              <div className="bg-zinc-50 border  p-4 rounded-md flex items-start gap-3">
                 <LuShieldCheck className="w-5 h-5 text-zinc-900 shrink-0 mt-0.5" />
                 <p className="text-xs text-gray-600 leading-relaxed">
                   <strong className="text-black">No Financial Risk:</strong>{" "}

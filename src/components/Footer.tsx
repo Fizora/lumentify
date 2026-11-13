@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import WorkStatusBadge from "@/components/WorkStatusBadge";
-import { LuGlobe, LuClock } from "react-icons/lu";
+import { LuGlobe } from "react-icons/lu";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -32,7 +32,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-white text-zinc-600 mt-auto border-zinc-200">
+    <footer className="bg-white text-zinc-600 mt-auto w-full border-b border-zinc-200">
       {/* Decorative dot-grid band */}
       <div
         className=""
@@ -45,16 +45,21 @@ const Footer = () => {
         }}
       />
 
-      <div className="mx-auto max-w-7xl py-20 border-x">
+      {/* 
+        PERUBAHAN UTAMA DI SINI:
+        Ditambahkan px-4 sm:px-6 md:px-8 agar konten di dalam border-x 
+        tidak menempel atau terpotong garis di layar HP (mobile).
+      */}
+      <div className="mx-auto max-w-7xl py-12 md:py-20 px-4 sm:px-6 md:px-8 border-x border-zinc-200">
         {/* Link grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 px-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-1">
             <Link
               href="/"
               className="text-xl font-bold text-black flex items-center gap-2 group tracking-tight"
             >
-              <div className="bg-white group-hover:scale-105 border border-zinc-200 hover:border-black transition duration-300 p-2 rounded-full">
+              <div className="bg-white group-hover:scale-105 border hover:border-black transition duration-300 p-2 rounded-full">
                 <Image
                   src="/logo.svg"
                   alt="Lexentify logo"
@@ -99,7 +104,7 @@ const Footer = () => {
               </h4>
               <Link
                 href="mailto:business@lexentify.com"
-                className="group flex items-center justify-between border border-zinc-200 hover:border-blue-600 bg-zinc-50 hover:bg-zinc-100 px-3.5 py-2 text-sm text-zinc-900 font-medium transition-colors rounded-md"
+                className="group flex items-center justify-between border hover:border-blue-600 bg-zinc-50 hover:bg-zinc-100 px-3.5 py-2 text-sm text-zinc-900 font-medium transition-colors rounded-md"
               >
                 <span>Email</span>
                 <span className="text-xs text-zinc-400 flex items-center gap-2 group-hover:text-blue-600 transition-colors">
@@ -130,7 +135,7 @@ const Footer = () => {
         </div>
 
         {/* Giant wordmark */}
-        <div className="mt-20 -mx-4 select-none overflow-hidden py-15">
+        <div className="mt-16 md:mt-20 -mx-4 sm:-mx-6 md:-mx-8 select-none overflow-hidden py-10 md:py-15">
           <h1
             className="font-black text-zinc-800 text-center leading-none tracking-tighter"
             style={{ fontSize: "clamp(4.5rem, 14vw, 11rem)" }}
@@ -140,7 +145,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="px-3 mt-10 pt-6 border-t border-zinc-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-zinc-500">
+        <div className="mt-10 pt-6 border-t border-zinc-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-zinc-500">
           <p className="order-2 md:order-1 text-center md:text-left">
             &copy; {currentYear} Lexentify. All rights reserved.
           </p>

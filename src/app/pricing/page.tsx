@@ -42,7 +42,7 @@ const ComparisonTable = ({
     <div className="overflow-x-auto">
       <table className="w-full min-w-175 border-collapse text-sm">
         <thead>
-          <tr className="border-b border-zinc-200">
+          <tr className="border-b ">
             <th className="text-left py-3 px-4 font-medium text-zinc-600 bg-zinc-50/50">
               {title}
             </th>

@@ -121,7 +121,7 @@ function HelperText({ children }: { children: React.ReactNode }) {
 }
 
 const inputClasses =
-  "mt-2 w-full  border border-zinc-200 px-3.5 py-2.5 text-[15px] text-black placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-black/80 focus:border-transparent";
+  "mt-2 w-full  border  px-3.5 py-2.5 text-[15px] text-black placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-black/80 focus:border-transparent";
 
 function SectionHeading({ step, title }: { step: string; title: string }) {
   return (
@@ -235,7 +235,7 @@ export default function Project() {
           {/* Project intake form */}
           <form
             onSubmit={handleSubmit}
-            className="bg-white border border-zinc-200  p-6 md:p-8 space-y-8"
+            className="bg-white border   p-6 md:p-8 space-y-8"
           >
             {/* Section 1 — Your Business */}
             <fieldset className="space-y-5">
@@ -399,7 +399,7 @@ export default function Project() {
                       className={` border px-3.5 py-2.5 text-lg font-medium text-left transition-colors ${
                         form.package === p
                           ? "border-black bg-black text-white"
-                          : "border-zinc-200 text-black hover:border-zinc-300"
+                          : " text-black hover:border-zinc-300"
                       }`}
                     >
                       {p}

@@ -84,14 +84,14 @@ const Testimonials = () => {
             <>
               <button
                 onClick={prevSlide}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 md:-translate-x-5 bg-white border border-zinc-200 p-2 shadow-md hover:bg-zinc-50 transition-colors z-10"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 md:-translate-x-5 bg-white border  p-2 shadow-md hover:bg-zinc-50 transition-colors z-10"
                 aria-label="Previous slide"
               >
                 <LuChevronLeft className="w-4 h-4 text-zinc-700" />
               </button>
               <button
                 onClick={nextSlide}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 md:translate-x-5 bg-white border border-zinc-200 p-2 shadow-md hover:bg-zinc-50 transition-colors z-10"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 md:translate-x-5 bg-white border  p-2 shadow-md hover:bg-zinc-50 transition-colors z-10"
                 aria-label="Next slide"
               >
                 <LuChevronRight className="w-4 h-4 text-zinc-700" />

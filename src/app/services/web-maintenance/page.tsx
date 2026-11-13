@@ -42,19 +42,17 @@ const included = [
 
 export default function WebMaintenance() {
   return (
-    <div className="min-h-screen bg-white text-zinc-900 flex flex-col">
+    <>
       <Navbar />
-
-      {/* Wrapper utama yang menyatukan main dan footer dalam batas max-w-7xl dan border-x */}
-      <div className="w-full max-w-7xl mx-auto border-x border-zinc-200 flex-1 flex flex-col">
-        <main className="flex-1 w-full border-b border-zinc-200">
+      <main className="min-h-screen bg-white text-zinc-900 border-b ">
+        <div className="w-full max-w-7xl mx-auto border-x ">
           <div className="w-full py-20">
             {/* Header Section */}
             <section className="pt-32 pb-16 mx-auto max-w-3xl text-center px-3">
               <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
                 Services / Web Maintenance
               </span>
-              <h1 className="text-3xl md:text-4xl font-medium text-black leading-tight mb-4">
+              <h1 className="text-3xl md:text-5xl font-medium text-black leading-tight mb-4">
                 A website is never really &quot;done.&quot;
               </h1>
               <p className="text-sm md:text-base text-zinc-600 leading-relaxed">
@@ -70,7 +68,7 @@ export default function WebMaintenance() {
                 {included.map(({ icon: Icon, title, body }) => (
                   <div
                     key={title}
-                    className="border border-zinc-200 p-8 bg-zinc-50/50 rounded-lg"
+                    className="border  p-8 bg-zinc-50/50 rounded-lg"
                   >
                     <Icon className="w-5 h-5 text-zinc-800 mb-4" />
                     <h3 className="text-sm font-semibold text-black mb-2">
@@ -85,7 +83,7 @@ export default function WebMaintenance() {
             </section>
 
             {/* Detailed Narrative Transparency Hub */}
-            <section className="mx-auto max-w-4xl px-3 py-16 border-t border-zinc-200">
+            <section className="mx-auto max-w-4xl px-3 py-16 border-t ">
               <div className="mb-12 text-center max-w-2xl mx-auto">
                 <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-3">
                   Maintenance Information Hub
@@ -136,8 +134,8 @@ export default function WebMaintenance() {
                 ))}
               </div>
 
-              {/* Cross-reference CTA to Web Development */}
-              <div className="mt-16 bg-zinc-50 border border-zinc-200 rounded-xl p-8 text-center space-y-4">
+              {/* Cross-reference CTA */}
+              <div className="mt-16 bg-zinc-50 border  rounded-xl p-8 text-center space-y-4">
                 <h3 className="text-base font-semibold text-black">
                   Looking to commission a brand new trade website?
                 </h3>
@@ -158,11 +156,10 @@ export default function WebMaintenance() {
               </div>
             </section>
           </div>
-        </main>
+        </div>
+      </main>
 
-        {/* Footer sekarang ikut di dalam satu jalur border yang sama */}
-        <Footer />
-      </div>
-    </div>
+      <Footer />
+    </>
   );
 }

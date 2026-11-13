@@ -39,7 +39,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
   return (
     <section id="pricing">
       <div className="bg-white border-b ">
-        <div className="mx-auto max-w-7xl py-32 border-x border-zinc-200">
+        <div className="mx-auto max-w-7xl py-32 border-x ">
           {/* SECTION 1: BUILD YOUR SITE */}
           {showOneTime && (
             <>
@@ -67,7 +67,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-y border-zinc-200 mb-16 items-stretch"
+                className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-y  mb-16 items-stretch"
               >
                 {buildPlans.map((plan, index) => {
                   const promo = originalPrices[plan.name];
@@ -76,7 +76,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                     <motion.div
                       key={index}
                       variants={cardVariants}
-                      className={`relative flex flex-col p-6 lg:p-8 bg-white border-b lg:border-b-0 lg:border-r border-zinc-200 last:border-r-0 ${
+                      className={`relative flex flex-col p-6 lg:p-8 bg-white border-b lg:border-b-0 lg:border-r  last:border-r-0 ${
                         plan.featured ? "bg-zinc-50/50 z-10" : ""
                       }`}
                     >
@@ -186,7 +186,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-y border-zinc-200 items-stretch"
+                className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-y  items-stretch"
               >
                 {mrrPlans.map((plan, index) => {
                   const promo = originalPrices[plan.name];
@@ -195,7 +195,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                     <motion.div
                       key={index}
                       variants={cardVariants}
-                      className={`relative flex flex-col p-6 lg:p-8 bg-white border-b lg:border-b-0 lg:border-r border-zinc-200 last:border-r-0 ${
+                      className={`relative flex flex-col p-6 lg:p-8 bg-white border-b lg:border-b-0 lg:border-r  last:border-r-0 ${
                         plan.featured ? "bg-zinc-50/50 z-10" : ""
                       }`}
                     >
@@ -288,7 +288,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mt-16 mx-3 max-w-2xl bg-zinc-50 lg:mx-auto p-6 border border-zinc-200 rounded-md shadow-2xs px-3 "
+              className="text-center mt-16 mx-3 max-w-2xl bg-zinc-50 lg:mx-auto p-6 border  rounded-md shadow-2xs px-3 "
             >
               <p className="text-sm text-gray-600 leading-relaxed">
                 To ensure sub-second performance and direct founder-level

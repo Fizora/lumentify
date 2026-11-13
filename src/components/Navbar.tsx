@@ -91,7 +91,7 @@ const Navbar = () => {
   return (
     <header
       ref={headerRef}
-      className="w-full fixed top-0 left-0 z-50 bg-white border-b border-zinc-200"
+      className="w-full fixed top-0 left-0 z-50 bg-white border-b "
     >
       {/* ===== ANNOUNCEMENT / PROMO BANNER ===== */}
       {ENABLE_ANNOUNCEMENT_BANNER && (
@@ -133,7 +133,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="group px-2 rounded-full text-black flex items-center gap-2">
           <Link href="/" className="text-xl font-black flex items-center gap-2">
-            <div className="bg-white group-hover:scale-105 border border-zinc-200 hover:border-black transition duration-300 p-2 rounded-full">
+            <div className="bg-white group-hover:scale-105 border  hover:border-black transition duration-300 p-2 rounded-full">
               <Image
                 src="/logo.svg"
                 alt="Lexentify logo"
@@ -274,7 +274,7 @@ const Navbar = () => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden absolute top-full left-0 w-full bg-white overflow-hidden pb-8 border-b border-zinc-200 z-40 shadow-lg max-h-[80vh] overflow-y-auto"
+              className="md:hidden absolute top-full left-0 w-full bg-white overflow-hidden pb-8 border-b  z-40 shadow-lg max-h-[80vh] overflow-y-auto"
             >
               <div className="flex flex-col gap-2 px-6 py-4">
                 {visibleNavItems.map((item, index) => {

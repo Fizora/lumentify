@@ -42,16 +42,11 @@ const included = [
 
 export default function WebDevelopment() {
   return (
-    <div className="min-h-screen bg-white text-zinc-900 flex flex-col">
+    <>
       <Navbar />
-
-      {/* 
-         Bungkus seluruh area utama & footer dalam satu container max-w-7xl mx-auto dengan border-x.
-        Dengan ini, batas kiri dan kanan konten serta footer dijamin 100% sejajar dan lurus.
-      */}
-      <div className="w-full max-w-7xl mx-auto border-x border-zinc-200 flex-1 flex flex-col">
-        <main className="flex-1 w-full">
-          <div className="w-full py-20 border-b border-zinc-200">
+      <main className="min-h-screen bg-white text-zinc-900 border-b ">
+        <div className="w-full max-w-7xl mx-auto border-x ">
+          <div className="w-full py-20">
             {/* Header Section */}
             <section className="pt-32 pb-16 mx-auto max-w-3xl text-center px-3">
               <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
@@ -60,21 +55,21 @@ export default function WebDevelopment() {
               <h1 className="text-3xl md:text-5xl font-medium text-black leading-tight mb-4">
                 Websites built to get your phone ringing.
               </h1>
-              <p className="text-zinc-600 leading-relaxed text-sm md:text-base">
+              <p className="text-sm md:text-base text-zinc-600 leading-relaxed">
                 Not a template with your logo on it — a site engineered around
                 how trade customers actually behave in an emergency.
               </p>
             </section>
 
             {/* Features Grid */}
-            <section className="mx-auto max-w-4xl pb-20 px-3">
+            <section className="mx-auto max-w-4xl pb-16 px-3">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {included.map(({ icon: Icon, title, body }) => (
                   <div
                     key={title}
-                    className="border border-zinc-200 p-8 bg-zinc-50/50 rounded-lg"
+                    className="border  p-8 bg-zinc-50/50 rounded-lg"
                   >
-                    {Icon && <Icon className="w-5 h-5 text-zinc-800 mb-4" />}
+                    <Icon className="w-5 h-5 text-zinc-800 mb-4" />
                     <h3 className="text-sm font-semibold text-black mb-2">
                       {title}
                     </h3>
@@ -87,7 +82,7 @@ export default function WebDevelopment() {
             </section>
 
             {/* Detailed Narrative Transparency Hub */}
-            <section className="mx-auto max-w-4xl px-3 py-16 border-t border-zinc-200">
+            <section className="mx-auto max-w-4xl px-3 py-16 border-t ">
               <div className="mb-12 text-center max-w-2xl mx-auto">
                 <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-3">
                   Development Information Hub
@@ -138,8 +133,8 @@ export default function WebDevelopment() {
                 ))}
               </div>
 
-              {/* Cross-reference CTA to Web Maintenance */}
-              <div className="mt-16 bg-zinc-50 border border-zinc-200 rounded-xl p-8 text-center space-y-4">
+              {/* Cross-reference CTA */}
+              <div className="mt-16 bg-zinc-50 border  rounded-xl p-8 text-center space-y-4">
                 <h3 className="text-base font-semibold text-black">
                   Looking for ongoing updates or server management?
                 </h3>
@@ -159,12 +154,10 @@ export default function WebDevelopment() {
                 </div>
               </div>
             </section>
-          </div>
-        </main>
-
-        {/* Footer diletakkan di dalam container yang sama agar border kiri-kanannya menyambung lurus */}
-        <Footer />
-      </div>
-    </div>
+          </div>{" "}
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }
