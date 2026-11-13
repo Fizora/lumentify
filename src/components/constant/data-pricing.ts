@@ -36,7 +36,7 @@ export const buildPlans: PricingPlan[] = [
   {
     name: "Pro",
     description:
-      "A multi-page local digital asset engineered to dominate suburb search traffic and capture local intent.",
+      "A multi-page local digital asset engineered to dominate suburb search traffic and capture local.",
     price: "$2,499",
     period: "one-time",
     features: [
@@ -97,12 +97,13 @@ export const mrrPlans: PricingPlan[] = [
     cta: "Subscribe",
     href: "/auth/signup",
     paymentLink: "/dashboard-panel/services/payment",
-    featured: false, // Jadikan featured karena ini core service Anda yang paling aman & profitable
+    featured: false,
   },
   {
     name: "Growth Care",
+    // Diperpendek agar pas 2 baris dan sejajar dengan card di sebelah kiri & kanan
     description:
-      "Expanded developer support for active trade businesses that need regular content updates and priority assistance.",
+      "Expanded developer support with regular content updates and priority assistance.",
     price: "$199",
     period: "/mo",
     features: [

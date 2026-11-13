@@ -22,20 +22,14 @@ interface PricingProps {
   showMRR?: boolean;
 }
 
-// ==========================================
-// PENGATURAN DISKON (Ubah ke true untuk aktif)
-// ==========================================
 const ENABLE_DISCOUNT = false;
 
-// Data pembanding harga coret dengan label persentase diskon
 const originalPrices: Record<string, { price: string; discountLabel: string }> =
   {
-    // Build Plans (One-time)
     Essential: { price: "$1,899", discountLabel: "21% OFF" },
     Pro: { price: "$2,999", discountLabel: "17% OFF" },
     Custom: { price: "from $5,499", discountLabel: "16% OFF" },
 
-    // MRR Plans (Monthly)
     "Core Tech & Care": { price: "$119", discountLabel: "25% OFF" },
     "Local Dominance": { price: "$249", discountLabel: "20% OFF" },
     "Growth Partner": { price: "from $499", discountLabel: "20% OFF" },
@@ -68,7 +62,6 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                 </p>
               </motion.div>
 
-              {/* Grid dengan items-stretch agar tinggi kartu sama rata */}
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
@@ -93,8 +86,8 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                         </div>
                       )}
 
-                      {/* Header Paket */}
-                      <div className="mb-6 pb-6 border-b border-zinc-100">
+                      {/* BAGIAN ATAS: Judul & Deskripsi */}
+                      <div className="mb-6">
                         <div className="flex items-center justify-between mb-2">
                           <h3 className="text-xl font-semibold text-black">
                             {plan.name}
@@ -106,29 +99,31 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                             </span>
                           )}
                         </div>
-                        <p className="text-sm text-gray-600 leading-relaxed py-3 min-h-18">
+                        {/* min-h-[4.5rem] memastikan ruang deskripsi sama rata meskipun jumlah baris berbeda */}
+                        <p className="text-sm text-gray-600 leading-relaxed py-3 min-h-[4.5rem]">
                           {plan.description}
                         </p>
+                      </div>
 
-                        <div className="mt-4 flex flex-col">
-                          {ENABLE_DISCOUNT && promo && (
-                            <span className="text-lg text-gray-400 font-mono line-through">
-                              {promo.price}
-                            </span>
-                          )}
-                          <div className="flex items-baseline">
-                            <span className="text-3xl lg:text-4xl font-semibold text-black font-mono">
-                              {plan.price}
-                            </span>
-                            <span className="text-gray-500 ml-2 text-sm">
-                              {plan.period}
-                            </span>
-                          </div>
+                      {/* BAGIAN HARGA (Dijamin sejajar rata) */}
+                      <div className="pt-4 border-t border-zinc-100 flex flex-col">
+                        {ENABLE_DISCOUNT && promo && (
+                          <span className="text-lg text-gray-400 font-mono line-through">
+                            {promo.price}
+                          </span>
+                        )}
+                        <div className="flex items-baseline mb-6">
+                          <span className="text-3xl lg:text-4xl font-semibold text-black font-mono">
+                            {plan.price}
+                          </span>
+                          <span className="text-gray-500 ml-2 text-sm">
+                            {plan.period}
+                          </span>
                         </div>
                       </div>
 
-                      {/* Tombol Aksi */}
-                      <div className="mb-8 space-y-2">
+                      {/* TOMBOL AKSI / CTA (Dijamin sejajar rata) */}
+                      <div className="mb-8">
                         {plan.featured ? (
                           <PrimaryButtonLink
                             href={plan.href}
@@ -147,8 +142,8 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                         )}
                       </div>
 
-                      {/* Daftar Fitur */}
-                      <ul className="space-y-3 mb-6 flex-1">
+                      {/* DAFTAR FITUR (Bebas tinggi sesuai jumlah poin) */}
+                      <ul className="space-y-3 pt-6 border-t border-zinc-100">
                         {plan.features.map((feat, i) => (
                           <li key={i} className="flex items-start gap-3">
                             <div className="w-4 h-4 rounded-full bg-zinc-900 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
@@ -186,7 +181,6 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                 </p>
               </motion.div>
 
-              {/* Grid MRR dengan items-stretch agar tinggi kartu simetris */}
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
@@ -211,8 +205,8 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                         </div>
                       )}
 
-                      {/* Header Paket MRR dengan min-h yang disamakan */}
-                      <div className="mb-6 pb-6 border-b border-zinc-100">
+                      {/* BAGIAN ATAS: Judul & Deskripsi */}
+                      <div className="mb-6">
                         <div className="flex items-center justify-between mb-2">
                           <h3 className="text-xl font-semibold text-black">
                             {plan.name}
@@ -223,31 +217,32 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                             </span>
                           )}
                         </div>
-                        <p className="text-sm text-gray-600 py-3 leading-relaxed min-h-18">
+                        <p className="text-sm text-gray-600 py-3 leading-relaxed min-h-[4.5rem]">
                           {plan.description}
                         </p>
+                      </div>
 
-                        <div className="mt-4 flex flex-col">
-                          {ENABLE_DISCOUNT && promo && (
-                            <span className="text-lg text-gray-400 font-mono line-through">
-                              {promo.price}
-                            </span>
-                          )}
-                          <div className="flex items-baseline">
-                            <span className="text-3xl min-h-18 lg:text-4xl font-semibold text-black font-mono">
-                              {plan.price}
-                            </span>
-                            <span className="text-gray-500 ml-2 text-sm">
-                              {plan.period}
-                            </span>
-                          </div>
+                      {/* BAGIAN HARGA */}
+                      <div className="pt-4 border-t border-zinc-100 flex flex-col">
+                        {ENABLE_DISCOUNT && promo && (
+                          <span className="text-lg text-gray-400 font-mono line-through">
+                            {promo.price}
+                          </span>
+                        )}
+                        <div className="flex items-baseline">
+                          <span className="text-3xl lg:text-4xl font-semibold text-black font-mono">
+                            {plan.price}
+                          </span>
+                          <span className="text-gray-500 ml-2 text-sm">
+                            {plan.period}
+                          </span>
                         </div>
-                        <span className="block text-[11px] text-gray-400 mt-0.5">
+                        <span className="block text-[11px] text-gray-400 mt-0.5 mb-6">
                           billed monthly
                         </span>
                       </div>
 
-                      {/* Tombol Aksi MRR */}
+                      {/* TOMBOL AKSI */}
                       <div className="mb-8">
                         {plan.featured ? (
                           <PrimaryButtonLink
@@ -267,8 +262,8 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
                         )}
                       </div>
 
-                      {/* Daftar Fitur MRR (flex-1 agar tombol & list fitur sejajar secara vertikal) */}
-                      <ul className="space-y-3 mb-6 flex-1">
+                      {/* DAFTAR FITUR */}
+                      <ul className="space-y-3 pt-6 border-t border-zinc-100">
                         {plan.features.map((feat, i) => (
                           <li key={i} className="flex items-start gap-3">
                             <div className="w-4 h-4 rounded-full bg-zinc-900 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-xs">

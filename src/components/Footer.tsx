@@ -45,7 +45,7 @@ const Footer = () => {
         }}
       />
 
-      <div className="mx-auto max-w-7xl py-20">
+      <div className="mx-auto max-w-7xl py-20 border-x">
         {/* Link grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 px-3">
           {/* Brand column */}
