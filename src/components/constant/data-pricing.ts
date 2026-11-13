@@ -97,7 +97,7 @@ export const mrrPlans: PricingPlan[] = [
     cta: "Subscribe",
     href: "/auth/signup",
     paymentLink: "/dashboard-panel/services/payment",
-    featured: true, // Jadikan featured karena ini core service Anda yang paling aman & profitable
+    featured: false, // Jadikan featured karena ini core service Anda yang paling aman & profitable
   },
   {
     name: "Growth Care",
@@ -115,12 +115,12 @@ export const mrrPlans: PricingPlan[] = [
     cta: "Get Started",
     href: "/auth/signup",
     paymentLink: "/dashboard-panel/services/payment",
-    featured: false,
+    featured: true,
   },
   {
     name: "Scaling Partner",
     description:
-      "Dedicated full-stack maintenance partnership for multi-location trade operators expanding rapidly.",
+      "Dedicated full-stack maintenance partnership for multi-location trade operators and expanding rapidly.",
     price: "from $399",
     period: "/mo",
     features: [

@@ -45,7 +45,7 @@ const Pricing = ({ showOneTime = true, showMRR = true }: PricingProps) => {
   return (
     <section id="pricing">
       <div className="bg-white border-b ">
-        <div className="mx-auto max-w-300 py-32 border-x border-zinc-200">
+        <div className="mx-auto max-w-7xl py-32 border-x border-zinc-200">
           {/* SECTION 1: BUILD YOUR SITE */}
           {showOneTime && (
             <>

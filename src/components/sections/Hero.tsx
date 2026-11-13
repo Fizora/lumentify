@@ -26,7 +26,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="border-b">
+    <section className="border-b ">
       <div className="space-y-12 pt-15 md:pt-20 lg:pt-30 mx-auto max-w-7xl border-x">
         {/* Headline dengan Animasi Fade Up */}
         <motion.div
@@ -47,7 +47,7 @@ const Hero = () => {
           </div>
           <ButtonGrid>
             <PrimaryButtonLink
-              href="/auth/signup"
+              href="/start-project"
               children="Start Project"
               className="w-full text-sm lg:w-max"
             />

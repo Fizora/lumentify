@@ -96,7 +96,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       data-scroll="smooth"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scrollbar-thin`}
     >
-      <body className="min-h-full">
+      <body className="min-h-full w-full flex flex-col items-center md:items-stretch">
         <LenisProvider>{children}</LenisProvider>
       </body>
     </html>

@@ -121,7 +121,7 @@ export default function PricingPage() {
         <Pricing showOneTime={true} showMRR={true}></Pricing>
         <Skathes />
         <CTA />
-        <Skathes />
+        {/* <Skathes /> */}
       </main>
       <Footer />
     </>
