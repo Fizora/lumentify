@@ -114,7 +114,7 @@ const Footer = () => {
             </div>
 
             {/* Jam Operasional Zona Waktu Asia-Pacific */}
-            <div className="space-y-1.5 text-xs text-zinc-500 pt-3 border-t border-zinc-100">
+            {/* <div className="space-y-1.5 text-xs text-zinc-500 pt-3 border-t border-zinc-100">
               <div className="flex items-center gap-1.5 font-semibold text-xs uppercase tracking-wider text-black mb-4">
                 <span>Business Hours (APAC):</span>
               </div>
@@ -130,7 +130,7 @@ const Footer = () => {
                 <span>Mon–Fri, 11:00–20:00</span>
                 <span className="font-mono text-zinc-400">(GMT+10)</span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
