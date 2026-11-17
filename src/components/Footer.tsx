@@ -32,7 +32,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-white text-zinc-600 mt-auto w-full border-b border-zinc-200">
+    <footer className="bg-white text-zinc-600 mt-auto w-full border-zinc-200">
       {/* Decorative dot-grid band */}
       <div
         className=""
@@ -50,7 +50,7 @@ const Footer = () => {
         Ditambahkan px-4 sm:px-6 md:px-8 agar konten di dalam border-x 
         tidak menempel atau terpotong garis di layar HP (mobile).
       */}
-      <div className="mx-auto max-w-7xl py-12 md:py-20 px-4 sm:px-6 md:px-8 border-x border-zinc-200">
+      <div className="mx-auto max-w-7xl py-12 md:py-20 px-4 sm:px-6 md:px-8 border-zinc-200">
         {/* Link grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {/* Brand column */}
@@ -66,13 +66,14 @@ const Footer = () => {
                   priority
                   height={20}
                   width={20}
+                  title="home"
                 />
               </div>
               Lexentify.
             </Link>
             <p className="mt-3 text-sm text-zinc-500 max-w-xs leading-relaxed">
               Fast, clean, and directed websites — built & dedicated for
-              home-service businesses that can&apos;t afford to lose a call.
+              home-service businesses that can't afford to lose a call.
             </p>
           </div>
 
@@ -86,7 +87,7 @@ const Footer = () => {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-zinc-500 text-sm hover:text-black transition-colors"
+                      className="text-zinc-500 text-sm font-light hover:text-black transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -145,7 +146,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-10 pt-6 border-t border-zinc-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-zinc-500">
+        <div className="mt-10 pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-zinc-500 pb-20">
           <p className="order-2 md:order-1 text-center md:text-left">
             &copy; {currentYear} Lexentify. All rights reserved.
           </p>
