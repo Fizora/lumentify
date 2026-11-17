@@ -16,7 +16,7 @@ export type ShowcaseItem = {
 export const showcaseList: ShowcaseItem[] = [
   {
     // Pastikan Anda memiliki gambar ini di folder public/img/
-    img: "/img/adpplumbing.png",
+    img: "/img/adpplumbing-good.png",
     icon: LuHammer,
     name: "ADP Plumbing",
     desc: "High-converting plumbing template featuring dedicated local suburb pages, 24/7 emergency dispatch UI, and a streamlined online booking system.",
@@ -28,7 +28,7 @@ export const showcaseList: ShowcaseItem[] = [
   },
   {
     // Pastikan Anda memiliki gambar ini di folder public/img/
-    img: "/img/wcaircon.png",
+    img: "/img/wcaircon-new.png",
     icon: LuHammer,
     name: "WC Aircon",
     desc: "HVAC and air conditioning platform demo designed for deep service proof, tailored installation showcases, and instant quote generation.",
