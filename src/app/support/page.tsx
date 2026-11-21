@@ -28,6 +28,7 @@ export default function Support() {
           title={supportPageContent.hero.title}
           intro={supportPageContent.hero.intro}
         />
+        <Skathes />
 
         <Block label={supportPageContent.guaranteesLabel}>
           <RowList>

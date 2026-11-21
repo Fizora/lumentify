@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Skathes from "@/components/Skathes";
 import {
   Block,
   ButtonLink,
@@ -23,6 +24,7 @@ export default function SEO() {
           title={seoPageContent.title}
           intro={seoPageContent.intro}
         />
+        <Skathes />
 
         <Block label={seoPageContent.includedLabel}>
           <RowList>

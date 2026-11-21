@@ -1,20 +1,25 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { businessContactEmail } from "@/const/landing/Contact";
+import { briefUploadConfig } from "@/const/page/StartProject";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const {
-      name,
-      business,
-      email,
-      phone,
-      package: selectedPackage,
-      suburbsCount,
-      goals,
-    } = body;
+    const formData = await request.formData();
+    const getValue = (key: string) => {
+      const value = formData.get(key);
+      return typeof value === "string" ? value.trim() : "";
+    };
+
+    const name = getValue("name");
+    const business = getValue("business");
+    const email = getValue("email");
+    const phone = getValue("phone");
+    const selectedPackage = getValue("package");
+    const suburbsCount = getValue("suburbsCount");
+    const goals = getValue("goals");
 
     // Validasi data penting
     if (!name || !business || !email || !phone || !goals) {
@@ -24,10 +29,55 @@ export async function POST(request: Request) {
       );
     }
 
+    const briefEntry = formData.get("brief");
+    if (briefEntry !== null && !(briefEntry instanceof File)) {
+      return NextResponse.json(
+        { error: "The brief must be uploaded as a document." },
+        { status: 400 },
+      );
+    }
+
+    const brief = briefEntry instanceof File ? briefEntry : null;
+    if (brief && (!brief.name || brief.size === 0)) {
+      return NextResponse.json(
+        { error: "The uploaded brief is empty or invalid." },
+        { status: 400 },
+      );
+    }
+
+    if (brief && brief.size > briefUploadConfig.maxBytes) {
+      return NextResponse.json(
+        { error: "The brief must be 3 MB or smaller." },
+        { status: 413 },
+      );
+    }
+
+    let attachment:
+      | { filename: string; content: string; contentType: string }
+      | undefined;
+    if (brief) {
+      const supportedType = Object.entries(
+        briefUploadConfig.mimeTypes,
+      ).find(([extension]) => brief.name.toLowerCase().endsWith(extension));
+
+      if (!supportedType || (brief.type && brief.type !== supportedType[1])) {
+        return NextResponse.json(
+          { error: "Upload a PDF, DOC, DOCX, or TXT brief." },
+          { status: 400 },
+        );
+      }
+
+      attachment = {
+        filename: brief.name,
+        content: Buffer.from(await brief.arrayBuffer()).toString("base64"),
+        contentType: supportedType[1],
+      };
+    }
+
     // Kirim email notifikasi via Resend
-    const data = await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: "Lexentify Project System <notification@lexentify.com>",
-      to: ["info@lexentify.com"],
+      to: [businessContactEmail],
       subject: `🚀 Pesanan Proyek Baru: ${business} (${selectedPackage})`,
       replyTo: email,
       html: `
@@ -73,7 +123,16 @@ export async function POST(request: Request) {
           </p>
         </div>
       `,
+      attachments: attachment ? [attachment] : undefined,
     });
+
+    if (error) {
+      console.error("Failed to send project email:", error);
+      return NextResponse.json(
+        { error: "The email provider could not deliver the project brief." },
+        { status: 502 },
+      );
+    }
 
     return NextResponse.json({ success: true, data });
   } catch (error) {

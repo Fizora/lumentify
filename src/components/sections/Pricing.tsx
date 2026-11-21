@@ -50,12 +50,12 @@ const PlanGrid = ({
       const fg = featured ? C.BG : C.INK;
       const muted = featured ? "#5C594F" : C.MUTED;
       const rule = featured ? "#B5AE9B" : C.RULE;
-      const featuredBackground = "#D8D1C2";
+      const featuredBackground = "#ffff";
 
       return (
         <div
           key={plan.name}
-          className="flex flex-col border-b p-5 py-32 transition-colors hover:bg-white/[0.03] last:border-b-0 md:p-6 lg:border-b-0 lg:border-r lg:p-7 lg:last:border-r-0"
+          className="flex flex-col border-b p-5 py-32 transition-colors hover:bg-white/3 last:border-b-0 md:p-6 lg:border-b-0 lg:border-r lg:p-7 lg:last:border-r-0"
           style={{
             borderColor: C.RULE,
             backgroundColor: featured ? featuredBackground : "transparent",
@@ -118,7 +118,7 @@ const PlanGrid = ({
             {plan.features.map((feat: string) => (
               <li
                 key={feat}
-                className="flex gap-3 text-sm leading-relaxed"
+                className="flex gap-3 text-sm font-semibold leading-relaxed"
                 style={{ color: muted }}
               >
                 <span aria-hidden="true" style={{ color: fg }}>

@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Skathes from "@/components/Skathes";
 import {
   Block,
   ButtonLink,
@@ -47,6 +48,7 @@ export default function ServicePage({
       <Navbar />
       <main style={{ backgroundColor: C.BG, color: C.INK }}>
         <PageHero label={label} title={title} intro={intro} />
+        <Skathes />
 
         <Block label={servicesCommonContent.includedLabel}>
           <RowList>

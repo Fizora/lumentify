@@ -172,7 +172,7 @@ const Contact = () => {
             >
               {contactContent.sendError}{" "}
               <a
-                href="mailto:info@lexentify.com"
+                href={contactContent.contactRows[0].href}
                 className="font-medium underline"
               >
                 {contactContent.contactRows[0].action}
@@ -192,7 +192,7 @@ const Contact = () => {
                 <LuLoaderCircle className="h-4 w-4 animate-spin" />
               </>
             ) : (
-              "              {contactContent.sendAction}"
+              contactContent.sendAction
             )}
           </button>
         </form>
@@ -203,10 +203,10 @@ const Contact = () => {
           <Row title={contactContent.contactRows[0].title}>
             <p>{contactContent.contactRows[0].description}</p>
             <a
-              href="mailto:info@lexentify.com"
+              href={contactContent.contactRows[0].href}
               className="inline-block border-b border-white pb-0.5 font-medium text-white"
             >
-              info@lexentify.com
+              {contactContent.contactRows[0].action}
             </a>
           </Row>
           <Row title={contactContent.contactRows[1].title}>

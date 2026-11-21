@@ -1,3 +1,5 @@
+export const businessContactEmail = "business@lexentify.com";
+
 export const contactContent = {
   label: "Contact",
   title: "Let’s talk about your site.",
@@ -37,8 +39,8 @@ export const contactContent = {
       title: "Direct email",
       description:
         "Prefer writing directly? We check our inbox daily and reply within 1 business day.",
-      action: "info@lexentify.com",
-      href: "mailto:info@lexentify.com",
+      action: businessContactEmail,
+      href: `mailto:${businessContactEmail}`,
     },
     {
       title: "Already a client?",

@@ -13,7 +13,10 @@ const Footer = () => {
         className="mx-auto w-full max-w-[1600px] border-l border-r"
         style={{ borderColor: C.RULE }}
       >
-        <div className="grid grid-cols-1 border-y md:grid-cols-12" style={{ borderColor: C.RULE }}>
+        <div
+          className="grid grid-cols-1 border-y md:grid-cols-12"
+          style={{ borderColor: C.RULE }}
+        >
           <div className="px-6 py-12 md:col-span-7 md:px-12 md:py-16">
             <Link href="/" className="flex items-center gap-3 group">
               <Image
@@ -50,9 +53,9 @@ const Footer = () => {
             </h4>
             <Link
               href={`mailto:${siteContent.businessEmail}`}
-              className="group flex h-14 items-stretch border transition-[border-color,box-shadow] duration-300 hover:border-white hover:shadow-[0_0_18px_rgba(255,255,255,0.08)]"
+              className="group flex h-14 items-stretch border transition-[border-color,box-shadow] duration-300 border-zinc-800 hover:border-white hover:shadow-[0_0_18px_rgba(255,255,255,0.08)]"
               style={{
-                borderColor: C.RULE_HI,
+                // borderColor: C.RULE_HI,
                 color: C.INK,
                 backgroundColor: "transparent",
               }}
@@ -61,8 +64,8 @@ const Footer = () => {
                 {siteContent.businessEmail}
               </span>
               <span
-                className="flex w-14 items-center justify-center border-l text-xl transition-[background-color,color,transform] duration-300 group-hover:bg-white group-hover:text-black"
-                style={{ borderColor: C.RULE_HI }}
+                className="flex w-14 items-center justify-center border-l border-zinc-800 text-xl transition-[background-color,color,transform] duration-300 group-hover:bg-white group-hover:text-black"
+                // style={{ borderColor: C.RULE_HI }}
                 aria-hidden="true"
               >
                 →
@@ -71,7 +74,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 border-b md:grid-cols-12" style={{ borderColor: C.RULE }}>
+        <div
+          className="grid grid-cols-2 border-b md:grid-cols-12"
+          style={{ borderColor: C.RULE }}
+        >
           {siteContent.footer.groups.map((group, index) => (
             <div
               key={group.title}
@@ -80,7 +86,10 @@ const Footer = () => {
               } ${index === 2 ? "border-t md:border-t-0" : ""}`}
               style={{ borderColor: C.RULE }}
             >
-              <h4 className="mb-5 text-[10px] font-semibold uppercase tracking-widest" style={{ color: C.INK }}>
+              <h4
+                className="mb-5 text-[10px] font-semibold uppercase tracking-widest"
+                style={{ color: C.INK }}
+              >
                 {group.title}
               </h4>
               <ul className="space-y-3">
@@ -88,8 +97,8 @@ const Footer = () => {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm transition-colors hover:text-white"
-                      style={{ color: C.MUTED }}
+                      className="text-sm transition-colors text-zinc-500 hover:text-white"
+                      // style={{ color: C.MUTED }}
                     >
                       {link.label}
                     </Link>
@@ -99,8 +108,14 @@ const Footer = () => {
             </div>
           ))}
 
-          <div className="border-l px-6 py-8 md:col-span-3 md:px-10 md:py-10" style={{ borderColor: C.RULE }}>
-            <h4 className="mb-5 text-[10px] font-semibold uppercase tracking-widest" style={{ color: C.INK }}>
+          <div
+            className="border-l px-6 py-8 md:col-span-3 md:px-10 md:py-10"
+            style={{ borderColor: C.RULE }}
+          >
+            <h4
+              className="mb-5 text-[10px] font-semibold uppercase tracking-widest"
+              style={{ color: C.INK }}
+            >
               Operations
             </h4>
             <div className="space-y-3 text-sm" style={{ color: C.MUTED }}>
@@ -115,7 +130,8 @@ const Footer = () => {
           style={{ color: C.MUTED }}
         >
           <p className="md:col-span-5">
-            &copy; {currentYear} {siteContent.brandName}. {siteContent.footer.copyright}
+            &copy; {currentYear} {siteContent.brandName}.{" "}
+            {siteContent.footer.copyright}
           </p>
           <div className="md:col-span-3">
             <WorkStatusBadge variant="full" />

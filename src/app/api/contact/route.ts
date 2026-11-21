@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { businessContactEmail } from "@/const/landing/Contact";
 
 // Inisialisasi Resend menggunakan API key dari environment variable
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -18,11 +19,11 @@ export async function POST(request: Request) {
     }
 
     // Kirim email menggunakan Resend
-    const data = await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       // Use a verified domain email in Resend,
       // or 'onboarding@resend.dev' for development/testing.
       from: "Lexentify Contact <notification@lexentify.com>",
-      to: ["info@lexentify.com"],
+      to: [businessContactEmail],
       subject: `Pesan Baru dari ${name} (${business})`,
       replyTo: email,
       html: `
@@ -38,6 +39,14 @@ export async function POST(request: Request) {
         </div>
       `,
     });
+
+    if (error) {
+      console.error("Failed to send contact email:", error);
+      return NextResponse.json(
+        { error: "The email provider could not deliver the message." },
+        { status: 502 },
+      );
+    }
 
     return NextResponse.json({ success: true, data });
   } catch (error) {

@@ -137,14 +137,15 @@ export const PageHero = ({
   compact?: boolean;
 }) => (
   <header
-    className={
-      compact
-        ? "pb-10 pt-32 md:pb-14 md:pt-40"
-        : "pb-16 pt-32 md:pb-24 md:pt-44"
-    }
     style={{ backgroundColor: C.BG, color: C.INK }}
   >
-    <Container>
+    <Container
+      className={
+        compact
+          ? "pb-10 pt-32 md:pb-14 md:pt-40"
+          : "pb-16 pt-32 md:pb-24 md:pt-44"
+      }
+    >
       <div className="grid grid-cols-1 gap-x-6 gap-y-6 md:grid-cols-12">
         <div className="md:col-span-3">
           <Label>{label}</Label>

@@ -25,6 +25,46 @@ export const heroContent = {
   previewDescription:
     "Same-day plumbing and HVAC repairs across Sydney, done right the first time.",
   previewActions: ["Book a Callout", "Get a Free Quote"],
+  servicesLabel: "Our Services",
+  servicesTitle: "Help for every plumbing problem",
+  servicesIntro:
+    "From urgent repairs to planned upgrades, get dependable help from one local team.",
+  services: [
+    {
+      title: "Emergency Plumbing",
+      description:
+        "Fast help for burst pipes, stubborn leaks, and urgent repairs.",
+    },
+    {
+      title: "Hot Water Systems",
+      description:
+        "Repair, replace, or upgrade your system for reliable hot water.",
+    },
+    {
+      title: "Gas Fitting",
+      description:
+        "Professional gas fitting for new installations and existing systems.",
+    },
+  ],
+  processLabel: "How It Works",
+  processTitle: "From first call to fixed",
+  processSteps: [
+    {
+      title: "Tell us what happened",
+      description:
+        "Share the issue and your location so we can understand what you need.",
+    },
+    {
+      title: "Get a clear quote",
+      description:
+        "We explain the recommended work and upfront costs before starting.",
+    },
+    {
+      title: "We handle the repair",
+      description:
+        "A qualified plumber arrives ready to complete the agreed work.",
+    },
+  ],
   achievements: [
     { title: "1,200+ Jobs", description: "Greater Sydney since 2014" },
     { title: "4.9★ Rating", description: "240+ Verified Reviews" },

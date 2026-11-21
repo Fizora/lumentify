@@ -32,7 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       data-scroll="smooth"
       className={`${sans.variable} ${mono.variable} h-full antialiased scrollbar-thin`}
     >
-      <body className="min-h-full w-full flex flex-col overflow-x-clip">
+      <body className="min-h-full w-full flex flex-col overflow-x-clip bg-black">
         <LenisProvider>{children}</LenisProvider>
       </body>
     </html>

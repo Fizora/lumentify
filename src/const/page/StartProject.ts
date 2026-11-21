@@ -13,6 +13,18 @@ export const startProjectOptions = {
   ],
 } as const;
 
+export const briefUploadConfig = {
+  maxBytes: 3 * 1024 * 1024,
+  accept: ".pdf,.doc,.docx,.txt",
+  mimeTypes: {
+    ".pdf": "application/pdf",
+    ".doc": "application/msword",
+    ".docx":
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    ".txt": "text/plain",
+  },
+} as const;
+
 export const startProjectContent = {
   backAction: "Back to home",
   onboardingLabel: "Lexentify onboarding",
@@ -45,6 +57,12 @@ export const startProjectContent = {
       label: "Project goals & current website (if any) *",
       placeholder:
         "Tell us about your current site limitations, the trade services you want to highlight, or your main objectives.",
+    },
+    brief: {
+      label: "Brief document (optional)",
+      hint: "PDF, DOC, DOCX, or TXT. Maximum file size: 3 MB.",
+      error:
+        "This file wasn't attached. Choose a supported document up to 3 MB, or continue without one.",
     },
   },
   sendError: "Your brief was not sent. Try again, or email us directly at",

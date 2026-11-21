@@ -264,6 +264,119 @@ const Hero = () => {
                 </div>
               </div>
 
+              <section
+                className="border-b p-5 md:p-12"
+                style={{ borderColor: BORDER }}
+              >
+                <div className="mb-6 grid gap-3 md:mb-8 md:grid-cols-12 md:items-end">
+                  <div className="md:col-span-6">
+                    <p
+                      className="text-[9px] font-bold uppercase tracking-widest"
+                      style={{ color: MUTED }}
+                    >
+                      {heroContent.servicesLabel}
+                    </p>
+                    <h3
+                      className="mt-2 text-xl font-bold uppercase tracking-tight md:text-2xl"
+                      style={{ color: INK }}
+                    >
+                      {heroContent.servicesTitle}
+                    </h3>
+                  </div>
+                  <p
+                    className="max-w-md text-xs leading-relaxed md:col-span-6 md:justify-self-end md:text-right"
+                    style={{ color: MUTED }}
+                  >
+                    {heroContent.servicesIntro}
+                  </p>
+                </div>
+
+                <div
+                  className="grid grid-cols-1 border-l border-t sm:grid-cols-3"
+                  style={{ borderColor: BORDER }}
+                >
+                  {heroContent.services.map((service, index) => (
+                    <article
+                      key={service.title}
+                      className="border-b border-r p-4 md:p-5"
+                      style={{ borderColor: BORDER }}
+                    >
+                      <span
+                        className="text-[9px] font-bold tracking-widest"
+                        style={{ color: MUTED }}
+                      >
+                        0{index + 1}
+                      </span>
+                      <h4
+                        className="mt-5 text-xs font-bold uppercase tracking-wider"
+                        style={{ color: INK }}
+                      >
+                        {service.title}
+                      </h4>
+                      <p
+                        className="mt-2 text-[10px] leading-relaxed"
+                        style={{ color: MUTED }}
+                      >
+                        {service.description}
+                      </p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+
+              <section
+                className="border-b p-5 md:p-12"
+                style={{ borderColor: BORDER }}
+              >
+                <div className="grid gap-6 md:grid-cols-12 md:gap-10">
+                  <div className="md:col-span-4">
+                    <p
+                      className="text-[9px] font-bold uppercase tracking-widest"
+                      style={{ color: MUTED }}
+                    >
+                      {heroContent.processLabel}
+                    </p>
+                    <h3
+                      className="mt-2 text-xl font-bold uppercase tracking-tight md:text-2xl"
+                      style={{ color: INK }}
+                    >
+                      {heroContent.processTitle}
+                    </h3>
+                  </div>
+                  <ol
+                    className="border-t md:col-span-8"
+                    style={{ borderColor: BORDER }}
+                  >
+                    {heroContent.processSteps.map((step, index) => (
+                      <li
+                        key={step.title}
+                        className="grid grid-cols-[2rem_1fr] gap-x-3 gap-y-1 border-b py-4 last:border-b-0 md:grid-cols-[2.5rem_1fr_1.5fr] md:items-baseline md:gap-4"
+                        style={{ borderColor: BORDER }}
+                      >
+                        <span
+                          className="row-span-2 text-[9px] font-bold tracking-widest md:row-span-1"
+                          style={{ color: MUTED }}
+                        >
+                          0{index + 1}
+                        </span>
+                        <h4
+                          className="text-[10px] font-bold uppercase tracking-wider"
+                          style={{ color: INK }}
+                        >
+                          {step.title}
+                        </h4>
+                        <p
+                          className="col-start-2 text-[10px] leading-relaxed md:col-start-auto"
+                          style={{ color: MUTED }}
+                        >
+                          {step.description}
+                        </p>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              </section>
+
               {/* Achievement Grid — hanya desktop */}
               <div
                 className="hidden md:grid grid-cols-4 divide-x border-b"

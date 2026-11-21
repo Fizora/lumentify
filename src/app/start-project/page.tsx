@@ -5,7 +5,6 @@ import Link from "next/link";
 import { LuChevronLeft, LuCircleCheck, LuLoaderCircle } from "react-icons/lu";
 import {
   C,
-  Container,
   Field,
   Label,
   buttonClass,
@@ -13,6 +12,7 @@ import {
 } from "@/components/ui/Swiss";
 import { siteContent } from "@/const/data";
 import {
+  briefUploadConfig,
   startProjectContent,
   startProjectOptions,
 } from "@/const/page/StartProject";
@@ -52,6 +52,8 @@ function StartProjectContent() {
   const [status, setStatus] = useState<"idle" | "loading" | "sent" | "error">(
     "idle",
   );
+  const [briefFile, setBriefFile] = useState<File | null>(null);
+  const [briefError, setBriefError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -62,14 +64,44 @@ function StartProjectContent() {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleBriefChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] ?? null;
+    if (!file) {
+      setBriefFile(null);
+      setBriefError("");
+      return;
+    }
+
+    const supportedType = Object.entries(briefUploadConfig.mimeTypes).find(
+      ([extension]) => file.name.toLowerCase().endsWith(extension),
+    );
+
+    if (
+      file.size > briefUploadConfig.maxBytes ||
+      !supportedType ||
+      (file.type && file.type !== supportedType[1])
+    ) {
+      setBriefFile(null);
+      setBriefError(startProjectContent.fields.brief.error);
+      e.target.value = "";
+      return;
+    }
+
+    setBriefFile(file);
+    setBriefError("");
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
     try {
+      const payload = new FormData();
+      Object.entries(form).forEach(([key, value]) => payload.append(key, value));
+      if (briefFile) payload.append("brief", briefFile);
+
       const res = await fetch("/api/project", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: payload,
       });
       if (!res.ok) throw new Error("Request failed");
       setStatus("sent");
@@ -80,11 +112,11 @@ function StartProjectContent() {
 
   return (
     <main
-      className="min-h-screen"
-      style={{ backgroundColor: C.BG, color: C.INK }}
+      className="mx-auto flex min-h-dvh w-full max-w-[1600px] flex-col border-x"
+      style={{ borderColor: C.RULE, backgroundColor: C.BG, color: C.INK }}
     >
       <header className="border-b" style={{ borderColor: C.RULE }}>
-        <Container className="flex items-center justify-between py-4">
+        <div className="flex items-center justify-between px-5 py-4 md:px-10">
           <Link
             href="/"
             className="flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-60"
@@ -93,10 +125,10 @@ function StartProjectContent() {
             {startProjectContent.backAction}
           </Link>
           <Label>{startProjectContent.onboardingLabel}</Label>
-        </Container>
+        </div>
       </header>
 
-      <Container className="py-16 md:py-28">
+      <div className="px-5 py-12 md:px-10 md:py-20">
         <div className="grid grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <h1 className="text-balance text-[clamp(2.25rem,5vw,4rem)] font-semibold leading-none tracking-[-0.045em]">
@@ -151,7 +183,10 @@ function StartProjectContent() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2">
-                  <Field id="name" label={startProjectContent.fields.name.label}>
+                  <Field
+                    id="name"
+                    label={startProjectContent.fields.name.label}
+                  >
                     <input
                       id="name"
                       name="name"
@@ -176,11 +211,16 @@ function StartProjectContent() {
                       required
                       value={form.business}
                       onChange={handleChange}
-                      placeholder={startProjectContent.fields.business.placeholder}
+                      placeholder={
+                        startProjectContent.fields.business.placeholder
+                      }
                       className={inputClass}
                     />
                   </Field>
-                  <Field id="email" label={startProjectContent.fields.email.label}>
+                  <Field
+                    id="email"
+                    label={startProjectContent.fields.email.label}
+                  >
                     <input
                       id="email"
                       name="email"
@@ -193,7 +233,10 @@ function StartProjectContent() {
                       className={inputClass}
                     />
                   </Field>
-                  <Field id="phone" label={startProjectContent.fields.phone.label}>
+                  <Field
+                    id="phone"
+                    label={startProjectContent.fields.phone.label}
+                  >
                     <input
                       id="phone"
                       name="phone"
@@ -260,6 +303,54 @@ function StartProjectContent() {
                   />
                 </Field>
 
+                <Field
+                  id="brief"
+                  label={startProjectContent.fields.brief.label}
+                >
+                  <input
+                    id="brief"
+                    name="brief"
+                    type="file"
+                    accept={briefUploadConfig.accept}
+                    onChange={handleBriefChange}
+                    aria-describedby={
+                      briefError ? "brief-hint brief-error" : "brief-hint"
+                    }
+                    className="peer sr-only"
+                  />
+                  <div className="flex flex-wrap items-center gap-3 peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-white">
+                    <label
+                      htmlFor="brief"
+                      className={`${buttonClass("line")} cursor-pointer`}
+                    >
+                      Choose file
+                    </label>
+                    <span
+                      aria-live="polite"
+                      className="break-all text-sm"
+                      style={{ color: C.MUTED }}
+                    >
+                      {briefFile?.name ?? "No file selected"}
+                    </span>
+                  </div>
+                </Field>
+                <p
+                  id="brief-hint"
+                  className="-mt-6 text-sm"
+                  style={{ color: C.MUTED }}
+                >
+                  {startProjectContent.fields.brief.hint}
+                </p>
+                {briefError && (
+                  <p
+                    id="brief-error"
+                    role="alert"
+                    className="-mt-6 text-sm text-[#ff9a9a]"
+                  >
+                    {briefError}
+                  </p>
+                )}
+
                 {status === "error" && (
                   <p
                     role="alert"
@@ -294,12 +385,12 @@ function StartProjectContent() {
             )}
           </div>
         </div>
-      </Container>
+      </div>
     </main>
   );
 }
 
-// Dibungkus Suspense karena memakai useSearchParams
+// Wrapped in Suspense because useSearchParams is required.
 export default function StartProjectPage() {
   return (
     <Suspense

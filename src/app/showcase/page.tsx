@@ -19,6 +19,7 @@ export default function Showcase() {
           title={portfolioPageContent.title}
           intro={portfolioPageContent.intro}
         />
+        <Skathes />
         <section>
           <Container className="py-12 md:py-20">
             <ShowcaseGrid />

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { LuMenu, LuX, LuChevronDown, LuMail, LuPhone } from "react-icons/lu";
+import { LuMenu, LuX, LuChevronDown, LuMail } from "react-icons/lu";
 import { navItems, siteContent, type NavDropdown } from "@/const/data";
 import { PrimaryButtonLink, SecondaryButtonLink } from "./ui/Button";
 
@@ -75,17 +75,12 @@ const Navbar = () => {
           <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
           <span>{siteContent.navbar.workHours}</span>
         </div>
-        <div className="flex items-center gap-6">
-          <span className="flex items-center gap-2">
-            <LuMail size={12} /> {siteContent.businessEmail}
-          </span>
-          <span className="flex items-center gap-2">
-            <LuPhone size={12} /> {siteContent.navbar.phoneNumbers[0]}
-          </span>
-          <span className="flex items-center gap-2">
-            <LuPhone size={12} /> {siteContent.navbar.phoneNumbers[1]}
-          </span>
-        </div>
+        <a
+          href={`mailto:${siteContent.businessEmail}`}
+          className="flex items-center gap-2 transition-colors hover:text-white"
+        >
+          <LuMail size={12} /> {siteContent.businessEmail}
+        </a>
       </div>
 
       <div
