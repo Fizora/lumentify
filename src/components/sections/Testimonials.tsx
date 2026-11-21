@@ -1,122 +1,109 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { testimonials } from "@/components/constant/data";
-import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
+import { useState, useSyncExternalStore } from "react";
+import { LuArrowLeft, LuArrowRight } from "react-icons/lu";
+import {
+  testimonials,
+  testimonialsSectionContent,
+} from "@/const/landing/Testimonials";
+import { C, Section } from "@/components/ui/Swiss";
+
+const QUERY = "(min-width: 768px)";
+
+const subscribe = (cb: () => void) => {
+  const mq = window.matchMedia(QUERY);
+  mq.addEventListener("change", cb);
+  return () => mq.removeEventListener("change", cb);
+};
+
+// 3 testimoni per halaman di desktop, 1 di HP
+const usePerPage = () =>
+  useSyncExternalStore(
+    subscribe,
+    () => (window.matchMedia(QUERY).matches ? 3 : 1),
+    () => 3,
+  );
+
+const arrowBtn =
+  "flex h-11 w-11 items-center justify-center border transition-colors hover:bg-white hover:text-black";
 
 const Testimonials = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const itemsPerSlide = 3;
-  const totalSlides = Math.ceil(testimonials.length / itemsPerSlide);
+  const perPage = usePerPage();
+  const [page, setPage] = useState(0);
 
-  const getCurrentItems = () => {
-    const start = currentSlide * itemsPerSlide;
-    const end = start + itemsPerSlide;
-    return testimonials.slice(start, end);
-  };
+  const totalPages = Math.ceil(testimonials.length / perPage);
+  const current = Math.min(page, totalPages - 1);
+  const items = testimonials.slice(
+    current * perPage,
+    current * perPage + perPage,
+  );
 
-  const currentItems = getCurrentItems();
-
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
-  };
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
-  };
+  const next = () => setPage(current === totalPages - 1 ? 0 : current + 1);
+  const prev = () => setPage(current === 0 ? totalPages - 1 : current - 1);
 
   return (
-    <section className="py-16 bg-white">
-      <div className="mx-auto container px-3">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5 }}
-          className="text-center space-y-3 mb-10"
+    <Section
+      label={testimonialsSectionContent.label}
+      title={testimonialsSectionContent.title}
+      intro={testimonialsSectionContent.intro}
+      wide
+    >
+      <div aria-live="polite">
+        <div
+          className="-mx-5 grid grid-cols-1 border-y md:-mx-10 md:grid-cols-3"
+          style={{ borderColor: C.RULE }}
         >
-          <h2 className="text-2xl md:text-3xl font-medium text-black">
-            Trusted by home‑service owners
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Here's what they say about working with us.
-          </p>
-        </motion.div>
-
-        {/* Carousel wrapper */}
-        <div className="relative">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentSlide}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.3 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-4"
+          {items.map((t, i) => (
+            <figure
+              key={`${current}-${i}`}
+              className="flex flex-col justify-between gap-10 border-t p-6 first:border-t-0 md:border-l md:border-t-0 md:p-8 md:first:border-l-0 lg:p-10"
+              style={{ borderColor: C.RULE }}
             >
-              {currentItems.map((t, i) => (
-                <div
-                  key={i}
-                  className="bg-gray-50 p-4 flex flex-col justify-between border border-gray-200 hover:shadow-md transition duration-200"
-                >
-                  <span className="text-lg font-medium text-yellow-400">
-                    {t.rating}
-                  </span>
-                  <blockquote className="text-gray-700 my-2 text-sm leading-relaxed line-clamp-3">
-                    "{t.quote}"
-                  </blockquote>
-                  <div className="mt-auto border-t border-gray-200 pt-3">
-                    <p className="font-medium text-black text-sm">{t.name}</p>
-                    <p className="text-xs text-gray-500">{t.role}</p>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Navigation buttons */}
-          {totalSlides > 1 && (
-            <>
-              <button
-                onClick={prevSlide}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 md:-translate-x-5 bg-white border  p-2 shadow-md hover:bg-zinc-50 transition-colors z-10"
-                aria-label="Previous slide"
-              >
-                <LuChevronLeft className="w-4 h-4 text-zinc-700" />
-              </button>
-              <button
-                onClick={nextSlide}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 md:translate-x-5 bg-white border  p-2 shadow-md hover:bg-zinc-50 transition-colors z-10"
-                aria-label="Next slide"
-              >
-                <LuChevronRight className="w-4 h-4 text-zinc-700" />
-              </button>
-
-              {/* Dots indicator */}
-              <div className="flex justify-center gap-1.5 mt-6">
-                {Array.from({ length: totalSlides }).map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => goToSlide(idx)}
-                    className={`h-1.5 transition-all duration-200 ${
-                      idx === currentSlide
-                        ? "w-6 bg-zinc-900"
-                        : "w-1.5 bg-zinc-300 hover:bg-zinc-400"
-                    }`}
-                    aria-label={`Go to slide ${idx + 1}`}
-                  />
-                ))}
+              <div>
+                <p className="mb-6 text-lg tracking-widest">{t.rating}</p>
+                <blockquote className="text-lg font-medium leading-snug tracking-tight md:text-xl">
+                  “{t.quote}”
+                </blockquote>
               </div>
-            </>
-          )}
+              <figcaption>
+                <p className="text-sm font-semibold">{t.name}</p>
+                <p className="mt-0.5 text-sm" style={{ color: C.MUTED }}>
+                  {t.role}
+                </p>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </div>
-    </section>
+
+      {totalPages > 1 && (
+        <div className="mt-8 flex items-center justify-between">
+          <p className="text-sm tabular-nums" style={{ color: C.MUTED }}>
+            {current + 1} / {totalPages}
+          </p>
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={prev}
+              className={arrowBtn}
+              style={{ borderColor: C.RULE_HI }}
+              aria-label={testimonialsSectionContent.previousLabel}
+            >
+              <LuArrowLeft className="h-4 w-4" />
+            </button>
+            <button
+              type="button"
+              onClick={next}
+              className={arrowBtn}
+              style={{ borderColor: C.RULE_HI }}
+              aria-label={testimonialsSectionContent.nextLabel}
+            >
+              <LuArrowRight className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+      )}
+    </Section>
   );
 };
 

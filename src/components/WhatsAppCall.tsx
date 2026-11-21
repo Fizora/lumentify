@@ -1,45 +1,46 @@
 // components/WhatsAppCall.tsx
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
+import { siteContent } from "@/const/data";
 
 const WhatsAppCall = () => {
   const phoneNumber = "6285235086814";
 
-  // Pesan template yang lebih rinci untuk information gathering
+  // Detailed message template for information gathering
   const message = `
-Halo, saya tertarik untuk memesan jasa pembuatan website untuk bisnis home services saya.
+Hello, I am interested in ordering a website for my home-service business.
 
-Berikut detail kebutuhan saya:
+Here are my project details:
 
-1. *Nama Usaha*: 
-2. *Jenis Layanan* (misal: Plumbing, HVAC, Listrik, Kebersihan, dll.): 
-3. *Lokasi / Wilayah Operasional*: 
-4. *Tujuan Website* (centang yang sesuai):
-   - [ ] Informasi perusahaan / profil
-   - [ ] Pemesanan jasa online
-   - [ ] Galeri portofolio / proyek
-   - [ ] Testimoni pelanggan
-   - [ ] Integrasi WhatsApp / kontak
-   - [ ] Pembayaran online (jika ada)
-   - [ ] Lainnya: ...
+1. *Business name*:
+2. *Service type* (for example: plumbing, HVAC, electrical, cleaning):
+3. *Operating location / service area*:
+4. *Website goals* (tick all that apply):
+   - [ ] Company information / profile
+   - [ ] Online service booking
+   - [ ] Project portfolio
+   - [ ] Customer testimonials
+   - [ ] WhatsApp / contact integration
+   - [ ] Online payment
+   - [ ] Other: ...
 
-5. *Fitur Utama yang Diinginkan*:
-   - Landing page yang menarik
-   - Halaman layanan (deskripsi setiap layanan)
-   - Sistem booking / jadwal
-   - Halaman tentang kami
-   - Blog / artikel (jika perlu)
-   - Lainnya: ...
+5. *Main features*:
+   - High-converting landing page
+   - Service pages
+   - Booking / scheduling system
+   - About page
+   - Blog / articles
+   - Other: ...
 
-6. *Desain & Gaya*:
-   - Warna favorit: 
-   - Contoh website yang saya sukai (URL): 
-   - Apakah perlu desain custom atau pakai template? 
+6. *Design and style*:
+   - Preferred colours:
+   - Example website (URL):
+   - Custom design or template-based design?
 
-7. *Anggaran yang Disediakan*: 
-8. *Timeline / Deadline*: 
+7. *Available budget*:
+8. *Timeline / deadline*:
 
-Terima kasih, saya tunggu balasannya.
+Thank you. I look forward to your response.
 `;
 
   const encodedMessage = encodeURIComponent(message.trim());
@@ -55,7 +56,7 @@ Terima kasih, saya tunggu balasannya.
       className="z-100 fixed bottom-2 right-2 md:bottom-4 md:right-4 xl:bottom-10 xl:right-10 p-4 bg-green-500 text-white rounded-full flex items-center gap-2 font-medium hover:scale-105 transform transition duration-300 active:scale-95 shadow-lg"
     >
       <FaWhatsapp size={30} />
-      <span className="hidden md:block">Contact Us</span>
+      <span className="hidden md:block">{siteContent.whatsappAction}</span>
     </Link>
   );
 };

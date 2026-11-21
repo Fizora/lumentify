@@ -15,7 +15,6 @@ export type ShowcaseItem = {
 
 export const showcaseList: ShowcaseItem[] = [
   {
-    // Pastikan Anda memiliki gambar ini di folder public/img/
     img: "/img/adpplumbing-good.png",
     icon: LuHammer,
     name: "ADP Plumbing",
@@ -27,7 +26,6 @@ export const showcaseList: ShowcaseItem[] = [
     year: "2026",
   },
   {
-    // Pastikan Anda memiliki gambar ini di folder public/img/
     img: "/img/wcaircon-new.png",
     icon: LuHammer,
     name: "WC Aircon",
@@ -42,7 +40,6 @@ export const showcaseList: ShowcaseItem[] = [
 
 export const projectsList: ShowcaseItem[] = [];
 
-// PROMO / LIMITED-TIME OFFERS
 export type PromoOffer = {
   id: string;
   title: string;
@@ -67,3 +64,34 @@ export const promoOffers: PromoOffer[] = [
     durationUnit: "weeks",
   },
 ];
+
+export const portfolioPageContent = {
+  metadata: {
+    title: "Showcase",
+    description:
+      "Explore our live interactive demo builds. See how our Essential, Pro, and Custom web architectures deliver lightning-fast performance and high conversions for trade businesses.",
+  },
+  label: "Showcase",
+  title: "Explore our demo",
+  intro:
+    "Experience firsthand how our Essential, Pro, and Custom packages perform in the wild—engineered specifically to dominate local searches and turn emergency clicks into direct calls.",
+} as const;
+
+export const portfolioGridContent = {
+  previewAlt: "Project preview",
+  previewFallback: "Preview coming soon",
+  visitAction: "Visit Site",
+  statuses: {
+    demo: "Live Demo",
+    progress: "In Progress",
+    production: "Production",
+    live: "Live",
+  },
+  emptyState:
+    "No {tab} available yet. We believe in transparency — we'll publish them as soon as they're ready.",
+  ctaTitle: "Ready to Build?",
+  ctaDescription:
+    "Want something built for your business specifically? Let's talk.",
+  ctaAction: "Start Project",
+  ctaHref: "https://wa.me/6285235086814",
+} as const;

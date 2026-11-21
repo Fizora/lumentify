@@ -3,61 +3,19 @@
 import { useState } from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { C } from "@/components/ui/Swiss";
+import {
+  projectBudgetOptions,
+  projectGoalOptions,
+  projectPackageOptions,
+  projectPageContent,
+  projectTimelineOptions,
+  serviceTypeOptions,
+} from "@/const/page/Project";
 
-type ServiceType =
-  | "Plumbing"
-  | "Electrical"
-  | "HVAC (Heating & Cooling)"
-  | "Roofing"
-  | "Cleaning"
-  | "Landscaping & Gardening"
-  | "Other";
-
-type Package = "Essential" | "Pro" | "Custom" | "Not sure yet";
-
-type Goal =
-  | "Get more phone calls / enquiries"
-  | "Look more professional than competitors"
-  | "Show off past jobs (photos, reviews)"
-  | "Make it easy for customers to book online"
-  | "Replace an old, outdated site"
-  | "Something else";
-
-const SERVICE_TYPES: ServiceType[] = [
-  "Plumbing",
-  "Electrical",
-  "HVAC (Heating & Cooling)",
-  "Roofing",
-  "Cleaning",
-  "Landscaping & Gardening",
-  "Other",
-];
-
-const GOALS: Goal[] = [
-  "Get more phone calls / enquiries",
-  "Look more professional than competitors",
-  "Show off past jobs (photos, reviews)",
-  "Make it easy for customers to book online",
-  "Replace an old, outdated site",
-  "Something else",
-];
-
-const PACKAGES: Package[] = ["Essential", "Pro", "Custom", "Not sure yet"];
-
-const BUDGET_OPTIONS = [
-  "Under $1,000",
-  "$1,000–$3,000",
-  "$3,000–$6,000",
-  "$6,000+",
-  "Prefer to discuss",
-];
-
-const TIMELINE_OPTIONS = [
-  "ASAP",
-  "Within 1 month",
-  "1–3 months",
-  "No rush, just exploring",
-];
+type ServiceType = (typeof serviceTypeOptions)[number];
+type Package = (typeof projectPackageOptions)[number];
+type Goal = (typeof projectGoalOptions)[number];
 
 interface FormState {
   businessName: string;
@@ -105,23 +63,29 @@ function FieldLabel({
   children: React.ReactNode;
 }) {
   return (
-    <label htmlFor={htmlFor} className="block text-lg font-medium text-black">
+    <label htmlFor={htmlFor} className="block text-lg font-medium text-white">
       {children}
       {required ? (
-        <span className="text-zinc-400 font-normal"> *</span>
+        <span className="text-zinc-500 font-normal">
+          {" "}
+          {projectPageContent.requiredIndicator}
+        </span>
       ) : (
-        <span className="text-zinc-400 font-normal"> (optional)</span>
+        <span className="text-zinc-500 font-normal">
+          {" "}
+          {projectPageContent.optionalIndicator}
+        </span>
       )}
     </label>
   );
 }
 
 function HelperText({ children }: { children: React.ReactNode }) {
-  return <p className="text-xs text-gray-500 mt-1">{children}</p>;
+  return <p className="mt-1 text-xs text-zinc-400">{children}</p>;
 }
 
 const inputClasses =
-  "mt-2 w-full  border  px-3.5 py-2.5 text-[15px] text-black placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-black/80 focus:border-transparent";
+  "mt-2 w-full border border-[#555555] bg-transparent px-3.5 py-2.5 text-[15px] text-white placeholder:text-zinc-500 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-white/80";
 
 function SectionHeading({ step, title }: { step: string; title: string }) {
   return (
@@ -129,7 +93,7 @@ function SectionHeading({ step, title }: { step: string; title: string }) {
       <span className="text-xs font-medium tracking-widest uppercase text-zinc-400">
         {step}
       </span>
-      <h2 className="text-sm font-medium text-black">{title}</h2>
+      <h2 className="text-sm font-medium text-white">{title}</h2>
     </div>
   );
 }
@@ -165,7 +129,7 @@ export default function Project() {
       !form.name ||
       !form.email
     ) {
-      setError("Please fill in the required fields marked with *.");
+      setError(projectPageContent.validationError);
       return;
     }
 
@@ -186,19 +150,22 @@ export default function Project() {
     return (
       <>
         <Navbar />
-        <main className="pt-32 pb-24">
-          <div className="mx-auto max-w-2xl px-3 text-center space-y-4">
-            <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 ">
-              Details received
+        <main
+          className="pt-32 pb-24"
+          style={{ backgroundColor: C.BG, color: C.INK }}
+        >
+          <div className="mx-auto w-full max-w-[1600px] border-x px-5 md:px-10">
+            <div className="mx-auto max-w-2xl space-y-4 text-center">
+            <span className="inline-block border border-[#555555] px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-zinc-400">
+              {projectPageContent.confirmation.badge}
             </span>
-            <h1 className="text-3xl md:text-4xl font-medium text-black leading-tight">
-              Thanks — we&apos;ve got your details.
+            <h1 className="text-3xl font-medium leading-tight md:text-4xl">
+              {projectPageContent.confirmation.title}
             </h1>
-            <p className="text-gray-600 text-[15px] md:text-sm leading-relaxed">
-              We&apos;ll reply within 1 business day with a proposed scope,
-              timeline, and any documents you asked for. No pressure — reply to
-              our email anytime if you&apos;ve got questions first.
+            <p className="text-[15px] leading-relaxed text-zinc-400 md:text-sm">
+              {projectPageContent.confirmation.description}
             </p>
+            </div>
           </div>
         </main>
         <Footer />
@@ -209,46 +176,45 @@ export default function Project() {
   return (
     <>
       <Navbar />
-      <main className="pt-32 pb-24">
-        <div className="mx-auto max-w-3xl px-3 space-y-10">
+      <main
+        className="pt-32 pb-24"
+        style={{ backgroundColor: C.BG, color: C.INK }}
+      >
+        <div className="mx-auto w-full max-w-[1600px] border-x px-5 md:px-10">
+        <div className="mx-auto max-w-3xl space-y-10">
           {/* Hero */}
           <section className="space-y-4">
-            <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 ">
-              Start project
+            <span className="inline-block border border-[#555555] px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-zinc-400">
+              {projectPageContent.hero.eyebrow}
             </span>
-            <h1 className="text-3xl md:text-4xl font-medium text-black leading-tight">
-              Ready to get your site built?
+            <h1 className="text-3xl font-medium leading-tight md:text-4xl">
+              {projectPageContent.hero.title}
             </h1>
-            <p className="text-gray-600 text-[15px] md:text-sm leading-relaxed">
-              Share a few details about your home-service business and
-              we&apos;ll reply with a proposed scope, timeline, and simple
-              documents to kick things off.
+            <p className="text-[15px] leading-relaxed text-zinc-400 md:text-sm">
+              {projectPageContent.hero.description}
             </p>
-            <p className="text-gray-600 text-[15px] md:text-sm leading-relaxed">
-              If you prefer to work under an NDA or need a formal Master Service
-              Agreement, just let us know in the form. We&apos;ll send a simple
-              NDA and MSA alongside a draft Statement of Work based on your
-              answers, so everything is clear before we start.
+            <p className="text-[15px] leading-relaxed text-zinc-400 md:text-sm">
+              {projectPageContent.hero.ndaDescription}
             </p>
           </section>
 
           {/* Project intake form */}
           <form
             onSubmit={handleSubmit}
-            className="bg-white border   p-6 md:p-8 space-y-8"
+            className="space-y-8 border border-[#2A2A2A] bg-[#080808] p-6 md:p-8"
           >
             {/* Section 1 — Your Business */}
             <fieldset className="space-y-5">
-              <SectionHeading step="01" title="Your business" />
+              <SectionHeading step="01" title={projectPageContent.sections[0]} />
 
               <div>
                 <FieldLabel htmlFor="businessName" required>
-                  Business name
+                  {projectPageContent.business.name.label}
                 </FieldLabel>
                 <input
                   id="businessName"
                   type="text"
-                  placeholder="e.g. Mitchell's Plumbing"
+                  placeholder={projectPageContent.business.name.placeholder}
                   className={inputClasses}
                   value={form.businessName}
                   onChange={(e) => update("businessName", e.target.value)}
@@ -257,10 +223,10 @@ export default function Project() {
 
               <div>
                 <FieldLabel htmlFor="serviceType" required>
-                  What does your business do?
+                  {projectPageContent.business.type.label}
                 </FieldLabel>
                 <HelperText>
-                  Pick the closest match — doesn&apos;t need to be exact.
+                  {projectPageContent.business.type.helper}
                 </HelperText>
                 <select
                   id="serviceType"
@@ -271,18 +237,18 @@ export default function Project() {
                   }
                 >
                   <option value="" disabled>
-                    Select one
+                    {projectPageContent.business.type.emptyOption}
                   </option>
-                  {SERVICE_TYPES.map((s) => (
+                  {serviceTypeOptions.map((s) => (
                     <option key={s} value={s}>
                       {s}
                     </option>
                   ))}
                 </select>
-                {form.serviceType === "Other" && (
+                {form.serviceType === projectPageContent.otherServiceType && (
                   <input
                     type="text"
-                    placeholder="Tell us what you do"
+                    placeholder={projectPageContent.business.type.otherPlaceholder}
                     className={inputClasses}
                     value={form.serviceTypeOther}
                     onChange={(e) => update("serviceTypeOther", e.target.value)}
@@ -292,13 +258,15 @@ export default function Project() {
 
               <div>
                 <FieldLabel htmlFor="serviceArea" required>
-                  Where do you work?
+                  {projectPageContent.business.area.label}
                 </FieldLabel>
-                <HelperText>Suburbs, city, or region you service.</HelperText>
+                <HelperText>
+                  {projectPageContent.business.area.helper}
+                </HelperText>
                 <input
                   id="serviceArea"
                   type="text"
-                  placeholder="e.g. Western Sydney, NSW"
+                  placeholder={projectPageContent.business.area.placeholder}
                   className={inputClasses}
                   value={form.serviceArea}
                   onChange={(e) => update("serviceArea", e.target.value)}
@@ -307,15 +275,15 @@ export default function Project() {
 
               <div>
                 <FieldLabel htmlFor="currentWebsite">
-                  Do you already have a website?
+                  {projectPageContent.business.website.label}
                 </FieldLabel>
                 <HelperText>
-                  If yes, drop the link so we can take a look.
+                  {projectPageContent.business.website.helper}
                 </HelperText>
                 <input
                   id="currentWebsite"
                   type="text"
-                  placeholder="e.g. www.mitchellsplumbing.com.au (or 'No, starting fresh')"
+                  placeholder={projectPageContent.business.website.placeholder}
                   className={inputClasses}
                   value={form.currentWebsite}
                   onChange={(e) => update("currentWebsite", e.target.value)}
@@ -324,19 +292,19 @@ export default function Project() {
             </fieldset>
 
             {/* Section 2 — What You Need */}
-            <fieldset className="space-y-5 border-t border-zinc-100 pt-8">
-              <SectionHeading step="02" title="What you need" />
+            <fieldset className="space-y-5 border-t border-[#2A2A2A] pt-8">
+              <SectionHeading step="02" title={projectPageContent.sections[1]} />
 
               <div>
                 <FieldLabel htmlFor="goals" required>
-                  What do you want the website to do for you?
+                  {projectPageContent.goals.label}
                 </FieldLabel>
-                <HelperText>Pick as many as apply.</HelperText>
+                <HelperText>{projectPageContent.goals.helper}</HelperText>
                 <div className="mt-2 space-y-2">
-                  {GOALS.map((goal) => (
+                  {projectGoalOptions.map((goal) => (
                     <label
                       key={goal}
-                      className="flex items-start gap-2.5 text-[15px] text-black"
+                      className="flex items-start gap-2.5 text-[15px] text-white"
                     >
                       <input
                         type="checkbox"
@@ -348,10 +316,10 @@ export default function Project() {
                     </label>
                   ))}
                 </div>
-                {form.goals.includes("Something else") && (
+                {form.goals.includes(projectPageContent.otherGoal) && (
                   <input
                     type="text"
-                    placeholder="Tell us more"
+                    placeholder={projectPageContent.goals.otherPlaceholder}
                     className={inputClasses}
                     value={form.goalsOther}
                     onChange={(e) => update("goalsOther", e.target.value)}
@@ -361,16 +329,15 @@ export default function Project() {
 
               <div>
                 <FieldLabel htmlFor="notes">
-                  Anything specific you want us to know?
+                  {projectPageContent.goals.notesLabel}
                 </FieldLabel>
                 <HelperText>
-                  Any pages, features, or examples of sites you like. Totally
-                  optional.
+                  {projectPageContent.goals.notesHelper}
                 </HelperText>
                 <textarea
                   id="notes"
                   rows={3}
-                  placeholder='e.g. "I love how [competitor]&apos;s site looks" or "Need a quote request form"'
+                  placeholder={projectPageContent.goals.notesPlaceholder}
                   className={inputClasses}
                   value={form.notes}
                   onChange={(e) => update("notes", e.target.value)}
@@ -379,27 +346,26 @@ export default function Project() {
             </fieldset>
 
             {/* Section 3 — Package & Budget */}
-            <fieldset className="space-y-5 border-t border-zinc-100 pt-8">
-              <SectionHeading step="03" title="Package & budget" />
+            <fieldset className="space-y-5 border-t border-[#2A2A2A] pt-8">
+              <SectionHeading step="03" title={projectPageContent.sections[2]} />
 
               <div>
                 <FieldLabel htmlFor="package" required>
-                  Which package sounds right for you?
+                  {projectPageContent.package.label}
                 </FieldLabel>
                 <HelperText>
-                  Not sure? Pick &quot;Not sure yet&quot; and we&apos;ll help
-                  you figure it out.
+                  {projectPageContent.package.helper}
                 </HelperText>
                 <div className="mt-2 grid grid-cols-2 gap-2">
-                  {PACKAGES.map((p) => (
+                  {projectPackageOptions.map((p) => (
                     <button
                       key={p}
                       type="button"
                       onClick={() => update("package", p)}
                       className={` border px-3.5 py-2.5 text-lg font-medium text-left transition-colors ${
                         form.package === p
-                          ? "border-black bg-black text-white"
-                          : " text-black hover:border-zinc-300"
+                          ? "border-white bg-white text-black"
+                          : "text-white hover:border-zinc-500"
                       }`}
                     >
                       {p}
@@ -409,9 +375,11 @@ export default function Project() {
               </div>
 
               <div>
-                <FieldLabel htmlFor="budget">Rough budget range</FieldLabel>
+                <FieldLabel htmlFor="budget">
+                  {projectPageContent.budget.label}
+                </FieldLabel>
                 <HelperText>
-                  This just helps us scope the right options — no commitment.
+                  {projectPageContent.budget.helper}
                 </HelperText>
                 <select
                   id="budget"
@@ -419,8 +387,10 @@ export default function Project() {
                   value={form.budget}
                   onChange={(e) => update("budget", e.target.value)}
                 >
-                  <option value="">Select a range</option>
-                  {BUDGET_OPTIONS.map((b) => (
+                  <option value="">
+                    {projectPageContent.budget.emptyOption}
+                  </option>
+                  {projectBudgetOptions.map((b) => (
                     <option key={b} value={b}>
                       {b}
                     </option>
@@ -430,11 +400,10 @@ export default function Project() {
 
               <div>
                 <FieldLabel htmlFor="timeline">
-                  When do you need this live?
+                  {projectPageContent.timeline.label}
                 </FieldLabel>
                 <HelperText>
-                  Give us your ideal timeframe — we&apos;ll tell you if
-                  it&apos;s realistic.
+                  {projectPageContent.timeline.helper}
                 </HelperText>
                 <select
                   id="timeline"
@@ -442,8 +411,10 @@ export default function Project() {
                   value={form.timeline}
                   onChange={(e) => update("timeline", e.target.value)}
                 >
-                  <option value="">Select a timeframe</option>
-                  {TIMELINE_OPTIONS.map((t) => (
+                  <option value="">
+                    {projectPageContent.timeline.emptyOption}
+                  </option>
+                  {projectTimelineOptions.map((t) => (
                     <option key={t} value={t}>
                       {t}
                     </option>
@@ -453,17 +424,17 @@ export default function Project() {
             </fieldset>
 
             {/* Section 4 — Contact Details */}
-            <fieldset className="space-y-5 border-t border-zinc-100 pt-8">
-              <SectionHeading step="04" title="Contact details" />
+            <fieldset className="space-y-5 border-t border-[#2A2A2A] pt-8">
+              <SectionHeading step="04" title={projectPageContent.sections[3]} />
 
               <div>
                 <FieldLabel htmlFor="name" required>
-                  Your name
+                  {projectPageContent.contact.name.label}
                 </FieldLabel>
                 <input
                   id="name"
                   type="text"
-                  placeholder="e.g. Dave Mitchell"
+                  placeholder={projectPageContent.contact.name.placeholder}
                   className={inputClasses}
                   value={form.name}
                   onChange={(e) => update("name", e.target.value)}
@@ -472,13 +443,15 @@ export default function Project() {
 
               <div>
                 <FieldLabel htmlFor="email" required>
-                  Email address
+                  {projectPageContent.contact.email.label}
                 </FieldLabel>
-                <HelperText>We&apos;ll send your proposal here.</HelperText>
+                <HelperText>
+                  {projectPageContent.contact.email.helper}
+                </HelperText>
                 <input
                   id="email"
                   type="email"
-                  placeholder="e.g. dave@mitchellsplumbing.com.au"
+                  placeholder={projectPageContent.contact.email.placeholder}
                   className={inputClasses}
                   value={form.email}
                   onChange={(e) => update("email", e.target.value)}
@@ -487,22 +460,22 @@ export default function Project() {
 
               <div>
                 <FieldLabel htmlFor="phone">
-                  Phone or WhatsApp number
+                  {projectPageContent.contact.phone.label}
                 </FieldLabel>
                 <HelperText>
-                  Only if you&apos;re happy for us to reach out this way.
+                  {projectPageContent.contact.phone.helper}
                 </HelperText>
                 <input
                   id="phone"
                   type="tel"
-                  placeholder="e.g. 04XX XXX XXX"
+                  placeholder={projectPageContent.contact.phone.placeholder}
                   className={inputClasses}
                   value={form.phone}
                   onChange={(e) => update("phone", e.target.value)}
                 />
               </div>
 
-              <label className="flex items-start gap-2.5 text-[15px] text-black">
+              <label className="flex items-start gap-2.5 text-[15px] text-white">
                 <input
                   type="checkbox"
                   className="mt-0.5 h-4 w-4  border-zinc-300"
@@ -510,63 +483,45 @@ export default function Project() {
                   onChange={(e) => update("wantsNda", e.target.checked)}
                 />
                 <span>
-                  I&apos;d like to sign an NDA before sharing more details
-                  <span className="block text-xs text-gray-500 mt-0.5">
-                    No worries if so — we&apos;ll send it over before asking
-                    anything further.
+                  {projectPageContent.contact.nda}
+                  <span className="mt-0.5 block text-xs text-zinc-400">
+                    {projectPageContent.contact.ndaHelper}
                   </span>
                 </span>
               </label>
             </fieldset>
 
             {error && (
-              <p className="text-lg text-red-600 border border-red-200 bg-red-50  px-3.5 py-2.5">
+              <p className="border border-red-500/60 bg-red-950/30 px-3.5 py-2.5 text-lg text-red-300">
                 {error}
               </p>
             )}
 
             <button
               type="submit"
-              className="w-full  bg-black text-white text-[15px] font-medium py-3 hover:bg-zinc-800 transition-colors"
+              className="w-full bg-white py-3 text-[15px] font-medium text-black transition-colors hover:bg-zinc-200"
             >
-              Send My Details
+              {projectPageContent.submitAction}
             </button>
           </form>
 
           {/* What happens next */}
           <section className="space-y-3">
-            <h2 className="text-lg font-medium text-black">
-              What happens next
+            <h2 className="text-lg font-medium text-white">
+              {projectPageContent.followUp.title}
             </h2>
-            <ul className="space-y-2 text-gray-600 text-[15px] leading-relaxed list-disc pl-5">
-              <li>
-                <span className="text-black font-medium">
-                  We reply within 1 business day
-                </span>{" "}
-                — usually sooner.
-              </li>
-              <li>
-                <span className="text-black font-medium">
-                  You&apos;ll get a proposed scope, timeline, and price range
-                </span>{" "}
-                based on what you told us — no vague &quot;let&apos;s hop on a
-                call&quot; runaround.
-              </li>
-              <li>
-                <span className="text-black font-medium">
-                  If you asked for an NDA or MSA, it&apos;ll be attached
-                </span>
-                , along with a draft Statement of Work, so everything&apos;s
-                clear before any money or commitment changes hands.
-              </li>
-              <li>
-                <span className="text-black font-medium">No pressure.</span> If
-                something&apos;s unclear or you just want to ask a question
-                first, reply to our email — you&apos;re not locked into anything
-                by filling out this form.
-              </li>
+            <ul className="list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-zinc-400">
+              {projectPageContent.followUp.steps.map((item) => (
+                <li key={item.emphasis}>
+                  <span className="font-medium text-white">
+                    {item.emphasis}
+                  </span>
+                  {item.text}
+                </li>
+              ))}
             </ul>
           </section>
+        </div>
         </div>
       </main>
       <Footer />

@@ -1,7 +1,7 @@
 export const privacyPolicyData = {
   lastUpdated: "November 2026",
   scopeNotice:
-    "Scope: This policy describes how Lexentify handles information collected through this website and related business communications. Information handled during a client project may also be subject to the applicable project agreement and any relevant privacy requirements.",
+    "This policy describes how Lexentify handles information collected through this website and related business communications. Information handled during a client project may also be subject to the applicable project agreement and any relevant privacy requirements.",
   sections: [
     {
       title: "1. Information we may collect",
@@ -50,3 +50,29 @@ export const privacyPolicyData = {
     },
   ],
 };
+
+export const privacyMetadata = {
+  title: "Privacy Policy",
+  description:
+    "Read how Lexentify handles information submitted through its website and business communications.",
+} as const;
+
+export const privacyPageContent = {
+  eyebrow: "Legal",
+  title: "Privacy Policy",
+  updatedLabel: "Last updated:",
+  scopeLabel: "Scope:",
+  contacts: [
+    { title: "Privacy & Data Requests:", email: "info@lexentify.com" },
+    {
+      title: "Business Inquiries & Partnerships:",
+      email: "business@lexentify.com",
+    },
+    {
+      title: "Service & Support Questions:",
+      email: "services@lexentify.com",
+    },
+    { title: "Sales & Project Estimates:", email: "sales@lexentify.com" },
+  ],
+  emailPrompt: "Email us at",
+} as const;

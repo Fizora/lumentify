@@ -1,36 +1,38 @@
 // src/app/not-found.tsx
 import { PrimaryButton } from "@/components/ui/Button";
 import Link from "next/link";
+import { notFoundContent } from "@/const/page/NotFound";
+import { C } from "@/components/ui/Swiss";
 
 export default function NotFound() {
   return (
-    <main className="bg-white w-full flex flex-col">
-      <div className="border-b w-full">
+    <main className="flex w-full flex-col" style={{ backgroundColor: C.BG }}>
+      <div className="w-full border-b" style={{ borderColor: C.RULE }}>
         <div
-          className="bg-white text-center mx-auto max-w-7xl w-full border-x flex min-h-[calc(100vh-5rem)] flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-16"
+          className="mx-auto flex min-h-[calc(100vh-5rem)] w-full max-w-[1600px] flex-col items-center justify-center border-x px-4 py-16 text-center sm:px-6 lg:px-8"
           style={{
-            backgroundColor: "#fafafa",
+            backgroundColor: C.BG,
+            borderColor: C.RULE,
             backgroundImage: `repeating-linear-gradient(
               -45deg,
-              #f0f0f0,
-              #f0f0f0 1px,
-              #fafafa 1px,
-              #fafafa 6px
+              #080808,
+              #080808 1px,
+              #000000 1px,
+              #000000 6px
             )`,
           }}
         >
           <div className="space-y-4 max-w-lg mx-auto">
-            <h2 className="text-6xl font-bold tracking-tight text-zinc-900">
-              404
+            <h2 className="text-6xl font-bold tracking-tight text-white">
+              {notFoundContent.title}
             </h2>
-            <p className="text-sm md:text-base text-zinc-600 leading-relaxed">
-              The page you&apos;re looking for doesn&apos;t exist or has been
-              moved.
+            <p className="text-sm leading-relaxed text-zinc-400 md:text-base">
+              {notFoundContent.description}
             </p>
             <div className="pt-2">
               <PrimaryButton className="rounded-lg">
-                <Link href="/" className="inline-block">
-                  Return to Home
+                <Link href={notFoundContent.href} className="inline-block">
+                  {notFoundContent.action}
                 </Link>
               </PrimaryButton>
             </div>

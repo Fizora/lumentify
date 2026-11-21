@@ -1,10 +1,12 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { LuPlus } from "react-icons/lu";
+import { LuMinus, LuPlus } from "react-icons/lu";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { faqs } from "@/components/constant/data"; // Impor data terpusat
+import { faqs } from "@/const/landing/FAQ";
+import { faqPageContent } from "@/const/page/FAQ";
+import { C, Container } from "@/components/ui/Swiss";
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -16,27 +18,35 @@ const FAQ = () => {
   return (
     <>
       <Navbar />
-      <section className="py-24 bg-white">
-        <div className="mx-auto max-w-4xl px-3">
-          {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5 }}
-            className="text-center space-y-5 mb-16"
-          >
-            <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
-              FAQ
-            </span>
-            <h2 className="text-3xl md:text-4xlfont-medium text-black leading-tight">
-              Questions, answered
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Straight answers before you commit — no fine print you&apos;ll
-              find out about later.
-            </p>
-          </motion.div>
+      <section
+        className="flex min-h-screen items-center"
+        style={{ backgroundColor: C.BG, color: C.INK, borderColor: C.RULE }}
+      >
+        <Container className="py-24">
+          <div className="mx-auto w-full max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5 }}
+              className="mb-16 space-y-5 text-center"
+            >
+              <span
+                className="inline-block rounded-full border px-4 py-1.5 text-xs font-medium uppercase tracking-widest"
+                style={{ borderColor: C.RULE_HI, color: C.MUTED }}
+              >
+                {faqPageContent.label}
+              </span>
+              <h2 className="text-3xl font-medium leading-tight md:text-4xl">
+                {faqPageContent.title}
+              </h2>
+              <p
+                className="mx-auto max-w-2xl text-lg leading-relaxed"
+                style={{ color: C.MUTED }}
+              >
+                {faqPageContent.intro}
+              </p>
+            </motion.div>
 
           {/* List FAQ */}
           <div className="space-y-3">
@@ -49,21 +59,27 @@ const FAQ = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.03 }}
-                  className="border border-gray-200 overflow-hidden bg-white"
+                  className="overflow-hidden border"
+                  style={{ borderColor: C.RULE, backgroundColor: C.BG }}
                 >
                   <button
                     onClick={() => toggle(i)}
-                    className="w-full flex items-center justify-between gap-4 text-left px-5 py-5 hover:bg-zinc-50/50 transition-colors"
+                    className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left transition-colors hover:bg-white/5"
                     aria-expanded={isOpen}
                   >
-                    <span className="text-sm md:text-lg font-medium text-black">
+                    <span className="text-sm font-medium md:text-lg">
                       {faq.question}
                     </span>
-                    <LuPlus
-                      className={`w-5 h-5 shrink-0 text-zinc-600 transition-transform duration-300 ${
-                        isOpen ? "rotate-45" : ""
-                      }`}
-                    />
+                    <span
+                      className="grid size-10 shrink-0 place-items-center rounded-full border"
+                      style={{ borderColor: C.RULE_HI }}
+                    >
+                      {isOpen ? (
+                        <LuMinus className="h-5 w-5 shrink-0" />
+                      ) : (
+                        <LuPlus className="h-5 w-5 shrink-0" />
+                      )}
+                    </span>
                   </button>
 
                   <AnimatePresence initial={false}>
@@ -76,7 +92,7 @@ const FAQ = () => {
                         transition={{ duration: 0.25, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <p className="px-5 pb-5 text-sm text-gray-600 leading-relaxed">
+                        <p className="px-5 pb-5 text-sm leading-relaxed" style={{ color: C.MUTED }}>
                           {faq.answer}
                         </p>
                       </motion.div>
@@ -85,8 +101,9 @@ const FAQ = () => {
                 </motion.div>
               );
             })}
-          </div>
+            </div>
         </div>
+        </Container>
       </section>
       <Footer />
     </>

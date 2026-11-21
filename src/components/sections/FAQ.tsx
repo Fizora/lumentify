@@ -1,89 +1,71 @@
 "use client";
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { LuPlus } from "react-icons/lu";
-import { faqs } from "@/components/constant/data";
+import { LuMinus, LuPlus } from "react-icons/lu";
+import { faqs, faqSectionContent } from "@/const/landing/FAQ";
+import { C, Section } from "@/components/ui/Swiss";
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState(0);
-
-  const toggle = (i = 0) => {
-    setOpenIndex(openIndex === i ? -1 : i);
-  };
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="bg-white border-b" id="faq">
-      <div className="mx-auto max-w-7xl py-24 px-3 border-x">
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5 }}
-          className="text-center space-y-5 mb-16"
-        >
-          <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
-            FAQ
-          </span>
-          <h2 className="text-3xl md:text-4xl font-semibold text-black leading-tight">
-            Your concerns, addressed
-          </h2>
-          <p className="text-sm text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Clear answers to the questions that matter before you engage us —
-            built to give you confidence, clarity, and peace of mind.
-          </p>
-        </motion.div>
-
-        {/* FAQ list */}
-        <div className="space-y-3  mx-auto max-w-4xl">
-          {faqs.map((faq, i) => {
-            const isOpen = openIndex === i;
-            return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="border border-gray-200 overflow-hidden bg-white"
-              >
+    <Section
+      id="faq"
+      label={faqSectionContent.label}
+      title={faqSectionContent.title}
+      intro={faqSectionContent.intro}
+    >
+      <div className="border-b" style={{ borderColor: C.RULE }}>
+        {faqs.map((faq, i) => {
+          const isOpen = openIndex === i;
+          return (
+            <div key={i} className="border-t" style={{ borderColor: C.RULE }}>
+              <h3>
                 <button
-                  onClick={() => toggle(i)}
-                  className="w-full flex items-center justify-between gap-4 text-left px-3 py-5 hover:bg-zinc-100 transition-colors"
+                  type="button"
+                  id={`faq-q-${i}`}
                   aria-expanded={isOpen}
+                  aria-controls={`faq-a-${i}`}
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                  className="flex w-full items-start justify-between gap-6 py-6 text-left md:py-7"
                 >
-                  <span className="text-sm md:text-base font-medium text-black">
+                  <span className="text-lg font-medium tracking-tight md:text-2xl">
                     {faq.question}
                   </span>
-                  <LuPlus
-                    className={`w-5 h-5 shrink-0 text-zinc-600 transition-transform duration-300 ${
-                      isOpen ? "rotate-45" : ""
-                    }`}
-                  />
+                  <span
+                    className="grid size-10 shrink-0 place-items-center rounded-full border transition-colors"
+                    style={{ borderColor: C.RULE_HI }}
+                  >
+                    {isOpen ? (
+                      <LuMinus aria-hidden="true" className="h-5 w-5" />
+                    ) : (
+                      <LuPlus aria-hidden="true" className="h-5 w-5" />
+                    )}
+                  </span>
                 </button>
-
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      key="content"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: "easeInOut" }}
-                      className="overflow-hidden"
-                    >
-                      <p className="px-3 pb-5 text-sm text-gray-600 leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            );
-          })}
-        </div>
+              </h3>
+              <div
+                id={`faq-a-${i}`}
+                role="region"
+                aria-labelledby={`faq-q-${i}`}
+                inert={!isOpen}
+                className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+                  isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <p
+                    className="max-w-2xl pb-7 pr-10 text-[15px] leading-relaxed md:text-base"
+                    style={{ color: C.MUTED }}
+                  >
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
-    </section>
+    </Section>
   );
 };
 

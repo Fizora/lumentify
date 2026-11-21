@@ -31,17 +31,17 @@ const PricingComparisonTable = ({
       <table className="w-full min-w-175 border-collapse text-sm">
         <thead>
           <tr className="border-b ">
-            <th className="text-left py-3 px-4 font-medium text-zinc-600 bg-zinc-50/50">
+            <th className="bg-[#111111] px-4 py-3 text-left font-medium text-zinc-400">
               {title}
             </th>
             {plans.map((plan, i) => (
               <th
                 key={i}
                 className={`text-center py-3 px-4 font-medium ${
-                  plan.featured ? "bg-zinc-100" : "bg-zinc-50/50"
+                  plan.featured ? "bg-[#1A1A1A]" : "bg-[#080808]"
                 }`}
               >
-                <div className="font-medium text-black">{plan.name}</div>
+                <div className="font-medium text-white">{plan.name}</div>
                 <div className="text-sm font-normal text-zinc-500">
                   {plan.price}
                 </div>
@@ -56,7 +56,7 @@ const PricingComparisonTable = ({
               {plans.map((plan, j) => (
                 <td
                   key={j}
-                  className={`text-center py-3 px-4 ${plan.featured ? "bg-zinc-50/30" : ""}`}
+                  className={`px-4 py-3 text-center ${plan.featured ? "bg-white/5" : ""}`}
                 >
                   {plan.features.includes(feature) ? (
                     <LuCircleCheck className="w-5 h-5 text-green-600 mx-auto" />

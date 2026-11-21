@@ -7,7 +7,7 @@ export type LegalSection = {
 export const termsData = {
   lastUpdated: "November 2026",
   scopeNotice:
-    "Scope & Legal Hierarchy: These Terms & Conditions govern your access to and use of the Lexentify website, as well as the overarching framework of our professional digital engineering services. Commissioned projects, deliverables, and commercial engagements are formally governed by individual written project agreements, Statements of Work (SOW), and Master Services Agreements (MSA). In the event of any conflict, the specific executed project agreement shall supersede these general website terms.",
+    "These Terms & Conditions govern your access to and use of the Lexentify website, as well as the overarching framework of our professional digital engineering services. Commissioned projects, deliverables, and commercial engagements are formally governed by individual written project agreements, Statements of Work (SOW), and Master Services Agreements (MSA). In the event of any conflict, the specific executed project agreement shall supersede these general website terms.",
   sections: [
     {
       title: "1. Use of this Website",
@@ -76,3 +76,19 @@ export const termsData = {
     },
   ],
 };
+
+export const termsMetadata = {
+  title: "Terms & Conditions",
+  description:
+    "Read the comprehensive terms and conditions governing the use of the Lexentify website and general engagement frameworks for professional digital services.",
+} as const;
+
+export const termsPageContent = {
+  eyebrow: "Legal",
+  title: "Terms & Conditions",
+  updatedLabel: "Last updated:",
+  scopeLabel: "Scope & Legal Hierarchy:",
+  contactTitle: "10. Contact Information",
+  contactIntro:
+    "Inquiries concerning these terms, legal compliance, or contractual frameworks can be directed to our team at",
+} as const;

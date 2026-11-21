@@ -3,97 +3,61 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Skathes from "@/components/Skathes";
 import CTA from "@/components/sections/CTA";
-import { privacyPolicyData } from "@/components/constant/data-privacy-policy";
+import { C, Container } from "@/components/ui/Swiss";
+import {
+  privacyMetadata,
+  privacyPageContent,
+  privacyPolicyData,
+} from "@/const/page/Privacy";
 
-export const metadata: Metadata = {
-  title: "Lexentify | Privacy Policy",
-  description:
-    "Read how Lexentify handles information submitted through its website and business communications.",
-};
+export const metadata: Metadata = privacyMetadata;
 
 export default function Privacy() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen px-4 bg-white text-zinc-900 border-b">
-        <section className="mx-auto max-w-7xl px-3 py-20 border-x ">
-          <section className="pt-32 pb-8 mx-auto max-w-3xl">
-            <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full mb-5">
-              Legal
-            </span>
+      <main className="min-h-screen" style={{ backgroundColor: C.BG, color: C.INK }}>
+        <Container className="pt-32 pb-16 md:pt-44 md:pb-24">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
+            <div className="md:col-span-3">
+              <span className="text-sm" style={{ color: C.MUTED }}>
+                {privacyPageContent.eyebrow}
+              </span>
+            </div>
+            <div className="md:col-span-9">
+              <h1 className="text-balance text-[clamp(2.5rem,7vw,5.5rem)] font-semibold leading-[0.98] tracking-[-0.045em]">
+                {privacyPageContent.title}
+              </h1>
+              <p className="mt-6 text-sm" style={{ color: C.MUTED }}>
+                {privacyPageContent.updatedLabel} {privacyPolicyData.lastUpdated}
+              </p>
+            </div>
+          </div>
+        </Container>
 
-            <h1 className="text-3xl md:text-4xl font-medium tracking-tight text-black leading-tight mb-3">
-              Privacy Policy
-            </h1>
-
-            <p className="text-sm text-zinc-500">
-              Last updated: {privacyPolicyData.lastUpdated}
-            </p>
-          </section>
-
-          <section className="mx-auto max-w-3xl pb-24 text-zinc-600 leading-relaxed space-y-6 text-sm">
-            <p className="bg-zinc-50 border  p-4 text-sm text-zinc-700">
-              <strong className="text-black">Scope:</strong>{" "}
+        <Container className="border-t p-0" style={{ borderColor: C.RULE }}>
+          <div className="-mx-5 grid grid-cols-1 border-b md:-mx-10 md:grid-cols-12" style={{ borderColor: C.RULE }}>
+            <div className="px-5 py-8 md:col-span-3 md:px-10 md:py-12">
+              <p className="text-sm font-semibold uppercase tracking-widest">{privacyPageContent.scopeLabel}</p>
+            </div>
+            <p className="border-t px-5 py-8 text-[15px] leading-relaxed md:col-span-9 md:border-l md:border-t-0 md:px-10 md:py-12 md:text-base" style={{ borderColor: C.RULE, color: C.MUTED }}>
               {privacyPolicyData.scopeNotice}
             </p>
+          </div>
 
-            {privacyPolicyData.sections.map((section, idx) => (
-              <div key={idx}>
-                <h2 className="text-lg font-medium text-black mt-8 mb-2">
-                  {section.title}
-                </h2>
-                {section.content.map((paragraph, pIdx) => (
-                  <p key={pIdx} className={pIdx > 0 ? "mt-3" : ""}>
-                    {paragraph}
-                  </p>
-                ))}
-
-                {/* Render contact list specifically for section 7 (Contact) */}
-                {section.title.startsWith("7. Contact") && (
-                  <ul className="list-disc pl-5 space-y-2 mt-4">
-                    <li>
-                      <strong>Privacy & Data Requests:</strong> Email us at{" "}
-                      <a
-                        href="mailto:info@lexentify.com"
-                        className="text-black font-medium underline hover:text-zinc-700 transition-colors"
-                      >
-                        info@lexentify.com
-                      </a>
-                    </li>
-                    <li>
-                      <strong>Business Inquiries & Partnerships:</strong> Email
-                      us at{" "}
-                      <a
-                        href="mailto:business@lexentify.com"
-                        className="text-black font-medium underline hover:text-zinc-700 transition-colors"
-                      >
-                        business@lexentify.com
-                      </a>
-                    </li>
-                    <li>
-                      <strong>Service & Support Questions:</strong> Email us at{" "}
-                      <a
-                        href="mailto:services@lexentify.com"
-                        className="text-black font-medium underline hover:text-zinc-700 transition-colors"
-                      >
-                        services@lexentify.com
-                      </a>
-                    </li>
-                    <li>
-                      <strong>Sales & Project Estimates:</strong> Email us at{" "}
-                      <a
-                        href="mailto:sales@lexentify.com"
-                        className="text-black font-medium underline hover:text-zinc-700 transition-colors"
-                      >
-                        sales@lexentify.com
-                      </a>
-                    </li>
-                  </ul>
-                )}
+          {privacyPolicyData.sections.map((section, idx) => (
+            <div key={idx} className="-mx-5 grid grid-cols-1 border-b md:-mx-10 md:grid-cols-12" style={{ borderColor: C.RULE }}>
+              <div className="px-5 py-8 md:col-span-3 md:px-10 md:py-12">
+                <h2 className="text-sm font-semibold uppercase tracking-wide md:text-base">{section.title}</h2>
               </div>
-            ))}
-          </section>
-        </section>
+              <article className="border-t px-5 py-8 text-[15px] leading-relaxed md:col-span-9 md:border-l md:border-t-0 md:px-10 md:py-12 md:text-base" style={{ borderColor: C.RULE, color: C.MUTED }}>
+                {section.content.map((paragraph, pIdx) => (
+                  <p key={pIdx} className={pIdx > 0 ? "mt-5" : ""}>{paragraph}</p>
+                ))}
+              </article>
+            </div>
+          ))}
+        </Container>
       </main>
       <CTA />
       <Skathes />

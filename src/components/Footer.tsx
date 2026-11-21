@@ -1,93 +1,95 @@
 import Image from "next/image";
 import Link from "next/link";
 import WorkStatusBadge from "@/components/WorkStatusBadge";
-import { LuGlobe } from "react-icons/lu";
+import { siteContent } from "@/const/data";
+import { C } from "@/components/ui/Swiss";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const linkGroups = [
-    {
-      title: "Explore",
-      links: [
-        { label: "Showcase", href: "/showcase" },
-        { label: "Pricing", href: "/pricing" },
-        { label: "FAQ", href: "/faq" },
-      ],
-    },
-    {
-      title: "Company",
-      links: [
-        { label: "About", href: "/about" },
-        { label: "Support", href: "/support" },
-      ],
-    },
-    {
-      title: "Legal",
-      links: [
-        { label: "Privacy Policy", href: "/legal/privacy-policy" },
-        { label: "Terms & Conditions", href: "/legal/terms" },
-      ],
-    },
-  ];
-
   return (
-    <footer className="bg-white text-zinc-600 mt-auto w-full border-zinc-200">
-      {/* Decorative dot-grid band */}
+    <footer className="mt-auto w-full" style={{ backgroundColor: C.BG }}>
       <div
-        className=""
-        style={{
-          backgroundImage:
-            "radial-gradient(rgba(0,0,0,0.08) 1px, transparent 1px)",
-          backgroundSize: "16px 16px",
-          maskImage: "linear-gradient(to bottom, black, transparent)",
-          WebkitMaskImage: "linear-gradient(to bottom, black, transparent)",
-        }}
-      />
-
-      {/* 
-        PERUBAHAN UTAMA DI SINI:
-        Ditambahkan px-4 sm:px-6 md:px-8 agar konten di dalam border-x 
-        tidak menempel atau terpotong garis di layar HP (mobile).
-      */}
-      <div className="mx-auto max-w-7xl py-12 md:py-20 px-4 sm:px-6 md:px-8 border-zinc-200">
-        {/* Link grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-          {/* Brand column */}
-          <div className="col-span-2 md:col-span-1">
-            <Link
-              href="/"
-              className="text-xl font-bold text-black flex items-center gap-2 group tracking-tight"
-            >
-              <div className="bg-white group-hover:scale-105 border hover:border-black transition duration-300 p-2 rounded-full">
-                <Image
-                  src="/logo.svg"
-                  alt="Lexentify logo"
-                  priority
-                  height={20}
-                  width={20}
-                  title="home"
-                />
-              </div>
-              Lexentify.
+        className="mx-auto w-full max-w-[1600px] border-l border-r"
+        style={{ borderColor: C.RULE }}
+      >
+        <div className="grid grid-cols-1 border-y md:grid-cols-12" style={{ borderColor: C.RULE }}>
+          <div className="px-6 py-12 md:col-span-7 md:px-12 md:py-16">
+            <Link href="/" className="flex items-center gap-3 group">
+              <Image
+                src="/logo.svg"
+                alt={siteContent.logoAlt}
+                priority
+                height={20}
+                width={20}
+              />
+              <span
+                className="text-lg font-semibold tracking-tight"
+                style={{ color: C.INK }}
+              >
+                {siteContent.brandName}.
+              </span>
             </Link>
-            <p className="mt-3 text-sm text-zinc-500 max-w-xs leading-relaxed">
-              Fast, clean, and directed websites — built & dedicated for
-              home-service businesses that can't afford to lose a call.
+            <p
+              className="mt-6 max-w-md text-sm leading-relaxed"
+              style={{ color: C.MUTED }}
+            >
+              {siteContent.footer.description}
             </p>
           </div>
 
-          {linkGroups.map((group) => (
-            <div key={group.title}>
-              <h4 className="font-semibold text-xs uppercase tracking-wider text-black mb-4">
+          <div
+            className="border-t px-6 py-10 md:col-span-5 md:border-l md:border-t-0 md:px-12 md:py-16"
+            style={{ borderColor: C.RULE }}
+          >
+            <h4
+              className="mb-5 text-[10px] font-semibold uppercase tracking-widest"
+              style={{ color: C.MUTED }}
+            >
+              Start a conversation
+            </h4>
+            <Link
+              href={`mailto:${siteContent.businessEmail}`}
+              className="group flex h-14 items-stretch border transition-[border-color,box-shadow] duration-300 hover:border-white hover:shadow-[0_0_18px_rgba(255,255,255,0.08)]"
+              style={{
+                borderColor: C.RULE_HI,
+                color: C.INK,
+                backgroundColor: "transparent",
+              }}
+            >
+              <span className="flex flex-1 items-center px-4 text-sm font-medium">
+                {siteContent.businessEmail}
+              </span>
+              <span
+                className="flex w-14 items-center justify-center border-l text-xl transition-[background-color,color,transform] duration-300 group-hover:bg-white group-hover:text-black"
+                style={{ borderColor: C.RULE_HI }}
+                aria-hidden="true"
+              >
+                →
+              </span>
+            </Link>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 border-b md:grid-cols-12" style={{ borderColor: C.RULE }}>
+          {siteContent.footer.groups.map((group, index) => (
+            <div
+              key={group.title}
+              className={`px-6 py-8 md:col-span-3 md:px-10 md:py-10 ${
+                index > 0 ? "border-l" : ""
+              } ${index === 2 ? "border-t md:border-t-0" : ""}`}
+              style={{ borderColor: C.RULE }}
+            >
+              <h4 className="mb-5 text-[10px] font-semibold uppercase tracking-widest" style={{ color: C.INK }}>
                 {group.title}
               </h4>
-              <ul className="space-y-2.5 text-sm">
+              <ul className="space-y-3">
                 {group.links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-zinc-500 text-sm font-light hover:text-black transition-colors"
+                      className="text-sm transition-colors hover:text-white"
+                      style={{ color: C.MUTED }}
                     >
                       {link.label}
                     </Link>
@@ -97,79 +99,39 @@ const Footer = () => {
             </div>
           ))}
 
-          {/* Contact column dengan Zona Waktu Asia-Pacific */}
-          <div className="col-span-2 md:col-span-1 flex flex-col space-y-4">
-            <div>
-              <h4 className="font-semibold text-xs uppercase tracking-wider text-black mb-4">
-                Get in Touch
-              </h4>
-              <Link
-                href="mailto:business@lexentify.com"
-                className="group flex items-center justify-between border hover:border-blue-600 bg-zinc-50 hover:bg-zinc-100 px-3.5 py-2 text-sm text-zinc-900 font-medium transition-colors rounded-md"
-              >
-                <span>Email</span>
-                <span className="text-xs text-zinc-400 flex items-center gap-2 group-hover:text-blue-600 transition-colors">
-                  Inbox <span className="text-xs">▶</span>
-                </span>
-              </Link>
+          <div className="border-l px-6 py-8 md:col-span-3 md:px-10 md:py-10" style={{ borderColor: C.RULE }}>
+            <h4 className="mb-5 text-[10px] font-semibold uppercase tracking-widest" style={{ color: C.INK }}>
+              Operations
+            </h4>
+            <div className="space-y-3 text-sm" style={{ color: C.MUTED }}>
+              <div>{siteContent.navbar.workHours}</div>
+              <div>{siteContent.footer.region}</div>
             </div>
-
-            {/* Jam Operasional Zona Waktu Asia-Pacific */}
-            {/* <div className="space-y-1.5 text-xs text-zinc-500 pt-3 border-t border-zinc-100">
-              <div className="flex items-center gap-1.5 font-semibold text-xs uppercase tracking-wider text-black mb-4">
-                <span>Business Hours (APAC):</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Mon–Fri, 09:00–18:00</span>
-                <span className="font-mono text-zinc-400">(GMT+7)</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Mon–Fri, 10:00–19:00</span>
-                <span className="font-mono text-zinc-400">(GMT+8)</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Mon–Fri, 11:00–20:00</span>
-                <span className="font-mono text-zinc-400">(GMT+10)</span>
-              </div>
-            </div> */}
           </div>
         </div>
 
-        {/* Giant wordmark */}
-        <div className="mt-16 md:mt-20 -mx-4 sm:-mx-6 md:-mx-8 select-none overflow-hidden py-10 md:py-15">
-          <h1
-            className="font-black text-zinc-800 text-center leading-none tracking-tighter"
-            style={{ fontSize: "clamp(4.5rem, 14vw, 11rem)" }}
-          >
-            LEXENTIFY
-          </h1>
-        </div>
-
-        {/* Bottom bar */}
-        <div className="mt-10 pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-zinc-500 pb-20">
-          <p className="order-2 md:order-1 text-center md:text-left">
-            &copy; {currentYear} Lexentify. All rights reserved.
+        <div
+          className="grid grid-cols-1 items-center gap-5 px-6 py-7 text-xs md:grid-cols-12 md:px-10"
+          style={{ color: C.MUTED }}
+        >
+          <p className="md:col-span-5">
+            &copy; {currentYear} {siteContent.brandName}. {siteContent.footer.copyright}
           </p>
-
-          <div className="order-1 md:order-2 flex justify-center">
+          <div className="md:col-span-3">
             <WorkStatusBadge variant="full" />
           </div>
-
-          <div className="order-3 flex items-center justify-center md:justify-end gap-5">
-            <span className="hidden md:inline-flex items-center gap-1.5 text-zinc-400">
-              <LuGlobe className="w-3.5 h-3.5" /> Asia-Pacific / Remote
-            </span>
+          <div className="flex items-center gap-6 md:col-span-4 md:justify-end">
             <Link
               href="/legal/privacy-policy"
-              className="hover:text-black transition-colors"
+              className="transition-colors hover:opacity-70"
             >
-              Privacy & Policy
+              {siteContent.footer.privacyLink}
             </Link>
             <Link
               href="/legal/terms"
-              className="hover:text-black transition-colors"
+              className="transition-colors hover:opacity-70"
             >
-              Terms & Conditions
+              {siteContent.footer.termsLink}
             </Link>
           </div>
         </div>

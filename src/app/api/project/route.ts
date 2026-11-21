@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     // Validasi data penting
     if (!name || !business || !email || !phone || !goals) {
       return NextResponse.json(
-        { error: "Semua field wajib diisi dengan lengkap." },
+        { error: "Please complete every required field." },
         { status: 400 },
       );
     }
@@ -27,7 +27,7 @@ export async function POST(request: Request) {
     // Kirim email notifikasi via Resend
     const data = await resend.emails.send({
       from: "Lexentify Project System <notification@lexentify.com>",
-      to: ["info@lexentify.com"], // Ganti dengan email tujuan perusahaan Anda
+      to: ["info@lexentify.com"],
       subject: `🚀 Pesanan Proyek Baru: ${business} (${selectedPackage})`,
       replyTo: email,
       html: `
@@ -54,7 +54,7 @@ export async function POST(request: Request) {
               <td style="padding: 8px 0; color: #111;">${phone}</td>
             </tr>
             <tr>
-              <td style="padding: 8px 0; color: #6b7280;"><strong>Paket Dipilih:</strong></td>
+              <td style="padding: 8px 0; color: #6b7280;"><strong>Selected Package:</strong></td>
               <td style="padding: 8px 0; color: #111; font-weight: bold; color: #2563eb;">${selectedPackage}</td>
             </tr>
             <tr>
@@ -69,7 +69,7 @@ export async function POST(request: Request) {
           </div>
 
           <p style="font-size: 12px; color: #9ca3af; margin-top: 24px; border-top: 1px solid #e5e7eb; padding-top: 12px;">
-            Email ini dikirim otomatis melalui sistem pemesanan Lexentify. Balas langsung email ini untuk merespons klien.
+            This email was sent automatically by the Lexentify project system. Reply directly to respond to the client.
           </p>
         </div>
       `,
@@ -77,9 +77,9 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true, data });
   } catch (error) {
-    console.error("Gagal mengirim email project:", error);
+    console.error("Failed to send project email:", error);
     return NextResponse.json(
-      { error: "Terjadi kesalahan pada server saat mengirim brief proyek." },
+      { error: "A server error occurred while sending the project brief." },
       { status: 500 },
     );
   }

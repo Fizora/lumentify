@@ -101,7 +101,6 @@ export const mrrPlans: PricingPlan[] = [
   },
   {
     name: "Growth Care",
-    // Diperpendek agar pas 2 baris dan sejajar dengan card di sebelah kiri & kanan
     description:
       "Expanded developer support with regular content updates and priority assistance.",
     price: "$199",
@@ -137,3 +136,41 @@ export const mrrPlans: PricingPlan[] = [
     featured: false,
   },
 ];
+
+export const pricingSectionContent = {
+  oneTime: {
+    label: "Pricing",
+    title: "Build your site",
+    intro:
+      "One payment, no subscriptions. Choose the package that fits your business needs.",
+    badge: "Best choice",
+  },
+  maintenance: {
+    label: "Maintenance",
+    title: "Keep it running",
+    intro:
+      "Ongoing support, hosting, and updates — lock in the November rate and never worry about your site.",
+    badge: "Best value",
+  },
+  billedMonthly: "Billed monthly",
+  capacityLabel: "Capacity",
+  capacityMessage:
+    "To ensure sub-second performance and direct founder-level communication, we cap our active builds at 4 clients per month.",
+} as const;
+
+export const originalPrices: Record<
+  string,
+  { price: string; discountLabel: string }
+> = {
+  Essential: { price: "$1,899", discountLabel: "21% off" },
+  Pro: { price: "$2,999", discountLabel: "17% off" },
+  Custom: { price: "from $5,499", discountLabel: "16% off" },
+  "Core Tech & Care": { price: "$119", discountLabel: "25% off" },
+  "Local Dominance": { price: "$249", discountLabel: "20% off" },
+  "Growth Partner": { price: "from $499", discountLabel: "20% off" },
+};
+
+export const pricingCardContent = {
+  featuredBadge: "The Best Choice",
+  billedMonthly: "billed monthly",
+} as const;

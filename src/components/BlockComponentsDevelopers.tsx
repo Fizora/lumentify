@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { developerGateContent } from "@/const/page/DeveloperGate";
 
 const CORRECT_PASSWORD = "010363";
 
@@ -28,14 +29,13 @@ const BlockComponentsDevelopers = () => {
       <div className="w-full max-w-sm rounded-xl border border-zinc-800 bg-zinc-900 p-6 space-y-4">
         <div className="space-y-1.5">
           <span className="inline-block text-xs font-medium tracking-widest  uppercase text-zinc-400 bg-zinc-800 px-3 py-1 rounded-full">
-            Under development
+            {developerGateContent.badge}
           </span>
           <h1 className="text-lg font-medium text-white">
-            This site isn&apos;t live yet
+            {developerGateContent.title}
           </h1>
           <p className="text-lg text-zinc-400 leading-relaxed">
-            Only developers can access this page right now. Enter the password
-            to continue.
+            {developerGateContent.description}
           </p>
         </div>
 
@@ -49,12 +49,12 @@ const BlockComponentsDevelopers = () => {
                 setPassword(e.target.value);
                 if (error) setError(false);
               }}
-              placeholder="Password"
+              placeholder={developerGateContent.passwordPlaceholder}
               className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-3.5 py-2.5 text-[15px] text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-transparent"
             />
             {error && (
               <p className="text-xs text-red-400 mt-1.5">
-                That password isn&apos;t right — try again.
+                {developerGateContent.invalidPassword}
               </p>
             )}
           </div>
@@ -63,7 +63,7 @@ const BlockComponentsDevelopers = () => {
             type="submit"
             className="w-full rounded-lg bg-white text-black text-[15px] font-medium py-2.5 hover:bg-zinc-200 transition-colors"
           >
-            Unlock
+            {developerGateContent.unlockAction}
           </button>
         </form>
       </div>

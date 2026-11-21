@@ -98,3 +98,124 @@ export const webMaintenanceDetails = {
     },
   ],
 };
+
+export const servicesCommonContent = {
+  includedLabel: "Included",
+  relatedLabel: "Related",
+  lastUpdatedLabel: "Last updated:",
+} as const;
+
+export const webDevelopmentPageContent = {
+  metadata: {
+    title: "Web Development Scope",
+    description:
+      "Comprehensive technical scope, deliverable definitions, and operational framework for Lexentify web development services.",
+  },
+  label: "Services / Web development",
+  title: "Websites built to get your phone ringing.",
+  intro:
+    "Not a template with your logo on it — a site engineered around how trade customers actually behave in an emergency.",
+  included: [
+    {
+      title: "Click-to-call built in",
+      body: "A sticky mobile call button engineered for emergency customers to reach dispatch in one tap.",
+    },
+    {
+      title: "Suburb-level pages",
+      body: "Dedicated location pages structured to capture local search traffic in the suburbs you cover.",
+    },
+    {
+      title: "Sub-second load times",
+      body: "Clean, modern code and optimized assets so visitors don't bounce before the page even loads.",
+    },
+    {
+      title: "Secure by default",
+      body: "SSL, modern security headers, and hardened hosting configuration included on every build.",
+    },
+  ],
+  hubLabel: "Development information",
+  hubTitle: "Technical scope & operational rules",
+  cross: {
+    title: "Looking for ongoing updates or server management?",
+    body: "If you want to understand how our monthly maintenance tiers handle server uptime, security patches, and routine adjustments, check out our dedicated maintenance guide.",
+    href: "/services/web-maintenance",
+    cta: "Explore web maintenance",
+  },
+} as const;
+
+export const webMaintenancePageContent = {
+  metadata: {
+    title: "Web Maintenance Scope",
+    description:
+      "Operational framework, managed hosting specifications, and technical care guidelines for Lexentify maintenance plans.",
+  },
+  label: "Services / Web maintenance",
+  title: "A website is never really “done.”",
+  intro:
+    "Hosting expires, software needs updates, and content goes stale. Our maintenance plans keep everything running smoothly without you having to think about it.",
+  included: [
+    {
+      title: "Hosting & SSL, handled",
+      body: "Fast hosting and security certificates managed for you — nothing to renew or configure yourself.",
+    },
+    {
+      title: "Ongoing updates",
+      body: "Core and security updates applied monthly so your site stays fast and safe without you lifting a finger.",
+    },
+    {
+      title: "Uptime monitoring",
+      body: "24/7 monitoring on speed and availability — we usually catch an issue before you notice it.",
+    },
+    {
+      title: "Priority support",
+      body: "Skip the queue — maintenance clients get faster response times on requests and fixes.",
+    },
+  ],
+  hubLabel: "Maintenance information",
+  hubTitle: "MRR operational framework & guidelines",
+  cross: {
+    title: "Looking to commission a brand new trade website?",
+    body: "Review our one-time development packages, architectural deliverables, and initial hosting inclusions on our main development page.",
+    href: "/services/web-development",
+    cta: "Explore web development",
+  },
+} as const;
+
+export const seoPageContent = {
+  metadata: {
+    title: "SEO",
+    description:
+      "Discover how our built-in SEO and suburb-level architecture drive local search visibility.",
+  },
+  label: "Services / SEO",
+  title: "SEO that starts with the build, not after it.",
+  intro:
+    "We don’t sell SEO as a bolt-on service — it’s built into how every site is structured from day one.",
+  includedLabel: "Included",
+  included: [
+    {
+      title: "Suburb-level pages",
+      body: "Instead of one homepage competing for every keyword, dedicated pages target each suburb you service.",
+    },
+    {
+      title: "Technical foundation",
+      body: "Clean semantic HTML, fast loading, and proper structure — the groundwork Google actually rewards.",
+    },
+    {
+      title: "Google Business Profile",
+      body: "Setup and optimization guidance so your profile and website work together, not separately.",
+    },
+    {
+      title: "Ongoing ranking checks",
+      body: "Available on maintenance plans — a monthly check on where you sit for the searches that matter.",
+    },
+  ],
+  expectations: {
+    label: "Expectations",
+    title: "A note on realistic expectations",
+    body:
+      "No one can guarantee a #1 ranking — anyone who promises that is selling you something. What we can guarantee is the technical foundation done right, which is the part most sites get wrong from the start.",
+    action: "See plans",
+    href: "/pricing",
+  },
+} as const;

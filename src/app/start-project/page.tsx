@@ -1,18 +1,21 @@
 "use client";
-import { useState, useEffect, Suspense } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { motion } from "motion/react";
 import Link from "next/link";
+import { LuChevronLeft, LuCircleCheck, LuLoaderCircle } from "react-icons/lu";
 import {
-  LuArrowLeft,
-  LuSend,
-  LuCircleCheck,
-  LuLoaderCircle,
-  LuShieldCheck,
-  LuZap,
-  LuChevronLeft,
-} from "react-icons/lu";
-import { SecondaryButtonLink } from "@/components/ui/Button";
+  C,
+  Container,
+  Field,
+  Label,
+  buttonClass,
+  inputClass,
+} from "@/components/ui/Swiss";
+import { siteContent } from "@/const/data";
+import {
+  startProjectContent,
+  startProjectOptions,
+} from "@/const/page/StartProject";
 
 type ProjectFormState = {
   name: string;
@@ -29,25 +32,26 @@ const initialFormState: ProjectFormState = {
   business: "",
   email: "",
   phone: "",
-  package: "Essential",
-  suburbsCount: "1-5 suburbs",
+  package: startProjectOptions.packages[0],
+  suburbsCount: startProjectOptions.suburbs[0],
   goals: "",
 };
 
 function StartProjectContent() {
   const searchParams = useSearchParams();
-  const [form, setForm] = useState<ProjectFormState>(initialFormState);
+  const [form, setForm] = useState<ProjectFormState>(() => {
+    const requestedPackage = searchParams.get("package");
+    const selectedPackage = startProjectOptions.packages.find(
+      (option) => option === requestedPackage,
+    );
+
+    return selectedPackage
+      ? { ...initialFormState, package: selectedPackage }
+      : initialFormState;
+  });
   const [status, setStatus] = useState<"idle" | "loading" | "sent" | "error">(
     "idle",
   );
-
-  // Tangkap parameter 'package' dari URL (misal: /start-project?package=Pro) jika diklik dari pricing
-  useEffect(() => {
-    const pkg = searchParams.get("package");
-    if (pkg) {
-      setForm((prev) => ({ ...prev, package: pkg }));
-    }
-  }, [searchParams]);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -75,278 +79,236 @@ function StartProjectContent() {
   };
 
   return (
-    <main className="min-h-screen bg-white text-black selection:bg-black selection:text-white">
-      {/* Header Nav Minimalis */}
-      <header className=" w-full">
-        <div className=" border-gray-200 px-4 py-2 flex items-center justify-between max-w-7xl mx-auto">
-          <SecondaryButtonLink
+    <main
+      className="min-h-screen"
+      style={{ backgroundColor: C.BG, color: C.INK }}
+    >
+      <header className="border-b" style={{ borderColor: C.RULE }}>
+        <Container className="flex items-center justify-between py-4">
+          <Link
             href="/"
-            className="text-sm flex items-center gap-2 py-1.5 pr-8"
+            className="flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-60"
           >
-            <LuChevronLeft></LuChevronLeft>
-            Back To Home
-          </SecondaryButtonLink>
-          <span className="text-xs font-medium uppercase tracking-wider text-zinc-400">
-            Lexentify Onboarding
-          </span>
-        </div>
+            <LuChevronLeft size={16} aria-hidden="true" />
+            {startProjectContent.backAction}
+          </Link>
+          <Label>{startProjectContent.onboardingLabel}</Label>
+        </Container>
       </header>
 
-      <div className="mx-auto max-w-210 px-4 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="text-center space-y-3 mb-10"
-        >
-          <h1 className="text-3xl md:text-4xl font-medium tracking-tight">
-            Let&apos;s build your high-converting trade site.
-          </h1>
-          <p className="text-sm text-gray-600 max-w-xl mx-auto leading-relaxed">
-            Fill out the details below to lock in your project scope. No upfront
-            payment required—we review your brief and send a formal SOW first.
-          </p>
-        </motion.div>
+      <Container className="py-16 md:py-28">
+        <div className="grid grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <h1 className="text-balance text-[clamp(2.25rem,5vw,4rem)] font-semibold leading-none tracking-[-0.045em]">
+              {startProjectContent.title}
+            </h1>
+            <p
+              className="mt-6 max-w-sm text-base leading-relaxed"
+              style={{ color: C.MUTED }}
+            >
+              {startProjectContent.intro}
+            </p>
+            <p
+              className="mt-10 border-t pt-6 text-sm leading-relaxed"
+              style={{ borderColor: C.RULE, color: C.MUTED }}
+            >
+              <strong className="font-semibold" style={{ color: C.INK }}>
+                {startProjectContent.reassuranceTitle}
+              </strong>{" "}
+              {startProjectContent.reassurance}
+            </p>
+          </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-          className="border border-gray-200 p-6 md:p-10 bg-white shadow-xs rounded-lg"
-        >
-          {status === "sent" ? (
-            <div className="flex flex-col items-center text-center py-12 space-y-4">
-              <LuCircleCheck className="w-14 h-14 text-emerald-600" />
-              <h3 className="text-2xl font-medium">Project Brief Received!</h3>
-              <p className="text-sm text-gray-600 leading-relaxed max-w-md">
-                Thank you,{" "}
-                <span className="font-medium text-black">{form.name}</span>. We
-                have received your project details for{" "}
-                <span className="font-medium text-black">{form.business}</span>{" "}
-                and will review your specifications. Expect a response with next
-                steps within 1 business day.
-              </p>
-              <Link
-                href="/"
-                className="mt-4 inline-flex items-center justify-center bg-zinc-900 text-white text-sm font-medium px-6 py-3 rounded-md hover:bg-zinc-800 transition-colors"
+          <div className="md:col-span-7">
+            {status === "sent" ? (
+              <div
+                role="status"
+                className="border-y py-16"
+                style={{ borderColor: C.RULE }}
               >
-                Return to Homepage
-              </Link>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Grid Identitas */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-xs font-medium uppercase tracking-wider mb-2"
-                  >
-                    Your Full Name *
-                  </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    value={form.name}
-                    onChange={handleChange}
-                    placeholder="John Smith"
-                    className="w-full border border-gray-300 px-3.5 py-3 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-black transition-all"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="business"
-                    className="block text-xs font-medium uppercase tracking-wider mb-2"
-                  >
-                    Business / Trade Name *
-                  </label>
-                  <input
-                    id="business"
-                    name="business"
-                    type="text"
-                    required
-                    value={form.business}
-                    onChange={handleChange}
-                    placeholder="Smith Plumbing & HVAC"
-                    className="w-full border border-gray-300 px-3.5 py-3 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-black transition-all"
-                  />
-                </div>
-              </div>
-
-              {/* Grid Kontak */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-xs font-medium uppercase tracking-wider mb-2"
-                  >
-                    Email Address *
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    value={form.email}
-                    onChange={handleChange}
-                    placeholder="you@business.com"
-                    className="w-full border border-gray-300 px-3.5 py-3 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-black transition-all"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-xs font-medium uppercase tracking-wider mb-2"
-                  >
-                    Phone / WhatsApp Number *
-                  </label>
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="text"
-                    required
-                    value={form.phone}
-                    onChange={handleChange}
-                    placeholder="+61 255 511 192"
-                    className="w-full border border-gray-300 px-3.5 py-3 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-black transition-all"
-                  />
-                </div>
-              </div>
-
-              {/* Pilihan Paket & Kebutuhan */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label
-                    htmlFor="package"
-                    className="block text-xs font-medium uppercase tracking-wider mb-2"
-                  >
-                    Selected Package
-                  </label>
-                  <select
-                    id="package"
-                    name="package"
-                    value={form.package}
-                    onChange={handleChange}
-                    className="w-full border border-gray-300 px-3.5 py-3 text-sm rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-black transition-all"
-                  >
-                    <option value="Essential">
-                      Essential ($1,499) — 1 Landing Page
-                    </option>
-                    <option value="Pro">
-                      Pro ($2,499) — Up to 5 Custom Pages
-                    </option>
-                    <option value="Custom">
-                      Custom (from $4,599) — Multi-suburb Platform
-                    </option>
-                  </select>
-                </div>
-                <div>
-                  <label
-                    htmlFor="suburbsCount"
-                    className="block text-xs font-medium uppercase tracking-wider mb-2"
-                  >
-                    Target Service Area Coverage
-                  </label>
-                  <select
-                    id="suburbsCount"
-                    name="suburbsCount"
-                    value={form.suburbsCount}
-                    onChange={handleChange}
-                    className="w-full border border-gray-300 px-3.5 py-3 text-sm rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-black transition-all"
-                  >
-                    <option value="1-5 suburbs">
-                      1 - 5 Suburbs / Local Area
-                    </option>
-                    <option value="6-15 suburbs">
-                      6 - 15 Suburbs (Regional Coverage)
-                    </option>
-                    <option value="Greater Metro">
-                      Greater Metropolitan Area (Multi-branch)
-                    </option>
-                  </select>
-                </div>
-              </div>
-
-              {/* Pesan / Goals */}
-              <div>
-                <label
-                  htmlFor="goals"
-                  className="block text-xs font-medium uppercase tracking-wider mb-2"
+                <LuCircleCheck className="mb-6 h-10 w-10" />
+                <h2 className="text-3xl font-semibold tracking-tight">
+                  {startProjectContent.successTitle}
+                </h2>
+                <p
+                  className="mt-4 max-w-md text-[15px] leading-relaxed"
+                  style={{ color: C.MUTED }}
                 >
-                  Project Goals & Current Website (if any) *
-                </label>
-                <textarea
-                  id="goals"
-                  name="goals"
-                  required
-                  rows={4}
-                  value={form.goals}
-                  onChange={handleChange}
-                  placeholder="Tell us about your current site limitations, specific trade services you want to highlight, or main objectives."
-                  className="w-full border border-gray-300 px-3.5 py-3 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-black resize-none transition-all"
-                />
+                  {startProjectContent.successLead}{" "}
+                  <span className="font-semibold" style={{ color: C.INK }}>
+                    {form.name}
+                  </span>
+                  {startProjectContent.successBetween}{" "}
+                  <span className="font-semibold" style={{ color: C.INK }}>
+                    {form.business}
+                  </span>{" "}
+                  {` ${startProjectContent.successEnd}`}
+                </p>
+                <Link href="/" className={`${buttonClass("solid")} mt-10`}>
+                  {startProjectContent.returnAction}
+                </Link>
               </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2">
+                  <Field id="name" label={startProjectContent.fields.name.label}>
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      autoComplete="name"
+                      required
+                      value={form.name}
+                      onChange={handleChange}
+                      placeholder={startProjectContent.fields.name.placeholder}
+                      className={inputClass}
+                    />
+                  </Field>
+                  <Field
+                    id="business"
+                    label={startProjectContent.fields.business.label}
+                  >
+                    <input
+                      id="business"
+                      name="business"
+                      type="text"
+                      autoComplete="organization"
+                      required
+                      value={form.business}
+                      onChange={handleChange}
+                      placeholder={startProjectContent.fields.business.placeholder}
+                      className={inputClass}
+                    />
+                  </Field>
+                  <Field id="email" label={startProjectContent.fields.email.label}>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      autoComplete="email"
+                      required
+                      value={form.email}
+                      onChange={handleChange}
+                      placeholder={startProjectContent.fields.email.placeholder}
+                      className={inputClass}
+                    />
+                  </Field>
+                  <Field id="phone" label={startProjectContent.fields.phone.label}>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      autoComplete="tel"
+                      required
+                      value={form.phone}
+                      onChange={handleChange}
+                      placeholder={startProjectContent.fields.phone.placeholder}
+                      className={inputClass}
+                    />
+                  </Field>
+                  <Field
+                    id="package"
+                    label={startProjectContent.fields.package.label}
+                  >
+                    <select
+                      id="package"
+                      name="package"
+                      value={form.package}
+                      onChange={handleChange}
+                      className={inputClass}
+                    >
+                      {startProjectOptions.packages.map((option, index) => (
+                        <option key={option} value={option}>
+                          {startProjectOptions.packageLabels[index]}
+                        </option>
+                      ))}
+                    </select>
+                  </Field>
+                  <Field
+                    id="suburbsCount"
+                    label={startProjectContent.fields.suburbs.label}
+                  >
+                    <select
+                      id="suburbsCount"
+                      name="suburbsCount"
+                      value={form.suburbsCount}
+                      onChange={handleChange}
+                      className={inputClass}
+                    >
+                      {startProjectOptions.suburbs.map((option, index) => (
+                        <option key={option} value={option}>
+                          {startProjectOptions.suburbLabels[index]}
+                        </option>
+                      ))}
+                    </select>
+                  </Field>
+                </div>
 
-              {status === "error" && (
-                <div className="bg-red-50 border border-red-200 p-4 rounded-md">
-                  <p className="text-sm text-red-700">
-                    Failed to submit project brief. Please try again or email us
-                    directly at{" "}
+                <Field
+                  id="goals"
+                  label={startProjectContent.fields.goals.label}
+                >
+                  <textarea
+                    id="goals"
+                    name="goals"
+                    required
+                    rows={4}
+                    value={form.goals}
+                    onChange={handleChange}
+                    placeholder={startProjectContent.fields.goals.placeholder}
+                    className={`${inputClass} resize-none`}
+                  />
+                </Field>
+
+                {status === "error" && (
+                  <p
+                    role="alert"
+                    className="border border-[#ff6b6b] px-4 py-3 text-sm leading-relaxed text-[#ff9a9a]"
+                  >
+                    {startProjectContent.sendError}{" "}
                     <a
-                      href="mailto:info@lexentify.com"
+                      href={`mailto:${siteContent.email}`}
                       className="font-medium underline"
                     >
-                      info@lexentify.com
+                      {siteContent.email}
                     </a>
+                    .
                   </p>
-                </div>
-              )}
-
-              {/* Keamanan & Jaminan */}
-              <div className="bg-zinc-50 border  p-4 rounded-md flex items-start gap-3">
-                <LuShieldCheck className="w-5 h-5 text-zinc-900 shrink-0 mt-0.5" />
-                <p className="text-xs text-gray-600 leading-relaxed">
-                  <strong className="text-black">No Financial Risk:</strong>{" "}
-                  Submitting this brief does not lock you into payment. We draft
-                  a formal Statement of Work (SOW) first. Work only begins after
-                  mutual agreement.
-                </p>
-              </div>
-
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="w-full inline-flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 disabled:opacity-60 text-white font-medium px-6 py-3.5 text-sm rounded-md transition-colors cursor-pointer shadow-sm"
-              >
-                {status === "loading" ? (
-                  <>
-                    <LuLoaderCircle className="w-4 h-4 animate-spin" />
-                    Submitting Project Brief...
-                  </>
-                ) : (
-                  <>
-                    Submit Project Brief & Lock Scope
-                    <LuSend className="w-4 h-4" />
-                  </>
                 )}
-              </button>
-            </form>
-          )}
-        </motion.div>
-      </div>
+
+                <button
+                  type="submit"
+                  disabled={status === "loading"}
+                  className={`${buttonClass("solid")} w-full cursor-pointer`}
+                >
+                  {status === "loading" ? (
+                    <>
+                      {startProjectContent.submittingAction}
+                      <LuLoaderCircle className="h-4 w-4 animate-spin" />
+                    </>
+                  ) : (
+                    startProjectContent.submitAction
+                  )}
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      </Container>
     </main>
   );
 }
 
-// Dibungkus Suspense karena menggunakan useSearchParams
+// Dibungkus Suspense karena memakai useSearchParams
 export default function StartProjectPage() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen flex items-center justify-center text-sm font-medium">
-          Loading...
+        <div
+          className="flex min-h-screen items-center justify-center text-sm"
+          style={{ backgroundColor: C.BG, color: C.MUTED }}
+        >
+          {startProjectContent.loading}
         </div>
       }
     >

@@ -12,17 +12,17 @@ export async function POST(request: Request) {
     // Validasi sederhana
     if (!name || !business || !email || !message) {
       return NextResponse.json(
-        { error: "Semua field wajib diisi." },
+        { error: "Please complete every required field." },
         { status: 400 },
       );
     }
 
     // Kirim email menggunakan Resend
     const data = await resend.emails.send({
-      // Gunakan email domain terverifikasi Anda di Resend,
-      // atau 'onboarding@resend.dev' untuk tahap uji coba / development
+      // Use a verified domain email in Resend,
+      // or 'onboarding@resend.dev' for development/testing.
       from: "Lexentify Contact <notification@lexentify.com>",
-      to: ["info@lexentify.com"], // Ganti dengan email tujuan Anda
+      to: ["info@lexentify.com"],
       subject: `Pesan Baru dari ${name} (${business})`,
       replyTo: email,
       html: `
@@ -31,7 +31,7 @@ export async function POST(request: Request) {
           <p><strong>Nama:</strong> ${name}</p>
           <p><strong>Nama Bisnis:</strong> ${business}</p>
           <p><strong>Email Pengirim:</strong> ${email}</p>
-          <p><strong>Layanan yang Diminati:</strong> ${interest}</p>
+          <p><strong>Service of Interest:</strong> ${interest}</p>
           <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 20px 0;" />
           <h3 style="color: #111; margin-bottom: 8px;">Pesan / Detail Proyek:</h3>
           <p style="background: #f9fafb; padding: 15px; border-radius: 6px; white-space: pre-wrap;">${message}</p>
@@ -41,9 +41,9 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true, data });
   } catch (error) {
-    console.error("Gagal mengirim email:", error);
+    console.error("Failed to send email:", error);
     return NextResponse.json(
-      { error: "Terjadi kesalahan saat mengirim pesan." },
+      { error: "A server error occurred while sending the message." },
       { status: 500 },
     );
   }

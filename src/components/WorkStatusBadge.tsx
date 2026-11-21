@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { siteContent } from "@/const/data";
 
 const WORK_HOURS = { start: 9, end: 18, days: [1, 2, 3, 4, 5] } as const;
 const TZ_OFFSET = 7; // GMT+7
@@ -37,9 +38,12 @@ export default function WorkStatusBadge({
   const [status, setStatus] = useState<WorkStatus | null>(null);
 
   useEffect(() => {
-    setStatus(getStatus());
+    const initialStatus = window.setTimeout(() => setStatus(getStatus()), 0);
     const id = setInterval(() => setStatus(getStatus()), 60_000);
-    return () => clearInterval(id);
+    return () => {
+      window.clearTimeout(initialStatus);
+      clearInterval(id);
+    };
   }, []);
 
   if (!status) return null;
@@ -62,7 +66,7 @@ export default function WorkStatusBadge({
     return (
       <span className="inline-flex items-center gap-2 text-xs text-zinc-400">
         {dot}
-        {isOpen ? "Open now" : "Closed"}
+        {isOpen ? siteContent.workStatus.open : siteContent.workStatus.closed}
       </span>
     );
   }
@@ -71,10 +75,10 @@ export default function WorkStatusBadge({
     <span className="inline-flex items-center gap-2 text-xs">
       {dot}
       <span className={isOpen ? "text-emerald-400" : "text-amber-400"}>
-        {isOpen ? "Open now" : "Closed"}
+        {isOpen ? siteContent.workStatus.open : siteContent.workStatus.closed}
       </span>
       <span className="text-zinc-600">·</span>
-      <span className="text-zinc-500">Mon–Fri, 09:00–18:00 (GMT+7)</span>
+      <span className="text-zinc-500">{siteContent.workStatus.hours}</span>
     </span>
   );
 }

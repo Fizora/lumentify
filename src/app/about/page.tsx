@@ -3,104 +3,107 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Skathes from "@/components/Skathes";
 import CTA from "@/components/sections/CTA";
+import { C, Container, Label, PageHero } from "@/components/ui/Swiss";
+import { aboutMetadata, aboutPageContent } from "@/const/page/About";
 
-export const metadata: Metadata = {
-  title: "Lexentify | About Our Studio",
-  description:
-    "Learn about Lexentify's approach to building clear, mobile-friendly websites for home-service businesses and broader digital projects.",
-};
+export const metadata: Metadata = aboutMetadata;
 
 export default function About() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white text-zinc-900 border-b px-3">
-        <div className="mx-auto max-w-7xl px-3 py-20 border-x ">
-          <div className="mx-auto max-w-3xl pt-12">
-            <div className="mb-12 space-y-4">
-              <span className="inline-block text-xs font-medium tracking-widest uppercase text-zinc-600 bg-zinc-100 px-4 py-1.5 rounded-full">
-                About Lexentify
-              </span>
+      <main style={{ backgroundColor: C.BG, color: C.INK }}>
+        <PageHero
+          label={aboutPageContent.label}
+          title={aboutPageContent.title}
+          intro={aboutPageContent.intro}
+          compact
+        />
 
-              <h1 className="text-3xl md:text-4xl font-medium tracking-tight text-black leading-tight">
-                Websites designed with precision & purpose
-              </h1>
+        <section
+          className="border-y"
+          style={{ borderColor: C.RULE, backgroundColor: C.BG, color: C.INK }}
+        >
+          <Container className="py-8 md:py-12">
+            <div className="grid grid-cols-1 gap-x-6 gap-y-5 md:grid-cols-12">
+              <div className="md:col-span-3">
+                <Label>{aboutPageContent.studioLabel}</Label>
+              </div>
 
-              <p className="text-sm text-zinc-600 leading-relaxed">
-                Learn about our focus, our approach to digital execution, and
-                the core principles that guide our work across every project.
-              </p>
+              <article
+                className="text-[15px] leading-relaxed md:col-span-9"
+                style={{ color: C.MUTED }}
+              >
+                <div className="border-y" style={{ borderColor: C.RULE }}>
+                  <p className="border-b py-4 md:py-5" style={{ borderColor: C.RULE }}>
+                    {aboutPageContent.paragraphs[0]}
+                  </p>
+
+                  <div
+                    className="grid border-b md:grid-cols-2"
+                    style={{ borderColor: C.RULE }}
+                  >
+                    <p
+                      className="py-4 md:py-5 md:pr-6"
+                      style={{ borderColor: C.RULE }}
+                    >
+                      {aboutPageContent.paragraphs[1]}
+                    </p>
+                    <p
+                      className="border-t py-4 md:border-l md:border-t-0 md:py-5 md:pl-6"
+                      style={{ borderColor: C.RULE }}
+                    >
+                      {aboutPageContent.paragraphs[2]}
+                    </p>
+                  </div>
+
+                  <p
+                    className="border-b py-4 md:py-5"
+                    style={{ borderColor: C.RULE }}
+                  >
+                    {aboutPageContent.paragraphs[3]}{" "}
+                    <strong style={{ color: C.INK }}>
+                      {aboutPageContent.principlesEmphasis}
+                    </strong>
+                  </p>
+
+                  <dl className="grid md:grid-cols-3">
+                    {aboutPageContent.principles.map((p) => (
+                      <div
+                        key={p.name}
+                        className="border-b py-4 last:border-b-0 md:border-r md:border-b-0 md:px-5 md:py-5 md:last:border-r-0 md:first:pl-0"
+                        style={{ borderColor: C.RULE }}
+                      >
+                        <dt
+                          className="mb-1 font-medium"
+                          style={{ color: C.INK }}
+                        >
+                          {p.name}
+                        </dt>
+                        <dd>{p.text}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+
+                <div
+                  className="grid border-b md:grid-cols-2"
+                  style={{ borderColor: C.RULE }}
+                >
+                  <p className="py-4 md:py-5 md:pr-6">
+                    {aboutPageContent.paragraphs[4]}
+                  </p>
+                  <p
+                    className="border-t py-4 md:border-l md:border-t-0 md:py-5 md:pl-6"
+                    style={{ borderColor: C.RULE }}
+                  >
+                    {aboutPageContent.paragraphs[5]}
+                  </p>
+                </div>
+              </article>
             </div>
-
-            <article className="space-y-6 text-zinc-700 leading-relaxed text-sm text-left">
-              <p>
-                Lexentify is an independent digital studio with a primary focus
-                on building high-conversion websites for household and
-                home-service businesses, including plumbers, electricians, HVAC
-                providers, and roofers. By deeply specializing in this sector,
-                we streamline our development processes and maintain rigorous
-                quality control. However, our engineering standards are
-                adaptable—we are always open to selecting and accepting
-                selective projects outside of this niche when clients share our
-                value for clean, high-performance web architecture.
-              </p>
-
-              <p>
-                Website usability matters, particularly on mobile devices. Slow
-                loading, unclear service information, or difficult-to-find
-                contact details can create friction for visitors. We aim to
-                reduce that friction through considered page structure,
-                responsive layouts, optimized assets, and clear contact options.
-                Actual website performance and customer behavior depend on
-                factors beyond design and development alone.
-              </p>
-
-              <p>
-                We take a project-specific approach rather than relying on
-                one-size-fits-all copy. Where information is available, we
-                review your services, target audience, business priorities, and
-                existing digital assets before shaping the page structure and
-                content. The result is a website built around your agreed
-                requirements, with clear paths for visitors to call, enquire, or
-                request a quote.
-              </p>
-
-              <p>
-                Our approach is guided by three principles:{" "}
-                <strong>Fast, Clean, and Directed.</strong>
-                <span className="block mt-2">
-                  <strong className="text-black">Fast</strong> means applying
-                  performance-conscious development practices and testing the
-                  site under defined conditions. Actual loading times vary with
-                  devices, networks, hosting, and third-party services.
-                  <strong className="text-black ml-1">Clean</strong> means
-                  organizing information in a way that is easy to scan and
-                  navigate.
-                  <strong className="text-black ml-1">Directed</strong> means
-                  giving each page a clear purpose and making relevant actions,
-                  such as calling or submitting an enquiry, easy to find.
-                </span>
-              </p>
-
-              <p>
-                Where applicable, business credentials, licences, insurance
-                details, reviews, and other trust signals should be accurate and
-                supplied or approved by the business owner. We do not present
-                unverified credentials or invented customer reviews as genuine
-                evidence.
-              </p>
-
-              <p>
-                Whether building for our core household niche or expanding into
-                new industries, Lexentify focuses on delivering practical,
-                high-standard websites one project at a time. Our work supports
-                your online presence; search rankings, enquiry volume, bookings,
-                and revenue depend on many factors and are not guaranteed by
-                website development alone.
-              </p>
-            </article>
-          </div>
-        </div>
+          </Container>
+        </section>
       </main>
       <Skathes />
       <CTA />

@@ -24,10 +24,10 @@ export default function Home() {
         <Skathes />
         <Workflow />
         <Skathes />
-        {/* <Testimonials /> */}
+        <Testimonials />
         <FAQ />
-        {/* <Skathes /> */}
-        {/* <Contact /> */}
+        <Skathes />
+        <Contact />
         <Skathes />
         <CTA />
         <Skathes />

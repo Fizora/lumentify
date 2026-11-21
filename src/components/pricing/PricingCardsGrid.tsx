@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { LuCircleCheck, LuArrowRight } from "react-icons/lu";
 import { PrimaryButtonLink, SecondaryButtonLink } from "@/components/ui/Button";
+import { pricingCardContent } from "@/const/landing/Pricing";
 
 type Plan = {
   name: string;
@@ -24,7 +25,7 @@ type PricingCardsGridProps = {
 
 const PricingCardsGrid = ({
   plans,
-  featuredBadgeLabel = "The Best Choice",
+  featuredBadgeLabel = pricingCardContent.featuredBadge,
   showBilledMonthlyNote = false,
 }: PricingCardsGridProps) => {
   return (
@@ -45,31 +46,31 @@ const PricingCardsGrid = ({
             hidden: { opacity: 0, y: 20 },
             visible: { opacity: 1, y: 0 },
           }}
-          className={`rounded-md relative flex flex-col p-6 md:p-8 border ${
+          className={`relative flex flex-col p-6 md:p-8 border ${
             plan.featured
-              ? "border-zinc-300 bg-zinc-50/50 shadow-xl shadow-zinc-200 z-10"
-              : "border-gray-200 bg-white"
+              ? "z-10 border-[#B5AE9B] bg-[#D8D1C2] shadow-xl shadow-black"
+              : "border-[#2A2A2A] bg-black"
           }`}
         >
           {plan.featured && (
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-xs font-medium px-5 py-1 rounded-full">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#24231F] text-[#F3F0E8] text-xs font-medium px-5 py-1 rounded-full">
               {featuredBadgeLabel}
             </div>
           )}
           <div className="mb-6">
-            <h3 className="text-xl font-medium text-black">{plan.name}</h3>
-            <p className="text-sm text-gray-600 mb-5 py-3 min-h-12 leading-relaxed">
+            <h3 className={`text-xl font-medium ${plan.featured ? "text-black" : "text-white"}`}>{plan.name}</h3>
+            <p className={`mb-5 min-h-12 py-3 text-sm leading-relaxed ${plan.featured ? "text-[#5C594F]" : "text-zinc-400"}`}>
               {plan.description}
             </p>
           </div>
           <div className="mb-8">
-            <span className="text-4xl font-medium text-black">
+            <span className={`text-4xl font-medium ${plan.featured ? "text-black" : "text-white"}`}>
               {plan.price}
             </span>
-            <span className="text-gray-500 ml-2 text-sm">{plan.period}</span>
+            <span className={`ml-2 text-sm ${plan.featured ? "text-[#5C594F]" : "text-gray-500"}`}>{plan.period}</span>
             {showBilledMonthlyNote && (
-              <span className="block text-xs text-gray-400 mt-1">
-                billed monthly
+              <span className="mt-1 block text-xs text-zinc-500">
+                {pricingCardContent.billedMonthly}
               </span>
             )}
           </div>
@@ -78,10 +79,10 @@ const PricingCardsGrid = ({
               <li key={i} className="flex items-start gap-3">
                 <LuCircleCheck
                   className={`w-5 h-5 mt-0.5 shrink-0 ${
-                    plan.featured ? "text-green-600" : "text-gray-600"
+                    plan.featured ? "text-zinc-300" : "text-zinc-500"
                   }`}
                 />
-                <span className="text-sm text-gray-700 leading-relaxed">
+                <span className={`text-sm leading-relaxed ${plan.featured ? "text-[#35332E]" : "text-zinc-300"}`}>
                   {feat}
                 </span>
               </li>
@@ -101,7 +102,7 @@ const PricingCardsGrid = ({
               <SecondaryButtonLink
                 href={plan.paymentLink}
                 target="_blank"
-                className="w-full text-center flex items-center justify-center gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 text-black transition-colors px-8 py-3 text-sm font-medium"
+                className="flex w-full items-center justify-center gap-2 border border-[#555555] bg-transparent px-8 py-3 text-center text-sm font-medium text-white transition-colors hover:bg-white/5"
               >
                 {plan.cta}
               </SecondaryButtonLink>
