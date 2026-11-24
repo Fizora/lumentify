@@ -107,9 +107,9 @@ export const servicesCommonContent = {
 
 export const webDevelopmentPageContent = {
   metadata: {
-    title: "Web Development Scope",
+    title: "Web Design & Development for Home Services",
     description:
-      "Comprehensive technical scope, deliverable definitions, and operational framework for Lexentify web development services.",
+      "Custom, mobile-friendly websites for plumbers, electricians, HVAC, and other home-service businesses, built with clear service pages and local SEO foundations.",
   },
   label: "Services / Web development",
   title: "Websites built to get your phone ringing.",
@@ -145,9 +145,9 @@ export const webDevelopmentPageContent = {
 
 export const webMaintenancePageContent = {
   metadata: {
-    title: "Web Maintenance Scope",
+    title: "Website Maintenance for Home-Service Businesses",
     description:
-      "Operational framework, managed hosting specifications, and technical care guidelines for Lexentify maintenance plans.",
+      "Managed website hosting, security updates, uptime monitoring, and ongoing technical care for home-service businesses.",
   },
   label: "Services / Web maintenance",
   title: "A website is never really “done.”",
@@ -183,9 +183,9 @@ export const webMaintenancePageContent = {
 
 export const seoPageContent = {
   metadata: {
-    title: "SEO",
+    title: "Local SEO Foundations for Home-Service Businesses",
     description:
-      "Discover how our built-in SEO and suburb-level architecture drive local search visibility.",
+      "Explore Lexentify's technical SEO foundations for home-service websites, including clear site structure, local service-area pages, and Google Business Profile guidance.",
   },
   label: "Services / SEO",
   title: "SEO that starts with the build, not after it.",

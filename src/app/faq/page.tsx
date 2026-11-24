@@ -37,9 +37,9 @@ const FAQ = () => {
               >
                 {faqPageContent.label}
               </span>
-              <h2 className="text-3xl font-medium leading-tight md:text-4xl">
+              <h1 className="text-3xl font-medium leading-tight md:text-4xl">
                 {faqPageContent.title}
-              </h2>
+              </h1>
               <p
                 className="mx-auto max-w-2xl text-lg leading-relaxed"
                 style={{ color: C.MUTED }}

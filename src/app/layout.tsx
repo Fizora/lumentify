@@ -17,12 +17,17 @@ const mono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lexentify.com"),
+  metadataBase: new URL(siteContent.siteUrl),
   title: {
     default: siteContent.metadata.title,
     template: siteContent.metadata.template,
   },
-  // ...sisanya sama persis seperti sebelumnya
+  description: siteContent.metadata.description,
+  applicationName: siteContent.brandName,
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

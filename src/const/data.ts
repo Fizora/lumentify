@@ -48,9 +48,12 @@ export const sidebarNavItems = [
 
 export const siteContent = {
   brandName: "Lexentify",
+  siteUrl: "https://lexentify.com",
   metadata: {
-    title: "Lexentify | High-Conversion Web Development for Home Services",
+    title: "Web Design & Development for Home-Service Businesses",
     template: "%s | Lexentify",
+    description:
+      "Lexentify builds fast, mobile-friendly websites for plumbers, electricians, HVAC, and other home-service businesses. Explore web development, local SEO, pricing, and maintenance.",
   },
   email: "business@lexentify.com",
   businessEmail: "business@lexentify.com",
@@ -74,6 +77,9 @@ export const siteContent = {
           { label: "Showcase", href: "/showcase" },
           { label: "Pricing", href: "/pricing" },
           { label: "FAQ", href: "/faq" },
+          { label: "Web Development", href: "/services/web-development" },
+          { label: "Web Maintenance", href: "/services/web-maintenance" },
+          { label: "SEO", href: "/services/seo" },
         ],
       },
       {

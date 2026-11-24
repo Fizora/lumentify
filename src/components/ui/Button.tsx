@@ -81,7 +81,7 @@ export const PrimaryButtonLink = ({
     <Link
       href={href}
       style={style} // ✅ Teruskan ke elemen Link
-      className={`${className} rounded-md px-6 py-1.5 font-medium bg-white hover:bg-zinc-200 transition duration-300 text-black border border-white text-center transform active:scale-95 text-sm`}
+      className={`${className} px-6 py-1.5 font-medium bg-white hover:bg-zinc-200 transition duration-300 text-black border border-white text-center transform active:scale-95 text-sm`}
       target={target}
     >
       {children}
@@ -100,7 +100,7 @@ export const SecondaryButtonLink = ({
     <Link
       href={href}
       style={style} // ✅ Teruskan ke elemen Link
-      className={`${className} rounded-md px-6 py-1.5 font-medium bg-transparent hover:bg-white/5 transition duration-300 text-white border border-[#555555] text-center text-sm`}
+      className={`${className} px-6 py-1.5 font-medium bg-transparent hover:bg-white/5 transition duration-300 text-white border border-[#555555] text-center text-sm`}
       target={target}
     >
       {children}

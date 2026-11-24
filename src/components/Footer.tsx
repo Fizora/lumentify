@@ -14,7 +14,7 @@ const Footer = () => {
         style={{ borderColor: C.RULE }}
       >
         <div
-          className="grid grid-cols-1 border-y md:grid-cols-12"
+          className="grid grid-cols-1 border-b md:grid-cols-12"
           style={{ borderColor: C.RULE }}
         >
           <div className="px-6 py-12 md:col-span-7 md:px-12 md:py-16">

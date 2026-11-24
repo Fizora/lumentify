@@ -104,19 +104,19 @@ const ShowcaseCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: (index % 3) * 0.1, ease: "easeOut" }}
-      className="h-full"
+      className={`h-full ${index === totalItems - 1 ? "" : "border-b"} ${
+        !isLastInRow ? "lg:border-r" : ""
+      } lg:border-b-0`}
+      style={{ borderColor: BORDER }}
     >
       <Link
         href={item.href}
         target="_blank"
-        className={`group flex h-full flex-col p-6 transition-colors duration-300 hover:bg-white/5 lg:p-8 ${
-          !isLastInRow ? "lg:border-r" : ""
-        } ${!isLastRow ? "border-b" : "border-b lg:border-b-0"}`}
-        style={{ borderColor: BORDER }}
+        className="group flex h-full flex-col p-6 transition-colors duration-300 hover:bg-white/5 lg:p-8"
       >
         {/* Preview */}
         <div
-          className="relative aspect-16/10 w-full overflow-hidden rounded-md border mb-6"
+          className="relative mb-6 aspect-16/10 w-full overflow-hidden border"
           style={{ backgroundColor: "#101010", borderColor: BORDER }}
         >
           <PreviewImage img={item.img} icon={IconComponent} />
@@ -125,7 +125,7 @@ const ShowcaseCard = ({
           <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
           <span
-            className="absolute bottom-3 right-3 inline-flex translate-y-2 items-center gap-1.5 rounded-md px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+            className="absolute bottom-3 right-3 inline-flex translate-y-2 items-center gap-1.5 border px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
             style={{ backgroundColor: INK, color: BG }}
           >
             {portfolioGridContent.visitAction}
@@ -134,7 +134,7 @@ const ShowcaseCard = ({
 
           {/* Status Badge */}
           <span
-            className="absolute left-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest backdrop-blur-md"
+            className="absolute left-3 top-3 z-10 inline-flex items-center gap-1.5 border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest backdrop-blur-md"
             style={{
               backgroundColor: "rgba(10, 10, 10, 0.9)",
               color: INK,
@@ -178,7 +178,7 @@ const ShowcaseCard = ({
               {item.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-md border px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider"
+                  className="border px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider"
                   style={{
                     backgroundColor: SAGE_SOFT,
                     color: SAGE,
@@ -218,7 +218,7 @@ export default function ShowcaseGrid() {
 
       {currentItems.length === 0 ? (
         <div
-          className="text-center py-20 px-6 border rounded-md"
+          className="text-center py-20 px-6 border"
           style={{ backgroundColor: SAGE_SOFT, borderColor: SAGE_BORDER }}
         >
           <p className="text-sm font-medium" style={{ color: SAGE }}>
@@ -244,28 +244,31 @@ export default function ShowcaseGrid() {
 
       {/* Bottom CTA Block */}
       <div
-        className="mt-24 mb-16 px-6 py-16 border text-center space-y-8"
+        className="-mx-5 mt-16 grid grid-cols-1 border-y md:-mx-10 lg:grid-cols-12"
         style={{ backgroundColor: SAGE_SOFT, borderColor: BORDER }}
       >
-        <h2
-          className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight uppercase"
-          style={{ color: INK }}
-        >
-          {portfolioGridContent.ctaTitle}
-        </h2>
-        <p
-          className="max-w-xl mx-auto text-lg leading-relaxed"
-          style={{ color: MUTED }}
-        >
-          {portfolioGridContent.ctaDescription}
-        </p>
-        <div className="pt-2">
+        <div className="flex flex-col justify-center px-5 py-10 md:px-10 lg:col-span-8 lg:border-r">
+          <h2
+            className="text-4xl font-semibold uppercase leading-none tracking-tight md:text-5xl"
+            style={{ color: INK }}
+          >
+            {portfolioGridContent.ctaTitle}
+          </h2>
+          <p
+            className="mt-5 max-w-xl text-base leading-relaxed"
+            style={{ color: MUTED }}
+          >
+            {portfolioGridContent.ctaDescription}
+          </p>
+        </div>
+        <div className="flex items-end border-t px-5 py-5 md:px-10 lg:col-span-4 lg:border-t-0 lg:border-l-0">
           <PrimaryButtonLink
             href={portfolioGridContent.ctaHref}
-            className="inline-flex items-center px-8 py-3.5 text-sm font-semibold uppercase tracking-wider rounded-md transition-opacity hover:opacity-90"
+            className="flex w-full items-center justify-between px-5 py-4 text-sm font-semibold uppercase tracking-wider transition-opacity hover:opacity-90"
             style={{ backgroundColor: INK, color: BG }}
           >
-            {portfolioGridContent.ctaAction}
+            <span>{portfolioGridContent.ctaAction}</span>
+            <LuArrowUpRight className="size-4" />
           </PrimaryButtonLink>
         </div>
       </div>
