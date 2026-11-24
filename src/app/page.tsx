@@ -56,7 +56,8 @@ export default function Home() {
         <Skathes />
         <Workflow />
         <Skathes />
-        <Testimonials />
+        {/* <Testimonials />
+        <Skathes /> */}
         <FAQ />
         <Skathes />
         <Contact />

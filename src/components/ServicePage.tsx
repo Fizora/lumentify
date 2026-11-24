@@ -117,6 +117,7 @@ export default function ServicePage({
           </div>
         </Block>
       </main>
+      <Skathes />
       <Footer />
     </>
   );

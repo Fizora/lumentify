@@ -23,6 +23,7 @@ export default function PricingPage() {
         <Pricing showOneTime showMRR />
         <Skathes />
         <CTA />
+        <Skathes />
       </main>
       <Footer />
     </>

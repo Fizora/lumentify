@@ -56,6 +56,7 @@ export default function SEO() {
           </div>
         </Block>
       </main>
+      <Skathes />
       <Footer />
     </>
   );
