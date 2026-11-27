@@ -98,7 +98,7 @@ export const siteContent = {
       },
     ],
     description:
-      "Fast, clean, and directed websites — built & dedicated for home-service businesses that can't afford to lose a call.",
+      "Mobile-friendly websites for Australian home-service businesses, with clear services, local coverage and straightforward contact options.",
     contactTitle: "Get in Touch",
     emailAction: "Email",
     sendAction: "Send",

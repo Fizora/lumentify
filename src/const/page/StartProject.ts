@@ -28,17 +28,17 @@ export const briefUploadConfig = {
 export const startProjectContent = {
   backAction: "Back to home",
   onboardingLabel: "Lexentify onboarding",
-  title: "Let’s build your high-converting trade site.",
+  title: "Talk about your trade website",
   intro:
-    "Fill out the details to lock in your project scope. No upfront payment required—we review your brief and send a formal SOW first.",
-  reassuranceTitle: "No financial risk.",
+    "Share your business details and website goals. We’ll review the brief before recommending a scope.",
+  reassuranceTitle: "No payment is taken at this stage.",
   reassurance:
-    "Submitting this brief does not lock you into payment. We draft a formal Statement of Work (SOW) first. Work only begins after mutual agreement.",
+    "Submitting this brief does not start work or commit you to a purchase. Any proposal, Statement of Work and payment schedule will be agreed separately.",
   successTitle: "Project brief received.",
   successLead: "Thank you,",
   successBetween: ". We have received your project details for",
   successEnd:
-    "and will review your specifications. Expect a response with next steps within 1 business day.",
+    "and will review your specifications. We’ll reply with relevant next steps.",
   returnAction: "Return to homepage",
   fields: {
     name: { label: "Your full name *", placeholder: "John Smith" },

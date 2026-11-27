@@ -5,42 +5,42 @@ export type FaqItem = {
 
 export const faqs: FaqItem[] = [
   {
-    question: "How do I know these websites actually convert local customers?",
+    question: "Can a website guarantee more enquiries or jobs?",
     answer:
-      "Our layouts are engineered around real emergency trade-buyer behavior: sticky mobile click-to-call bars, prominent license & insurance badges, sub-second load times, and frictionless quote forms. You can test these exact interactive features live on our Showcase demo builds before committing.",
+      "No. Enquiry volume depends on demand, competition, pricing, reputation, traffic sources and other factors. A clear website can make services, coverage and contact actions easier to understand, but it cannot guarantee leads or revenue.",
   },
   {
     question:
       "How does remote project delivery work seamlessly across time zones?",
     answer:
-      "We operate on a streamlined asynchronous workflow utilizing structured Loom video updates, WhatsApp, and shared milestone dashboards. This ensures zero waiting for meetings, transparent progress tracking, and direct senior-level execution without local agency overhead.",
+      "Project communication, review meetings and progress updates are agreed in the proposal and project agreement. You will know who is responsible for each stage and how approvals will be recorded.",
   },
   {
     question: "Do I own the website and source code once built?",
     answer:
-      "Yes, 100% ownership. Upon final completion, all source code, design assets, and domain configurations transfer entirely to you. There are zero proprietary builder lock-ins or mandatory long-term platform fees.",
+      "Ownership, source-code handover, domains, hosting and third-party subscriptions are confirmed in the signed project agreement. We do not assume that an asset or service is included unless the scope says so.",
   },
   {
     question: "How long does a project take from kickoff to launch?",
     answer:
-      "Essential landing pages are delivered in 5–7 business days, Pro multi-page builds take 1–2 weeks, and Custom platforms take 3–4 weeks. All delivery milestones are firmly locked in writing before kickoff.",
+      "The estimated timeline depends on the agreed scope, content readiness, feedback and approvals. Timelines and milestones should be stated in the written proposal before work begins.",
   },
   {
     question: "What happens after the website goes live?",
     answer:
-      "Every project includes a dedicated post-launch stabilization and support window (7 days for Essential, 14 days for Pro, and 30 days for Custom). During this period, our team handles all system fine-tuning, adjustments, and transition assistance at zero extra cost.",
+      "Post-launch support and stabilisation are defined in the project agreement. The agreement should identify the support period, eligible issues and any additional work or maintenance charges.",
   },
   {
     question: "Will my site be optimized to show up on Google?",
     answer:
-      "Every build incorporates robust technical local SEO architecture: clean semantic HTML, sub-second asset optimization, suburb-level page hierarchies, and Google Business Profile structural alignment to give you an immediate competitive edge.",
+      "A build can include technical SEO foundations and agreed on-page elements such as clear page structure and service-area content. Rankings are not guaranteed; Google results depend on relevance, competition, authority, location and ongoing optimisation.",
   },
 ];
 
 export const faqSectionContent = {
   label: "FAQ",
-  title: "Your concerns, addressed.",
+  title: "The questions buyers usually ask",
   intro:
-    "Clear answers to the questions that matter before you engage us — built to give you confidence, clarity, and peace of mind.",
+    "Scope, ownership, SEO and post-launch support are addressed before a project begins.",
 } as const;
 

@@ -16,7 +16,7 @@ export const webDevelopmentDetails = {
         "The initial project fee covers end-to-end architecture, mobile responsiveness, targeted copywriting optimization, and deployment. Once milestones are signed off and the stabilization window concludes, structural changes fall outside this initial scope.",
       ],
       listItems: [
-        "Essential Tier: Strictly limited to 1 high-converting landing page optimized for emergency mobile dispatch and single-location service coverage.",
+        "Essential Tier: 1 focused landing page for a single-location service business.",
         "Pro Tier: Up to 5 custom pages, incorporating dedicated suburb-level local SEO architecture to capture regional traffic across multiple service zones.",
         "Custom Platform: Up to 12 custom pages designed for scaling multi-location trade fleets, featuring advanced intake flows and bespoke tool integrations.",
       ],
@@ -49,7 +49,7 @@ export const webDevelopmentDetails = {
     {
       title: "5. Revision Protocols & Client-Supplied Assets",
       content: [
-        "Projects operate under structured revision cycles (2 rounds for Essential, 4 rounds for Pro & Custom) during the design and layout review phases to lock in visual and structural directions efficiently.",
+        "Included revision cycles are specified in each package and restated in the written proposal.",
         "Clients are required to supply verified credentials, business licenses, insurance details, and brand assets in a timely manner. Lexentify strictly prohibits the fabrication of unverified licenses or fake customer reviews, maintaining absolute professional integrity.",
       ],
     },
@@ -64,12 +64,12 @@ export const webMaintenanceDetails = {
     {
       title: "1. Scope of Managed Hosting & Technical Care",
       content: [
-        "Our maintenance tiers are designed to provide complete peace of mind for business owners, handling all technical aspects of server infrastructure, security monitoring, and core framework updates without requiring client intervention.",
+        "Maintenance tiers can handle agreed hosting, technical care and routine updates so clients do not need to manage those tasks themselves.",
       ],
       listItems: [
-        "Server & Infrastructure: High-speed managed cloud hosting, automated daily/weekly backups, and SSL certificate management.",
-        "Security & Updates: Monthly core framework updates, vulnerability patching, and firewall hardening against malicious traffic.",
-        "Uptime Monitoring: 24/7 automated checks on site speed and availability to detect and resolve technical anomalies proactively.",
+        "Server & Infrastructure: Managed hosting, agreed backup coverage and SSL certificate management.",
+        "Security & Updates: Scheduled framework updates and agreed maintenance work.",
+        "Uptime Monitoring: Availability checks within the scope and monitoring terms of the selected plan.",
       ],
     },
     {
@@ -86,7 +86,7 @@ export const webMaintenanceDetails = {
     {
       title: "3. Service Level Agreements (SLA) & Support Priority",
       content: [
-        "Maintenance subscribers receive prioritized technical assistance, skipping general studio queues to ensure rapid turnaround times on support tickets, emergency fixes, or requested adjustments.",
+        "Maintenance subscribers receive support under the response and priority terms stated in their selected plan.",
       ],
     },
     {
@@ -114,7 +114,7 @@ export const webDevelopmentPageContent = {
   label: "Services / Web development",
   title: "Websites built to get your phone ringing.",
   intro:
-    "Not a template with your logo on it — a site engineered around how trade customers actually behave in an emergency.",
+    "A purpose-built website structure for the services, locations and contact needs of trade businesses.",
   included: [
     {
       title: "Click-to-call built in",
@@ -126,7 +126,7 @@ export const webDevelopmentPageContent = {
     },
     {
       title: "Sub-second load times",
-      body: "Clean, modern code and optimized assets so visitors don't bounce before the page even loads.",
+      body: "Performance-conscious code and asset use. Actual loading times vary by device, network and third-party services.",
     },
     {
       title: "Secure by default",
@@ -152,23 +152,23 @@ export const webMaintenancePageContent = {
   label: "Services / Web maintenance",
   title: "A website is never really “done.”",
   intro:
-    "Hosting expires, software needs updates, and content goes stale. Our maintenance plans keep everything running smoothly without you having to think about it.",
+    "Hosting, software and content need ongoing attention. Maintenance plans can cover agreed technical care and routine updates.",
   included: [
     {
       title: "Hosting & SSL, handled",
-      body: "Fast hosting and security certificates managed for you — nothing to renew or configure yourself.",
+      body: "Where included, hosting and SSL administration are managed under the selected maintenance plan.",
     },
     {
       title: "Ongoing updates",
-      body: "Core and security updates applied monthly so your site stays fast and safe without you lifting a finger.",
+      body: "Agreed framework and security updates are scheduled according to the plan.",
     },
     {
       title: "Uptime monitoring",
-      body: "24/7 monitoring on speed and availability — we usually catch an issue before you notice it.",
+      body: "Monitoring and alert arrangements are defined by the selected plan.",
     },
     {
       title: "Priority support",
-      body: "Skip the queue — maintenance clients get faster response times on requests and fixes.",
+      body: "Maintenance requests are handled according to the support priority and response terms in the agreement.",
     },
   ],
   hubLabel: "Maintenance information",
@@ -188,33 +188,33 @@ export const seoPageContent = {
       "Explore Lexentify's technical SEO foundations for home-service websites, including clear site structure, local service-area pages, and Google Business Profile guidance.",
   },
   label: "Services / SEO",
-  title: "SEO that starts with the build, not after it.",
+  title: "Search foundations that start with the build",
   intro:
-    "We don’t sell SEO as a bolt-on service — it’s built into how every site is structured from day one.",
+    "Technical SEO foundations can be included in a build. Ongoing campaigns and larger content strategies are separately scoped.",
   includedLabel: "Included",
   included: [
     {
       title: "Suburb-level pages",
-      body: "Instead of one homepage competing for every keyword, dedicated pages target each suburb you service.",
+      body: "Where useful and agreed, dedicated pages can present the suburbs or regions you genuinely serve.",
     },
     {
       title: "Technical foundation",
-      body: "Clean semantic HTML, fast loading, and proper structure — the groundwork Google actually rewards.",
+      body: "Clear semantic structure, indexable pages and mobile-friendly presentation provide a practical technical foundation.",
     },
     {
       title: "Google Business Profile",
-      body: "Setup and optimization guidance so your profile and website work together, not separately.",
+      body: "Guidance for keeping website information consistent with a Google Business Profile, where this work is included in the agreed scope.",
     },
     {
       title: "Ongoing ranking checks",
-      body: "Available on maintenance plans — a monthly check on where you sit for the searches that matter.",
+      body: "Available only when separately agreed, with reports that explain the monitoring scope and search terms.",
     },
   ],
   expectations: {
     label: "Expectations",
     title: "A note on realistic expectations",
     body:
-      "No one can guarantee a #1 ranking — anyone who promises that is selling you something. What we can guarantee is the technical foundation done right, which is the part most sites get wrong from the start.",
+      "No credible provider can guarantee a first-page or #1 ranking. Search visibility depends on competition, relevance, authority, location and ongoing optimisation. Website work can provide a clear technical and on-page foundation, but cannot guarantee results.",
     action: "See plans",
     href: "/pricing",
   },

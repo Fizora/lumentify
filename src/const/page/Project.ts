@@ -49,13 +49,13 @@ export const projectPageContent = {
     badge: "Details received",
     title: "Thanks — we’ve got your details.",
     description:
-      "We’ll reply within 1 business day with a proposed scope, timeline, and any documents you asked for. No pressure — reply to our email anytime if you’ve got questions first.",
+      "We’ll review your details and reply with a proposed scope, timeline and any relevant documents. No pressure — reply with questions before making a commitment.",
   },
   hero: {
     eyebrow: "Start project",
-    title: "Ready to get your site built?",
+    title: "Tell us about your website",
     description:
-      "Share a few details about your home-service business and we’ll reply with a proposed scope, timeline, and simple documents to kick things off.",
+      "Share a few details about your home-service business. We’ll assess the fit and explain a suitable next step.",
     ndaDescription:
       "If you prefer to work under an NDA or need a formal Master Service Agreement, just let us know in the form. We’ll send a simple NDA and MSA alongside a draft Statement of Work based on your answers, so everything is clear before we start.",
   },
@@ -129,8 +129,8 @@ export const projectPageContent = {
     title: "What happens next",
     steps: [
       {
-        emphasis: "We reply within 1 business day",
-        text: " — usually sooner.",
+        emphasis: "We review the information you provide",
+        text: " and identify the scope and questions that need to be clarified.",
       },
       {
         emphasis: "You’ll get a proposed scope, timeline, and price range",

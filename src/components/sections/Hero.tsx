@@ -249,18 +249,22 @@ const Hero = () => {
                   {heroContent.previewDescription}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-                  <button
+                  <a
+                    href="https://adpplumbing.lexentify.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="px-4 md:px-6 py-2.5 md:py-3 text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-black transition-opacity hover:opacity-90"
                     style={{ backgroundColor: INK }}
                   >
                     {heroContent.previewActions[0]}
-                  </button>
-                  <button
+                  </a>
+                  <a
+                    href="/showcase"
                     className="px-4 md:px-6 py-2.5 md:py-3 text-[9px] md:text-[10px] font-bold uppercase tracking-widest border transition-colors hover:bg-[#1a1a1a]"
                     style={{ borderColor: BORDER, color: INK }}
                   >
                     {heroContent.previewActions[1]}
-                  </button>
+                  </a>
                 </div>
               </div>
 

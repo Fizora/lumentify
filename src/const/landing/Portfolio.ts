@@ -18,10 +18,10 @@ export const showcaseList: ShowcaseItem[] = [
     img: "/img/adpplumbing-good.png",
     icon: LuHammer,
     name: "ADP Plumbing",
-    desc: "High-converting plumbing template featuring dedicated local suburb pages, 24/7 emergency dispatch UI, and a streamlined online booking system.",
+    desc: "A live plumbing industry demonstration showing clear service categories, suburb information, prominent call actions and a quote enquiry form.",
     tags: ["Plumbing", "Local SEO", "Live"],
     href: "https://adpplumbing.lexentify.com/",
-    status: "Live",
+    status: "Live Demo",
     type: "Plumbing Services",
     year: "2026",
   },
@@ -29,10 +29,10 @@ export const showcaseList: ShowcaseItem[] = [
     img: "/img/wcaircon-new.png",
     icon: LuHammer,
     name: "WC Aircon",
-    desc: "HVAC and air conditioning platform demo designed for deep service proof, tailored installation showcases, and instant quote generation.",
+    desc: "A live air-conditioning industry demonstration showing service presentation, service-area information, quote actions and a mobile-friendly enquiry flow.",
     tags: ["HVAC", "Air Conditioning", "Live"],
     href: "https://wcaircon.lexentify.com/",
-    status: "Live",
+    status: "Live Demo",
     type: "HVAC Services",
     year: "2026",
   },
@@ -69,12 +69,12 @@ export const portfolioPageContent = {
   metadata: {
     title: "Showcase",
     description:
-      "Explore our live interactive demo builds. See how our Essential, Pro, and Custom web architectures deliver lightning-fast performance and high conversions for trade businesses.",
+      "Explore Lexentify's live demonstrations for plumbing and air-conditioning businesses.",
   },
   label: "Showcase",
-  title: "Explore our demo",
+  title: "Explore the live demonstrations",
   intro:
-    "Experience firsthand how our Essential, Pro, and Custom packages perform in the wild—engineered specifically to dominate local searches and turn emergency clicks into direct calls.",
+    "These are independently developed industry demonstrations, not paying client engagements or verified case studies. Inspect the service structure, mobile layouts and contact journeys.",
 } as const;
 
 export const portfolioGridContent = {
@@ -89,9 +89,9 @@ export const portfolioGridContent = {
   },
   emptyState:
     "No {tab} available yet. We believe in transparency — we'll publish them as soon as they're ready.",
-  ctaTitle: "Ready to Build?",
+  ctaTitle: "Discuss a project",
   ctaDescription:
-    "Want something built for your business specifically? Let's talk.",
-  ctaAction: "Start Project",
-  ctaHref: "https://wa.me/6285235086814",
+    "Need a website for your trade business? Tell us about your services and target areas.",
+  ctaAction: "Talk About Your Project",
+  ctaHref: "/start-project",
 } as const;

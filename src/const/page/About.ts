@@ -6,14 +6,14 @@ export const aboutMetadata = {
 
 export const aboutPageContent = {
   label: "About Lexentify",
-  title: "Websites designed with precision & purpose",
+  title: "Direct accountability, practical delivery",
   intro:
-    "Learn about our focus, our approach to digital execution, and the core principles that guide our work across every project.",
+    "Lexentify is an independent web studio focused on clear, usable websites for Australian home-service businesses.",
   studioLabel: "Studio",
   paragraphs: [
-    "Lexentify is an independent digital studio with a primary focus on building high-conversion websites for household and home-service businesses, including plumbers, electricians, HVAC providers, and roofers. By deeply specializing in this sector, we streamline our development processes and maintain rigorous quality control. However, our engineering standards are adaptable—we are always open to selecting and accepting selective projects outside of this niche when clients share our value for clean, high-performance web architecture.",
-    "Website usability matters, particularly on mobile devices. Slow loading, unclear service information, or difficult-to-find contact details can create friction for visitors. We aim to reduce that friction through considered page structure, responsive layouts, optimized assets, and clear contact options. Actual website performance and customer behavior depend on factors beyond design and development alone.",
-    "We take a project-specific approach rather than relying on one-size-fits-all copy. Where information is available, we review your services, target audience, business priorities, and existing digital assets before shaping the page structure and content. The result is a website built around your agreed requirements, with clear paths for visitors to call, enquire, or request a quote.",
+    "Lexentify works primarily with plumbers, electricians, HVAC providers, roofers and related home-service businesses. The focus is on clear services, useful service-area information and straightforward contact options.",
+    "Usability matters, particularly on mobile devices. A visitor should be able to understand what a business offers and how to contact it without searching through unnecessary content.",
+    "Each engagement begins with the business's services, target areas, existing assets and project requirements. Scope and responsibilities are agreed before development proceeds.",
     "Our approach is guided by three principles:",
     "Where applicable, business credentials, licences, insurance details, reviews, and other trust signals should be accurate and supplied or approved by the business owner. We do not present unverified credentials or invented customer reviews as genuine evidence.",
     "Whether building for our core household niche or expanding into new industries, Lexentify focuses on delivering practical, high-standard websites one project at a time. Our work supports your online presence; search rankings, enquiry volume, bookings, and revenue depend on many factors and are not guaranteed by website development alone.",

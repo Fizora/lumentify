@@ -1,7 +1,7 @@
 export const ctaContent = {
-  title: "Ready to grow your business?",
+  title: "Have a website project in mind?",
   description:
-    "Get a website that actually brings in leads — no fluff, just a clear direction.",
-  action: "Start project",
-  href: "mailto:info@lexentify.com",
+    "Discuss your services, target areas and current website. We’ll identify whether a focused rebuild or a new build is appropriate.",
+  action: "Discuss Your Website",
+  href: "/start-project",
 } as const;

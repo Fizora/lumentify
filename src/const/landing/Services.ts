@@ -21,89 +21,89 @@ export const businessFeatures: FeatureItem[] = [
     icon: LuPhoneCall,
     title: "Instant mobile click-to-call",
     description:
-      "A sticky, thumb-friendly call bar engineered to give urgent emergency customers a direct line to your dispatch in a single tap.",
+      "Place call and quote actions where mobile visitors can find them quickly.",
   },
   {
     icon: LuMapPin,
     title: "Suburb-level service mapping",
     description:
-      "Dedicated location page structures architected to capture high-intent local search traffic across every suburb you service.",
+      "Present the suburbs and regions you serve so visitors can confirm local relevance.",
   },
   {
     icon: LuBadgeCheck,
     title: "Authority front and center",
     description:
-      "Strategic above-the-fold placement for your state licenses, insurance credentials, and verified Google ratings to instantly establish trust.",
+      "Give genuine licences, insurance details and customer evidence a clear, accurate place on the page.",
   },
   {
     icon: LuCalendarCheck,
     title: "Frictionless quote & booking flows",
     description:
-      "Streamlined interaction forms optimized for rapid mobile input, minimizing user drop-off and maximizing direct callout requests.",
+      "Use practical form and call options that ask only for the information needed to start an enquiry.",
   },
 ];
 
 export const technicalFeatures: FeatureItem[] = [
   {
     icon: LuZap,
-    title: "Sub-second load speed",
+    title: "Performance-conscious builds",
     description:
-      "Lean modern code and optimized assets guarantee near-instant loading, preventing potential clients from bouncing to competitors.",
+      "Mobile-friendly layouts and responsible asset use support a straightforward customer experience.",
   },
   {
     icon: LuShield,
-    title: "Secure infrastructure by default",
+    title: "Practical security foundations",
     description:
-      "Enterprise-grade SSL encryption, advanced security headers, and hardened hosting environments configured as standard.",
+      "Security measures, hosting and ongoing maintenance are agreed and documented in the project scope.",
   },
   {
     icon: LuPenTool,
-    title: "High-converting trade copy",
+    title: "Trade-specific copy",
     description:
-      "Direct, persuasive copywriting frameworks structured around consumer urgency, transparent value, and immediate action.",
+      "Clear, accessible copy explains what you do, where you work and how a customer should get in touch.",
   },
   {
     icon: LuLifeBuoy,
-    title: "Post-launch transition support",
+    title: "Post-launch support",
     description:
-      "Dedicated post-deployment assistance included with every build to ensure absolute platform stability and total peace of mind.",
+      "The agreed support period and exclusions are written into the project terms.",
   },
 ];
 
 export const featuresSectionContent = {
-  label: "Features",
-  title: "Built to grow your home-service business",
+  label: "What we deliver",
+  title: "Make it easier for customers to choose and contact you",
   intro:
-    "Everything you need to turn clicks into booked jobs – designed specifically for HVAC, plumbing, and electrical pros.",
-  businessLabel: "For your customers’ urgent moments",
-  technicalLabel: "Under the hood",
+    "We combine trade-specific structure with a practical mobile experience.",
+  businessLabel: "For the customer journey",
+  technicalLabel: "Supporting delivery",
 } as const;
 
 export const workflowSectionContent = {
   label: "How it works",
-  title: "A transparent process built for mutual safety",
+  title: "A clear process before work begins",
   intro:
-    "Eliminating the guesswork and fear of offshore development with clear, structured milestones from day one.",
+    "Scope, approvals and responsibilities are confirmed in writing.",
   steps: [
     {
-      title: "Discovery & written agreement",
+      title: "Discovery",
       description:
-        "We discuss your business needs, define exact deliverables, and lock everything into a formal, signed SOW and MSA before any financial commitment.",
+        "We discuss your business, services, target areas, website needs and available content.",
     },
     {
-      title: "Visual direction & refundable milestone",
+      title: "Proposal",
       description:
-        "An initial modest deposit initiates the design phase. You review and approve the homepage layout early—if it doesn't align with your vision, your deposit is fully refunded.",
+        "You receive a written proposal covering scope, price and the intended project terms.",
     },
     {
-      title: "Precision development & handover",
+      title: "Design and development",
       description:
-        "Once the design direction is locked, we build your lightning-fast site. The remaining 50% balance is paid only when the project is fully complete and ready for deployment.",
+        "The agreed design direction and development scope are reviewed through the milestones in your agreement.",
     },
     {
-      title: "Post-launch stabilization support",
+      title: "Review, launch and handover",
       description:
-        "Your site goes live backed by our dedicated support window (7 to 30 days depending on your plan), ensuring absolute stability and zero technical stress.",
+        "The final website is tested, launched and handed over with the ownership and post-launch arrangements recorded in writing.",
     },
   ],
 } as const;

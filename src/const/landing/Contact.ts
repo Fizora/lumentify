@@ -2,12 +2,12 @@ export const businessContactEmail = "business@lexentify.com";
 
 export const contactContent = {
   label: "Contact",
-  title: "Let’s talk about your site.",
+  title: "Discuss your website",
   intro:
-    "Tell us a bit about your business and what you need. No pressure, no aggressive sales script — just honest, professional next steps.",
+    "Tell us about your trade, target service area and current website. We’ll use the details to assess fit and outline the next steps.",
   successTitle: "Message received.",
   successMessage:
-    "Thank you for reaching out. We review every project personally and will reply with clear, actionable steps within 1 business day.",
+    "Thank you for reaching out. We’ll review your details and reply with clear next steps.",
   sendAnother: "Send another message",
   fields: {
     name: { label: "Your name *", placeholder: "John Smith" },
@@ -19,9 +19,9 @@ export const contactContent = {
     interest: {
       label: "What are you looking for?",
       options: [
-        { value: "Essential", label: "Essential — High-converting landing page" },
-        { value: "Pro", label: "Pro — Multi-page local asset" },
-        { value: "Custom", label: "Custom — Multi-suburb platform" },
+        { value: "Essential", label: "Essential — Single-page website" },
+        { value: "Pro", label: "Pro — Multi-page website" },
+        { value: "Custom", label: "Custom — Larger or bespoke website" },
         { value: "Not sure", label: "Not sure yet / Need guidance" },
       ],
     },
@@ -38,7 +38,7 @@ export const contactContent = {
     {
       title: "Direct email",
       description:
-        "Prefer writing directly? We check our inbox daily and reply within 1 business day.",
+        "Prefer writing directly? Email us with a brief summary of your business and website needs.",
       action: businessContactEmail,
       href: `mailto:${businessContactEmail}`,
     },
@@ -52,7 +52,7 @@ export const contactContent = {
     {
       title: "Written agreement first",
       description:
-        "Every project starts with a clear written proposal and formal agreement before any financial commitment — absolute transparency guaranteed.",
+        "Before work begins, the scope, price, timeline, ownership and support arrangements should be confirmed in writing.",
     },
   ],
 } as const;

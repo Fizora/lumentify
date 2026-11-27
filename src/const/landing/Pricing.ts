@@ -15,7 +15,7 @@ export const buildPlans: PricingPlan[] = [
   {
     name: "Essential",
     description:
-      "A fast, high-converting landing page built to turn emergency mobile clicks into more direct phone calls.",
+      "A focused landing page for one location, with clear services and direct contact options.",
     price: "$1,499",
     period: "one-time",
     features: [
@@ -36,7 +36,7 @@ export const buildPlans: PricingPlan[] = [
   {
     name: "Pro",
     description:
-      "A multi-page local digital asset engineered to dominate suburb search traffic and capture local.",
+      "A multi-page website for businesses covering more services or a wider local area.",
     price: "$2,499",
     period: "one-time",
     features: [
@@ -142,20 +142,20 @@ export const pricingSectionContent = {
     label: "Pricing",
     title: "Build your site",
     intro:
-      "One payment, no subscriptions. Choose the package that fits your business needs.",
+      "Compare build scope and inclusions. Hosting, domains and third-party services are stated in the package details and proposal.",
     badge: "Best choice",
   },
   maintenance: {
     label: "Maintenance",
     title: "Keep it running",
     intro:
-      "Ongoing support, hosting, and updates — lock in the November rate and never worry about your site.",
+      "Choose ongoing technical care, updates and managed hosting separately from the initial build.",
     badge: "Best value",
   },
   billedMonthly: "Billed monthly",
   capacityLabel: "Capacity",
   capacityMessage:
-    "To ensure sub-second performance and direct founder-level communication, we cap our active builds at 4 clients per month.",
+    "Project timing and availability are confirmed in writing before work begins.",
 } as const;
 
 export const originalPrices: Record<
